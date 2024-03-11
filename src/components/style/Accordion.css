@@ -1,0 +1,37 @@
+#panel1-faq {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+#panel1-faq div{
+    font-family: "Bahij TheSansArabic";
+font-size: 16px;
+font-weight: 500;
+line-height: 25px;
+letter-spacing: 0em;
+text-align: right !important;
+justify-content: flex-end !important;
+color: #5D5D5D;
+}
+.acc-Asset li {
+    text-align: right; 
+    list-style-type: none;
+    margin-bottom: 15px;
+
+}
+.acc-Asset li::after {
+    content: "\2022"; 
+    color: #877096; 
+    font-size: inherit;
+    margin-left: 0.5em; 
+}
+.acc-Asset li a{
+    text-decoration: none;
+    text-align: right;
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: right;
+    color: #877096;
+}

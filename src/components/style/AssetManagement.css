@@ -1,0 +1,23 @@
+.boxes-title{
+    font-family: "Bahij TheSansArabic";
+font-size: 42px;
+font-weight: 500;
+line-height: 69px;
+color: #222222;
+text-align: center;
+padding-top: 111px;
+margin-bottom: 20px;
+}
+.AssetManagement-title{
+    background: url("/Frame 2.png");
+
+    background-position: left top;
+        background-repeat: no-repeat;
+}
+.assetManagement-accordion{
+    display: flex;
+    justify-content: center;
+}
+.assetManagement-accordion-container{
+    width: 50%;
+}

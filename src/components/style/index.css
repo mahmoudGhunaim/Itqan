@@ -1,0 +1,287 @@
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0 ;
+}
+
+
+body{
+    background: #FAFAFA;
+}
+.hero-homepage-sec{
+    background: url("/Rectangle 1.png") ;
+    height: 742px;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-homepage-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-homepage-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 739px;
+}
+.hero-homepage-content span{
+    color: #FFFFFF;
+    font-weight: 500;
+    font-family: 'Bahij TheSansArabic';
+    
+}
+.hero-homepage-content span img:nth-child(1){
+    margin-right: 7px;
+}
+.hero-homepage-content span img:nth-child(2){
+    margin-left: 7px;
+}
+.hero-homepage-content h1{
+    color: #FFFFFF;
+    font-size: 60px;
+    font-family: 'Bahij TheSansArabic';
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hero-homepage-content p{
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Bahij TheSansArabic';
+    text-align: center;
+    line-height: 25px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.hero-homepage-content button{
+    background: #3F1A58;
+    width: 298px;
+    height: 59px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-family: 'Bahij TheSansArabic';
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 29.5px;
+}
+.products-sec{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 150px;
+    background: url("/Frame 2.png"), linear-gradient(180deg, #E6E3DD 0%, rgba(230, 227, 221, 0) 20.34%);
+
+background-position: left top;
+    background-repeat: no-repeat;
+
+}
+.products-container{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 90%;
+    
+}
+.products-container h1{
+    color: #222222;
+    font-size: 42px;
+    font-family: 'Bahij TheSansArabic';
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.products-container p{
+    color: #3F1A58;
+    font-size: 18px;
+    font-family: 'Bahij TheSansArabic';
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 90px;
+}
+.products-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 100%;
+    gap: 35px;
+}
+.products-single button{
+    width: 415.2px;
+    height: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    color: #222222;
+    font-size: 20px;
+    font-family: 'Bahij TheSansArabic';
+    text-align: center;
+    font-weight: 500;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 0px 23.200000762939453px 0px #64646F1F;
+    cursor: pointer;
+}
+.products-single:nth-child(5) button{
+    background: #3F1A58 !important;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 23.200000762939453px 0px #64646F47;
+
+}
+@keyframes slideUpFadeIn {
+    from {
+      opacity: 0; 
+      transform: translateY(400%); 
+    }
+    to {
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  /* .products-single {
+    opacity: 0; 
+    animation: slideUpFadeIn 1s ease-out forwards; 
+  } */
+  .animate {
+    animation: slideUpFadeIn 1s ease-out forwards;
+  }
+  .exchange-rates-section{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(#FAFAFA 80%,#46235E 20%) ;
+    background-position: bottom;
+  }
+  .exchange-rates-container{
+    text-align: center;
+    padding-bottom: 45px;
+ 
+  
+  }
+  .exchange-rates-container h2{
+    color: #222222;
+    font-size: 42px;
+    font-family: 'Bahij TheSansArabic';
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+  table{
+    border-spacing: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px -4px 21.5px 0px #00000008;
+    border-radius: 10px;
+  }
+  td,th{
+    border: 1px solid #F2F4F7;
+    border-top:none ;
+  }
+  th{
+    text-align: center;
+    color: #222222;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Bahij TheSansArabic';
+    height: 70px;
+  }
+  td{
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    color: #5D5D5D;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Bahij TheSansArabic';
+
+  }
+  .box-name{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 400px;
+    color: #3F1A58;
+    font-size: 18px;
+  }
+  .box-name img {
+    margin-right: 25px;
+}
+.exchange-rates-container table tr:nth-child(3) td:nth-child(1){
+    border-radius: 0px 0px 0px 10px;
+}
+.exchange-rates-container table tr:nth-child(3) td:nth-child(5){
+    border-radius: 0px 0px 10px 0px;
+}
+
+
+
+
+.Reports-data-sec{
+    display: flex;
+    justify-content: center;
+}
+.Reports-data-container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   padding: 150px 0;
+
+}
+.Reports-data-title h1{
+    color: #222222;
+    font-size: 42px;
+    font-family: 'Bahij TheSansArabic';
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.Reports-data-title p{
+    text-align: center;
+    color: #3F1A58;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Bahij TheSansArabic';
+
+    margin-bottom: 80px;
+}
+.Reports-data-cards{
+    display: flex;
+    gap: 50px;
+
+}
+.Reports-data-single-card{
+    background: white;
+    box-shadow: 0px 0px 21.299999237060547px 0px #64646F1F;
+    width: 328px;
+    height: 243px;
+    border-radius: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Reports-data-single-card p{
+    margin-top: 15px;
+    text-align: center;
+    color: #222222;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Bahij TheSansArabic';
+}
+.sec-footer-background{
+    height: 200px;
+    background: #FFFFFF;
+    margin-top: -100px;
+}

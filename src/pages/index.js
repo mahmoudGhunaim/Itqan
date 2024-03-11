@@ -1,127 +1,125 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import React, { useEffect, useState } from 'react';
+import { Link } from "gatsby";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import * as styles from "../components/style/index.module.css";
+import "../components/style/index.css";
+import ItqanC from '../components/ItqanC';
+import Distinction from '../components/distinction';
+import SecFooter from '../components/SecFooter';
+import ScrollToTopButton from '../components/ScrollToTopButton';
+const Index  = () => {   
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1 }); 
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+    document.querySelectorAll('.products-single').forEach(item => {
+      observer.observe(item);
+    });
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
+    return () => observer.disconnect(); 
+  }, []);
 
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+  return (
+    <Layout>
+      <ScrollToTopButton/>
+    <section className="hero-homepage-sec">
+      <div className="hero-homepage-container">
+        <div className="hero-homepage-content">
+          <span><img src="/Isolation_Mode.svg"/>إتقان كابيتال<img src="/Isolation_Mode.svg"/></span>
+          <h1><img src="/Vector.svg"/>رواد الاستثمار الأكثر ثقة</h1>
+          <p>“إتقان كابيتال” هي شركة استثمارية تقدم منتجات وخدمات استثمارية متوافقة مع الشريعة الإسلامية وتتعامل في السوق المالي السعودي وأسواق دول مجلس التعاون الخليج العربي.</p>
+          <Link><button> <img src="/Vector1.svg"/>أنشئ حساب جديد</button></Link>
+        </div>
+      </div>
+    </section>
+    <section className="products-sec">
+      <div className="products-container">
+      <h1>منتجات إتقان كابيتال</h1>
+          <p>نقدم لك مجموعة من الخدمات المالية والبحوث وإدارة الأصول وغيرها من الخدمات الخاصة</p>
+          <div className="products-content">
+            <div className="products-single">
+              <button><img src="/Control Panel Icon.png"/>إدارة الأصول</button>
+            </div>
+            <div className="products-single">
+              <button><img src="/Consultation.png"/>الخدمات المصرفية الاستثمارية</button>
+            </div>
+            <div className="products-single">
+              <button><img src="/Examination.png"/>خدمات الحفظ</button>
+            </div>
+            <div className="products-single">
+              <button><img src="/Reporting.png"/>الأبحاث المنشورة</button>
+            </div>
+            <div className="products-single">
+              <button><img src="/New Account.png"/>فتح حساب جديد</button>
+            </div>
+          </div>
+        <ItqanC/>
+      </div>
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+    </section>
+    <Distinction/>
+    <section class="exchange-rates-section">
+      <div class="exchange-rates-container">
+        <h2>إحصائيات الصرافة</h2>
+        <table>
+        
+          <tr>  
+            <th>متوسط الذكاء السنوي</th>
+            <th>أيام التقييم</th>
+            <th>تاريخ التقييم</th>
+            <th>سعر الوحدة الحالي</th>
+            <th>اسم الصندوق</th>
+          </tr>
+          <tr >
+            <td>3.81</td> 
+            <td>يومي</td>
+            <td>10/01/2024</td>
+            <td>SAR 13.9661</td>
+            <td className='box-name'>صندوق المرابحات والصكوك<img src='/Frame 1.png'/></td>    
+          </tr>
+          <tr>
+            <td>1.93</td>
+            
+            <td>الإثنين , الأربعاء</td>
+          
+            <td>10/01/2024</td>
+            <td>SAR 16.7911</td>
+            <td className='box-name'>صندوق إتقان للأسهم السعودية<img src='/Frame 1.png'/></td>      
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section className='Reports-data-sec'>
+      <div className='Reports-data-container'>
+        <div className='Reports-data-title'>
+          <h1>التقارير والبيانات</h1>
+          <p>اطّلع على آخر التحليلات والرؤى للأسواق المالية</p>
+        </div>
+        <div className='Reports-data-cards'>
+          <div className='Reports-data-single-card'>
+              <img src='/Breaking.png'/>
+              <p>البيانات المالية</p>
+
+          </div>
+          <div className='Reports-data-single-card'>
+              <img src='/Documents.png'/>
+              <p>التقارير السنوية</p>
+              
+          </div>
+        </div>
+      </div>
+    </section>
+    <SecFooter/>
+    <div className='sec-footer-background'></div>
   </Layout>
-)
-
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
+  )
+}
 export const Head = () => <Seo title="Home" />
-
-export default IndexPage
+export default Index 

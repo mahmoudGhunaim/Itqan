@@ -1,0 +1,71 @@
+.itqan-c-section{
+    margin-top: 120px;
+    z-index: 11;
+}
+.itqan-c-container{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 65px;
+    background: #FFFFFF;
+    padding: 56px 72px 72px 72px;
+    box-shadow: 0px 4px 28.399999618530273px 0px #00000014;
+    border-radius: 20px;
+}
+.itqan-c-content {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: flex-end;
+    
+}
+.itqan-c-content p{
+    color: #46235E;
+    font-size: 16px;
+    font-family: 'Bahij TheSansArabic';
+}
+
+.itqan-c-content h2{
+    font-size: 42px;
+    
+    font-family: 'Bahij TheSansArabic';
+    font-weight: 700;
+}
+.itqan-c-container p{
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.itqan-c-text {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.itqan-c-text h6 {
+    display: flex;
+    color: #222222;
+    font-size: 24px;
+    font-family: 'Bahij TheSansArabic';
+    font-weight: 500;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.itqan-c-text p{
+    font-family: 'Bahij TheSansArabic';
+
+    color: #222222;
+    font-size: 16px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.itqan-c-line{
+    border-top: 3px solid #3F1A58;
+    width: 220px;
+    margin-top: 13px;
+    margin-bottom: 22px;
+}

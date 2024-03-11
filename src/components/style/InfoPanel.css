@@ -1,0 +1,70 @@
+.infopanel-sec{
+    display: flex;
+    justify-content: center;
+    padding: 65px 0;
+}
+.infopanel-container{
+    display: flex;
+    max-width: 1420px;
+    align-items: center;
+    gap: 50px;
+}
+.infopanel-content{
+    text-align: right;
+}
+.infopanel-content ul {
+    list-style: none;
+    direction: rtl;
+    counter-reset: list-counter;
+    padding: 0;
+}
+
+.infopanel-content ul li {
+    counter-increment: list-counter;
+    margin-bottom: 5px;
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    color: #3F1A58;
+    line-height: 27px;
+    text-align: right;
+
+}
+
+.infopanel-content ul li:before {
+    content: counter(list-counter) " . ";
+    margin-right: 5px; /* Adjust as needed */
+}
+.infopanel-container h2{
+    font-family: "Bahij TheSansArabic";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 52px;
+    color: #222222;
+    text-align: right;
+    margin-bottom: 20px;
+
+}
+.infopanel-container p{
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: right;
+
+}
+.infopanel-container button{
+    padding: 10px 40px;
+    background: #46235E;
+    border: none;
+    border-radius: 8px;
+    font-family: "Bahij TheSansArabic";
+font-size: 16px;
+font-weight: 500;
+line-height: 27px;
+color: #FFFFFF;
+text-align: right;
+margin-top: 20px;
+
+}

@@ -1,0 +1,182 @@
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url(../../../Font/alfont_com_ArbFONTS-Bahij_TheSansArabic-Plain.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bahij TheSansArabic light';
+  src: url(../../../Font/TheSansArabic-Light.ttf) format('truetype');
+}
+body {
+  margin: 0 !important;
+}
+header.navBar-sec {
+  display: flex;
+  justify-content: center;
+  background: #5E5E5E0A;
+}
+.navBar-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+.navBar-logo{
+  padding: 15px 0;
+}
+.navBar-links {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 63px;
+}
+.navBar-links a{
+  text-decoration: none;
+  color: #5D5D5D;
+  font-weight: 500;
+  font-family:"Bahij TheSansArabic" ;
+  font-size: 16px;
+
+}
+.navBar-links a:focus{
+  color: #3F1A58;
+  border-bottom: 1px solid #3F1A58;
+  margin-bottom: 8px;
+  
+}
+.navBar-openAcc button{
+  color: #3F1A58;
+  font-family: 'Bahij TheSansArabic';
+  font-size: 16px;
+  border: none;
+  background: rgba(174, 174, 174, 0.2);
+
+  width: 189px;
+  height: 48px;
+  border-radius: 24px;
+}
+.footer-sec{
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+  border-width: 95%;
+}
+.footer-container{
+  padding-top: 80px;
+  border-top:  1px solid #0000000D;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 90%;
+  padding-bottom: 60px;
+}
+.footer-links,.footer-services,.footer-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-links h6,.footer-services h6,.footer-container form h6{
+  color: #222222;
+  font-family: "Bahij TheSansArabic";
+  font-weight: 500;
+  font-size: 16px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.footer-links a,.footer-services a,.footer-logo p,.footer-container form p{
+  font-family: "Bahij TheSansArabic";
+  font-weight: 500;
+  font-size: 14px;
+  color: #5D5D5D;
+  text-decoration: none;
+  text-align: right;
+}
+.footer-logo {
+  text-align: right;
+  width: 25%;
+}
+.footer-logo img{
+  margin-bottom: 15px;
+}
+.button-input{
+  display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 3px 20px 3px 10px;
+    border: 1px solid #BFBFBF;
+    border-radius: 27px;
+}
+input.button-input-field:focus-visible {
+  outline-offset: none !important;
+  
+  outline:none !important;
+}
+input.button-input-field {
+  border: none;
+  text-align: right;
+  color: #0000004D;
+  font-weight: 500;
+  font-family:" Bahij TheSansArabic";
+  font-size: 14px;
+  
+}
+button.button-input-button{
+  width: 78px;
+  height: 48px;
+  border: none;
+  background: #3F1A58;
+  border-radius: 25px;
+  font-family: "Bahij TheSansArabic";
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+  /* padding: 12px 16px; */
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease,  0.5s ease; 
+  transform: translateY(-20px); 
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0px) translateX(-100px); 
+
+}
+.dropdown-content a {
+  font-family: "Bahij TheSansArabic";
+  font-weight: 500;
+  text-align: right;
+  color: black;
+  padding: 15px 20px;
+  text-decoration: none;
+  display: block;
+  box-shadow: none;
+}
+.dropdown-content a:hover{
+  color: #3F1A58;
+  font-weight: 700;
+  background: #F2F4F7;
+
+}
+.dropdown-content a:focus{
+  border: none !important;
+  padding: none !important;
+  margin: none !important;
+}
