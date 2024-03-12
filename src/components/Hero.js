@@ -9,6 +9,7 @@ const Hero = ({title, subTitle}) => {
         <p> {subTitle}</p>
       </div>
     </div>
+    dwadwahdwuawdiuglkugdwalkjgdw
   </section>
   )
 }

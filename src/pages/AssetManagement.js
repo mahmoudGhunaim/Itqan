@@ -12,6 +12,7 @@ import accordionData from '../Json/Accordion.json';
 const AssetManagement = () => {
   return (
     <Layout>
+
         <Hero
         title=" إدارة الأصول"
         subTitle="“خدمات إدارة الأصول”"/>
@@ -41,6 +42,7 @@ const AssetManagement = () => {
         none="none"
         />
         </section>
+       
        < h2 className='boxes-title'>خدمات الإدارة</h2>
         <InfoPanel
         title="إدارة الثروات"
