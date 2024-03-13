@@ -9,6 +9,7 @@ import Hero from '../components/Hero';
 import InfoPanel from '../components/InfoPanel';
 import Accordion from '../components/Accordion';
 import accordionData from '../Json/Accordion.json';
+import PrivateBox from '../components/PrivateBoxCard';
 const AssetManagement = () => {
   return (
     <Layout>
@@ -43,6 +44,36 @@ const AssetManagement = () => {
         />
         </section>
        
+       <section className='private-box-sec'>
+          <div  className='private-box-container'>
+            <div  className='private-box-title'>
+              <h2>الصناديق الخاصة</h2>
+            </div>
+            <div  className='private-box-card'>
+              <PrivateBox 
+              title="صندوق إتقان للعقارات"
+              subtitle="تتمثل استراتيجية هذا الصندوق في البحث عن مختلف الفرص العقارية والاستثمار فيها والعمل على زيادة قيمتها لتحقيق مكاسب رأسمالية.
+              حجم الصندوق: 10 ملايين ريال سعودي"
+              Button="ابدأ الاستثمار"
+              imgSrc="/Frame 18181.png"
+              />
+               <PrivateBox 
+              title="صندوق إتقان للعقارات"
+              subtitle="تتمثل استراتيجية هذا الصندوق في البحث عن مختلف الفرص العقارية والاستثمار فيها والعمل على زيادة قيمتها لتحقيق مكاسب رأسمالية.
+              حجم الصندوق: 10 ملايين ريال سعودي"
+              Button="ابدأ الاستثمار"
+              imgSrc="/Frame 18181.png"
+              />
+               <PrivateBox 
+              title="صندوق إتقان للعقارات"
+              subtitle="تتمثل استراتيجية هذا الصندوق في البحث عن مختلف الفرص العقارية والاستثمار فيها والعمل على زيادة قيمتها لتحقيق مكاسب رأسمالية.
+              حجم الصندوق: 10 ملايين ريال سعودي"
+              Button="ابدأ الاستثمار"
+              imgSrc="/Frame 18181.png"
+              />
+            </div>
+          </div>
+        </section>
        < h2 className='boxes-title'>خدمات الإدارة</h2>
         <InfoPanel
         title="إدارة الثروات"

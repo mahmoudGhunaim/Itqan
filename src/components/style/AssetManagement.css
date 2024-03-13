@@ -21,3 +21,26 @@ margin-bottom: 20px;
 .assetManagement-accordion-container{
     width: 50%;
 }
+section.private-box-sec {
+    DISPLAY: flex;
+    justify-content: center;
+    padding: 80px 0;
+    background: #F2F4F7;
+}
+.private-box-container{
+    width: 90%;
+}
+.private-box-title h2{
+    font-family: "Bahij TheSansArabic";
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 69px;
+    color: #222222;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.private-box-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 55px; 
+  }

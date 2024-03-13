@@ -1,0 +1,40 @@
+.PrivateBoxCard-image img{
+    width: 100%;
+}
+.PrivateBoxCard-title{
+    text-align: right;
+}
+.PrivateBoxCard-title h3{
+    font-family: "Bahij TheSansArabic";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 41px;
+    color: #000000;
+    text-align: right;
+    margin-top: 10px;
+}
+.PrivateBoxCard-title p{
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    color: #000000;
+    text-align: right;
+    margin-top: 10px;
+}
+.PrivateBoxCard-title button{
+    width: 100%;
+    padding: 10px 0;
+    background: #46235E;
+    border: none;
+    border-radius: 8px;
+    text-align: center !important;
+    color: White;
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27px;
+    
+    margin-top: 10px;
+
+}
