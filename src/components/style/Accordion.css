@@ -1,3 +1,12 @@
+.acc-Asset{
+    margin-top: 20px;
+    border: 1px solid #F2F4F7;
+    box-shadow: none !important;
+    
+}
+.acc-Asset:nth-child(1){
+    margin-top: 0px;
+}
 #panel1-faq {
     display: flex;
     flex-direction: row-reverse;
@@ -13,6 +22,7 @@ text-align: right !important;
 justify-content: flex-end !important;
 color: #5D5D5D;
 }
+
 .acc-Asset li {
     text-align: right; 
     list-style-type: none;

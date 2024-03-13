@@ -44,3 +44,19 @@ section.private-box-sec {
     grid-template-columns: repeat(3, 1fr); 
     gap: 55px; 
   }
+  .swiper-Discover{
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+  .btn-sliider{
+    justify-content: flex-end;
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .swiper-wrapper{
+    justify-content: space-between;
+  }
+  .btn-sliider button{
+    background: none;
+    border: none;
+  }

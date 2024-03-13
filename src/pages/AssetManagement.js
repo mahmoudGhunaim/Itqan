@@ -10,6 +10,19 @@ import InfoPanel from '../components/InfoPanel';
 import Accordion from '../components/Accordion';
 import accordionData from '../Json/Accordion.json';
 import PrivateBox from '../components/PrivateBoxCard';
+import PrivateBoxData from "../Json/PrivateBoxData.json"
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+const SliderButtons = () => {
+  const swiper = useSwiper();
+  return (
+    <div className="btn-sliider">
+      <button onClick={() => swiper.slidePrev()} className=''><img src='/arrow-circle-left.png' /></button>
+      <button onClick={() => swiper.slideNext()} className=''><img src='/arrow-circle-right.png' /></button>
+    </div>
+  )
+}
 const AssetManagement = () => {
   return (
     <Layout>
@@ -46,32 +59,56 @@ const AssetManagement = () => {
        
        <section className='private-box-sec'>
           <div  className='private-box-container'>
+          <Swiper className="swiper-Discover"
+              breakpointsInverse={true}
+              breakpoints={{
+                900: {
+                  slidesPerView: 1,
+                  spaceBetween: 40,
+                },
+                1070:{
+                  slidesPerView: 2 ,
+                  spaceBetween: 50,
+                },
+                
+                1300: {
+                  slidesPerView: 2,
+                  spaceBetween: 50,
+                },
+                1640:{
+                  slidesPerView: 3,
+                  spaceBetween: 50,
+                },
+              }}
+              modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+              pagination={{ clickable: true }} // Enable pagination and make the bullets clickable.
+
+              spaceBetween={0}
+              direction="horizontal"
+
+              scrollbar={{ draggable: true }}
+
+              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={() => console.log('slide change')}
+             
+            >
             <div  className='private-box-title'>
               <h2>الصناديق الخاصة</h2>
+              <SliderButtons />
             </div>
             <div  className='private-box-card'>
-              <PrivateBox 
-              title="صندوق إتقان للعقارات"
-              subtitle="تتمثل استراتيجية هذا الصندوق في البحث عن مختلف الفرص العقارية والاستثمار فيها والعمل على زيادة قيمتها لتحقيق مكاسب رأسمالية.
-              حجم الصندوق: 10 ملايين ريال سعودي"
-              Button="ابدأ الاستثمار"
-              imgSrc="/Frame 18181.png"
-              />
-               <PrivateBox 
-              title="صندوق إتقان للعقارات"
-              subtitle="تتمثل استراتيجية هذا الصندوق في البحث عن مختلف الفرص العقارية والاستثمار فيها والعمل على زيادة قيمتها لتحقيق مكاسب رأسمالية.
-              حجم الصندوق: 10 ملايين ريال سعودي"
-              Button="ابدأ الاستثمار"
-              imgSrc="/Frame 18181.png"
-              />
-               <PrivateBox 
-              title="صندوق إتقان للعقارات"
-              subtitle="تتمثل استراتيجية هذا الصندوق في البحث عن مختلف الفرص العقارية والاستثمار فيها والعمل على زيادة قيمتها لتحقيق مكاسب رأسمالية.
-              حجم الصندوق: 10 ملايين ريال سعودي"
-              Button="ابدأ الاستثمار"
-              imgSrc="/Frame 18181.png"
-              />
+                  {PrivateBoxData.map((item, index) => (
+               <SwiperSlide className="swiper-Discover-Slide"><PrivateBox 
+                key={index} 
+                title={item.title}
+                subtitle={item.subtitle}
+                Button={item.button}
+                imgSrc={item.imgSrc}
+                size={item.size}
+              /></SwiperSlide>
+            ))}
             </div>
+            </Swiper>
           </div>
         </section>
        < h2 className='boxes-title'>خدمات الإدارة</h2>
