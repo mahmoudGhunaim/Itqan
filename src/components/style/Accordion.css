@@ -46,5 +46,12 @@ color: #5D5D5D;
     color: #877096;
 }
 #panel1-faq{
-    background-color: #F2F4F7 !important;
+    background-color: #FFFFFF !important;
+}
+#panel1-faq[aria-expanded="true"] {
+    background:#F2F4F7  !important;
+}
+#panel1-faq[aria-expanded="true"] div{
+    color: #46235E;
+    font-weight: 700;
 }

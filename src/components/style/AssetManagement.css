@@ -17,6 +17,10 @@ margin-bottom: 20px;
 .assetManagement-accordion{
     display: flex;
     justify-content: center;
+    padding: 80px 0px 120px 0;
+    background: url("/Frame 1006.png");
+    background-position: bottom left;
+    background-repeat: no-repeat;
 }
 .assetManagement-accordion-container{
     width: 50%;
