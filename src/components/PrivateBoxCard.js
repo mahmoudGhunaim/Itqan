@@ -1,9 +1,9 @@
 import React from 'react'
 import "./style/PrivateBoxCard.css"
-const PrivateBoxCard = ({title,imgSrc,subtitle,Button,size}) => {
+const PrivateBoxCard = ({title,imgSrc,subtitle,Button,size,backgroundColor}) => {
   return (
     <div className='PrivateBoxCard-sec'>
-        <div className='PrivateBoxCard-container'>
+    <div className={`PrivateBoxCard-container ${backgroundColor}`}>
           <div className='PrivateBoxCard-image'>
             <img src={imgSrc}/>
           </div>

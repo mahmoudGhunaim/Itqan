@@ -1,0 +1,52 @@
+.Conservation-Services-card-sec{
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    background: url("/Frame 21212.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.Conservation-Services-card-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 115px;
+    background: url("/Frame 106.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+.Conservation-Services-card-title{
+    width: 925px;
+    text-align: center;
+}
+.Conservation-Services-card-title h1{
+    font-family: "Bahij TheSansArabic";
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 69px;
+    color: #222222;
+    margin-bottom: 20px;
+}
+.Conservation-Services-card-title p{
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: center;
+    color: #222222;
+    margin-bottom: 20px;
+}
+.Conservation-Services-cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 40px;   
+    width: 90%;
+    
+}
+.ConservationServices-single-card{
+    padding: 35px;
+    background: #FFFFFF;
+    border-radius: 24px;
+}
