@@ -20,6 +20,7 @@ header.navBar-sec {
   justify-content: space-between;
   width: 90%;
   align-items: center;
+  gap: 20px;
 }
 .navBar-logo{
   padding: 15px 0;
@@ -27,7 +28,8 @@ header.navBar-sec {
 .navBar-links {
   display: flex;
   flex-direction: row-reverse;
-  gap: 63px;
+    justify-content: space-between;
+    width: 100%;
 }
 .navBar-links a{
   text-decoration: none;

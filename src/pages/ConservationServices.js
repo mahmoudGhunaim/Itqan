@@ -3,10 +3,12 @@ import PrivateBox from '../components/PrivateBoxCard';
 import Hero from '../components/Hero';
 import Layout from "../components/layout";
 import "../components/style/ConservationServices.css"
+import ScrollToTopButton from '../components/ScrollToTopButton';
 import ConservationServicesData from "../Json/ConservationServicesData.json"
 const ConservationServices = () => {
   return (
     <Layout>
+      <ScrollToTopButton/>
         <Hero
         title="خدمات الحفظ"
         subTitle="“الخدمات”"
