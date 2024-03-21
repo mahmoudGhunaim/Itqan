@@ -30,7 +30,7 @@ const Header = ({ siteTitle }) => {
           <Link to="/AboutUS">خدمة العملاء</Link>
           <Link to="/AboutUS">التصريحات</Link>
           <Link to="/AboutUS">المصادر</Link>
-          <Link to="/AboutUS">الاتصال بنا</Link>
+          <Link to="/ContactUs">الاتصال بنا</Link>
         </div>
         <div className="navBar-openAcc">
           <Link to="/AboutUs"><button>فتح حساب جديد</button></Link>
