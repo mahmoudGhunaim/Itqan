@@ -28,8 +28,9 @@ header.navBar-sec {
 .navBar-links {
   display: flex;
   flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 100%;
+  justify-content: center;
+  width: 100%;
+  gap: 50px;
 }
 .navBar-links a{
   text-decoration: none;

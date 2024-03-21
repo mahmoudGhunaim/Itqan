@@ -23,6 +23,7 @@ const Header = ({ siteTitle }) => {
                 <Link to="/AssetManagement">إدارة الأصول</Link>
                 <Link to="/ConservationServices">خدمات الحفظ</Link>
                 <Link to="/InvestmentBanking">الخدمات المصرفية الاستثمارية</Link>
+                <Link to="/AdvisoryResearch">البحوث والمشورة</Link>
               </div>
             )}
           </div>

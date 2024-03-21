@@ -7,6 +7,7 @@
 .investment-banking-title{
     max-width: 925px;
     text-align: center;
+    margin-bottom: 30px;
 }
 .investment-banking-title h2{
     font-family: "Bahij TheSansArabic";
@@ -22,4 +23,18 @@
     grid-template-columns: repeat(2, 1fr); 
     grid-gap: 40px;   
     width: 90%;
+}
+.react-tabs__tab-list{
+    border-bottom: none !important;
+    list-style-type: none !important;
+}
+.react-tabs__tab::before{
+    content: " " !important;
+}
+.react-tabs__tab--selected{
+    background: none !important;
+    border-bottom: 3px solid #3F1A58 !important; 
+}
+.react-tabs__tab{
+    border: none !important;
 }

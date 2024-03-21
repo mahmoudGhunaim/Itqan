@@ -2,7 +2,9 @@ h1,h2,h3,h4,h5,h6,p{
     margin: 0 ;
 }
 
-
+button{
+    cursor: pointer;
+}
 body{
     background: #FAFAFA;
 }
@@ -112,6 +114,7 @@ background-position: left top;
     width: 100%;
     gap: 35px;
 }
+
 .products-single button{
     width: 415.2px;
     height: 80px;
@@ -131,12 +134,17 @@ background-position: left top;
     box-shadow: 0px 0px 23.200000762939453px 0px #64646F1F;
     cursor: pointer;
 }
+.products-single button:hover{
+    box-shadow: 0px 0px 23.200000762939453px 0px #3F1F5861;
+
+}
 .products-single:nth-child(5) button{
     background: #3F1A58 !important;
     color: #FFFFFF;
     box-shadow: 0px 0px 23.200000762939453px 0px #64646F47;
 
 }
+
 @keyframes slideUpFadeIn {
     from {
       opacity: 0; 

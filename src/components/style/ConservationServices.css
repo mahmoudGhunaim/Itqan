@@ -17,11 +17,11 @@
     background-position: bottom left;
 }
 
-.Conservation-Services-card-title{
+.Conservation-Services-card-title,.AdvisoryResearch-card-title{
     width: 925px;
     text-align: center;
 }
-.Conservation-Services-card-title h1{
+.Conservation-Services-card-title h1,.AdvisoryResearch-card-title h1{
     font-family: "Bahij TheSansArabic";
     font-size: 42px;
     font-weight: 700;
@@ -29,7 +29,7 @@
     color: #222222;
     margin-bottom: 20px;
 }
-.Conservation-Services-card-title p{
+.Conservation-Services-card-title p,.AdvisoryResearch-card-title p{
     font-family: "Bahij TheSansArabic";
     font-size: 16px;
     font-weight: 500;
@@ -49,4 +49,12 @@
     padding: 35px;
     background: #FFFFFF;
     border-radius: 24px;
+}
+section.AdvisoryResearch-sec {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+}
+.Conservation-Services-card-title{
+    margin-bottom: 30px;
 }
