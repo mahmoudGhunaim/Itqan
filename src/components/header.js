@@ -47,12 +47,12 @@ const Header = ({ siteTitle }) => {
             <ModalHeader toggle={toggle}></ModalHeader>
             <ModalBody>
               <div className="logo-sec-mob">
-                <Link to="/"><img src="/Restnest.svg" alt="Restnest Logo"/></Link>
+                <Link to="/">          <img src="/itqanlogo.svg" alt="Logo"/></Link>
               </div>
               <div className='navBar-hamburger'>
               <Link to="/">الرئيسية</Link>
           <Link to="/AboutUS">نبذة عنا</Link>
-          <Link to="/AssetManagement">إدارة الأصول</Link>
+            <Link to="/AssetManagement">إدارة الأصول</Link>
                 <Link to="/ConservationServices">خدمات الحفظ</Link>
                 <Link to="/InvestmentBanking">الخدمات المصرفية الاستثمارية</Link>
                 <Link to="/AdvisoryResearch">البحوث والمشورة</Link>
@@ -65,7 +65,7 @@ const Header = ({ siteTitle }) => {
             </ModalBody>
             <ModalFooter>
               <div className="login-mob">
-                <Link to='https://dashboard.hostaway.com/login' className='login-btn'>Owner Login</Link>
+              <Link to="/OpenAccount"><button>فتح حساب جديد</button></Link>
               </div>
               </ModalFooter>
             </Modal>
