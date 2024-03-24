@@ -35,7 +35,14 @@ const Index  = () => {
           <span><img src="/Isolation_Mode.svg"/>إتقان كابيتال<img src="/Isolation_Mode.svg"/></span>
           <h1><img src="/Vector.svg"/>رواد الاستثمار الأكثر ثقة</h1>
           <p>“إتقان كابيتال” هي شركة استثمارية تقدم منتجات وخدمات استثمارية متوافقة مع الشريعة الإسلامية وتتعامل في السوق المالي السعودي وأسواق دول مجلس التعاون الخليج العربي.</p>
-          <Link><button> <img src="/Vector1.svg"/>أنشئ حساب جديد</button></Link>
+          <Link><button> <span class="blob-btn__inner">
+      <span class="blob-btn__blobs">
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+        <span class="blob-btn__blob"></span>
+      </span>
+    </span> <img src="/Vector1.svg"/>أنشئ حساب جديد</button></Link>
         </div>
       </div>
     </section>
