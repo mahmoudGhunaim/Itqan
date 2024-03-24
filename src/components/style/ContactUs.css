@@ -136,3 +136,15 @@ form.Contact-footer-form{
     flex-direction: row-reverse;
     gap: 20px;
 }
+@media screen and (max-width: 767px){
+    .Contact-footer-content{
+        width: 100%;
+    }
+    form.Contact-footer-form{
+        width: 80%;
+    }
+    .Contact-footer-container{
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+}

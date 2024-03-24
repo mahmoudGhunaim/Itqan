@@ -58,3 +58,11 @@ section.AdvisoryResearch-sec {
 .Conservation-Services-card-title{
     margin-bottom: 30px;
 }
+@media screen and (max-width: 767px){
+    .Conservation-Services-cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .Conservation-Services-card-title{
+        width: 90%;
+    }
+}

@@ -38,3 +38,8 @@
 .react-tabs__tab{
     border: none !important;
 }
+@media screen and (max-width: 767px){
+    .investment-banking-container-card{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
