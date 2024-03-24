@@ -178,13 +178,23 @@ button.button-input-button{
   background: #F2F4F7;
 
 }
+.mobile-menu{
+  display: none;
+}
 .dropdown-content a:focus{
   border: none !important;
   padding: none !important;
   margin: none !important;
 }
-@media screen and (max-width: 767px){
+
+@media screen and (max-width: 1024px){
   .footer-container{
     flex-direction: column;
+  }
+  .mobile-menu{
+    display:  inline-block;
+  }
+  .navBar-links,.navBar-openAcc{
+    display: none;
   }
 }
