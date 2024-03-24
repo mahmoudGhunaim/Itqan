@@ -147,4 +147,7 @@ form.Contact-footer-form{
         flex-direction: column-reverse;
         gap: 50px;
     }
+    .Contact-info{
+        flex-direction: column;
+    }
 }
