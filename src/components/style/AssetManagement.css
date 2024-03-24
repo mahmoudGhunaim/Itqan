@@ -68,4 +68,8 @@ section.private-box-sec {
     .assetManagement-accordion-container{
       width: 90%;
     }
+    .boxes-title{
+      padding-top: 30px;
+      font-size: 24px;
+    }
 }

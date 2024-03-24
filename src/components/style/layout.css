@@ -260,4 +260,12 @@ button.btn-close::before{
   .navBar-links,.navBar-openAcc{
     display: none;
   }
+  .footer-logo{
+    width: 100%;
+  }
+  .footer-services h6,.footer-links h6,form h6{
+    margin-top: 21px ;
+    margin-bottom: 10px;
+    font-weight: 700 !important;
+  }
 }

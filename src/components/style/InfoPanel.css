@@ -70,10 +70,14 @@ margin-top: 20px;
 }
 @media screen and (max-width: 767px) {
     .infopanel-container{
-        flex-direction: column !important;
-        max-width: 100%;
+        flex-direction: column-reverse !important;
+        max-width: 90%;
     }
     .infopanel-image img{
         width: 100%;
+    }
+    .infopanel-sec{
+        padding-top: 30px;
+        padding-bottom: 40;
     }
 }
