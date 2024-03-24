@@ -68,3 +68,12 @@ text-align: right;
 margin-top: 20px;
 
 }
+@media screen and (max-width: 767px) {
+    .infopanel-container{
+        flex-direction: column !important;
+        max-width: 100%;
+    }
+    .infopanel-image img{
+        width: 100%;
+    }
+}

@@ -69,3 +69,19 @@
     margin-top: 13px;
     margin-bottom: 22px;
 }
+.itqan-c-image{
+    width: 50%;
+}
+@media screen and (max-width: 767px) {
+    .itqan-c-container{
+        flex-direction: column;
+        padding: 10px;
+
+    }
+    .itqan-c-image{
+        width: 100%;
+    }
+    .itqan-c-image img{
+        width: 100%;
+    }
+}

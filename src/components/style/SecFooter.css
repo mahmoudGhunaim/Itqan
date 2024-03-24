@@ -133,3 +133,8 @@ color: #FFFFFF;
 .sec-footer-content-social img{
     cursor: pointer;
 }
+@media screen and (max-width: 767px) {
+    .sec-footer-container{
+        flex-direction: column;
+    }
+}

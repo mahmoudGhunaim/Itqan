@@ -64,3 +64,8 @@ section.private-box-sec {
     background: none;
     border: none;
   }
+  @media screen and (max-width: 767px) {
+    .assetManagement-accordion-container{
+      width: 90%;
+    }
+}

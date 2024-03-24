@@ -1,19 +1,55 @@
 .Contact-footer-section{
     display: flex;
     justify-content: center;
+    background: url("/Frame 21212.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.Contact-footer-section-wallpaper{
+    padding-bottom: 95px;
+    background: url("/Frame 106.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
 }
 .Contact-footer-container {
     width: 90%;
     display: flex;
     justify-content: space-between;
+    padding-top: 88px;
+}
+.Contact-footer-form input,.Contact-footer-form textarea{
+    text-align: right;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 12px 20px;
+    font-family: "Bahij TheSansArabic";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22.03px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 1) ;
+
+}
+.Contact-footer-form textarea{
+    height: 165px;
 }
 form.Contact-footer-form,form.Contact-footer-form label{
     display: flex;
     flex-direction: column;
 
 }
+form.Contact-footer-form label{
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25.17px;
+    color: #FFFFFF;
+
+}
 .Contact-footer-content{
     text-align: right;
+    width: 40%;
 }
 .Contact-footer-content h2{
     font-family: "Bahij TheSansArabic";
@@ -22,5 +58,81 @@ form.Contact-footer-form,form.Contact-footer-form label{
     line-height: 68.68px;
     color: #222222;
     text-align: right;
+    margin-bottom: 20px;
 
+}
+.Contact-footer-content h3{
+    font-family: "Bahij TheSansArabic";
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 42.52px;
+    margin-top: 50px;
+    color: #222222;
+}
+form.Contact-footer-form{
+    padding: 42px 38px;
+    text-align: right;
+    background: linear-gradient(270deg, #391A52 2.82%, #3F1F58 10.17%, #593E6D 90.04%, #E6E3DD 236.36%);
+    border-radius: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+   width: 40%;
+
+}
+.Contact-footer-form button{
+    padding: 13px;
+    background: rgba(34, 34, 34, 1);
+    font-family: "Bahij TheSansArabic";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28.32px;
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 48px;
+}
+.Contact-footer-form p{
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 29.76px;
+    color: rgba(255, 255, 255, 1);
+
+}
+.Contact-footer-content p{
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 29.76px;
+    color: #222222;
+
+}
+.Contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  
+}
+.Contact-info-data h6{
+    font-family: "Bahij TheSansArabic";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28.32px;
+    color: rgba(34, 34, 34, 1);
+    margin-bottom: 12px !important;
+
+}
+.Contact-footer-content h6{
+    font-family: "Bahij TheSansArabic";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28.32px;
+    color: rgba(34, 34, 34, 1);
+    margin-bottom: 30px;
+    margin-top: 35px;
+}
+.Contact-footer-content-social {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
 }

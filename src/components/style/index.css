@@ -293,3 +293,44 @@ background-position: left top;
     background: #FFFFFF;
     margin-top: -100px;
 }
+@media screen and (max-width: 767px) {
+    .Reports-data-cards{
+        flex-direction: column;
+    }
+    .exchange-rates-section {
+        overflow-X: auto;
+        justify-content: flex-start;
+    }
+    td,th{
+        padding: 20px;
+    }
+    .products-single button{
+        width: 200px;
+        height: 100px;
+    }
+    .products-sec{
+        padding: 30px 0;
+    }
+    .hero-homepage-content{
+        width: 100%;
+    }
+    .hero-homepage-sec{
+        height: 310px;
+    }
+    .hero-homepage-content h1{
+        font-size: 30px;
+    }
+    .hero-homepage-content p,.products-container p{
+        font-size: 14px;
+    }
+    .products-container p{
+        margin-bottom: 30px;
+    }
+    .hero-homepage-content h1 img{
+        width: 27px;
+        height: 27px;
+    }
+    .products-container h1{
+        font-size: 24px;
+    }
+}
