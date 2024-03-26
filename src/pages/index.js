@@ -35,14 +35,7 @@ const Index  = () => {
           <span><img src="/Isolation_Mode.svg"/>إتقان كابيتال<img src="/Isolation_Mode.svg"/></span>
           <h1><img src="/Vector.svg"/>رواد الاستثمار الأكثر ثقة</h1>
           <p>“إتقان كابيتال” هي شركة استثمارية تقدم منتجات وخدمات استثمارية متوافقة مع الشريعة الإسلامية وتتعامل في السوق المالي السعودي وأسواق دول مجلس التعاون الخليج العربي.</p>
-          <Link><button> <span class="blob-btn__inner">
-      <span class="blob-btn__blobs">
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-        <span class="blob-btn__blob"></span>
-      </span>
-    </span> <img src="/Vector1.svg"/>أنشئ حساب جديد</button></Link>
+          <Link><button> <img src="/Vector1.svg"/>أنشئ حساب جديد</button></Link>
         </div>
       </div>
     </section>
@@ -52,19 +45,19 @@ const Index  = () => {
           <p>نقدم لك مجموعة من الخدمات المالية والبحوث وإدارة الأصول وغيرها من الخدمات الخاصة</p>
           <div className="products-content">
             <div className="products-single">
-              <button><img src="/Control Panel Icon.png"/>إدارة الأصول</button>
+              <Link to="/AssetManagement"><button><img src="/Control Panel Icon.png"/>إدارة الأصول</button></Link>
             </div>
             <div className="products-single">
-              <button><img src="/Consultation.png"/>الخدمات المصرفية الاستثمارية</button>
+            <Link to="/InvestmentBanking"><button><img src="/Consultation.png"/>الخدمات المصرفية الاستثمارية</button></Link>
             </div>
             <div className="products-single">
-              <button><img src="/Examination.png"/>خدمات الحفظ</button>
+            <Link to="/ConservationServices"><button><img src="/Examination.png"/>خدمات الحفظ</button></Link>
             </div>
             <div className="products-single">
-              <button><img src="/Reporting.png"/>الأبحاث المنشورة</button>
+            <Link to="/AdvisoryResearch"> <button><img src="/Reporting.png"/>الأبحاث المنشورة</button></Link>
             </div>
             <div className="products-single">
-              <button><img src="/New Account.png"/>فتح حساب جديد</button>
+            <Link to=''> <button><img src="/New Account.png"/>فتح حساب جديد</button></Link>
             </div>
           </div>
         <ItqanC/>

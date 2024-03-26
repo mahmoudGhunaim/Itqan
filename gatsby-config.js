@@ -24,6 +24,16 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+			resolve: `gatsby-plugin-sharp`,
+			options: {
+				defaults: {
+					formats: [`auto`, `webp`, `avif`,`png`,`jpg`], 
+					quality: 100,
+					placeholder: "blurred",
+				},
+			},
+		}, 
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -34,7 +44,7 @@ module.exports = {
         background_color: `#663399`,
      
         display: `minimal-ui`,
-        icon: `static/Fav Icon Itqan.png`, // This path is relative to the root of the site.
+        icon: `static/Fav Icon Itqan.png`, 
       },
     },
   ],
