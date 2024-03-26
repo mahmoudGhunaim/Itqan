@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from 'react';
 import { Link } from "gatsby";
 import "./style/layout.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -6,6 +6,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 const Header = ({ siteTitle }) => {
   const [showDropdown, setShowDropdown] = React.useState(false);
   const [modal, setModal] = React.useState(false);
+  const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
 
   const toggle = () => setModal(!modal);
 
@@ -17,9 +18,21 @@ const Header = ({ siteTitle }) => {
         </div>
         <div className="navBar-links">
           <Link to="/">الرئيسية</Link>
-          <Link to="/AboutUS">نبذة عنا</Link>
           <div className="dropdown">
-            <Link to="/Services" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
+          <Link to="" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
+            نبذة عنا
+          </Link>
+          {showDropdown && (
+            <div className="dropdown-content" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
+              <Link to="/AboutUS">لمحة عامة</Link>
+              <Link to="/ShariyahReview">الهيئة الشرعية</Link>
+              <Link to="/BoardDirectors">الهيكل التنظيمي</Link>
+              <Link to="/CSR">المسؤولية الاجتماعية للشركات (CSR)</Link>
+            </div>
+          )}
+</div>
+          <div className="dropdown">
+            <Link to="" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
               الخدمات
             </Link>
             {showDropdown && (
@@ -33,8 +46,19 @@ const Header = ({ siteTitle }) => {
           </div>
           <Link to="/CustomerService">خدمة العملاء</Link>
           <Link to="/Statements">التصريحات</Link>
-          <Link to="/Resources">المصادر</Link>
-          <Link to="/ContactUs">الاتصال بنا</Link>
+          <div className="dropdown">
+            <Link to="" onMouseEnter={() => setShowResourcesDropdown(true)} onMouseLeave={() => setShowResourcesDropdown(false)}>
+              المصادر
+            </Link>
+            {showResourcesDropdown && (
+              <div className="dropdown-content" onMouseEnter={() => setShowResourcesDropdown(true)} onMouseLeave={() => setShowResourcesDropdown(false)}>
+                <Link to="/Reports">التقارير</Link>
+                <Link to="/Articles">مقالات</Link>
+                <Link to="/Videos">فيديوهات</Link>
+                <Link to="/CaseStudies">دراسات حالة</Link>
+              </div>
+            )}
+          </div>          <Link to="/ContactUs">الاتصال بنا</Link>
         </div>
         <div className="navBar-openAcc">
           <Link to="/OpenAccount"><button>فتح حساب جديد</button></Link>

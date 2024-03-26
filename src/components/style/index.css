@@ -8,6 +8,7 @@ button{
 body{
     background: #FAFAFA;
 }
+
 .hero-homepage-sec{
     background: url("/Rectangle 1.png") ;
     height: 742px;
@@ -146,7 +147,37 @@ background-position: left top;
     box-shadow: 0px 0px 23.200000762939453px 0px #64646F47;
 
 }
+.ShariyahReview-sec{
+    padding: 25px 0;
+    background: url("/Frame 21212.png");
+    background-repeat: no-repeat;
+    background-position: top right;
 
+}
+.BoardDirectors-sec{
+    text-align: center;
+    padding: 90px 0;
+}
+.BoardDirectors-sec img{
+    width: 90%;
+}
+.Reports-sec{
+    padding: 90px 0;
+    background: url("/Frame 21212.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.Reports-sec h3{
+    font-family: "Bahij TheSansArabic";
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 68.68px;
+color: #222222;
+
+}
 @keyframes slideUpFadeIn {
     from {
       opacity: 0; 
