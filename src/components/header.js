@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "gatsby";
 import "./style/layout.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -7,11 +7,33 @@ const Header = ({ siteTitle }) => {
   const [showDropdown, setShowDropdown] = React.useState(false);
   const [modal, setModal] = React.useState(false);
   const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
-
+  const [showCustomerServiceDropdown, setShowCustomerServiceDropdown] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [headerVisible, setHeaderVisible] = useState(true);
   const toggle = () => setModal(!modal);
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY) {
+      // Scrolling down
+      setHeaderVisible(false);
+    } else {
+      // Scrolling up
+      setHeaderVisible(true);
+    }
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
 
   return (
-    <header className="navBar-sec">
+    <header className={`navBar-sec ${headerVisible ? 'show-header' : 'hide-header'}`}>    
       <div className="navBar-container">
         <div className="navBar-logo">
           <img src="/itqanlogo.svg" alt="Logo"/>
@@ -44,8 +66,20 @@ const Header = ({ siteTitle }) => {
               </div>
             )}
           </div>
-          <Link to="/CustomerService">خدمة العملاء</Link>
-          <Link to="/Announcements">التصريحات</Link>
+          <div className="dropdown">
+            <Link to="/CustomerService" onMouseEnter={() => setShowCustomerServiceDropdown(true)} onMouseLeave={() => setShowCustomerServiceDropdown(false)}>
+              خدمة العملاء
+            </Link>
+            {showCustomerServiceDropdown && (
+              <div className="dropdown-content" onMouseEnter={() => setShowCustomerServiceDropdown(true)} onMouseLeave={() => setShowCustomerServiceDropdown(false)}>
+                <Link to="/FAQ">الأسئلة الشائعة</Link>
+                <Link to="/ContactUs">اتصل بنا</Link>
+                <Link to="/Support">الدعم</Link>
+                <Link to="/Feedback">التغذية الراجعة</Link>
+              </div>
+            )}
+          </div>        
+            <Link to="/Announcements">التصريحات</Link>
           <div className="dropdown">
             <Link to="" onMouseEnter={() => setShowResourcesDropdown(true)} onMouseLeave={() => setShowResourcesDropdown(false)}>
               المصادر

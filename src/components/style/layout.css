@@ -12,7 +12,13 @@ body {
 header.navBar-sec {
   display: flex;
   justify-content: center;
-  background: #5E5E5E0A;
+  position: fixed;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 7.199999809265137px 0px #5E5E5E0A;
+  transition: top 0.5s ease-in-out;
+
+  z-index: 111111;
 }
 .navBar-container {
   display: flex;
@@ -45,6 +51,13 @@ header.navBar-sec {
   border-bottom: 1px solid #3F1A58;
   margin-bottom: 8px;
   
+}
+.navBar-sec {
+  transition: top 0.3s;
+}
+
+.hide-header {
+  top: -100px; 
 }
 .navBar-openAcc button{
   color: #3F1A58;
