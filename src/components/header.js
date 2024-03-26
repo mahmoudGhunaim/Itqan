@@ -45,7 +45,7 @@ const Header = ({ siteTitle }) => {
             )}
           </div>
           <Link to="/CustomerService">خدمة العملاء</Link>
-          <Link to="/Statements">التصريحات</Link>
+          <Link to="/Announcements">التصريحات</Link>
           <div className="dropdown">
             <Link to="" onMouseEnter={() => setShowResourcesDropdown(true)} onMouseLeave={() => setShowResourcesDropdown(false)}>
               المصادر
@@ -53,9 +53,7 @@ const Header = ({ siteTitle }) => {
             {showResourcesDropdown && (
               <div className="dropdown-content" onMouseEnter={() => setShowResourcesDropdown(true)} onMouseLeave={() => setShowResourcesDropdown(false)}>
                 <Link to="/Reports">التقارير</Link>
-                <Link to="/Articles">مقالات</Link>
-                <Link to="/Videos">فيديوهات</Link>
-                <Link to="/CaseStudies">دراسات حالة</Link>
+                <Link to="/ResearchLibrary">مكتبة البحوث</Link>
               </div>
             )}
           </div>          <Link to="/ContactUs">الاتصال بنا</Link>

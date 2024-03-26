@@ -103,9 +103,9 @@ background-position: left top;
     color: #3F1A58;
     font-size: 18px;
     font-family: 'Bahij TheSansArabic';
-    text-align: center;
+    text-align: right  ;
     font-weight: 500;
-    margin-bottom: 90px;
+
 }
 .products-content{
     display: flex;
