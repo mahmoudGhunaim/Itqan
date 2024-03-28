@@ -73,9 +73,7 @@ const Header = ({ siteTitle }) => {
             {showCustomerServiceDropdown && (
               <div className="dropdown-content" onMouseEnter={() => setShowCustomerServiceDropdown(true)} onMouseLeave={() => setShowCustomerServiceDropdown(false)}>
                 <Link to="/FAQ">الأسئلة الشائعة</Link>
-                <Link to="/ContactUs">اتصل بنا</Link>
-                <Link to="/Support">الدعم</Link>
-                <Link to="/Feedback">التغذية الراجعة</Link>
+                <Link to="/ClientAwareness">توعية العملاء</Link>
               </div>
             )}
           </div>        
