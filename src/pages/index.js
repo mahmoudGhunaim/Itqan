@@ -8,6 +8,7 @@ import ItqanC from '../components/ItqanC';
 import Distinction from '../components/distinction';
 import SecFooter from '../components/SecFooter';
 import ScrollToTopButton from '../components/ScrollToTopButton';
+
 const Index  = () => {   
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -25,11 +26,38 @@ const Index  = () => {
     return () => observer.disconnect(); 
   }, []);
 
+  const backgrounds = [
+    "Rectangle%201.png",
+    "Rectangle%202.png", 
+    "Rectangle%203.png",
+  ];
+
+  
+  const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
+
+  useEffect(() => {
+    
+    const changeBackground = () => {
+      setCurrentBackground((prev) => {
+        
+        const index = backgrounds.indexOf(prev);
+        
+        return backgrounds[(index + 1) % backgrounds.length];
+      });
+    };
+
+
+    const intervalId = setInterval(changeBackground, 5000);
+
+
+    return () => clearInterval(intervalId);
+  }, []); 
 
   return (
     <Layout>
       <ScrollToTopButton/>
-    <section className="hero-homepage-sec">
+    <section className="hero-homepage-sec"  style={{ backgroundImage: `url( ${currentBackground} ) ` }}>
+      
       <div className="hero-homepage-container">
         <div className="hero-homepage-content">
           <span><img src="/Isolation_Mode.svg"/>إتقان كابيتال<img src="/Isolation_Mode.svg"/></span>

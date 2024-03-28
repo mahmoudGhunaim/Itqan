@@ -121,7 +121,7 @@ const Header = ({ siteTitle }) => {
             </ModalBody>
             <ModalFooter>
               <div className="login-mob">
-              <Link to="/OpenAccount"><button>فتح حساب جديد</button></Link>
+                <Link to="/OpenAccount"><button>فتح حساب جديد</button></Link>
               </div>
               </ModalFooter>
             </Modal>

@@ -7,16 +7,26 @@ button{
 }
 body{
     background: #FAFAFA;
+    overflow-x: hidden;
 }
+@keyframes zoomIn {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  
 
 .hero-homepage-sec{
-    background: url("/Rectangle 1.png") ;
     height: 742px;
-    background-size: cover;
+    background-size: cover !important;
     background-position: center center;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: zoomIn 20s infinite alternate;
 }
 .hero-homepage-container{
     display: flex;
