@@ -18,16 +18,32 @@ body{
     }
   }
   
-
-.hero-homepage-sec{
-    height: 742px;
-    background-size: cover !important;
-    background-position: center center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: zoomIn 20s infinite alternate;
-}
+  .hero-homepage-sec {
+      position: relative;
+      height: 742px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .hero-homepage-sec::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: inherit; /* Inherit the background image from the parent */
+      background-size: cover;
+      background-position: center center;
+      animation: zoomIn 20s infinite alternate;
+  }
+  
+  .hero-homepage-sec > * {
+      position: relative; /* Ensure the content is above the pseudo-element */
+      z-index: 1;
+  }
 .hero-homepage-container{
     display: flex;
     justify-content: center;

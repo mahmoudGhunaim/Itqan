@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Layout from "../components/layout";
+import ScrollToTopButton from '../components/ScrollToTopButton';
+
 import Hero from '../components/Hero';
 import "../components/style/ClientAwareness.css"
 const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
@@ -33,6 +35,7 @@ const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc
 const ClientAwareness = () => {
   return (
     <Layout>
+        <ScrollToTopButton/>
         <Hero title="توعية العملاء" subTitle="“خدمة العملاء”"/>
         <section className='Reports-data-sec'>
             <div className='Reports-data-container'>

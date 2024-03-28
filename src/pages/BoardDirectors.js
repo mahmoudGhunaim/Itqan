@@ -7,6 +7,7 @@ import ScrollToTopButton from '../components/ScrollToTopButton';
 const BoardDirectors = () => {
   return (
    <Layout>
+    <ScrollToTopButton/>
     <Hero
     title="الهيكل التنظيمي"/>
     <section className='BoardDirectors-sec'>
