@@ -4,36 +4,33 @@ import "./style/layout.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const Header = ({ siteTitle }) => {
-  const [showDropdown, setShowDropdown] = React.useState(false);
-  const [modal, setModal] = React.useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [modal, setModal] = useState(false);
   const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
   const [showCustomerServiceDropdown, setShowCustomerServiceDropdown] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [headerVisible, setHeaderVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true); // This replaces the previous visibility state handling
+
   const toggle = () => setModal(!modal);
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY) {
-      // Scrolling down
-      setHeaderVisible(false);
-    } else {
-      // Scrolling up
-      setHeaderVisible(true);
-    }
-    setLastScrollY(currentScrollY);
-  };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    let lastScrollTop = 0;
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => {
+      let currentScrollPos = window.pageYOffset;
+      if (lastScrollTop < currentScrollPos && currentScrollPos > 80) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollTop = currentScrollPos;
     };
-  }, [lastScrollY]);
 
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className={`navBar-sec ${headerVisible ? 'show-header' : 'hide-header'}`}>    
+    <header className={`navBar-sec ${isVisible ? 'show-header' : 'hide-header'}`} style={{transition: 'top 0.3s'}}>    
       <div className="navBar-container">
         <div className="navBar-logo">
           <img src="/itqanlogo.svg" alt="Logo"/>

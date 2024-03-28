@@ -16,9 +16,16 @@ header.navBar-sec {
   width: 100%;
   background: #FFFFFF;
   box-shadow: 0px 4px 7.199999809265137px 0px #5E5E5E0A;
-  transition: top 0.5s ease-in-out;
+  transition: top 0.3s ease-in-out;
 
   z-index: 111111;
+}
+.show-header {
+  top: 0; /* Show header */
+}
+
+.hide-header {
+  top: -100%; /* Hide header - adjust based on the actual height of your header */
 }
 .navBar-container {
   display: flex;
