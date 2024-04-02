@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => {
     <header className={`navBar-sec ${isVisible ? 'show-header' : 'hide-header'}`} style={{transition: 'top 0.3s'}}>    
       <div className="navBar-container">
         <div className="navBar-logo">
-          <img src="/itqanlogo.svg" alt="Logo"/>
+        <Link to="/"><img src="/itqanlogo.svg" alt="Logo"/></Link>
         </div>
         <div className="navBar-links">
           <Link to="/">الرئيسية</Link>
@@ -92,7 +92,7 @@ const Header = ({ siteTitle }) => {
         </div>
         <div className='mobile-menu'>
           <Button color="danger" onClick={toggle}>
-            <img src='/menu.png' alt="Menu"/>
+          <Link to="/"><img src='/menu.png' alt="Menu"/></Link>
           </Button>
           <Modal isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}></ModalHeader>
@@ -116,7 +116,7 @@ const Header = ({ siteTitle }) => {
             </ModalBody>
             <ModalFooter>
               <div className="login-mob">
-                <Link to="/OpenAccount"><button>فتح حساب جديد</button></Link>
+                <Link to="/IndividualsLogin"><button>فتح حساب جديد</button></Link>
               </div>
               </ModalFooter>
             </Modal>

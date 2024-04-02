@@ -63,6 +63,12 @@ const Layout = ({ children, overPadding,  }) => {
           </form>
         </div>
       </footer>
+      <footer className="copyright-sec">
+      <div className="copyright">
+              <p>تصميم وتطوير بواسطة <Link to="">Softylus</Link> 2024.</p>
+              <p>إتقان كابيتال © 2024. جميع الحقوق محفوظة. Created For Itqan Capital</p>
+          </div>
+      </footer>
     </>
   )
 }

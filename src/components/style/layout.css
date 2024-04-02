@@ -258,6 +258,27 @@ button.btn-close::before{
   background-size: cover !important;
  
 }
+.copyright-sec{
+  background: #FFFFFF;
+}
+.copyright{
+  text-align: center;
+  border-top: 1px solid #0000000D;
+  padding: 28px 0;
+  
+}
+.copyright p{
+  font-family: "Bahij TheSansArabic";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22.03px;
+  color: #5D5D5D;
+
+}
+.copyright p a{
+  color: #222222;
+  font-weight: 700;
+}
 @media screen and (max-width: 1024px){
   .modal-content {
     position: fixed;
