@@ -47,6 +47,7 @@ const Header = ({ siteTitle }) => {
               <Link to="/ShariyahReview">الهيئة الشرعية</Link>
               <Link to="/BoardDirectors">الهيكل التنظيمي</Link>
               <Link to="/CSR">المسؤولية الاجتماعية للشركات (CSR)</Link>
+              <Link to="/Board">مجلس الإدارة</Link>
             </div>
           )}
 </div>

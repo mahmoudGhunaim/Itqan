@@ -25,7 +25,7 @@ const Layout = ({ children, overPadding,  }) => {
       <footer className="footer-sec">
         <div className="footer-container">
           <div className="footer-logo">
-            <img src="/itqanlogo.svg"/>
+            <Link to="../../../"><img src="/itqanlogo.svg"/></Link>
             <p>“إتقان كابيتال” هي شركة استثمارية تتخذ من المملكة العربية السعودية مقراً لها وتعمل بترخيص من هيئة السوق المالية.</p>
             <p>رقم السجل التجاري 4030167335 بتاريخ 6/3/2007</p>
             <p>رقم الرخصة 07058-37</p>
@@ -34,17 +34,17 @@ const Layout = ({ children, overPadding,  }) => {
        
           <div className="footer-services">
           <h6>الخدمات</h6>
-            <Link to={`../../../`} >إدارة الأصول </Link>
-            <Link to={``} > الخدمات المصرفية الاستثمارية</Link>
-            <Link to={``} >خدمات الحفظ</Link>
-            <Link to={``} >البحوث والمشورة</Link>
+            <Link to="/AssetManagement" >إدارة الأصول </Link>
+            <Link to="/InvestmentBanking" > الخدمات المصرفية الاستثمارية</Link>
+            <Link to="/ConservationServices" >خدمات الحفظ</Link>
+            <Link to="/AdvisoryResearch" >البحوث والمشورة</Link>
           </div>
           <div className="footer-links">
             <h6>روابط سريعة</h6>
-            <Link to={`../../../`} >لمحة عامة</Link>
-            <Link to={``} >التصريحات</Link>
+            <Link to="/AboutUS" >لمحة عامة</Link>
+            <Link to="/Announcements" >التصريحات</Link>
             <Link to={``} >الوظائف</Link>
-            <Link to={``} >الاتصال بنا</Link>
+            <Link to="/ContactUs" >الاتصال بنا</Link>
           </div>
           <form>
             <h6>النشرة البريدية</h6>
@@ -65,7 +65,7 @@ const Layout = ({ children, overPadding,  }) => {
       </footer>
       <footer className="copyright-sec">
       <div className="copyright">
-              <p>تصميم وتطوير بواسطة <Link to="">Softylus</Link> 2024.</p>
+              <p>تصميم وتطوير بواسطة <Link to="https://softylus.com/">Softylus</Link> 2024.</p>
               <p>إتقان كابيتال © 2024. جميع الحقوق محفوظة. Created For Itqan Capital</p>
           </div>
       </footer>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Hero = ({title, subTitle}) => {
+const Hero = ({title, subTitle,bgcolor}) => {
   return (
-    <section className='aboutus-hero-sec'>
+    <section className='aboutus-hero-sec' style={{backgroundColor: `${bgcolor}`}}>
     <div className='aboutus-hero-container'>
       <div className='aboutus-hero-title'>
         <h1>{title}</h1>
