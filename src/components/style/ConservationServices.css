@@ -58,7 +58,7 @@ section.AdvisoryResearch-sec {
 .Conservation-Services-card-title{
     margin-bottom: 30px;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width:  1024px){
     .Conservation-Services-cards{
         grid-template-columns: repeat(1, 1fr);
     }

@@ -353,7 +353,7 @@ color: #222222;
     background: #FFFFFF;
     margin-top: -100px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width:  1024px) {
     .Reports-data-cards{
         flex-direction: column;
     }
