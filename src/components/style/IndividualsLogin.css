@@ -103,8 +103,11 @@
     font-family: 'Bahij TheSansArabic';
   
 }
+#individuals-login-field div{
+    justify-content: right;
+}
 .individuals-single-field label{
-    font-family:" Bahij TheSansArabic";
+    font-family:"Bahij TheSansArabic";
     font-size: 16px;
     font-weight: 500;
     color: #5D5D5D;
