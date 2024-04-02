@@ -74,7 +74,7 @@ const Header = ({ siteTitle }) => {
               </div>
             )}
           </div>        
-            <Link to="/">التصريحات</Link>
+            <Link to="/Announcements">التصريحات</Link>
           <div className="dropdown">
             <Link to="" onMouseEnter={() => setShowResourcesDropdown(true)} onMouseLeave={() => setShowResourcesDropdown(false)}>
               المصادر
