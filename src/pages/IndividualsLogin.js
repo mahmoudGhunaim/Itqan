@@ -511,7 +511,7 @@ const IndividualsLogin = () => {
                             <div  className='individuals-sec-field'>
                             <div  className='individuals-single-field' style={{textAlign:"right"}}>
                                 <label>أوافق على التصنيف على أنه</label>
-                                <select id="agreement" name="gender" style={{width:"50%"}}>
+                                <select id="agreement" name="gender">
                                     <option value="">{/* Placeholder option */}-- يُرجى الاختيار --</option>
                                         {agreement.map((agreement, index) => (
                                             <option key={index} value={agreement}>
@@ -521,8 +521,7 @@ const IndividualsLogin = () => {
                                 </select>
                                 <div className='individuals-single-check-box'>
                                 <input type="checkbox" id="consent" name="consent" value="yes" style={{marginLeft: "10px"}} />
-                                  <label for="consent">أوافق على الشروط والأحكام</label>
-                                  </div>
+                                <label for="consent">لقد قرأت ووافقت / وافقت على <Link to="">الأحكام والشروط</Link></label>                                  </div>
                                 </div>
                                 </div>
                             </div>

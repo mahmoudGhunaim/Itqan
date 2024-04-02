@@ -182,3 +182,31 @@ color: #5D5D5D;
     text-align: right;
     color: #000000;
 }
+.individuals-single-check-box label a{
+    text-decoration: none;
+}
+#agreement{
+    width: 50%;
+}
+@media screen and (max-width: 767px) {
+    .individuals-login-title h1{
+        font-size: 24px;
+    }
+    .individuals-login-title p{
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+    .individuals-login-buttons{
+        flex-direction: column;
+        align-items: center;
+    }
+    .individuals-sec-field-grid{
+        overflow-x: auto;
+    }
+    #agreement{
+        width: 100% !important;
+    }
+    .individuals-sec-field-grid-box-title,.individuals-sec-field-grid-box,.individuals-sec-field-grid-box-h4{
+        width: 249px;
+    }
+}
