@@ -64,7 +64,7 @@ const Header = ({ siteTitle }) => {
             )}
           </div>
           <div className="dropdown">
-            <Link to="/CustomerService" onMouseEnter={() => setShowCustomerServiceDropdown(true)} onMouseLeave={() => setShowCustomerServiceDropdown(false)}>
+            <Link to="/" onMouseEnter={() => setShowCustomerServiceDropdown(true)} onMouseLeave={() => setShowCustomerServiceDropdown(false)}>
               خدمة العملاء
             </Link>
             {showCustomerServiceDropdown && (
@@ -74,7 +74,7 @@ const Header = ({ siteTitle }) => {
               </div>
             )}
           </div>        
-            <Link to="/Announcements">التصريحات</Link>
+            <Link to="/">التصريحات</Link>
           <div className="dropdown">
             <Link to="" onMouseEnter={() => setShowResourcesDropdown(true)} onMouseLeave={() => setShowResourcesDropdown(false)}>
               المصادر
@@ -88,7 +88,7 @@ const Header = ({ siteTitle }) => {
           </div>          <Link to="/ContactUs">الاتصال بنا</Link>
         </div>
         <div className="navBar-openAcc">
-          <Link to="/OpenAccount"><button>فتح حساب جديد</button></Link>
+          <Link to="/IndividualsLogin"><button>فتح حساب جديد</button></Link>
         </div>
         <div className='mobile-menu'>
           <Button color="danger" onClick={toggle}>

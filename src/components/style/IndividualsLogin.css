@@ -1,0 +1,133 @@
+.individuals-login-title h1{
+    font-family: "Bahij TheSansArabic";
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 68.68px;
+   text-align: center;
+    color: #222222;
+}
+.individuals-login-title p{
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: #222222;
+    margin: 20px 0;
+}
+.individuals-login-field .MuiPaper-root{
+    box-shadow: none !important;
+}
+.individuals-single-check-box{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#individuals-login-field{
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: right;
+    background: #F2F4F7 !important;
+    margin-top: 30px;
+}
+.css-eqpfi5-MuiAccordionSummary-content{
+    justify-content: right;
+}
+.individuals-login-buttons{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.individuals-login-buttons button{
+    padding: 10px 93px;
+    border-radius: 27px;
+    border: 1px solid #3F1A58;
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+
+}
+.individuals-login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+}
+.individuals-login-title{
+    width: 90%;
+    max-width: 1150px;
+}
+.individuals-sec-field-title h3{
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+    color: #3F1A58;
+
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.individuals-login-field{
+    width: 90%;
+    max-width: 1150px;
+    text-align: right;
+}
+
+.individuals-sec-field{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 24px;
+    direction: rtl;
+    margin-top: 20px;
+}
+
+.individuals-sec-field-title {
+    margin-top: 30px;
+}
+.individuals-single-field{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.individuals-single-field input,.individuals-single-field select {
+    height: 46px;
+    border: 1px solid #AEAEAE;
+    border-radius: 10px;
+    color: #5D5D5D;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Bahij TheSansArabic';
+  
+}
+.individuals-single-field label{
+    font-family:" Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    color: #5D5D5D;
+
+}
+.individuals-single-field select{
+    padding: 10px;
+}
+.individuals-single-field input{
+    padding: 10px;
+    height: 22px;
+    
+}
+.individuals-buttom-form{
+    margin-top: 45px;
+    background: #46235E;
+    padding: 10px 80px;
+    border-radius: 99px;
+    border: none;
+    font-family: "Bahij TheSansArabic";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    color: #FFFFFF;
+
+}
