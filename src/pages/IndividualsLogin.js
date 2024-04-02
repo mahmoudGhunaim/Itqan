@@ -89,7 +89,7 @@ const IndividualsLogin = () => {
                 <h1>اتفاقية فتح حساب استثماري</h1>
                 <p>يرجى اختيار نوع الحساب المراد فتحه</p>
                 <div className='individuals-login-buttons'>
-                    <Link to=""><button style={{background:"none",color:"#46235E"}}>حساب شركات</button></Link><Link to="/IndividualsLogin"><button style={{background:"#3F1A58",color:"#FFFFFF"}}>حساب أفراد</button></Link>
+                    <Link to="/CompaniesLogin"><button style={{background:"none",color:"#46235E"}}>حساب شركات</button></Link><Link to="/IndividualsLogin"><button style={{background:"#3F1A58",color:"#FFFFFF"}}>حساب أفراد</button></Link>
                 </div>
             </div>
             <form className='individuals-login-field'>
