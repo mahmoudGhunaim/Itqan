@@ -11,7 +11,7 @@ const loader = () => {
         autoplay
         loop
         src={Loader} 
-        style={{ height: '166px', width: '166px' }} 
+        style={{ height: '100px', width: '100px' }} 
       >
         <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
       </Player>    
