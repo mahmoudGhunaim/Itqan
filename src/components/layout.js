@@ -1,13 +1,14 @@
 
 
 
-import * as React from "react"
+import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import Header from "./header"
 import "./style/layout.css"
-
+import Loader from "./loader"
 const Layout = ({ children, overPadding,  }) => {
+  const [loading, setLoading] = useState(true);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -17,7 +18,12 @@ const Layout = ({ children, overPadding,  }) => {
       }
     }
   `)
+  useEffect(() => {
+  
+    setTimeout(() => setLoading(false), 3000); 
+  }, []);
 
+  if (loading) return <Loader />;
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
