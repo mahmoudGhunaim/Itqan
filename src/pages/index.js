@@ -8,7 +8,32 @@ import ItqanC from '../components/ItqanC';
 import Distinction from '../components/distinction';
 import SecFooter from '../components/SecFooter';
 import ScrollToTopButton from '../components/ScrollToTopButton';
+const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
+  const [content, setContent] = useState(defaultContent);
+  const [imgSrc, setImgSrc] = useState(defaultImgSrc);
 
+  // Update both content and image source on hover
+  const handleMouseEnter = () => {
+    setContent(hoverContent);
+    setImgSrc(hoverImgSrc);
+  };
+
+  // Revert to default content and image source when not hovered
+  const handleMouseLeave = () => {
+    setContent(defaultContent);
+    setImgSrc(defaultImgSrc);
+  };
+
+  return (
+    <div 
+      className='Reports-data-single-card security-single-card'
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
+        <img src={imgSrc} alt="" />
+        <p>{content}</p>
+    </div>
+  );
+};
 const Index  = () => {   
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -27,9 +52,9 @@ const Index  = () => {
   }, []);
 
   const backgrounds = [
-    "Rectangle%201.png",
-    "Rectangle%202.png", 
-    "Rectangle%203.png",
+    "Property1Default.jpg",
+    "Rectangle%203-minn.png", 
+    "Rectangle%201-min.png",
   ];
 
   
@@ -63,7 +88,8 @@ const Index  = () => {
           <span><img src="/Isolation_Mode.svg"/>إتقان كابيتال<img src="/Isolation_Mode.svg"/></span>
           <h1><img src="/Vector.svg"/>رواد الاستثمار الأكثر ثقة</h1>
           <p>“إتقان كابيتال” هي شركة استثمارية تقدم منتجات وخدمات استثمارية متوافقة مع الشريعة الإسلامية وتتعامل في السوق المالي السعودي وأسواق دول مجلس التعاون الخليج العربي.</p>
-          <Link to='/IndividualsLogin'><button> <img src="/Vector1.svg"/>أنشئ حساب جديد</button></Link>
+          <Link to='/IndividualsLogin'>    <div class="button-wrapper"><button> <img src="/Vector1.svg"/>أنشئ حساب جديد</button> </div></Link>
+         
         </div>
       </div>
     </section>
@@ -131,17 +157,20 @@ const Index  = () => {
           <p>اطّلع على آخر التحليلات والرؤى للأسواق المالية</p>
         </div>
         <div className='Reports-data-cards'>
-          <div className='Reports-data-single-card'>
-              <img src='/Breaking.png'/>
-              <p>البيانات المالية</p>
-
-          </div>
-          <div className='Reports-data-single-card'>
-              <img src='/Documents.png'/>
-              <p>التقارير السنوية</p>
-              
-          </div>
+        <SecurityCard
+                        defaultImgSrc='/Breaking.png'
+                        hoverImgSrc='/PDF.png' 
+                        defaultContent='البيانات المالية'
+                        hoverContent='الإطلاع على ملف PDF'
+                    />
+                    <SecurityCard
+                        defaultImgSrc='/Documents.png'
+                        hoverImgSrc='/PDF.png' 
+                        defaultContent='التقارير السنوية'
+                        hoverContent='الإطلاع على ملف PDF'
+                    />
         </div>
+       
       </div>
     </section>
     <SecFooter/>

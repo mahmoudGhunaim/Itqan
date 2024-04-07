@@ -85,7 +85,7 @@ body{
     margin-bottom: 30px;
     margin-top: 15px;
 }
-.hero-homepage-content button{
+.hero-homepage-content button {
     background: #3F1A58;
     width: 298px;
     height: 59px;
@@ -98,6 +98,42 @@ body{
     justify-content: center;
     gap: 15px;
     border-radius: 29.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-homepage-content .button-content {
+    position: relative;
+    z-index: 2; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.hero-homepage-content button:hover .button-content {
+    color: #3F1A58 !important;
+}
+
+.hero-homepage-content button::before {
+    content: '';
+    position: absolute;
+    bottom: -200%;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background-color: white;
+    border-radius: 100%;
+    transform: scale(0.1, 1);
+    transition: transform 0.5s, bottom 0.5s;
+    z-index: 1;
+}
+
+.hero-homepage-content button:hover::before {
+    bottom: -20px;
+    left: -50px;
+    transform: scale(1, 1);
 }
 .products-sec{
     display: flex;
@@ -377,6 +413,7 @@ color: #222222;
     }
     .hero-homepage-sec{
         height: 310px;
+        margin-top: 100px;
     }
     .hero-homepage-content h1{
         font-size: 30px;

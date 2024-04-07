@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Layout from "../components/layout";
 import ScrollToTopButton from '../components/ScrollToTopButton';
-
 import Hero from '../components/Hero';
 import "../components/style/ClientAwareness.css"
 const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
