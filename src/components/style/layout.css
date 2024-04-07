@@ -18,7 +18,7 @@ header.navBar-sec {
   box-shadow: 0px 4px 7.199999809265137px 0px #5E5E5E0A;
   transition: top 0.3s ease-in-out;
 
-  z-index: 111111;
+  z-index: 11;
 }
 .show-header {
   top: 0; /* Show header */
@@ -215,10 +215,13 @@ button.button-input-button{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center;
+  align-items: flex-end;
+  margin-right: 30px;
 }
 .logo-sec-mob {
-  text-align: center;
+  text-align: right;
+  margin-right: 20px;
+
   margin-bottom: 30px;
 }
 .navBar-hamburger a{
@@ -233,7 +236,8 @@ button.btn.btn-danger{
   border: none;
 }
 .login-mob{
-  text-align: center;
+  text-align: right;
+  margin-right: 20px;
   margin-top: 30px;
 }
 .login-mob button{
@@ -251,7 +255,7 @@ button.btn-close{
   height: 27px !important;
   background: none;
   border: none;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: 20px;
 }
 button.btn-close::before{
@@ -318,12 +322,12 @@ button.btn-close::before{
     font-weight: 700 !important;
   }
   .logo-sec-mob {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 }
 @media screen and (max-width: 767px){
   .logo-sec-mob {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .login-mob{
   margin-bottom: 100px;
