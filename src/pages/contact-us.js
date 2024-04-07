@@ -3,9 +3,13 @@ import Layout from "../components/layout";
 import Hero from '../components/Hero';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import "../components/style/ContactUs.css"
+import Seo from '../components/seo';
 const ContactUs = () => {
   return (
     <Layout>
+        <Seo
+        title="تواصل معنا للحصول على دعم وإجابة استفساراتك - إتقان كابيتال        "
+        description="نحن في إتقان كابيتال هنا لمساعدتك وتقديم الدعم. اتصل بنا الآن عبر البريد الإلكتروني أو الهاتف أو ملء نموذج الاتصال. سنقوم بالرد على استفساراتك في أسرع وقت ممكن.        "/>
         <Hero title="الاتصال بنا" subTitle="“التواصل”"/>
         <ScrollToTopButton/>
         <div className='Contact-footer-section-wallpaper'>

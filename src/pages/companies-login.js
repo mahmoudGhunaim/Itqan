@@ -9,6 +9,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Seo from '../components/seo';
 
 const CompaniesLogin = () => {
     const [genders] = useState(['Male', 'Female']);
@@ -79,6 +80,9 @@ const CompaniesLogin = () => {
   return (
 <Layout>
     <ScrollToTopButton/>
+    <Seo
+    title="فتح حساب للشركات - خدمة العملاء - إتقان كابيتال    "
+    description="اتفق على شروط وأحكام فتح حساب استثماري للشركات مع إتقان كابيتال. ملء النموذج بالمعلومات المطلوبة لبدء عملية الفتح. تقديم الطلب الآن واحصل على حساب الاستثمار لشركتك.    "/>
     <Hero
     title="فتح حساب للشركات"
     subTitle="“خدمة العملاء”" />
@@ -88,7 +92,7 @@ const CompaniesLogin = () => {
                 <h1>اتفاقية فتح حساب استثماري</h1>
                 <p>يرجى اختيار نوع الحساب المراد فتحه</p>
                 <div className='individuals-login-buttons'>
-                    <Link to="/CompaniesLogin"><button style={{background:"#3F1A58",color:"#FFFFFF"}}>حساب شركات</button></Link><Link to="/IndividualsLogin"><button style={{background:"none",color:"#46235E"}}>حساب أفراد</button></Link>
+                    <Link to="/companies-login"><button style={{background:"#3F1A58",color:"#FFFFFF"}}>حساب شركات</button></Link><Link to="/Individuals-login"><button style={{background:"none",color:"#46235E"}}>حساب أفراد</button></Link>
                 </div>
             </div>
             <form className='individuals-login-field'>

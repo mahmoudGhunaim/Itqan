@@ -4,10 +4,14 @@ import Hero from '../components/Hero';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import InfoPanel from '../components/InfoPanel';
 import "../components/style/index.css";
+import Seo from '../components/seo';
 
 const ShariyahReview = () => {
   return (
     <Layout>
+      <Seo 
+      title="الهيئة الشرعية - شراكة “إتقان كابيتال” مع هيئة الرقابة الشرعية      "
+      description="استكشف كيف تتعاون “إتقان كابيتال” مع هيئة الرقابة الشرعية في تقديم الحلول المتوافقة مع الشريعة الإسلامية لمنتجاتها الاستثمارية. تعرف على كيفية تأمين المزايا التنافسية ودعم الإطلاق السريع للمنتجات من خلال هذه الشراكة.      "/>
         <ScrollToTopButton/>
         <Hero
         title="الهيئة الشرعية"/>

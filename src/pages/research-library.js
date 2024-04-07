@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import ResearchLibraryBox from '../components/ResearchLibraryBox';
 import ResearchLibraryData from "../Json/ResearchLibraryData.json"
 import "../components/style/ResearchLibrary.css"
+import Seo from '../components/seo';
 const ResearchLibrary = () => {
       // Calculate the number of items to show per "page"
   const itemsPerRow = 4; // Assuming each row has 4 items
@@ -17,6 +18,9 @@ const ResearchLibrary = () => {
   return (
     <Layout>
         <ScrollToTopButton/>
+        <Seo
+        title="مكتبة البحوث - استكشاف تقارير شركة الخطوط السعودية للتموين والمزيد | إتقان كابيتال        "
+        description="تستكشف مكتبة البحوث لشركة إتقان كابيتال التقارير والنظرات الفريدة حول أداء الشركات، بما في ذلك نظرة على نتائج الأعمال لشركة الخطوط السعودية للتموين في الربع الثاني لعام 2020 وغيرها من التقارير الهامة. استفد من المعرفة والبيانات لاتخاذ قرارات استثمارية مدروسة.        "/>
         <Hero title="مكتبة البحوث"
         subTitle="“المصادر”"/>
         <section className='ResearchLibrary-sec'>

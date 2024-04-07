@@ -5,9 +5,14 @@ import Accordion from '../components/Accordion';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import accordionData from '../Json/Accordion.json';
 import "../components/style/index.css";
+import Seo from '../components/seo';
 const Reports = () => {
   return (
     <Layout>
+      <ScrollToTopButton/>
+      <Seo
+      title="التقارير - موارد وتحليلات مفيدة من إتقان كابيتال      "
+      description="تصفح التقارير والتحليلات الهامة التي تقدمها شركة إتقان كابيتال، الشركة الاستثمارية المتخصصة في المملكة العربية السعودية، لاستفادة من مصادر المعرفة والتحليلات في مجال الاستثمار والأسواق المالية.      "/>
         <Hero
         title="التقارير"
         subTitle="“المصادر”"

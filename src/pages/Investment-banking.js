@@ -7,10 +7,14 @@ import ScrollToTopButton from '../components/ScrollToTopButton';
 import "../components/style/InvestmentBanking.css"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Seo from '../components/seo';
 const InvestmentBanking = (props) => {
     
   return (
    <Layout>
+    <Seo
+    title="خدمات الاستثمار المصرفي لـ إتقان كابيتال - الطروحات العامة والاستثمار المباشر    "
+    description="استكشف خدمات الاستثمار المصرفي المقدمة من إتقان كابيتال، بما في ذلك الطروحات العامة والاستثمار المباشر، واحصل على استشارات مالية استراتيجية تلبي احتياجات عملائنا بشكل فعال ومحترف.    "/>
     <ScrollToTopButton/>
     <Hero 
     title="الخدمات المصرفية الاستثمارية    "

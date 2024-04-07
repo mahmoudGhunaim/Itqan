@@ -89,7 +89,7 @@ const Header = ({ siteTitle }) => {
           </div>          <Link to="/contact-us">الاتصال بنا</Link>
         </div>
         <div className="navBar-openAcc">
-          <Link to="/IndividualsLogin"><button>فتح حساب جديد</button></Link>
+          <Link to="/Individuals-login"><button>فتح حساب جديد</button></Link>
         </div>
         <div className='mobile-menu'>
           <Button color="danger" onClick={toggle}>
@@ -122,7 +122,7 @@ const Header = ({ siteTitle }) => {
             </ModalBody>
             <ModalFooter>
               <div className="login-mob">
-                <Link to="/IndividualsLogin"><button>فتح حساب جديد</button></Link>
+                <Link to="/Individuals-login"><button>فتح حساب جديد</button></Link>
               </div>
               </ModalFooter>
             </Modal>

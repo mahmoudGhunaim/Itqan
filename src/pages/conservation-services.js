@@ -5,9 +5,13 @@ import Layout from "../components/layout";
 import "../components/style/ConservationServices.css"
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import ConservationServicesData from "../Json/ConservationServicesData.json"
+import Seo from '../components/seo';
 const ConservationServices = () => {
   return (
     <Layout>
+      <Seo
+      title="خدمات الحفظ في شركة إتقان كابيتال - صندوق العقارات والاستثمار المباشر      "
+      description="تعرف على خدمات الحفظ التي تقدمها شركة إتقان كابيتال، بما في ذلك صندوق العقارات والاستثمار المباشر، واستفد من الخبرة في إدارة الثروات لتحقيق أهداف استثمارية مستدامة ومواتية للمستثمرين.      "/>
       <ScrollToTopButton/>
         <Hero
         title="خدمات الحفظ"

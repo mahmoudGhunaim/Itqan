@@ -6,10 +6,14 @@ import Hero from '../components/Hero';
 import "../components/style/ConservationServices.css"
 
 import InfoPanel from '../components/InfoPanel';
+import Seo from '../components/seo';
 
 const CSR = () => {
   return (
     <Layout>
+      <Seo
+      title="المسؤولية الاجتماعية للشركات (CSR) - شركة إتقان كابيتال"
+      description="اطلع على كيفية تفعيل المسؤولية الاجتماعية للشركات (CSR) في شركة إتقان كابيتال، حيث نلتزم بتوجيه استثماراتنا وأنشطتنا نحو دعم المجتمع وتحسين الظروف الاجتماعية والبيئية.      "/>
     <ScrollToTopButton/>
     <Hero
     title="المسؤولية الاجتماعية للشركات (CSR)"

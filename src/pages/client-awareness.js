@@ -4,6 +4,7 @@ import ScrollToTopButton from '../components/ScrollToTopButton';
 import Hero from '../components/Hero';
 import "../components/style/ClientAwareness.css"
 import { Link } from "gatsby";
+import Seo from '../components/seo';
 
 const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
   const [content, setContent] = useState(defaultContent);
@@ -36,6 +37,9 @@ const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc
 const ClientAwareness = () => {
   return (
     <Layout>
+      <Seo
+      title="خدمة العملاء في إتقان كابيتال - التقارير والبيانات وإجراءات التقديم على الشكاوى      "
+      description="اكتشف خدمة العملاء في إتقان كابيتال، بما في ذلك التقارير والبيانات الأخيرة للأسواق المالية، وإجراءات تقديم الشكاوى، ودليل حماية المستثمر لضمان تجربة استثمارية آمنة وشفافة."/>
         <ScrollToTopButton/>
         <Hero title="توعية العملاء" subTitle="“خدمة العملاء”"/>
         <section className='Reports-data-sec'>

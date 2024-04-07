@@ -7,9 +7,13 @@ import SecFooter from '../components/SecFooter';
 import "../components/style/AboutUs.css"
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Hero from '../components/Hero';
+import Seo from '../components/seo';
 const AboutUS = () => {
   return (
     <Layout>
+      <Seo
+      title="إتقان كابيتال: الريادة في الاستثمار الإسلامي والخدمات المالية بالمملكة      "
+      description="اكتشف إتقان كابيتال، الشركة السعودية الرائدة في تقديم منتجات وخدمات استثمارية متوافقة مع الشريعة الإسلامية. مع تركيز على الدقة، الشغف، والكمال، نحن ملتزمون بتحقيق أعلى معايير الاستثمار لعملائنا في السوق المالية السعودية وأسواق دول مجلس التعاون الخليجي.      "/>
       <ScrollToTopButton/>
       <Hero
       title="لمحة عامة"

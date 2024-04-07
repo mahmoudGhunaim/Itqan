@@ -6,9 +6,13 @@ import Hero from '../components/Hero';
 import "../components/style/ConservationServices.css"
 
 import InfoPanel from '../components/InfoPanel';
+import Seo from '../components/seo';
 const AdvisoryResearch = () => {
   return (
     <Layout>
+      <Seo
+      title="خدمات البحوث والمشورة في إتقان كابيتال - المشورة الاستثمارية والقدرات البحثية      "
+      description="تعرّف على خدمات البحوث والمشورة التي تقدمها إتقان كابيتال، بما في ذلك المشورة الاستثمارية والقدرات البحثية التي تدعم أنشطتها الرئيسية في مجالات الاستثمار المباشر والخدمات المصرفية الاستثمارية وخدمات الحفظ.      "/>
         <ScrollToTopButton/>
         <Hero
         title="البحوث والمشورة"

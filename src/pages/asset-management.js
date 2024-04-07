@@ -14,6 +14,7 @@ import PrivateBoxData from "../Json/PrivateBoxData.json"
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import Seo from '../components/seo';
 const SliderButtons = () => {
   const swiper = useSwiper();
   return (
@@ -26,7 +27,9 @@ const SliderButtons = () => {
 const AssetManagement = () => {
   return (
     <Layout>
-
+      <Seo
+        title="خدمات إدارة الأصول في شركة إتقان كابيتال - صناديق الأسهم والمرابحات والعقارات        "
+        description="اكتشف خدمات إدارة الأصول التي تقدمها شركة إتقان كابيتال، بما في ذلك صناديق الأسهم والمرابحات وصندوق العقارات، واستفد من الاستشارات المالية المخصصة لتحقيق أهداف استثمارية متوافقة مع الضوابط الشرعية.        "/>
         <Hero
         title=" إدارة الأصول"
         subTitle="“خدمات إدارة الأصول”"/>
