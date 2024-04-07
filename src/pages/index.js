@@ -12,7 +12,7 @@ const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc
   const [content, setContent] = useState(defaultContent);
   const [imgSrc, setImgSrc] = useState(defaultImgSrc);
 
-  // Update both content and image source on hover
+
   const handleMouseEnter = () => {
     setContent(hoverContent);
     setImgSrc(hoverImgSrc);
@@ -59,20 +59,29 @@ const Index  = () => {
 
   
   const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
+  const [opacity, setOpacity] = useState(1); // Start with full opacity
+
 
   useEffect(() => {
     
     const changeBackground = () => {
-      setCurrentBackground((prev) => {
-        
-        const index = backgrounds.indexOf(prev);
-        
-        return backgrounds[(index + 1) % backgrounds.length];
-      });
+      // Start the fade-out
+      setOpacity(0);
+    
+      // After the fade-out transition is done, change the background and fade in
+      setTimeout(() => {
+        setCurrentBackground((prev) => {
+          const index = backgrounds.indexOf(prev);
+          return backgrounds[(index + 1) % backgrounds.length];
+        });
+    
+        // Reset opacity to 1 to fade back in
+        setOpacity(1);
+      }, 100); // Adjust this timeout to match your fade-out duration
     };
 
 
-    const intervalId = setInterval(changeBackground, 5000);
+    const intervalId = setInterval(changeBackground, 3000);
 
 
     return () => clearInterval(intervalId);
@@ -81,7 +90,7 @@ const Index  = () => {
   return (
     <Layout>
       <ScrollToTopButton/>
-    <section className="hero-homepage-sec"  style={{ backgroundImage: `url( ${currentBackground} ) ` }}>
+      <section className="hero-homepage-sec" style={{ backgroundImage: `url(${currentBackground})`, opacity: opacity }}>
       
       <div className="hero-homepage-container">
         <div className="hero-homepage-content">

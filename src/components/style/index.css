@@ -26,7 +26,9 @@ body{
       justify-content: center;
       align-items: center;
   }
-  
+  .hero-homepage-sec {
+    transition: opacity 0.5s ease-out; /* Adjust time as needed */
+  }
   .hero-homepage-sec::before {
       content: "";
       position: absolute;
@@ -92,7 +94,6 @@ body{
     width: 298px;
     height: 59px;
     color: #FFFFFF;
-    font-weight: 600;
     font-family: 'Bahij TheSansArabic';
     border: none;
     display: flex;
@@ -108,7 +109,6 @@ body{
     display: block;
     color: #3F1A58 !important;
     z-index: 1111;
-    font-weight: 600;
     font-family: 'Bahij TheSansArabic';
 
 }.hero-homepage-content button:hover img{
@@ -295,6 +295,7 @@ color: #222222;
     justify-content: center;
     background: linear-gradient(#FAFAFA 80%,#46235E 20%) ;
     background-position: bottom;
+    background-repeat: no-repeat;
   }
   .exchange-rates-container{
     text-align: center;

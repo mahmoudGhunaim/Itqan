@@ -332,4 +332,7 @@ button.btn-close::before{
 .login-mob{
   margin-bottom: 100px;
 }
+.navBar-hamburger a{
+  font-size: 16px;
+}
 }
