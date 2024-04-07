@@ -40,17 +40,17 @@ const Layout = ({ children, overPadding,  }) => {
        
           <div className="footer-services">
           <h6>الخدمات</h6>
-            <Link to="/AssetManagement" >إدارة الأصول </Link>
-            <Link to="/InvestmentBanking" > الخدمات المصرفية الاستثمارية</Link>
-            <Link to="/ConservationServices" >خدمات الحفظ</Link>
-            <Link to="/AdvisoryResearch" >البحوث والمشورة</Link>
+            <Link to="/asset-management" >إدارة الأصول </Link>
+            <Link to="/Investment-banking" > الخدمات المصرفية الاستثمارية</Link>
+            <Link to="/conservation-services" >خدمات الحفظ</Link>
+            <Link to="/advisory-research" >البحوث والمشورة</Link>
           </div>
           <div className="footer-links">
             <h6>روابط سريعة</h6>
-            <Link to="/AboutUS" >لمحة عامة</Link>
-            <Link to="/Announcements" >التصريحات</Link>
+            <Link to="/about-us" >لمحة عامة</Link>
+            <Link to="/announcements" >التصريحات</Link>
             <Link to={``} >الوظائف</Link>
-            <Link to="/ContactUs" >الاتصال بنا</Link>
+            <Link to="/contact-us" >الاتصال بنا</Link>
           </div>
           <form>
             <h6>النشرة البريدية</h6>

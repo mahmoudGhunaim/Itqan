@@ -28,15 +28,54 @@
     border-bottom: none !important;
     list-style-type: none !important;
 }
+.react-tabs__tab--selected::after{
+display:none !important;
+}
 .react-tabs__tab::before{
     content: " " !important;
 }
-.react-tabs__tab--selected,.react-tabs__tab--selected{
+.infopanel-content .react-tabs__tab--selected{
     background: none !important;
-    border-bottom: 3px solid #3F1A58 !important; 
+    border-bottom: 3px solid #3F1A58 !important;
+    background: none !important; 
+    z-index: 111;
 }
+
 .react-tabs__tab{
     border: none !important;
+}
+.react-tabs {
+    background: white;
+    padding: 40px 26px;
+    margin-top: 50px;
+}
+.bg-infopanel-sec{
+    background: #F2F4F7;
+    margin-top: 50px;
+}
+.react-tabs__tab-panel h2{
+    font-family: "Bahij TheSansArabic";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 23.8px;
+    text-align: right;
+    color: rgba(34, 34, 34, 1);
+} 
+ .react-tabs__tab{
+    font-family: "Bahij TheSansArabic";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 34px;
+    text-align: right;
+    color: rgba(34, 34, 34, 1);
+} 
+.react-tabs__tab{
+    font-family: "Bahij TheSansArabic";
+font-size: 20px !important;
+font-weight: 500 !important;
+line-height: 34px !important;
+text-align: right!important;
+color: rgba(34, 34, 34, 1) !important;
 }
 @media screen and (max-width:  1024px){
     .investment-banking-container-card{

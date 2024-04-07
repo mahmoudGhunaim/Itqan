@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from "gatsby";
 import "./style/InfoPanel.css"
-const InfoPanel = ({title, image, paragraph,button,point1,point2,point3,point4,links,none,revers}) => {
+const InfoPanel = ({title, image, paragraph,button,point1,point2,point3,point4,links,none,revers,bg}) => {
   return (
-    <section className='infopanel-sec'>
+    <section className={`infopanel-sec ${bg}`}>
         <div className='infopanel-container' style={{flexDirection: revers}}>
             <div className='infopanel-content'>
                 <h2>{title}</h2>
