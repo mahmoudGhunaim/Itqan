@@ -122,7 +122,8 @@ const Index  = () => {
     <section class="exchange-rates-section">
       <div class="exchange-rates-container">
         <h2>إحصائيات الصرافة</h2>
-        <table>
+        <div className='exchange-rate-card' >
+                  <table>
         
           <tr>  
             <th>متوسط الذكاء السنوي</th>
@@ -148,6 +149,7 @@ const Index  = () => {
             <td className='box-name'>صندوق إتقان للأسهم السعودية<img src='/Frame 1.png'/></td>      
           </tr>
         </table>
+        </div>
       </div>
     </section>
     <section className='Reports-data-sec'>
