@@ -3,6 +3,8 @@ import Layout from "../components/layout";
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Hero from '../components/Hero';
 import "../components/style/ClientAwareness.css"
+import { Link } from "gatsby";
+
 const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
   const [content, setContent] = useState(defaultContent);
   const [imgSrc, setImgSrc] = useState(defaultImgSrc);
@@ -43,18 +45,22 @@ const ClientAwareness = () => {
                     <p>اطّلع على آخر التحليلات والرؤى للأسواق المالية</p>
                 </div>
                 <div className='Reports-data-cards security-cards'>
+                  <Link to='https://itqancapital.com/wp-content/themes/etq/co/CustomerComplaint.pdf'>
                     <SecurityCard
                         defaultImgSrc='/Complaint.png'
                         hoverImgSrc='/PDF.png' 
                         defaultContent='اجراءات تقديم شكوى'
                         hoverContent='الإطلاع على ملف PDF'
                     />
+                    </Link>
+                    <Link to='https://itqancapital.com/wp-content/themes/etq/co/InvestorProtectionGuide.pdf'>
                     <SecurityCard
                         defaultImgSrc='/Investor.png'
                         hoverImgSrc='/PDF.png' 
                         defaultContent='دليل حماية المستثمر'
                         hoverContent='الإطلاع على ملف PDF'
                     />
+                    </Link>
                 </div>
             </div>
         </section>

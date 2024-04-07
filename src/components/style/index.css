@@ -471,9 +471,15 @@ color: #222222;
     .products-container h1{
         font-size: 24px;
     }
+    main{
+        margin-top: 50px;
+    }
 }
 @media screen and (max-width:  767px){
     .Reports-data-cards{
         flex-direction: column;
+    }
+    main{
+        margin-top: 50px;
     }
 }
