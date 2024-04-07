@@ -107,19 +107,19 @@ const Index  = () => {
           <p>نقدم لك مجموعة من الخدمات المالية والبحوث وإدارة الأصول وغيرها من الخدمات الخاصة</p>
           <div className="products-content">
             <div className="products-single">
-              <Link to="/AssetManagement"><button><img src="/Control Panel Icon.png"/>إدارة الأصول</button></Link>
+              <Link to="/asset-management"><button><img src="/Control Panel Icon.png"/>إدارة الأصول</button></Link>
             </div>
             <div className="products-single">
-            <Link to="/InvestmentBanking"><button><img src="/Consultation.png"/>الخدمات المصرفية الاستثمارية</button></Link>
+            <Link to="/Investment-banking"><button><img src="/Consultation.png"/>الخدمات المصرفية الاستثمارية</button></Link>
             </div>
             <div className="products-single">
-            <Link to="/ConservationServices"><button><img src="/Examination.png"/>خدمات الحفظ</button></Link>
+            <Link to="/conservation-services"><button><img src="/Examination.png"/>خدمات الحفظ</button></Link>
             </div>
             <div className="products-single">
-            <Link to="/AdvisoryResearch"> <button><img src="/Reporting.png"/>الأبحاث المنشورة</button></Link>
+            <Link to="/advisory-research"> <button><img src="/Reporting.png"/>الأبحاث المنشورة</button></Link>
             </div>
             <div className="products-single">
-            <Link to='/IndividualsLogin'> <button><img src="/New Account.png"/>فتح حساب جديد</button></Link>
+            <Link to='/Individuals-login'> <button><img src="/New Account.png"/>فتح حساب جديد</button></Link>
             </div>
           </div>
         <ItqanC/>
