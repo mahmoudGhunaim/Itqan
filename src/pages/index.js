@@ -96,7 +96,7 @@ const Index  = () => {
           <span><img src="/Isolation_Mode.svg"/>إتقان كابيتال<img src="/Isolation_Mode.svg"/></span>
           <h1><img src="/Vector.svg"/>رواد الاستثمار الأكثر ثقة</h1>
           <p>“إتقان كابيتال” هي شركة استثمارية تقدم منتجات وخدمات استثمارية متوافقة مع الشريعة الإسلامية وتتعامل في السوق المالي السعودي وأسواق دول مجلس التعاون الخليج العربي.</p>
-          <Link to='/IndividualsLogin'>    <div class="button-wrapper"><button> <img src="/Vector1.svg"/><div className='z-index'>أنشئ حساب جديد</div></button> </div></Link>
+          <Link to='/Individuals-login'>    <div class="button-wrapper"><button> <img src="/Vector1.svg"/><div className='z-index'>أنشئ حساب جديد</div></button> </div></Link>
          
         </div>
       </div>
