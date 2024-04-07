@@ -103,15 +103,21 @@ const Header = ({ siteTitle }) => {
               </div>
               <div className='navBar-hamburger'>
               <Link to="/">الرئيسية</Link>
-          <Link to="/AboutUS">نبذة عنا</Link>
-            <Link to="/AssetManagement">إدارة الأصول</Link>
+              <Link to="/AboutUS">لمحة عامة</Link>
+              <Link to="/ShariyahReview">الهيئة الشرعية</Link>
+              <Link to="/BoardDirectors">الهيكل التنظيمي</Link>
+              <Link to="/CSR">المسؤولية الاجتماعية للشركات (CSR)</Link>
+              <Link to="/Board">مجلس الإدارة</Link>
+              <Link to="/AssetManagement">إدارة الأصول</Link>
                 <Link to="/ConservationServices">خدمات الحفظ</Link>
                 <Link to="/InvestmentBanking">الخدمات المصرفية الاستثمارية</Link>
                 <Link to="/AdvisoryResearch">البحوث والمشورة</Link>
-              <Link to="/CustomerService">خدمة العملاء</Link>
-          <Link to="/Statements">التصريحات</Link>
-          <Link to="/Resources">المصادر</Link>
-          <Link to="/ContactUs">الاتصال بنا</Link>
+                <Link to="/FAQ">الأسئلة الشائعة</Link>
+                <Link to="/ClientAwareness">توعية العملاء</Link>
+                <Link to="/Announcements">التصريحات</Link>
+                <Link to="/Reports">التقارير</Link>
+                <Link to="/ResearchLibrary">مكتبة البحوث</Link>
+                <Link to="/ContactUs">الاتصال بنا</Link>
          
               </div>
             </ModalBody>

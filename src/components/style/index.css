@@ -92,7 +92,7 @@ body{
     width: 298px;
     height: 59px;
     color: #FFFFFF;
-    font-weight: 700;
+    font-weight: 600;
     font-family: 'Bahij TheSansArabic';
     border: none;
     display: flex;
@@ -108,7 +108,7 @@ body{
     display: block;
     color: #3F1A58 !important;
     z-index: 1111;
-    font-weight: 700;
+    font-weight: 600;
     font-family: 'Bahij TheSansArabic';
 
 }.hero-homepage-content button:hover img{
@@ -422,9 +422,7 @@ color: #222222;
 }
 
 @media screen and (max-width:  1024px) {
-    .Reports-data-cards{
-        flex-direction: column;
-    }
+
     .exchange-rate-card {
         overflow-X: auto;
         justify-content: flex-end;
@@ -472,5 +470,10 @@ color: #222222;
     }
     .products-container h1{
         font-size: 24px;
+    }
+}
+@media screen and (max-width:  767px){
+    .Reports-data-cards{
+        flex-direction: column;
     }
 }
