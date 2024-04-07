@@ -84,13 +84,15 @@ body{
     line-height: 25px;
     margin-bottom: 30px;
     margin-top: 15px;
+}.hero-homepage-content a {
+    text-decoration: none;
 }
 .hero-homepage-content button {
     background: #3F1A58;
     width: 298px;
     height: 59px;
     color: #FFFFFF;
-    font-weight: 500;
+    font-weight: 700;
     font-family: 'Bahij TheSansArabic';
     border: none;
     display: flex;
@@ -100,20 +102,49 @@ body{
     border-radius: 29.5px;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
 }
+.hero-homepage-content button:hover .z-index{
+    display: block;
+    color: #3F1A58 !important;
+    z-index: 1111;
+    font-weight: 700;
+    font-family: 'Bahij TheSansArabic';
 
+}.hero-homepage-content button:hover img{
+    display: none;
+}
+.hero-homepage-content button:hover .z-index::before{
+    content: " ";
+    background: url("../../../static/user-add-linehover.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    
+}
 .hero-homepage-content .button-content {
     position: relative;
-    z-index: 2; 
+    z-index: -1; 
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
+
 }
 
 
+.hero-homepage-content button:hover {
+    color: #3F1A58; 
+    z-index: 11111;
+}
+
 .hero-homepage-content button:hover .button-content {
     color: #3F1A58 !important;
+    z-index: 1111111;
 }
 
 .hero-homepage-content button::before {
@@ -132,7 +163,7 @@ body{
 
 .hero-homepage-content button:hover::before {
     bottom: -20px;
-    left: -50px;
+    left: -80px;
     transform: scale(1, 1);
 }
 .products-sec{
