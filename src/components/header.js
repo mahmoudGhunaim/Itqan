@@ -70,7 +70,7 @@ const Header = ({ siteTitle }) => {
             </Link>
             {showCustomerServiceDropdown && (
               <div className="dropdown-content" onMouseEnter={() => setShowCustomerServiceDropdown(true)} onMouseLeave={() => setShowCustomerServiceDropdown(false)}>
-                <Link to="/FAQ">الأسئلة الشائعة</Link>
+
                 <Link to="/ClientAwareness">توعية العملاء</Link>
               </div>
             )}
@@ -112,7 +112,6 @@ const Header = ({ siteTitle }) => {
                 <Link to="/ConservationServices">خدمات الحفظ</Link>
                 <Link to="/InvestmentBanking">الخدمات المصرفية الاستثمارية</Link>
                 <Link to="/AdvisoryResearch">البحوث والمشورة</Link>
-                <Link to="/FAQ">الأسئلة الشائعة</Link>
                 <Link to="/ClientAwareness">توعية العملاء</Link>
                 <Link to="/Announcements">التصريحات</Link>
                 <Link to="/Reports">التقارير</Link>
