@@ -65,19 +65,18 @@ const Index  = () => {
   useEffect(() => {
     
     const changeBackground = () => {
-      // Start the fade-out
+
       setOpacity(0);
     
-      // After the fade-out transition is done, change the background and fade in
+
       setTimeout(() => {
         setCurrentBackground((prev) => {
           const index = backgrounds.indexOf(prev);
           return backgrounds[(index + 1) % backgrounds.length];
         });
     
-        // Reset opacity to 1 to fade back in
         setOpacity(1);
-      }, 100); // Adjust this timeout to match your fade-out duration
+      }, 100); 
     };
 
 
