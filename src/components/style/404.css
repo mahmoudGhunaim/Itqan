@@ -1,5 +1,5 @@
 .NotFoundPage-section{
-    height: 30vw;
+    height: 35vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
 .NotFoundPage-container button{
     width: 100%;
     background: rgba(70, 35, 94, 1);
-    padding: 10px 40px;
+    padding: 10px 90px;
     border: none;
     border-radius: 8px;
     font-family: "Bahij TheSansArabic";

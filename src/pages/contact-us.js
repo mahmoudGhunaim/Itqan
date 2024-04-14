@@ -28,7 +28,7 @@ const ContactUs = () => {
           return;
         }
       
-        const url = `https://api.contentful.com/spaces/9acb47rc8erz/environments/master/entries`;
+        const url = `https://api.contentful.com/spaces/9acb47rc8erz/environments/itqanForm/entries `;
         const headers = {
           'Authorization': `Bearer _S2DDj9jugLQ_JfgVHESlqbnG6N9uPT-d2fMMOXbr7Y`,
           'Content-Type': 'application/vnd.contentful.management.v1+json',
