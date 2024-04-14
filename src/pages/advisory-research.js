@@ -18,13 +18,14 @@ const AdvisoryResearch = () => {
         title="البحوث والمشورة"
         subTitle="“الخدمات”"
         />
+            <div className='Contact-footer-section-wallpaper'>
         <section className='AdvisoryResearch-sec'>
+        
          <div className='AdvisoryResearch-card-title'>
                     <h1>خدمات البحوث والمشورة</h1>
                     <p>تساعد القدرات الاستشارية والبحثية المركزية التي تتمتع بها “إتقان كابيتال” على تعزيز ودعم أنشطتنا الأربعة الرئيسية (إدارة الأصول والاستثمار المباشر والخدمات المصرفية الاستثمارية وخدمات الحفظ). ويعمل فريقنا عن كثب مع عملائنا لتحديد أفضل الاستراتيجيات التي تلبي احتياجات كل منهم وتحقق أهدافه الاستثمارية. ويأتي دور وحدة بحوث “إتقان كابيتال” لتقدم لهم باقتدار جميع أشكال الدعم، مدعومة في ذلك بأنظمة قوية لجمع البيانات وإجراء التحليلات.</p>
                  </div>
-      </section>
-      {AdvisoryResearchData.map((item, index) => (
+                 {AdvisoryResearchData.map((item, index) => (
             <InfoPanel
               key={index}
               title={item.title}
@@ -37,6 +38,9 @@ const AdvisoryResearch = () => {
               none={item.none}
             />
         ))}
+      </section>
+      
+        </div>
     </Layout>
   )
 }

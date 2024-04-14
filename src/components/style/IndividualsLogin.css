@@ -1,3 +1,13 @@
+.individuals-login-sec{
+    background: url("/Frame 21212.png");
+    background-position: right top;
+        background-repeat: no-repeat;
+}
+.individuals-login-container{
+    background: url("/Frame 106.png");
+    background-repeat: no-repeat;
+    background-position: bottom left
+}
 .individuals-login-title h1{
     font-family: "Bahij TheSansArabic";
     font-size: 42px;

@@ -16,6 +16,7 @@ const ShariyahReview = () => {
         <Hero
         title="الهيئة الشرعية"/>
         <section className='ShariyahReview-sec'>
+          <div className='ShariyahReview-container'>
         <InfoPanel 
         revers="row-reverse"
         title="الهيئة الشرعية"
@@ -24,6 +25,7 @@ const ShariyahReview = () => {
         button="لمزيدٍ من المعلومات عن هيئة الرقابة الشرعي"
         image="/abour_01 1.png"
         />
+        </div>
         </section>
 
     </Layout>

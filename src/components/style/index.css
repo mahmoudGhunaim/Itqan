@@ -242,11 +242,16 @@ background-position: left top;
 
 }
 .ShariyahReview-sec{
-    padding: 25px 0;
+
     background: url("/Frame 21212.png");
     background-repeat: no-repeat;
     background-position: top right;
 
+}
+.ShariyahReview-container{
+    background: url("/Frame 106.png");
+    background-repeat: no-repeat;
+    background-position: bottom left
 }
 .BoardDirectors-sec{
     text-align: center;
@@ -365,6 +370,10 @@ color: #222222;
 .Reports-data-sec{
     display: flex;
     justify-content: center;
+    background: url("/Frame 21212.png");
+
+background-position: right top;
+    background-repeat: no-repeat;
 }
 .Reports-data-container{
     width: 90%;
