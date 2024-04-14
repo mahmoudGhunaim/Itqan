@@ -1,10 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Layout from "../components/layout";
 import Hero from '../components/Hero';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import "../components/style/ContactUs.css"
 import Seo from '../components/seo';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { createClient } from 'contentful';
+
+
 const ContactUs = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+      });
+    
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({ ...prevState, [name]: value }));
+      };
+    
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const response = await fetch('/submit-form', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+    
+          if (response.ok) {
+            alert('Form submitted successfully!');
+            setFormData({ name: '', email: '', message: '' }); // Reset form
+          } else {
+            alert('Failed to submit form.');
+          }
+        } catch (error) {
+          console.error('Failed to send form data:', error);
+          alert('Error submitting form.');
+        }
+      };
   return (
     <Layout>
         <Seo
@@ -17,35 +54,38 @@ const ContactUs = () => {
        
                
         <div className='Contact-footer-container'>
-           <form className='Contact-footer-form' >
-                
+            <form className='Contact-footer-form' onSubmit={handleSubmit}>
                 <label>
-                الاسم       
+                    الاسم       
                     <input
                     type='text'
                     name='name'
                     placeholder='حقل لإدخال الاسم'
+                    value={formData.name}
+                    onChange={handleChange}
                     />
                 </label>
                 <label>
-                البريد الإلكتروني
+                    البريد الإلكتروني
                     <input
                     type='email'
                     name='email'
                     placeholder='حقل لإدخال البريد الإلكتروني'
+                    value={formData.email}
+                    onChange={handleChange}
                     />
                 </label>
                 <label>
-                الرسالة
+                    الرسالة
                     <textarea
-                    type='text'
-                    name='name'
+                    name='message'
                     placeholder='حقل لإدخال موضوع الاستفسار'
+                    value={formData.message}
+                    onChange={handleChange}
                     />
                 </label>
                 <button type='submit'>إرسال</button>
-                <p>نحن ملتزمون بحماية واحترام خصوصيتكم. سيتم استخدام المعلومات المقدمة في هذا النموذج للتواصل معكم والإجابة على استفساراتكم فقط.</p>
-            </form>
+        </form>
             
             <div className='Contact-footer-content'>
                 <h2>اتصل بنا</h2>
