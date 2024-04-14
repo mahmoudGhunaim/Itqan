@@ -89,7 +89,7 @@ const Index  = () => {
   return (
     <Layout>
       <ScrollToTopButton/>
-      <section className="hero-homepage-sec" style={{ backgroundImage: `url(${currentBackground})`, opacity: opacity }}>
+      <section className="hero-homepage-sec" style={{ backgroundImage: `url(${currentBackground})` }}>
       
       <div className="hero-homepage-container">
         <div className="hero-homepage-content">
