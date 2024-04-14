@@ -36,6 +36,7 @@ const AdvisoryResearch = () => {
               // Since "none" prop doesn't seem to be directly used in rendering (based on your provided props),
               // I'm assuming it's some kind of flag or style modifier. Ensure to handle it accordingly in your InfoPanel component.
               none={item.none}
+              links={item.Links}
             />
         ))}
       </section>
