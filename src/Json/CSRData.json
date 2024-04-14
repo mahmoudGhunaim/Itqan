@@ -5,7 +5,8 @@
       "none": "none",
       "Button": "استثمر بحكمة",
       "imgSrc": "/Frame 138.png",
-      "revers":""
+      "revers":"",
+      "links":"/Individuals-login"
       
     },
     {
@@ -14,7 +15,8 @@
         "none": "none",
         "Button": "استثمر بحكمة",
         "imgSrc": "/Frame 138.png",
-        "revers":"row-reverse"
+        "revers":"row-reverse",
+        "links":"/Individuals-login"
         
       },{
         "title": "المشورة الاستثمارية",
@@ -22,8 +24,8 @@
         "none": "none",
         "Button": "استثمر بحكمة",
         "imgSrc": "/Frame 138.png",
-        "revers":""
-        
+        "revers":"",
+        "links":"/Individuals-login"      
       }
   
   ]

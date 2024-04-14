@@ -34,6 +34,7 @@ const ConservationServices = () => {
                         Button={item.Button}
                         imgSrc={item.imgSrc}
                         backgroundColor={item.backgroundColor}
+                        link={item.link}
                     />
                     ))}
                  </div>

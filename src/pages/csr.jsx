@@ -34,6 +34,7 @@ const CSR = () => {
           image={item.imgSrc}
           revers={item.revers}
           none={item.none}
+          links={item.links}
         />
     ))}
 </Layout>

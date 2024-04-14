@@ -50,6 +50,7 @@ const Announcements = () => {
                 p2={announcement.p2}
                 p3={announcement.p3}
                 span={announcement.span}
+                link={announcement.link}
               />
             ))}
             <div ref={loaderRef} style={{ height: '100px', textAlign: 'center', margin: '20px 0' }}>

@@ -45,7 +45,7 @@ const AssetManagement = () => {
         point4="وحدات صناديق الاستثمار التي تستثمر في أدوات الاستثمار المختلفة بما في ذلك المرابحة والمضاربة والاستصناع والسلم."
         button="استثمر بذكاء مع صندوق إتقان"
         image="/Frame 136.png"
-        
+        links="/Individuals-login"
         
         />
         <InfoPanel
@@ -57,6 +57,7 @@ const AssetManagement = () => {
         image="/Frame 138.png"
         revers="row-reverse"
         none="none"
+        links="/Individuals-login"
         />
         </section>
        
@@ -108,6 +109,7 @@ const AssetManagement = () => {
                 Button={item.button}
                 imgSrc={item.imgSrc}
                 size={item.size}
+                link={item.link} 
               /></SwiperSlide>
             ))}
             </div>
@@ -122,7 +124,7 @@ const AssetManagement = () => {
         none="none"
         button="استفد من إتقان كابيتال اليوم"
         image="/Frame 137.png"
-        
+        links="/Individuals-login"
         
         />
         <InfoPanel
@@ -135,6 +137,7 @@ const AssetManagement = () => {
         image="/Frame 139.png"
         revers="row-reverse"
         none="none"
+        links="/Individuals-login"
         />
         <section className='assetManagement-accordion'>
             <div className='assetManagement-accordion-container'>
