@@ -65,7 +65,7 @@ const ContactUs = () => {
        
                
         <div className='Contact-footer-container'>
-            <form className='Contact-footer-form' onSubmit={handleSubmit}>
+            <form className='Contact-footer-form' onSubmit={handleSubmit}       method="POST">
                 <label>
                     الاسم       
                     <input
