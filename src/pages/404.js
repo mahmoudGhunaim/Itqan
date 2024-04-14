@@ -1,12 +1,18 @@
 import * as React from "react"
-
+import { Link } from "gatsby";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import "../components/style/404.css"
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <section className="NotFoundPage-section">
+    <div className="NotFoundPage-container">
+      <img src="/Frame 427319299.svg"/>
+    <h1>تعذر الوصول الى الصفحة!</h1>
+    <Link to="../../../"><button>الرجوع الى الرئيسية</button></Link>
+    </div>
+    </section>
   </Layout>
 )
 

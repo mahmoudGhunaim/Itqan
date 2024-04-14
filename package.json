@@ -11,6 +11,7 @@
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@mui/icons-material": "^5.15.14",
     "@mui/material": "^5.15.14",
+    "axios": "^1.6.8",
     "contentful": "^10.8.7",
     "gatsby": "^5.13.3",
     "gatsby-plugin-image": "^3.13.1",

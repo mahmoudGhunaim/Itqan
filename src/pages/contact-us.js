@@ -4,9 +4,7 @@ import Hero from '../components/Hero';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import "../components/style/ContactUs.css"
 import Seo from '../components/seo';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { createClient } from 'contentful';
-
+import axios from 'axios';
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -17,31 +15,44 @@ const ContactUs = () => {
     
       const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prevState => ({ ...prevState, [name]: value }));
+        setFormData(prevState => ({
+          ...prevState,
+          [name]: value
+        }));
       };
     
       const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-          const response = await fetch('/submit-form', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-          });
-    
-          if (response.ok) {
-            alert('Form submitted successfully!');
-            setFormData({ name: '', email: '', message: '' }); // Reset form
-          } else {
-            alert('Failed to submit form.');
+        if (!formData.name || !formData.email || !formData.message) {
+          alert('Please fill out all fields.');
+          return;
+        }
+      
+        const url = `https://api.contentful.com/spaces/9acb47rc8erz/environments/master/entries`;
+        const headers = {
+          'Authorization': `Bearer _S2DDj9jugLQ_JfgVHESlqbnG6N9uPT-d2fMMOXbr7Y`,
+          'Content-Type': 'application/vnd.contentful.management.v1+json',
+          'X-Contentful-Content-Type': 'itqanForm'
+        };
+      
+        const data = {
+          fields: {
+            name: { 'en-US': formData.name },
+            email: { 'en-US': formData.email },
+            message: { 'en-US': formData.message }
           }
+        };
+      
+        try {
+          const response = await axios.post(url, data, { headers });
+          console.log('Form submitted: ', response.data);
+          alert('Form submitted successfully!');
         } catch (error) {
-          console.error('Failed to send form data:', error);
-          alert('Error submitting form.');
+          console.error('Submission error: ', error);
+          alert('Failed to submit the form.');
         }
       };
+    
   return (
     <Layout>
         <Seo
