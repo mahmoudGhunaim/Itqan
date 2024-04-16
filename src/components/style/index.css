@@ -1,5 +1,6 @@
 h1,h2,h3,h4,h5,h6,p{
     margin: 0 ;
+    direction: rtl;
 }
 
 button{
@@ -106,6 +107,11 @@ body{
     position: relative;
     overflow: hidden;
     text-decoration: none;
+
+}
+.hero-homepage-content button .z-index{
+    transition: 0.3s ease;
+
 }
 .hero-homepage-content button:hover .z-index{
     display: block;
@@ -232,6 +238,7 @@ background-position: left top;
     border-radius: 12px;
     box-shadow: 0px 0px 23.200000762939453px 0px #64646F1F;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 .products-single button:hover{
     box-shadow: 0px 0px 23.200000762939453px 0px #3F1F5861;
