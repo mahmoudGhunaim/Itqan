@@ -7,29 +7,26 @@ import AnnouncementsData from "../Json/AnnouncementsData.json";
 import "../components/style/Announcements.css";
 import Seo from '../components/seo';
 import { Player } from '@lottiefiles/react-lottie-player';
-import loaderl from "../Json/loaderl.json"; // Ensure this is the correct path to your Lottie animation
+import loaderl from "../Json/loaderl.json";
+
 const Announcements = () => {
-  const [itemsToShow, setItemsToShow] = useState(4); // Initially show 4 items
-  const loaderRef = useRef(null);
+  // const [itemsToShow, setItemsToShow] = useState(8); // Start with 8 items
+  // const [loading, setLoading] = useState(false);
+  // const loaderRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) {
-        setItemsToShow((prevItems) => prevItems + 4); // Load 4 more items
-      }
-    }, {
-      threshold: 1 
-    });
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (itemsToShow < AnnouncementsData.length && !loading) {
+  //       setLoading(true);
+  //       setTimeout(() => {
+  //         setItemsToShow(itemsToShow + 4);
+  //         setLoading(false);
+  //       }, 2000); // Delay the display of next 4 items by 2 seconds
+  //     }
+  //   }, 10000); // Check every 2 seconds if more items should be displayed
 
-    if (loaderRef.current) {
-      observer.observe(loaderRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+  //   return () => clearInterval(interval); // Clean up the interval on component unmount
+  // }, [itemsToShow, loading]);
 
   return (
     <Layout>
@@ -43,7 +40,7 @@ const Announcements = () => {
         <div className='Announcements-container'>
           <div className='Announcements-content'>
             <h3>التصريحات</h3>
-            {AnnouncementsData.slice(0, itemsToShow).map((announcement, index) => (
+            {AnnouncementsData.slice(0, AnnouncementsData.length + 1).map((announcement, index) => (
               <AnnouncementsBox
                 key={index}
                 p1={announcement.p1}
@@ -53,12 +50,12 @@ const Announcements = () => {
                 link={announcement.link}
               />
             ))}
-            <div ref={loaderRef} style={{ height: '100px', textAlign: 'center', margin: '20px 0' }}>
 
-              {itemsToShow < AnnouncementsData.length && <div ref={loaderRef} style={{ height: '100px', margin: '30px 0', display: 'flex', justifyContent: 'center' }}>
-              <Player autoplay loop src={loaderl} style={{ height: '100px', width: '100px' }} />
-            </div>}
-            </div>
+            {/* {loading && (
+              <div ref={loaderRef} style={{ height: '100px', margin: '30px 0', display: 'flex', justifyContent: 'center' }}>
+                <Player autoplay loop src={loaderl} style={{ height: '100px', width: '100px' }} />
+              </div>
+            )} */}
           </div>
         </div>
       </section>
