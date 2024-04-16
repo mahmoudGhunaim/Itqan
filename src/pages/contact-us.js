@@ -1,104 +1,94 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import Layout from "../components/layout";
 import Hero from '../components/Hero';
 import ScrollToTopButton from '../components/ScrollToTopButton';
-import "../components/style/ContactUs.css"
 import Seo from '../components/seo';
-import axios from 'axios';
+import "../components/style/ContactUs.css"
 
 const ContactUs = () => {
+    // State to store the form data
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
-      });
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-          ...prevState,
-          [name]: value
-        }));
-      };
-    
-      const handleSubmit = async (e) => {
+    });
+
+    // Handle change in form inputs
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    // Handle form submission
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if (!formData.name || !formData.email || !formData.message) {
-          alert('Please fill out all fields.');
-          return;
-        }
-      
-        const url = `https://api.contentful.com/spaces/9acb47rc8erz/environments/itqanForm/entries `;
-        const headers = {
-          'Authorization': `Bearer _S2DDj9jugLQ_JfgVHESlqbnG6N9uPT-d2fMMOXbr7Y`,
-          'Content-Type': 'application/vnd.contentful.management.v1+json',
-          'X-Contentful-Content-Type': 'itqanForm'
-        };
-      
-        const data = {
-          fields: {
-            name: { 'en-US': formData.name },
-            email: { 'en-US': formData.email },
-            message: { 'en-US': formData.message }
-          }
-        };
-      
-        try {
-          const response = await axios.post(url, data, { headers });
-          console.log('Form submitted: ', response.data);
-          alert('Form submitted successfully!');
-        } catch (error) {
-          console.error('Submission error: ', error);
-          alert('Failed to submit the form.');
-        }
-      };
-    
-  return (
-    <Layout>
-        <Seo
-        title="تواصل معنا للحصول على دعم وإجابة استفساراتك - إتقان كابيتال        "
-        description="نحن في إتقان كابيتال هنا لمساعدتك وتقديم الدعم. اتصل بنا الآن عبر البريد الإلكتروني أو الهاتف أو ملء نموذج الاتصال. سنقوم بالرد على استفساراتك في أسرع وقت ممكن.        "/>
-        <Hero title="الاتصال بنا" subTitle="“التواصل”"/>
-        <ScrollToTopButton/>
-        <div className='Contact-footer-section-wallpaper'>
-          <section className='Contact-footer-section'>
-       
-               
-        <div className='Contact-footer-container'>
-            <form className='Contact-footer-form' onSubmit={handleSubmit}       method="POST">
-                <label>
-                    الاسم       
-                    <input
-                    type='text'
-                    name='name'
-                    placeholder='حقل لإدخال الاسم'
-                    value={formData.name}
-                    onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    البريد الإلكتروني
-                    <input
-                    type='email'
-                    name='email'
-                    placeholder='حقل لإدخال البريد الإلكتروني'
-                    value={formData.email}
-                    onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    الرسالة
-                    <textarea
-                    name='message'
-                    placeholder='حقل لإدخال موضوع الاستفسار'
-                    value={formData.message}
-                    onChange={handleChange}
-                    />
-                </label>
-                <button type='submit'>إرسال</button>
-        </form>
-            
-            <div className='Contact-footer-content'>
+        // Endpoint should match your Strapi configuration, replace URL accordingly
+        axios.post("http://localhost:1337/006b3775968e8c4a3ed57dc3aad47171e8a9f0d569a4534c729421ea11731d1682ed1da1134c76d2c6f3e7f44f61864eece295af307a2292ee554b9cc9a3516bc36d33a23c4ddf0871a461a3d3059bb6e99e3d7295919624096525323fb12249c82fc8ed456bb3304b4f0e51f0514489ea50f5689ddc348c22863e997d4c7593/contactuses/", {
+            data: formData
+        })
+        .then(response => {
+            alert('Message sent successfully');
+            console.log(response.data);
+            // Clear form data after submission
+            setFormData({
+                name: '',
+                email: '',
+                message: ''
+            });
+        })
+        .catch(error => {
+            alert('Failed to send message');
+            console.error('Error :', error);
+        });
+    };
+
+    return (
+        <Layout>
+            <Seo
+                title="تواصل معنا للحصول على دعم وإجابة استفساراتك - إتقان كابيتال"
+                description="نحن في إتقان كابيتال هنا لمساعدتك وتقديم الدعم. اتصل بنا الآن عبر البريد الإلكتروني أو الهاتف أو ملء نموذج الاتصال. سنقوم بالرد على استفساراتك في أسرع وقت ممكن."
+            />
+            <Hero title="الاتصال بنا" subTitle="“التواصل”"/>
+            <ScrollToTopButton/>
+            <div className='Contact-footer-section-wallpaper'>
+                <section className='Contact-footer-section'>
+                    <div className='Contact-footer-container'>
+                        <form className='Contact-footer-form' onSubmit={handleSubmit} method='OPTIONS'>
+                            <label>
+                                الاسم       
+                                <input
+                                    type='text'
+                                    name='name'
+                                    placeholder='حقل لإدخال الاسم'
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            <label>
+                                البريد الإلكتروني
+                                <input
+                                    type='email'
+                                    name='email'
+                                    placeholder='حقل لإدخال البريد الإلكتروني'
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            <label>
+                                الرسالة
+                                <textarea
+                                    name='message'
+                                    placeholder='حقل لإدخال موضوع الاستفسار'
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            <button type='submit'>إرسال</button>
+                        </form>
+                        <div className='Contact-footer-content'>
                 <h2>اتصل بنا</h2>
                 <p>نحن هنا للإجابة على استفساراتكم وتقديم الدعم. يرجى ملء النموذج وسيقوم أحد ممثلينا بالتواصل معكم في أقرب وقت ممكن.</p>
                 <h3>معلومات الاتصال</h3>
@@ -129,12 +119,11 @@ const ContactUs = () => {
                     <img src='/LinkedIn.png'/>
                 </div>
             </div>
-        </div>
-        
-    </section>
-    </div>
-    </Layout>
-    )
+                    </div>
+                </section>
+            </div>
+        </Layout>
+    );
 }
 
-export default ContactUs
+export default ContactUs;
