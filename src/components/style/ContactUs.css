@@ -136,6 +136,45 @@ form.Contact-footer-form{
     flex-direction: row-reverse;
     gap: 20px;
 }
+.ReactModalPortal .ReactModal__Overlay.ReactModal__Overlay--after-open {
+    background-color: #fff0 !important;
+}
+.ReactModal__Content.ReactModal__Content--after-open {
+    position: absolute;
+    width: 588px;
+    height: 330px;
+    inset: revert-layer !important;
+    top: 20% !important;
+    left: 40% !important;
+    border-radius: 20px !important;
+}
+.Contact-successfuly button,.Contact-error button{
+    background: none;
+    border: none;
+}
+.Contact-successfuly button img ,.Contact-error button img{
+    width: 35px;
+    height: 35px;
+
+}
+.Contact-successfuly-body ,.Contact-error-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.Contact-successfuly-body img{
+    width: 200px;
+}
+.Contact-successfuly-body h4,.Contact-error-body h4{
+    font-family: "Bahij TheSansArabic";
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(63, 26, 88, 1);
+}
 @media screen and (max-width:  1024px){
     .Contact-footer-content{
         width: 100%;

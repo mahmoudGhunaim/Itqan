@@ -78,6 +78,7 @@ const IndividualsLogin = () => {
         'Temporary',
         'Other' // You can add more categories or customize these as needed.
     ]);
+
   return (
 <Layout>
     <Seo
@@ -132,7 +133,7 @@ const IndividualsLogin = () => {
                 <div  className='individuals-single-field'>
                     <label>نوع الهوية</label>
                     <select id="identityType" name="identityType">
-                    <option value="">{/* Placeholder option */}-- يُرجى الاختيار --</option>
+                    <option value="">-- يُرجى الاختيار --</option>
                                     {identityTypes.map((type, index) => (
                                         <option key={index} value={type}>
                                             {type}

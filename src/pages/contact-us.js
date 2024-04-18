@@ -5,16 +5,19 @@ import Hero from '../components/Hero';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Seo from '../components/seo';
 import "../components/style/ContactUs.css"
-
+import Modal from 'react-modal';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import Successfully from "../Json/Successfully.json"
+import Fail from "../Json/fail.json"
 const ContactUs = () => {
-    // State to store the form data
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [formError, setFormError] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
     });
 
-    // Handle change in form inputs
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -22,26 +25,32 @@ const ContactUs = () => {
         });
     };
 
-    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Endpoint should match your Strapi configuration, replace URL accordingly
-        axios.post("http://localhost:1337/006b3775968e8c4a3ed57dc3aad47171e8a9f0d569a4534c729421ea11731d1682ed1da1134c76d2c6f3e7f44f61864eece295af307a2292ee554b9cc9a3516bc36d33a23c4ddf0871a461a3d3059bb6e99e3d7295919624096525323fb12249c82fc8ed456bb3304b4f0e51f0514489ea50f5689ddc348c22863e997d4c7593/contactuses/", {
-            data: formData
+        const payload = { data: formData };
+
+        axios.post("http://192.168.1.19:1337/api/contact-uses", payload, {
+            headers: {
+                "Accept": "*/*",
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 662516a59e6dbdcaf0e28198cbaaa8f40c29f4076ba645e5d521ccbc234370f13da8e9fab43d30a47cbfd96461483c6f97d4b48859958b1399addc63ac80cc139b62b3f3799835893df308b2c131329a97f1ad993ead75036119f2fa767c0d35a1545cb77a6b5edf9fb2639df381d7d630891fad18b0770be9a2db0c2cb3e9a7"
+            }
         })
         .then(response => {
-            alert('Message sent successfully');
-            console.log(response.data);
-            // Clear form data after submission
-            setFormData({
-                name: '',
-                email: '',
-                message: ''
-            });
+            if (response.status === 200) {
+                setFormSubmitted(true);
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: ''
+                });
+            } else {
+                setFormError(true);
+            }
         })
         .catch(error => {
-            alert('Failed to send message');
-            console.error('Error :', error);
+            console.error('Error:', error);
+            setFormError(true);
         });
     };
 
@@ -56,6 +65,7 @@ const ContactUs = () => {
             <div className='Contact-footer-section-wallpaper'>
                 <section className='Contact-footer-section'>
                     <div className='Contact-footer-container'>
+                        
                         <form className='Contact-footer-form' onSubmit={handleSubmit} method='OPTIONS'>
                             <label>
                                 الاسم       
@@ -87,7 +97,43 @@ const ContactUs = () => {
                                 />
                             </label>
                             <button type='submit'>إرسال</button>
+                             <Modal isOpen={formSubmitted || formError} onRequestClose={() => {setFormSubmitted(false); setFormError(false);}}>
+                                {formSubmitted ? (
+                                    <div className='Contact-successfuly'>
+                                     <button onClick={() => {setFormSubmitted(false);}}><img src='/close.svg'/></button>
+                                     <div className='Contact-successfuly-body'> 
+                                     <Player
+                                        autoplay
+                                        loop
+                                        src={Successfully} 
+                                        style={{ height: '200px', width: '200px' }} 
+                                    >
+                                        <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+                                    </Player>  
+                                        <h4>لقد تم أرسال رسالتك بنجاح</h4>
+                                        </div>
+
+                                    </div>
+                                ) : (
+                                    <div className='Contact-error'>
+                                     <button onClick={() => {setFormError(false);}}><img src='/close.svg'/></button>
+                                     <div className='Contact-error-body'>
+                                     <Player
+                                        autoplay
+                                        loop
+                                        src={Fail} 
+                                        style={{ height: '200px', width: '200px' }} 
+                                    >
+                                        <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+                                    </Player>  
+                                        <h4>لم يتم أرسال رسالتك , الرجاء المحاوله لاحقا</h4>
+                                        </div>
+                                    </div>
+                                )}
+                            </Modal>
+                        
                         </form>
+                       
                         <div className='Contact-footer-content'>
                 <h2>اتصل بنا</h2>
                 <p>نحن هنا للإجابة على استفساراتكم وتقديم الدعم. يرجى ملء النموذج وسيقوم أحد ممثلينا بالتواصل معكم في أقرب وقت ممكن.</p>
