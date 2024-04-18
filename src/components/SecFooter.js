@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "./style/SecFooter.css";
-
+import Modal from 'react-modal'; // Import the Modal component
+import { Player, Controls } from '@lottiefiles/react-lottie-player'; // Import the Lottie Player component
+import Successfully from '../Json/Successfully.json'; // Import the success animation JSON file
+import Fail from '../Json/fail.json'; // Import the fail animation JSON file
+import "./style/ContactUs.css"
 const SecFooter = () => {
+    const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,11 +26,8 @@ const SecFooter = () => {
   // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    const payload = {
-      data: formData
-    };
-
-    // Replace URL with your Strapi API endpoint
+    const payload = { data: formData };
+  
     axios.post("http://192.168.1.19:1337/api/contact-uses", payload, {
       headers: {
         "Content-Type": "application/json",
@@ -32,19 +35,18 @@ const SecFooter = () => {
       }
     })
     .then(response => {
-      alert('Message sent successfully');
-      // Optionally reset form data after submission
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
+      if (response.status === 200) {
+        setFormSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setFormError(true);
+      }
     })
     .catch(error => {
-      alert('Failed to send message: ' + (error.response ? error.response.data.message : error.message));
+      console.error('Error:', error);
+      setFormError(true);
     });
   };
-
   return (
     <section className='sec-footer-section'>
       <div className='sec-footer-container'>
@@ -79,6 +81,39 @@ const SecFooter = () => {
             />
           </label>
           <button type='submit'>إرسال</button>
+          <Modal isOpen={formSubmitted || formError} onRequestClose={() => {setFormSubmitted(false); setFormError(false);}}>
+  {formSubmitted ? (
+    <div className='Contact-successfuly'>
+      <button onClick={() => {setFormSubmitted(false);}}><img src='/close.svg' alt="Close" /></button>
+      <div className='Contact-successfuly-body'> 
+        <Player
+          autoplay
+          loop
+          src={Successfully} 
+          style={{ height: '200px', width: '200px' }} 
+        >
+          <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+        </Player>  
+        <h4>لقد تم أرسال رسالتك بنجاح</h4>
+      </div>
+    </div>
+  ) : (
+    <div className='Contact-error'>
+      <button onClick={() => {setFormError(false);}}><img src='/close.svg' alt="Close" /></button>
+      <div className='Contact-error-body'>
+        <Player
+          autoplay
+          loop
+          src={Fail} 
+          style={{ height: '200px', width: '200px' }} 
+        >
+          <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+        </Player>  
+        <h4>لم يتم أرسال رسالتك , الرجاء المحاوله لاحقا</h4>
+      </div>
+    </div>
+  )}
+</Modal>
           <p>نحن ملتزمون بحماية واحترام خصوصيتكم. سيتم استخدام المعلومات المقدمة في هذا النموذج للتواصل معكم والإجابة على استفساراتكم فقط.</p>
         </form>
         <div className='sec-footer-content'>
