@@ -94,7 +94,7 @@ const SecFooter = () => {
         >
           <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
         </Player>  
-        <h4>لقد تم أرسال رسالتك بنجاح</h4>
+        <h4>لقد تم أرسال طلبك بنجاح</h4>
       </div>
     </div>
   ) : (
@@ -109,7 +109,7 @@ const SecFooter = () => {
         >
           <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
         </Player>  
-        <h4>لم يتم أرسال رسالتك , الرجاء المحاوله لاحقا</h4>
+        <h4>لم يتم أرسال طلبك , الرجاء المحاوله لاحقا</h4>
       </div>
     </div>
   )}

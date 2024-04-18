@@ -144,8 +144,8 @@ form.Contact-footer-form{
     width: 588px;
     height: 330px;
     inset: revert-layer !important;
-    top: 20% !important;
-    left: 40% !important;
+    top: 35% !important;
+    left: 35% !important;
     border-radius: 20px !important;
 }
 .Contact-successfuly button,.Contact-error button{
