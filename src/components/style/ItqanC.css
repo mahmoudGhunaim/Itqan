@@ -62,6 +62,7 @@
     display: flex;
     align-items: center;
     gap: 7px;
+    flex-direction: row-reverse;
 }
 .itqan-c-line{
     border-top: 3px solid #3F1A58;

@@ -189,4 +189,9 @@ form.Contact-footer-form{
     .Contact-info{
         flex-direction: column;
     }
+    .ReactModal__Content.ReactModal__Content--after-open{
+        width: 95%;
+        z-index: 22222;
+        left: 0 !important;
+    }
 }
