@@ -22,6 +22,8 @@ const IndividualsLogin = () => {
         fullName: '',
         nationality: '',
         gender: '',
+        title:'',
+        investorInformation:'', 
         identityType: '',
         identityNumber: '',
         issueDate: '',
@@ -39,6 +41,8 @@ const IndividualsLogin = () => {
         mobileNumber: '',
         homePhone: '',
         email: '',
+        Building:'',
+        Currency:'',
         telephoneNumber: '',
         correspondenceLanguage: '',
         messageTime: '',
@@ -96,6 +100,8 @@ const IndividualsLogin = () => {
                     fullName: '',
                     nationality: '',
                     gender: '',
+                    title:'',
+                    investorInformation:'',
                     identityType: '',
                     identityNumber: '',
                     issueDate: '',
@@ -113,6 +119,8 @@ const IndividualsLogin = () => {
                     mobileNumber: '',
                     homePhone: '',
                     email: '',
+                    Building: '' ,
+                    Currency:'',
                     telephoneNumber: '',
                     correspondenceLanguage: '',
                     messageTime: '',
@@ -177,33 +185,79 @@ const IndividualsLogin = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <div className='individuals-sec-field'>
+                        <div className='individuals-single-field'>
+                                <label>معلومات المستثمر (أفراد)</label>
+                                <select name="investorInformation" value={formData.investorInformation} onChange={handleChange}>
+                                    <option value="">-- يُرجى الاختيار --</option>
+                                    <option value="New Account ">New Account / حساب جديد </option>
+                                    <option value="Additional account ">Additional account / حساب إضافي</option>
+                                    <option value="Update Information ">Update Information / تحديث بيانات</option>
+                                </select>
+                            </div>
                             <div className='individuals-single-field'>
                                 <label>الاسم الكامل للعميل</label>
                                 <input name="fullName" value={formData.fullName} onChange={handleChange} />
                             </div>
-                            <div className='individuals-single-field'>
+                            {/* <div className='individuals-single-field'>
                                 <label>الجنسية</label>
                                 <input name="nationality" value={formData.nationality} onChange={handleChange} />
-                            </div>
+                            </div> */}
                             <div className='individuals-single-field'>
                                 <label>الجنس</label>
                                 <select name="gender" value={formData.gender} onChange={handleChange}>
                                     <option value="">-- يُرجى الاختيار --</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
+                                    <option value="Male">Male/ذكر </option>
+                                    <option value="Female">Female/أنثى</option>
                                 </select>
                             </div>
                             </div>
-
+                            <div  className='individuals-sec-field'>
+                            <div className='individuals-single-field'>
+                                <label>لقب المستثمر</label>
+                                <select name="title" value={formData.title} onChange={handleChange}>
+                                    <option value="">-- يُرجى الاختيار --</option>
+                                    <option value="Mr.">Mr./السيد</option>
+                                    <option value="Mrs.">Mrs./السيدة</option>
+                                    <option value="Miss.">Miss/الآنسة</option>
+                                    <option value="Dr.">Dr./الدكتور </option>
+                                    <option value="Eng.">Eng./المهندس</option>
+                                    <option value="other">Other/ أخرى</option>
+                                </select>
+                            </div>
+                            <div className='individuals-single-field'>
+                                <label>تاريخ الميلاد</label>
+                                <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} />
+                            </div>
+                            <div className='individuals-single-field'>
+                                <label>الحالة الاجتماعية</label>
+                                <select name="maritalStatus" value={formData.maritalStatus} onChange={handleChange}>
+                                    <option value="">-- يُرجى الاختيار --</option>
+                                    <option value="Single">Single/أعزب</option>
+                                    <option value="Married">Married/متزوج</option>
+                                </select>
+                            </div>
+                            </div>
+                            <div  className='individuals-sec-field'>
+                           
+                           <div className='individuals-single-field'>
+                               <label>عدد أفراد الأسرة</label>
+                               <input type="number" name="numberOfDependents" value={formData.numberOfDependents} onChange={handleChange} />
+                           </div>
+                           <div className='individuals-single-field'>
+                                <label>الجنسية</label>
+                                <input name="fullName" value={formData.nationality} onChange={handleChange} />
+                            </div>
+                           </div>
                             <div  className='individuals-sec-field'>
                             <div className='individuals-single-field'>
                                 <label>نوع الهوية</label>
                                 <select name="identityType" value={formData.identityType} onChange={handleChange}>
                                     <option value="">-- يُرجى الاختيار --</option>
-                                    <option value="National ID">National ID</option>
-                                    <option value="Passport">Passport</option>
-                                    <option value="Driver’s License">Driver’s License</option>
-                                    <option value="Residence Permit">Residence Permit</option>
+                                    <option value="National ID">National ID/ أحوال مدنية</option>
+                                    <option value="Passport">Passport/جواز سفر </option>
+                                    <option value="Residence ID">ResidenceID / هوية مقيم</option>
+                                    <option value="Family Registration">Family Registration / بطاقة عائلية</option>
+                                    <option value="Other">Other / أخرى </option>
                                 </select>
                             </div>
                             <div className='individuals-single-field'>
@@ -224,28 +278,10 @@ const IndividualsLogin = () => {
                                 <label>مكان الإصدار</label>
                                 <input name="placeOfIssue" value={formData.placeOfIssue} onChange={handleChange} />
                             </div>
-                            <div className='individuals-single-field'>
-                                <label>تاريخ الميلاد</label>
-                                <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} />
+                            
                             </div>
-                            </div>
-                            <div  className='individuals-sec-field'>
-                            <div className='individuals-single-field'>
-                                <label>الحالة الاجتماعية</label>
-                                <select name="maritalStatus" value={formData.maritalStatus} onChange={handleChange}>
-                                    <option value="">-- يُرجى الاختيار --</option>
-                                    <option value="Single">Single</option>
-                                    <option value="Married">Married</option>
-                                    <option value="Divorced">Divorced</option>
-                                    <option value="Widowed">Widowed</option>
-                                </select>
-                            </div>
-                            <div className='individuals-single-field'>
-                                <label>عدد المعالين</label>
-                                <input type="number" name="numberOfDependents" value={formData.numberOfDependents} onChange={handleChange} />
-                            </div>
-                            </div>
-                            <div  className='individuals-sec-field'>
+                         
+                            {/* <div  className='individuals-sec-field'>
                             <div className='individuals-single-field'>
                                 <label>نوع السكن</label>
                                 <select name="housingType" value={formData.housingType} onChange={handleChange}>
@@ -262,7 +298,7 @@ const IndividualsLogin = () => {
                                 <label>عنوان السكن</label>
                                 <input name="residenceAddress" value={formData.residenceAddress} onChange={handleChange} />
                             </div>
-                            </div>
+                            </div> */}
                      
                     </AccordionDetails>
                 </Accordion>
@@ -285,35 +321,8 @@ const IndividualsLogin = () => {
                 <label>صندوق البريد</label>
                 <input name="poBox" value={formData.poBox} onChange={handleChange} />
             </div>
+   
             <div className='individuals-single-field'>
-                <label>الدولة</label>
-                <input name="country" value={formData.country} onChange={handleChange} />
-            </div>
-            </div>
-            <div className='individuals-sec-field'>
-                <div className='individuals-single-field'>
-                    <label>المدينة</label>
-                    <input name="city" value={formData.city} onChange={handleChange} />
-                </div>
-                <div className='individuals-single-field'>
-                    <label>رقم الجوال</label>
-                    <input name="mobileNumber" value={formData.mobileNumber} onChange={handleChange} />
-                </div>
-                <div className='individuals-single-field'>
-                    <label htmlFor="homePhone">هاتف المنزل</label>
-                    <input name="homePhone" value={formData.homePhone} onChange={handleChange} />
-                </div>
-            </div>
-            <div className='individuals-sec-field'>
-                <div className='individuals-single-field'>
-                    <label>البريد الالكتروني</label>
-                    <input name="email" value={formData.email} onChange={handleChange} />
-                </div>
-                <div className='individuals-single-field'>
-                    <label>رقم الهاتف</label>
-                    <input name="telephoneNumber" value={formData.telephoneNumber} onChange={handleChange} />
-                </div>
-                <div className='individuals-single-field'>
                     <label htmlFor="correspondenceLanguage">لغة المراسلات</label>
                     <select id="correspondenceLanguage" name="correspondenceLanguage" value={formData.correspondenceLanguage} onChange={handleChange}>
                         <option value="">-- يُرجى الاختيار --</option>
@@ -321,6 +330,36 @@ const IndividualsLogin = () => {
                         <option value="AR">العربية</option>
                     </select>
                 </div>
+            </div>
+            <div className='individuals-sec-field'>
+            <div className='individuals-single-field'>
+                    <label>البريد الالكتروني</label>
+                    <input name="email" value={formData.email} onChange={handleChange} />
+                </div>
+                
+                <div className='individuals-single-field'>
+                    <label>رقم الجوال</label>
+                    <input name="mobileNumber" value={formData.mobileNumber} onChange={handleChange} />
+                </div>
+                <div className='individuals-single-field'>
+                    <label>رقم الهاتف</label>
+                    <input name="telephoneNumber" value={formData.telephoneNumber} onChange={handleChange} />
+                </div>
+            </div>
+            <div className='individuals-sec-field'>
+            <div className='individuals-single-field'>
+                <label>الدولة</label>
+                <input name="country" value={formData.country} onChange={handleChange} />
+            </div>
+                <div className='individuals-single-field'>
+                    <label>رقم المبني</label>
+                    <input name="Building " value={formData.Building } onChange={handleChange} />
+                </div>
+                <div className='individuals-single-field'>
+                    <label>المدينة/الحي</label>
+                    <input name="city" value={formData.city} onChange={handleChange} />
+                </div>
+             
             </div>
       
     </AccordionDetails>
@@ -341,9 +380,10 @@ const IndividualsLogin = () => {
                 <input name="bankName" value={formData.bankName} onChange={handleChange} />
             </div>
             <div className='individuals-single-field'>
-                <label>المدينة</label>
-                <input name="bankCity" value={formData.bankCity} onChange={handleChange} />
+                <label>رقم الحساب المصرفي الدولي </label>
+                <input name="ibanNumber" value={formData.ibanNumber} onChange={handleChange} />
             </div>
+            
         </div>
         <div className='individuals-sec-field'>
             <div className='individuals-single-field'>
@@ -351,9 +391,14 @@ const IndividualsLogin = () => {
                 <input name="bankBranch" value={formData.bankBranch} onChange={handleChange} />
             </div>
             <div className='individuals-single-field'>
-                <label>رقم الايبان</label>
-                <input name="ibanNumber" value={formData.ibanNumber} onChange={handleChange} />
+                <label>المدينة</label>
+                <input name="bankCity" value={formData.bankCity} onChange={handleChange} />
             </div>
+            <div className='individuals-single-field'>
+                <label>عملة الحساب </label>
+                <input name="Currency " value={formData.Currency } onChange={handleChange} />
+            </div>
+       
         </div>
     </AccordionDetails>
 </Accordion>

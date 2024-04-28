@@ -15,30 +15,25 @@ const AdvisoryResearch = () => {
       description="تعرّف على خدمات البحوث والمشورة التي تقدمها إتقان كابيتال، بما في ذلك المشورة الاستثمارية والقدرات البحثية التي تدعم أنشطتها الرئيسية في مجالات الاستثمار المباشر والخدمات المصرفية الاستثمارية وخدمات الحفظ.      "/>
         <ScrollToTopButton/>
         <Hero
-        title="البحوث والمشورة"
-        subTitle="“الخدمات”"
+        title="إدارة الثروات"
         />
             <div className='Contact-footer-section-wallpaper'>
         <section className='AdvisoryResearch-sec'>
         
          <div className='AdvisoryResearch-card-title'>
-                    <h1>خدمات إدارة الثروات</h1>
-                    <p>تساعد القدرات الاستشارية والبحثية المركزية التي تتمتع بها “إتقان كابيتال” على تعزيز ودعم أنشطتنا الأربعة الرئيسية (إدارة الأصول والاستثمار المباشر والخدمات المصرفية الاستثمارية وخدمات الحفظ). ويعمل فريقنا عن كثب مع عملائنا لتحديد أفضل الاستراتيجيات التي تلبي احتياجات كل منهم وتحقق أهدافه الاستثمارية. ويأتي دور وحدة بحوث “إتقان كابيتال” لتقدم لهم باقتدار جميع أشكال الدعم، مدعومة في ذلك بأنظمة قوية لجمع البيانات وإجراء التحليلات.</p>
+               
+                  
                  </div>
-                 {AdvisoryResearchData.map((item, index) => (
-            <InfoPanel
-              key={index}
-              title={item.title}
-              paragraph={item.paragraph} // Adjusted from description to paragraph
-              button={item.Button}
-              image={item.imgSrc}
-              revers={item.revers}
-              // Since "none" prop doesn't seem to be directly used in rendering (based on your provided props),
-              // I'm assuming it's some kind of flag or style modifier. Ensure to handle it accordingly in your InfoPanel component.
-              none={item.none}
-              links={item.Links}
-            />
-        ))}
+                 <div className='AdvisoryResearch-container'>
+                    <div className='AdvisoryResarch-img'>
+                      <img src='/teamwork.jpg'/>
+                    </div>
+                    <div className='AdvisoryResarch-info'>
+                        <h1>خدمات إدارة الثروات</h1>
+                        <p>يعمل فريق عمل إدارة الثروات على تلبية الاحتياجات الاستثمارية للعملاء الأفراد والشركات بعرض باقة متنوعة من المنتجات والخدمات المبتكرة والمميزة تلائم احتياجات عملائنا وتحقق بإذن الله طموحاتهم الاستثمارية. </p>
+                        <p>يمتلك فريق إدارة الثروات المؤهلات العلمية والخبرات الطويلة في خدمة مصالح عملائنا والمستثمرين والمجتمع بشكل أكبر من خلال عرض أفضل المنتجات والخدمات الاستثمارية التي تحقق عائدات مجزية للعملاء مع مراعاة المخاطر المحتملة وبالتالي بناء علاقات متينة وطويلة المدى مع عملائنا.</p>
+                    </div>
+                 </div>
       </section>
       
         </div>
