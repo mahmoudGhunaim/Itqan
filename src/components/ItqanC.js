@@ -4,9 +4,9 @@ const ItqanC = () => {
   return (
     <section className='itqan-c-section'>
         <div className='itqan-c-container'>
-            <div className='itqan-c-image'>
+            {/* <div className='itqan-c-image'>
                 <img src='/a2 1.png'/>
-            </div>
+            </div> */}
             <div className='itqan-c-content'>
                 <h2>إتقان كابيتال</h2>
                 <div className='itqan-c-line'></div>

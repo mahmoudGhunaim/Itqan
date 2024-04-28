@@ -21,10 +21,10 @@ const ConservationServices = () => {
 
             <div className='Conservation-Services-card-container'>
                  <div className='Conservation-Services-card-title'>
-                    <h1>خدمات الاستثمار</h1>
+                    <h1>خدمات الحفظ</h1>
                     <p>نحن ملتزمون للغاية بالحفاظ على ريادتنا من خلال تقديم خدمات استثنائية ومخصصة في مجالات العقارات والاستثمار المباشر الخاص وصناديق الاستثمار. نتشاور مع كل عميل لتحديد الخدمات المطلوبة، ومن خلال العمل معاً، نصمم الحلول اللازمة لتلبية أهداف شركاتهم. وبفضل القدرات التجارية والتشغيلية المبسطة التي تتمتع بها “إتقان كابيتال”، سنقدم خدمات سلسة لعملائنا وهيكل رسوم تنافسي.</p>
                  </div>
-                 <div className='Conservation-Services-cards'>
+                 {/* <div className='Conservation-Services-cards'>
                  {ConservationServicesData.map((item, index) => (
                     <PrivateBox
                         key={index}
@@ -37,7 +37,7 @@ const ConservationServices = () => {
                         link={item.link}
                     />
                     ))}
-                 </div>
+                 </div> */}
             </div>
         </section>
     </Layout>

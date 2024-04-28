@@ -1,7 +1,7 @@
 import React from 'react'
 import "./style/PrivateBoxCard.css"
 import { Link } from "gatsby"
-const PrivateBoxCard = ({title,imgSrc,subtitle,Button,size,backgroundColor,spaceP,link}) => {
+const PrivateBoxCard = ({title,imgSrc,subtitle,Button,size,backgroundColor,spaceP,link,hidebutton}) => {
   return (
     <div className='PrivateBoxCard-sec'>
     <div className={`PrivateBoxCard-container ${backgroundColor}`}>
@@ -12,7 +12,7 @@ const PrivateBoxCard = ({title,imgSrc,subtitle,Button,size,backgroundColor,space
             <h3>{title}</h3>
             <p>{subtitle}</p>
             <p style={{paddingTop:spaceP}}>{size}</p>
-            <Link to={link}><button>{Button}</button></Link>
+            <Link to={link} style={{display: hidebutton}}><button>{Button}</button></Link>
           </div>
         </div>
     </div>

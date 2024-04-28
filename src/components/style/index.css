@@ -439,7 +439,9 @@ background-position: right top;
     background: #FFFFFF;
     margin-top: -100px;
 }
-
+.space-homepage{
+    padding-top: 150px;
+}
 @media screen and (max-width:  1024px) {
 
     .exchange-rate-card {
@@ -492,6 +494,9 @@ background-position: right top;
     }
     main{
         margin-top: 50px;
+    }
+    .space-homepage{
+        padding-top: 50px;
     }
 }
 @media screen and (max-width:  767px){

@@ -154,7 +154,7 @@ const IndividualsLogin = () => {
 <Layout>
 <Seo title="فتح حساب للأفراد - خدمة العملاء - إتقان كابيتال" description="اتفق على شروط وأحكام فتح حساب استثماري للأفراد مع إتقان كابيتال. ملء النموذج بالمعلومات المطلوبة لبدء عملية الفتح. تقديم الطلب الآن واحصل على حسابك الاستثماري الخاص."/>
             <ScrollToTopButton/>
-            <Hero title="فتح حساب للأفراد" subTitle="“خدمة العملاء”"/>
+            <Hero title="فتح حساب للأفراد" />
             <section className='individuals-login-sec'>
             <div className='individuals-login-container'>
             <div className='individuals-login-title'>

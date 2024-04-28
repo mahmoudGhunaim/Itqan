@@ -43,7 +43,7 @@ const Layout = ({ children, overPadding,  }) => {
             <Link to="/asset-management" >إدارة الأصول </Link>
             <Link to="/Investment-banking" > الخدمات المصرفية الاستثمارية</Link>
             <Link to="/conservation-services" >خدمات الحفظ</Link>
-            <Link to="/advisory-research" >البحوث والمشورة</Link>
+            <Link to="/advisory-research" >إدارة الثروات</Link>
           </div>
           <div className="footer-links">
             <h6>روابط سريعة</h6>

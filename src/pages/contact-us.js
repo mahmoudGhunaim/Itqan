@@ -60,7 +60,7 @@ const ContactUs = () => {
                 title="تواصل معنا للحصول على دعم وإجابة استفساراتك - إتقان كابيتال"
                 description="نحن في إتقان كابيتال هنا لمساعدتك وتقديم الدعم. اتصل بنا الآن عبر البريد الإلكتروني أو الهاتف أو ملء نموذج الاتصال. سنقوم بالرد على استفساراتك في أسرع وقت ممكن."
             />
-            <Hero title="الاتصال بنا" subTitle="“التواصل”"/>
+            <Hero title="الاتصال بنا" />
             <ScrollToTopButton/>
             <div className='Contact-footer-section-wallpaper'>
                 <section className='Contact-footer-section'>

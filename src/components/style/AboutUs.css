@@ -5,11 +5,13 @@
     height: 470px;
 }
 .aboutus-hero-container{
-    width: 90%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     display:flex ;
-    background: url("/Frame 120.png");
+    background: url("/Frame 21212.png");
+    background-position: right top;
+        background-repeat: no-repeat;
 }
 .aboutus-hero-title{
     text-align: center;

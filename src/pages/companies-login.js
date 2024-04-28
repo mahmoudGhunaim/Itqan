@@ -155,8 +155,7 @@ const CompaniesLogin = () => {
     title="فتح حساب للشركات - خدمة العملاء - إتقان كابيتال    "
     description="اتفق على شروط وأحكام فتح حساب استثماري للشركات مع إتقان كابيتال. ملء النموذج بالمعلومات المطلوبة لبدء عملية الفتح. تقديم الطلب الآن واحصل على حساب الاستثمار لشركتك.    "/>
     <Hero
-    title="فتح حساب للشركات"
-    subTitle="“خدمة العملاء”" />
+    title="فتح حساب للشركات"/>
     <section className='individuals-login-sec'>
         <div className='individuals-login-container'>
             <div className='individuals-login-title'>

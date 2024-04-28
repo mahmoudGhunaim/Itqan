@@ -45,8 +45,7 @@ const ClientAwareness = () => {
         <section className='Reports-data-sec'>
             <div className='Reports-data-container'>
                 <div className='Reports-data-title'>
-                    <h1>التقارير والبيانات</h1>
-                    <p>اطّلع على آخر التحليلات والرؤى للأسواق المالية</p>
+                   
                 </div>
                 <div className='Reports-data-cards security-cards'>
                   <Link to='https://itqancapital.com/wp-content/themes/etq/co/CustomerComplaint.pdf'>

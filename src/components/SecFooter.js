@@ -123,7 +123,12 @@ const SecFooter = () => {
           <h6>البريد الإلكتروني</h6>
           <p>info@itqancapital.com</p>
           <h6>العنوان</h6>
-          <p>المملكة العربية السعودية / الرياض......</p>
+          <p>المملكة العربية السعودية / جدة/
+Al Zahraa District – Ahmed Al Attas Street
+
+Al Zahraa Commercial Center, Unit 2563, Jeddah 23425-2753
+Kingdom of Saudi Arabia
+</p>
           <h6>التواصل الاجتماعي</h6>
           <div className='sec-footer-content-social'>
             <img src='/X.png'/>

@@ -52,7 +52,7 @@ const Index  = () => {
   }, []);
 
   const backgrounds = [
-    "Property1Default.jpg",
+    "JeddahCORNICHE.jpg",
     "Rectangle%203-minn.png", 
     "Rectangle%201-min.png",
   ];
@@ -116,7 +116,7 @@ const Index  = () => {
             <Link to="/conservation-services"><button><img src="/Examination.png"/>خدمات الحفظ</button></Link>
             </div>
             <div className="products-single">
-            <Link to="/advisory-research"> <button><img src="/Reporting.png"/>الأبحاث المنشورة</button></Link>
+            <Link to="/advisory-research"> <button><img src="/Reporting.png"/>إدارة الثروات</button></Link>
             </div>
             <div className="products-single">
             <Link to='/Individuals-login'> <button><img src="/New Account.png"/>فتح حساب جديد</button></Link>
@@ -129,12 +129,12 @@ const Index  = () => {
     <Distinction/>
     <section class="exchange-rates-section">
       <div class="exchange-rates-container">
-        <h2>إحصائيات الصرافة</h2>
+        <h2>أداء الصناديق</h2>
         <div className='exchange-rate-card' >
                   <table>
         
           <tr>  
-            <th>متوسط الذكاء السنوي</th>
+            <th>متوسط الأداء السنوي</th>
             <th>أيام التقييم</th>
             <th>تاريخ التقييم</th>
             <th>سعر الوحدة الحالي</th>
@@ -160,7 +160,7 @@ const Index  = () => {
         </div>
       </div>
     </section>
-    <section className='Reports-data-sec'>
+    {/* <section className='Reports-data-sec'>
       <div className='Reports-data-container'>
         <div className='Reports-data-title'>
           <h1>التقارير والبيانات</h1>
@@ -182,7 +182,8 @@ const Index  = () => {
         </div>
        
       </div>
-    </section>
+    </section> */}
+    <div className='space-homepage'></div>
     <SecFooter/>
     <div className='sec-footer-background'></div>
   </Layout>

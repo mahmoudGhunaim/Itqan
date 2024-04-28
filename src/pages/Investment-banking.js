@@ -18,10 +18,10 @@ const InvestmentBanking = (props) => {
     <ScrollToTopButton/>
     <Hero 
     title="الخدمات المصرفية الاستثمارية    "
-    subTitle="“الخدمات”"/>
+  />
     <section  className='investment-banking-sec'>
         <div className='investment-banking-title'>
-            <h2>خدمات إتقان كابيتال</h2>
+
         </div>
         <div className='investment-banking-container-card'>
         <PrivateBox
