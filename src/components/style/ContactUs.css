@@ -175,6 +175,20 @@ form.Contact-footer-form{
     text-align: center;
     color: rgba(63, 26, 88, 1);
 }
+.Contact-footer-content h6 img{
+    width: 24px;
+    height: 24px;
+
+}
+.Contact-footer-content a{
+    text-decoration: none;
+}
+.Contact-footer-content h6{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
 @media screen and (max-width:  1024px){
     .Contact-footer-content{
         width: 100%;

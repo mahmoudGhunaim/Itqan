@@ -25,45 +25,34 @@ const SliderButtons = () => {
   )
 }
 const AssetManagement = () => {
-  const [content, setContent] = useState(<section className='AssetManagement-title'>
-  <h2 className='boxes-title'>صناديق الأسهم والمرابحات العامة</h2>
-  <InfoPanel
-  title="صندوق المرابحات والصكوك     "
-  paragraph="يهدف صندوق إتقان للمرابحات والصكوك إلى تحقيق عائدات مجزية للمستثمرين على المدى القصير والمتوسط متوافقة مع الضوابط الشرعية للاستثمار، والعمل على المحافظة على رأس مال المستثمر وتوفير إمكانية الاسترداد حسب الحاجة بأمثل طريقة لإدارة المخاطر. بهدف تحقيق أهدافه الاستثمارية، سيستثمر الصندوق بشكل أساسي في السوق السعودية في محفظة استثمارية متنوعة مكونة من أدوات استثمارية عالية الجودة وقصيرة الأجل ومتوافقة مع الضوابط الشرعية للاستثمار بما يشمل:"
-  point1="صفقات السلع القائمة على المرابحة."
-  point2="الصكوك باختلاف أنواعها، بشكل مباشر وغير مباشر، بحد أقصى 30% من صافي قيمة أصول الصندوق."
-  point3="وحدات صناديق استثمارية تستثمر في المرابحات و/ أو الصكوك بشكل رئيسي."
-  point4="وحدات صناديق الاستثمار التي تستثمر في أدوات الاستثمار المختلفة بما في ذلك المرابحة والمضاربة والاستصناع والسلم."
-  button="استثمر بذكاء مع صندوق إتقان"
-  image="/Frame 136.png"
-  links="/Individuals-login"
-  
-  />
-  <InfoPanel
-  title="صندوق الأسهم السعودية
-  "
-  paragraph="يهدف صندوق إتقان كابيتال للأسهم السعودية، وهو صندوق استثماري مفتوح، لتحقيق نمو في رأس المال في المدى المتوسط والطويل من خلال الاستثمار في أسهم الشركات المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وفي أسهم الإصدارات الأولية وحقوق الأولوية المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وصناديق المؤشرات المتداولة (ETFs) والصناديق العقارية المتداولة وصناديق الاستثمار في الأسهم السعودية و صناديق أسواق النقد وصناديق الدخل الثابت المرخصة من هيئة السوق المالية وأدوات الدخل الثابت والنقد وأشباه النقود المتوافقة مع ضوابط هيئة الرقابة الشرعية ذات تصنيف ائتماني بحد أدنى- BBB أو ما يعادلها في تصنيفات وكالات التصنيف الائتماني."
+  const [activeButton, setActiveButton] = useState("stock");
 
-  button="استثمر بذكاء مع صندوق إتقان"
-  image="/Frame 138.png"
-  revers="row-reverse"
-  none="none"
-  links="/Individuals-login"
-  />
-   
-   <section className='assetManagement-accordion'>
-            <div className='assetManagement-accordion-container'>
-            {accordionData.map((item, index) => (
-            <Accordion 
-            key={index}
-            title={item.title}
-            Details={item.Details}
-            />
-        ))}
-        </div>
-
-        </section>
-  </section>);
+  const [content, setContent] = useState(
+    <section className='AssetManagement-title'>
+      <h2 className='boxes-title'>صناديق الأسهم والمرابحات العامة</h2>
+      <InfoPanel
+        title="صندوق المرابحات والصكوك     "
+        paragraph="يهدف صندوق إتقان للمرابحات والصكوك إلى تحقيق عائدات مجزية للمستثمرين على المدى القصير والمتوسط متوافقة مع الضوابط الشرعية للاستثمار، والعمل على المحافظة على رأس مال المستثمر وتوفير إمكانية الاسترداد حسب الحاجة بأمثل طريقة لإدارة المخاطر. بهدف تحقيق أهدافه الاستثمارية، سيستثمر الصندوق بشكل أساسي في السوق السعودية في محفظة استثمارية متنوعة مكونة من أدوات استثمارية عالية الجودة وقصيرة الأجل ومتوافقة مع الضوابط الشرعية للاستثمار بما يشمل:"
+        point1="صفقات السلع القائمة على المرابحة."
+        point2="الصكوك باختلاف أنواعها، بشكل مباشر وغير مباشر، بحد أقصى 30% من صافي قيمة أصول الصندوق."
+        point3="وحدات صناديق استثمارية تستثمر في المرابحات و/ أو الصكوك بشكل رئيسي."
+        point4="وحدات صناديق الاستثمار التي تستثمر في أدوات الاستثمار المختلفة بما في ذلك المرابحة والمضاربة والاستصناع والسلم."
+        button="استثمر بذكاء مع صندوق إتقان"
+        image="/Frame 136.png"
+        links="/Individuals-login"
+      />
+      <InfoPanel
+        title="صندوق الأسهم السعودية"
+        paragraph="يهدف صندوق إتقان كابيتال للأسهم السعودية، وهو صندوق استثماري مفتوح، لتحقيق نمو في رأس المال في المدى المتوسط والطويل من خلال الاستثمار في أسهم الشركات المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وفي أسهم الإصدارات الأولية وحقوق الأولوية المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وصناديق المؤشرات المتداولة (ETFs) والصناديق العقارية المتداولة وصناديق الاستثمار في الأسهم السعودية و صناديق أسواق النقد وصناديق الدخل الثابت المرخصة من هيئة السوق المالية وأدوات الدخل الثابت والنقد وأشباه النقود المتوافقة مع ضوابط هيئة الرقابة الشرعية ذات تصنيف ائتماني بحد أدنى- BBB أو ما يعادلها في تصنيفات وكالات التصنيف الائتماني."
+        button="استثمر بذكاء مع صندوق إتقان"
+        image="/Frame 138.png"
+        revers="row-reverse"
+        none="none"
+        links="/Individuals-login"
+      />
+    </section>
+  );
+;
 
   const handlePortfolioManagementClick = () => {
     setContent(<section className='management-portfolios-sec'> < h2 className='boxes-title'>إدارة المحافظ</h2>
@@ -79,6 +68,7 @@ const AssetManagement = () => {
     none="none"
     links="/Individuals-login"
     /></section>);
+    setActiveButton("portfolio");
   };
 
   const handlePrivateFundsClick = () => {
@@ -138,6 +128,8 @@ const AssetManagement = () => {
       </Swiper>
     </div>
   </section>);
+      setActiveButton("private");
+
   };
 
   const handleStockFundsClick = () => {
@@ -179,6 +171,7 @@ const AssetManagement = () => {
 
     </section>
     </section>);
+        setActiveButton("stock");
   };
 
   return (
@@ -191,9 +184,24 @@ const AssetManagement = () => {
         subTitle="“خدمات إدارة الأصول”"/>
         <section className='assetManagement-all-sec'>
         <div className="buttons-container">
-        <button onClick={handlePortfolioManagementClick}>أدارة المحافظ</button>
-        <button onClick={handlePrivateFundsClick}>الصناديق الخاصة</button>
-        <button onClick={handleStockFundsClick}>الصناديق العامة</button>
+        <button
+          className={activeButton === "portfolio" ? "active" : ""}
+          onClick={handlePortfolioManagementClick}
+        >
+          أدارة المحافظ
+        </button>
+        <button
+          className={activeButton === "private" ? "active" : ""}
+          onClick={handlePrivateFundsClick}
+        >
+          الصناديق الخاصة
+        </button>
+        <button
+          className={activeButton === "stock" ? "active" : ""}
+          onClick={handleStockFundsClick}
+        >
+          الصناديق العامة
+        </button>
       </div>
       {content}
       </section>

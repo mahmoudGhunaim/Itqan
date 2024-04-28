@@ -133,6 +133,15 @@ color: #FFFFFF;
 .sec-footer-content-social img{
     cursor: pointer;
 }
+.sec-footer-content h6 img{
+    width: 24px;
+    height: 24px;
+}
+.sec-footer-content h6{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 @media screen and (max-width:  1024px) {
     .sec-footer-container{
         flex-direction: column;

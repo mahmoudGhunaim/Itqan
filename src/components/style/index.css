@@ -262,6 +262,14 @@ background-position: left top;
     background-repeat: no-repeat;
     background-position: bottom left
 }
+.ShariyahReview-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.ShariyahReview-content a{
+    text-decoration: none;
+}
 .BoardDirectors-sec{
     text-align: center;
     padding: 90px 0;
@@ -441,6 +449,18 @@ background-position: right top;
 }
 .space-homepage{
     padding-top: 150px;
+}
+.ShariyahReview-card{
+margin-top: 30px;
+
+}
+.ShariyahReviews-card a{
+    text-decoration: none;
+}
+.ShariyahReviews-card-container{
+    width: 90%;
+    display: flex;
+    justify-content: end;
 }
 @media screen and (max-width:  1024px) {
 
