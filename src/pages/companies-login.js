@@ -32,6 +32,10 @@ const CompaniesLogin = () => {
         maritalStatus: '',
         numberOfDependents: '',
         housingType: '',
+        otherFinancialInfo:'',
+        namesOfDirectors:'',
+        namesOfNaturalPersons:'',
+        isPubliclyListed:'',
         residenceAddress: '',
         postalCode: '',
         poBox: '',
@@ -49,6 +53,7 @@ const CompaniesLogin = () => {
         communicationMethod: '',
         annualIncome: '',
         incomeSource: '',
+        mainActivity: '',
         netWorth: '',
         academicQualifications: '',
         employmentStatus: '',
@@ -139,7 +144,14 @@ const CompaniesLogin = () => {
                       OtherPartiesSalesProceed:'' ,
                       recommendation: '',
                       signature: '', // This should be handled differently as it's a file upload
-                      clientName: ''
+                      clientName: '',
+                      registrationCountry:'',
+                      businessActivityCountry:'',
+                      mainActivity:'',
+                      paidCapitalL:'',
+                      annualBusinessVolume:'',
+                      website:'',
+                      NameofContact:''
 
     });
     const [q1Answer, setQ1Answer] = useState('');
@@ -252,10 +264,15 @@ const CompaniesLogin = () => {
                     dateOfBirth: '',
                     maritalStatus: '',
                     numberOfDependents: '',
+                    mainActivity:'',
                     housingType: '',
                     residenceAddress: '',
                     Correspondence:'',
                     postalCode: '',
+                    mainActivity:'',
+                      paidCapitalL:'',
+                      annualBusinessVolume:'',
+                      website:'',
                     poBox: '',
                     country: '',
                     city: '',
@@ -268,6 +285,7 @@ const CompaniesLogin = () => {
                     telephoneNumber: '',
                     correspondenceLanguage: '',
                     messageTime: '',
+                    businessActivityCountry:'',
                     communicationMethod: '',
                     annualIncome: '',
                     incomeSource: '',
@@ -359,7 +377,13 @@ const CompaniesLogin = () => {
                       OtherPartiesSalesProceed:'' ,
                       recommendation: '',
                       signature: '', // This should be handled differently as it's a file upload
-                      clientName: ''
+                      clientName: '',
+                      registrationCountry:'',
+                      NameofContact:'',
+                      otherFinancialInfo:'',
+                      namesOfDirectors:'',
+                      namesOfNaturalPersons:'',
+                      isPubliclyListed:'',
                       
                 });
             } else {
@@ -397,135 +421,100 @@ const CompaniesLogin = () => {
                         </div>
                     </div>
                     <form className='individuals-login-field' onSubmit={handleSubmit}>
-                        {/* Accordion for Personal Information */}
-                        <Accordion defaultExpanded>
-                        <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1-content"
-                                    id="individuals-login-field"
-                                    className='individuals-sec-field-title'
-                                    >
-                                <h3>المعلومات الشخصية - للشركات</h3>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <div className='individuals-sec-field'>
-                                <div className='individuals-single-field'>
-                                        <label>معلومات المستثمر (أفراد)</label>
-                                        <select name="investorInformation" value={formData.investorInformation} onChange={handleChange}>
-                                            <option value="">-- يُرجى الاختيار --</option>
-                                            <option value="New Account ">New Account / حساب جديد </option>
-                                            <option value="Additional account ">Additional account / حساب إضافي</option>
-                                            <option value="Update Information ">Update Information / تحديث بيانات</option>
-                                        </select>
-                                    </div>
-                                    <div className='individuals-single-field'>
-                                        <label>الاسم الكامل للعميل</label>
-                                        <input name="fullName" value={formData.fullName} onChange={handleChange} />
-                                    </div>
-                                    {/* <div className='individuals-single-field'>
-                                        <label>الجنسية</label>
-                                        <input name="nationality" value={formData.nationality} onChange={handleChange} />
-                                    </div> */}
-                                    <div className='individuals-single-field'>
-                                        <label>الجنس</label>
-                                        <select name="gender" value={formData.gender} onChange={handleChange}>
-                                            <option value="">-- يُرجى الاختيار --</option>
-                                            <option value="Male">Male/ذكر </option>
-                                            <option value="Female">Female/أنثى</option>
-                                        </select>
-                                    </div>
-                                    </div>
-                                    <div  className='individuals-sec-field'>
-                                    <div className='individuals-single-field'>
-                                        <label>لقب المستثمر</label>
-                                        <select name="title" value={formData.title} onChange={handleChange}>
-                                            <option value="">-- يُرجى الاختيار --</option>
-                                            <option value="Mr.">Mr./السيد</option>
-                                            <option value="Mrs.">Mrs./السيدة</option>
-                                            <option value="Miss.">Miss/الآنسة</option>
-                                            <option value="Dr.">Dr./الدكتور </option>
-                                            <option value="Eng.">Eng./المهندس</option>
-                                            <option value="other">Other/ أخرى</option>
-                                        </select>
-                                    </div>
-                                    <div className='individuals-single-field'>
-                                        <label>تاريخ الميلاد</label>
-                                        <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} />
-                                    </div>
-                                    <div className='individuals-single-field'>
-                                        <label>الحالة الاجتماعية</label>
-                                        <select name="maritalStatus" value={formData.maritalStatus} onChange={handleChange}>
-                                            <option value="">-- يُرجى الاختيار --</option>
-                                            <option value="Single">Single/أعزب</option>
-                                            <option value="Married">Married/متزوج</option>
-                                        </select>
-                                    </div>
-                                    </div>
-                                    <div  className='individuals-sec-field'>
-                                   
-                                   <div className='individuals-single-field'>
-                                       <label>عدد أفراد الأسرة</label>
-                                       <input type="number" name="numberOfDependents" value={formData.numberOfDependents} onChange={handleChange} />
-                                   </div>
-                                   <div className='individuals-single-field'>
-                                        <label>الجنسية</label>
-                                        <input name="fullName" value={formData.nationality} onChange={handleChange} />
-                                    </div>
-                                   </div>
-                                    <div  className='individuals-sec-field'>
-                                    <div className='individuals-single-field'>
-                                        <label>نوع الهوية</label>
-                                        <select name="identityType" value={formData.identityType} onChange={handleChange}>
-                                            <option value="">-- يُرجى الاختيار --</option>
-                                            <option value="National ID">National ID/ أحوال مدنية</option>
-                                            <option value="Passport">Passport/جواز سفر </option>
-                                            <option value="Residence ID">ResidenceID / هوية مقيم</option>
-                                            <option value="Family Registration">Family Registration / بطاقة عائلية</option>
-                                            <option value="Other">Other / أخرى </option>
-                                        </select>
-                                    </div>
-                                    <div className='individuals-single-field'>
-                                        <label>رقم الهوية</label>
-                                        <input name="identityNumber" value={formData.identityNumber} onChange={handleChange} />
-                                    </div>
-                                    <div className='individuals-single-field'>
-                                        <label>تاريخ الإصدار</label>
-                                        <input type="date" name="issueDate" value={formData.issueDate} onChange={handleChange} />
-                                    </div>
-                                    </div>
-                                    <div  className='individuals-sec-field'>
-                                    <div className='individuals-single-field'>
-                                        <label>تاريخ الانتهاء</label>
-                                        <input type="date" name="expirationDate" value={formData.expirationDate} onChange={handleChange} />
-                                    </div>
-                                    <div className='individuals-single-field'>
-                                        <label>مكان الإصدار</label>
-                                        <input name="placeOfIssue" value={formData.placeOfIssue} onChange={handleChange} />
-                                    </div>
-                                    
-                                    </div>
-                                 
-                                    {/* <div  className='individuals-sec-field'>
-                                    <div className='individuals-single-field'>
-                                        <label>نوع السكن</label>
-                                        <select name="housingType" value={formData.housingType} onChange={handleChange}>
-                                            <option value="">-- يُرجى الاختيار --</option>
-                                            <option value="Apartment">Apartment</option>
-                                            <option value="House">House</option>
-                                            <option value="Villa">Villa</option>
-                                            <option value="Studio">Studio</option>
-                                            <option value="Dormitory">Dormitory</option>
-                                        </select>
-                                    </div>
-                                 
-                                    <div className='individuals-single-field'>
-                                        <label>عنوان السكن</label>
-                                        <input name="residenceAddress" value={formData.residenceAddress} onChange={handleChange} />
-                                    </div>
-                                    </div> */}
-                             
-                            </AccordionDetails>
-                        </Accordion>
+                    <Accordion defaultExpanded>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1-content"
+                id="individuals-login-field"
+                className='individuals-sec-field-title'
+            >
+                <h3>معلومات المستثمر (الشركات)</h3>
+            </AccordionSummary>
+            <AccordionDetails>
+                <div className='corporate-investor-fields'>
+                    <div className='individuals-single-field'>
+                        <label>الاسم:</label>
+                        <input name="companyName" value={formData.companyName} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الكيان القانوني:</label>
+                        <input name="legalEntity" value={formData.legalEntity} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الرقم الموحد للمنشأة:</label>
+                        <input name="unifiedNumber" value={formData.unifiedNumber} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>رقم السجل التجاري (أو ما يمثله):</label>
+                        <input name="commercialRegistrationNumber" value={formData.commercialRegistrationNumber} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>تاريخ التأسيس أو ممارسة النشاط:</label>
+                        <input type="date" name="establishmentDate" value={formData.establishmentDate} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>العنوان المسجل:</label>
+                        <input name="registeredAddress" value={formData.registeredAddress} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>رقم المبنى:</label>
+                        <input name="buildingNumber" value={formData.buildingNumber} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>اسم الشارع:</label>
+                        <input name="streetName" value={formData.streetName} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الحي:</label>
+                        <input name="district" value={formData.district} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>المدينة:</label>
+                        <input name="city" value={formData.city} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الرمز البريدي:</label>
+                        <input name="postalCode" value={formData.postalCode} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الرقم الإضافي:</label>
+                        <input name="additionalNumber" value={formData.additionalNumber} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>بلد التسجيل:</label>
+                        <input name="registrationCountry" value={formData.registrationCountry} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>دولة ممارسة النشاط:</label>
+                        <input name="businessActivityCountry" value={formData.businessActivityCountry} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>النشاط الرئيسي:</label>
+                        <input name="mainActivity" value={formData.mainActivity} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>عدد الموظفين:</label>
+                        <input name="numberOfEmployees" value={formData.numberOfEmployees} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>رأس المال المدفوع:</label>
+                        <input name="paidCapital" value={formData.paidCapital} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>حجم الأعمال السنوية:</label>
+                        <input name="annualBusinessVolume" value={formData.annualBusinessVolume} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>هاتف (بالإضافة للتحويلة):</label>
+                        <input name="phone" value={formData.phone} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الموقع الإلكتروني (إن وجد):</label>
+                        <input name="website" value={formData.website} onChange={handleChange} />
+                    </div>
+                </div>
+            </AccordionDetails>
+        </Accordion>
                         <Accordion defaultExpanded>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -538,8 +527,8 @@ const CompaniesLogin = () => {
             <AccordionDetails>
                 <div className='individuals-sec-field'>
                     <div className='individuals-single-field'>
-                        <label>الرمز البريدي</label>
-                        <input name="postalCode" value={formData.postalCode} onChange={handleChange} />
+                        <label>اسم ضابط الاتصال </label>
+                        <input name="NameofContact" value={formData.NameofContact} onChange={handleChange} />
                     </div>
                     <div className='individuals-single-field'>
                         <label>صندوق البريد</label>
@@ -634,32 +623,11 @@ const CompaniesLogin = () => {
                  id="individuals-login-field"
                  className='individuals-sec-field-title'
             >
-                <h3>المراسلات</h3>
+                <h3>كشوف الحساب</h3>
             </AccordionSummary>
             <AccordionDetails>
                 <div className='individuals-sec-field'>
-                <div className='individuals-single-field'>
-                        <label>مصدر الدخل</label>
-                        <select id="incomeSource" name="incomeSource">
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Employment">employment / وظيفة</option>
-                            <option value="Business">Business / تجارة</option>
-                            <option value="Real Estate">Real Estate / عقار</option>
-                            <option value="Inheritance">Inheritance / إرث</option>
-                            <option value="Stock">Stock / أسهم</option>
-                            <option value="Other">Other / أخرى</option>
-                        </select>
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>بواسطة</label>
-                        <select id="communicationMethod" name="communicationMethod">
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Email">البريد الالكتروني</option>
-                            <option value="Fax">فاكس</option>
-                            <option value="SMS">رسالة قصيرة</option>
-                            <option value="Mail">بريد</option>
-                        </select>
-                    </div>
+              
                     <div className='individuals-single-field'>
                         <label>كشوف الحساب</label>
                         <select id="Correspondence" name="Correspondence">
@@ -672,36 +640,7 @@ const CompaniesLogin = () => {
                     </div>
                     
                 </div>
-                <div className='individuals-sec-field'>
-                <div className='individuals-single-field'>
-                        <label htmlFor="annualIncome">الدخل السنوي التقريبي (ريال سعودي)</label>
-                        <select id="annualIncome" name="annualIncome" value={formData.annualIncome} onChange={handleChange}>
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Less than 50,000">Less than 50,000</option>
-                            <option value="50,000 - 100,000">50,000 - 100,000</option>
-                            <option value="100,000 - 150,000">100,000 - 150,000</option>
-                            <option value="150,000 - 200,000">150,000 - 200,000</option>
-                            <option value="200,000 - 250,000">200,000 - 250,000</option>
-                            <option value="250,000 - 300,000">250,000 - 300,000</option>
-                            <option value="300,000 - 350,000">300,000 - 350,000</option>
-                            <option value="350,000 - 400,000">350,000 - 400,000</option>
-                            <option value="More than 400,000">More than 400,000</option>
-                        </select>
-        
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>صافي الثروة التقريبي (باستثناء السكن) (ريال سعودي)</label>
-                        <select id="netWorth" name="netWorth">
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="< 100,000"> Less than 100,000</option>
-                            <option value="100,000 - 500,000">100,000 - 500,000</option>
-                            <option value="500,000 - 1,000,000">500,000 - 1,000,000</option>
-                            <option value="1,000,000 - 5,000,000">1,000,000 - 5,000,000</option>
-                            <option value="5,000,000 - 10,000,000">5,000,000 - 10,000,000</option>
-                            <option value="> 10,000,000"> More than 10,000,000</option>
-                        </select>
-                    </div>
-                </div>
+               
             </AccordionDetails>
         </Accordion>
         
@@ -816,171 +755,37 @@ const CompaniesLogin = () => {
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1-content"
-                id="individuals-login-field"
-                className='individuals-sec-field-title'
+                id="general-info-field"
+                className='general-info-field-title'
             >
                 <h3>معلومات عامة</h3>
             </AccordionSummary>
             <AccordionDetails>
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>هل العميل عضو أو ذو علاقة بعضو مجلس إدارة أو لجنة مراجعة أو أحد كبار التنفيذين في شركة مدرجة؟</label>
-                        <select name="boardMembership" value={formData.boardMembership} onChange={handleChange}>
+                <div className='general-info-fields'>
+                    <div className='general-info-single-field'>
+                        <label>هل الشركة مدرجة في السوق السعودي؟</label>
+                        <select name="isPubliclyListed" value={formData.isPubliclyListed} onChange={handleChange}>
                             <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Yes">نعم</option>
-                            <option value="No">لا</option>
-                        </select>
-                        {formData.boardMembership === "Yes" && (
-                            <input type="text" name="companyName" placeholder="اسم الشركة" value={formData.companyName} onChange={handleChange} />
-                        )}
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>هل العميل مكلف بمهمات عليا في المملكة او في دولة أجنبية أو مناصب إدارة عليا أو وظيفة في إحدى المنظمات الدولية؟</label>
-                        <select name="seniorPosition" value={formData.seniorPosition} onChange={handleChange}>
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Yes">نعم</option>
-                            <option value="No">لا</option>
+                            <option value="نعم">نعم / Yes</option>
+                            <option value="لا">لا / No</option>
                         </select>
                     </div>
-                </div>
-        
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>هل للعميل صلة قرابة برابطة الدم أو الزواج وصولًا إلى الدرجة الثانية أو يعد مقربًا من شخص مكلف بمهمات عليا في المملكة أو في دولة أجنبية أو مناصب إدارة عليا أو وظيفة في إحدى المنظمات الدولية؟</label>
-                        <select name="familyRelationship" value={formData.familyRelationship} onChange={handleChange}>
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Yes">نعم</option>
-                            <option value="No">لا</option>
-                        </select>
+                    <div className='general-info-single-field'>
+                        <label>أسماء الأشخاص الطبيعيين المالكين او المسيطرين على 25% أو أكثر من الحصص</label>
+                        <input name="namesOfNaturalPersons" value={formData.namesOfNaturalPersons} onChange={handleChange} />
                     </div>
-                
-                    <div className='individuals-single-field'>
-                        <label>هل أنت المالك والمستفيد الحقيقي والنهائي والوحيد للحساب الاستثماري او علاقة العمل؟</label>
-                        <select name="accountOwnership" value={formData.accountOwnership} onChange={handleChange}>
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Yes">نعم</option>
-                            <option value="No">لا</option>
-                        </select>
+                    <div className='general-info-single-field'>
+                        <label>أسماء جميع المديرين وكبار الإداريين:</label>
+                        <input name="namesOfDirectors" value={formData.namesOfDirectors} onChange={handleChange} />
                     </div>
-                </div>
-        
-                {formData.accountOwnership === "No" && (
-                    <div className='individuals-sec-field'>
-                        <div className='individuals-single-field'>
-                            <label>هوية المستفيد الحقيقي من الحساب أو علاقة العمل:</label>
-                            <textarea name="beneficialOwnership" value={formData.beneficialOwnership} onChange={handleChange}></textarea>
-                        </div>
+                    <div className='general-info-single-field'>
+                        <label>أي معلومات مالية أخرى عن الوضع المالي للعميل</label>
+                        <input name="otherFinancialInfo" value={formData.otherFinancialInfo} onChange={handleChange} />
                     </div>
-                )}
-        
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>هل الحساب البنكي الذي قمت بإدخاله في الخانة المخصصة له بملف فتح الحساب باسمك وهل انت المالك والمستفيد الحقيقي والنهائي والوحيد له؟</label>
-                        <select name="bankAccountOwnership" value={formData.bankAccountOwnership} onChange={handleChange}>
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Yes">نعم</option>
-                            <option value="No">لا</option>
-                        </select>
-                    </div>
-                    <div className='individuals-single-field'>
-                    <label htmlFor="expectedDuration">المدة التي يتوقع العميل خلالها استرداد الأموال المستثمرة</label>
-                        <select
-                            id="expectedDuration"
-                            name="expectedDuration"
-                            value={formData.expectedDuration}
-                            onChange={handleChange}
-                        >
-                            <option value="">اختر المدة</option>
-                            <option value="shortTerm">مدة قصيرة المدى (أقل من سنة)</option>
-                            <option value="mediumTerm">مدة متوسطة المدى (من سنة إلى خمس سنوات)</option>
-                            <option value="longTerm">مدة طويلة المدى (أكثر من خمس سنوات)</option>
-                        </select>
-                        </div>
-                </div>
-        
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>أي معلومات أخرى عن الوضع المالي للمستثمر</label>
-                        <textarea name="financialSituationInfo" value={formData.financialSituationInfo} onChange={handleChange}></textarea>
-                    </div>
-                </div>
-        
-            </AccordionDetails>
-        </Accordion>
-        <Accordion defaultExpanded>
-            <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="individuals-login-field"
-                className='individuals-sec-field-title'
-            >
-                <h3>معلومات الحالات الخاصة</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-                <div className='individuals-sec-field'>
-              
-                    <div className='individuals-single-field'>
-                        <label>قيم لناقص الأهلية</label>
-                        <input type="text" name="incompetentLegalGuardian" value={formData.incompetentLegalGuardian} onChange={handleChange} />
-                    </div>
-                
-                    <div className='individuals-single-field'>
-                        <label>معرف المحجبة</label>
-                        <input type="text" name="veiledWomanId" value={formData.veiledWomanId} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>شاهد للأمي والكفيف</label>
-                        <input type="text" name="illiterateBlindWitness" value={formData.illiterateBlindWitness} onChange={handleChange} />
-                    </div>
-                   
-                    <div className='individuals-single-field'>
-                        <label>ولي / وصي للقاصر</label>
-                        <input type="text" name="inheritorsAgent" value={formData.inheritorsAgent} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>وكيل الورثة</label>
-                        <input type="text" name="fatherGuardianMinor" value={formData.fatherGuardianMinor} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>الاسم</label>
-                        <input type="text" name="inheritorsAgentName" value={formData.inheritorsAgentName} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>رقم الهوية</label>
-                        <input type="text" name="inheritorsAgentId" value={formData.inheritorsAgentId} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>نوع الهوية</label>
-                        <input type="text" name="inheritorsAgentIdType" value={formData.inheritorsAgentIdType} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>تاريخ الانتهاء</label>
-                        <input type="date" name="inheritorsAgentExpiryDate" value={formData.inheritorsAgentExpiryDate} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>تاريخ الإصدار</label>
-                        <input type="date" name="inheritorsAgentIssueDate" value={formData.inheritorsAgentIssueDate} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>رقم الهاتف</label>
-                        <input type="text" name="inheritorsAgentTelNo" value={formData.inheritorsAgentTelNo} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>مكان الإصدار</label>
-                        <input type="text" name="inheritorsAgentPlaceOfIssue" value={formData.inheritorsAgentPlaceOfIssue} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>التوقيع</label>
-                        <input type="text" name="inheritorsAgentSignature" value={formData.inheritorsAgentSignature} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>رقم الفاكس</label>
-                        <input type="text" name="inheritorsAgentFaxNo" value={formData.inheritorsAgentFaxNo} onChange={handleChange} />
-                    </div>
-                
                 </div>
             </AccordionDetails>
         </Accordion>
+       
         <Accordion defaultExpanded>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
