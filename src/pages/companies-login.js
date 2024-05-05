@@ -24,6 +24,13 @@ const CompaniesLogin = () => {
         title:'',
         investorInformation:'', 
         identityType: '',
+        relationship: '',
+        nationality: '',
+        idType: '',
+        idNumber: '',
+        placeOfIssue: '',
+        issueDate: '',
+        expiryDate: '',
         identityNumber: '',
         issueDate: '',
         expirationDate: '',
@@ -266,6 +273,13 @@ const CompaniesLogin = () => {
                     numberOfDependents: '',
                     mainActivity:'',
                     housingType: '',
+                    relationship: '',
+                    nationality: '',
+                    idType: '',
+                    idNumber: '',
+                    placeOfIssue: '',
+                    issueDate: '',
+                    expiryDate: '',
                     residenceAddress: '',
                     Correspondence:'',
                     postalCode: '',
@@ -528,107 +542,6 @@ const CompaniesLogin = () => {
                 
             </AccordionDetails>
         </Accordion>
-                        <Accordion defaultExpanded>
-            <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="individuals-login-field"
-                className='individuals-sec-field-title'
-            >
-                <h3>عنوان للمراسلة</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>اسم ضابط الاتصال </label>
-                        <input name="NameofContact" value={formData.NameofContact} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>صندوق البريد</label>
-                        <input name="poBox" value={formData.poBox} onChange={handleChange} />
-                    </div>
-           
-                    <div className='individuals-single-field'>
-                            <label htmlFor="correspondenceLanguage">لغة المراسلات</label>
-                            <select id="correspondenceLanguage" name="correspondenceLanguage" value={formData.correspondenceLanguage} onChange={handleChange}>
-                                <option value="">-- يُرجى الاختيار --</option>
-                                <option value="EN">English</option>
-                                <option value="AR">العربية</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                            <label>البريد الالكتروني</label>
-                            <input name="email" value={formData.email} onChange={handleChange} />
-                        </div>
-                        
-                        <div className='individuals-single-field'>
-                            <label>رقم الجوال</label>
-                            <input name="mobileNumber" value={formData.mobileNumber} onChange={handleChange} />
-                        </div>
-                        <div className='individuals-single-field'>
-                            <label>رقم الهاتف</label>
-                            <input name="telephoneNumber" value={formData.telephoneNumber} onChange={handleChange} />
-                        </div>
-                    </div>
-                    <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>الدولة</label>
-                        <input name="country" value={formData.country} onChange={handleChange} />
-                    </div>
-                        <div className='individuals-single-field'>
-                            <label>رقم المبني</label>
-                            <input name="Building " value={formData.Building } onChange={handleChange} />
-                        </div>
-                        <div className='individuals-single-field'>
-                            <label>المدينة/الحي</label>
-                            <input name="city" value={formData.city} onChange={handleChange} />
-                        </div>
-                     
-                    </div>
-              
-            </AccordionDetails>
-        </Accordion>
-        <Accordion defaultExpanded>
-            <AccordionSummary
-                 expandIcon={<ExpandMoreIcon />}
-                 aria-controls="panel1-content"
-                 id="individuals-login-field"
-                 className='individuals-sec-field-title'
-            >
-                <h3>معلومات البنك</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>اسم البنك</label>
-                        <input name="bankName" value={formData.bankName} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>رقم الحساب المصرفي الدولي </label>
-                        <input name="ibanNumber" value={formData.ibanNumber} onChange={handleChange} />
-                    </div>
-                    
-                </div>
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>الفرع</label>
-                        <input name="bankBranch" value={formData.bankBranch} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>المدينة</label>
-                        <input name="bankCity" value={formData.bankCity} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>عملة الحساب </label>
-                        <input name="Currency " value={formData.Currency } onChange={handleChange} />
-                    </div>
-               
-                </div>
-            </AccordionDetails>
-        </Accordion>
-        
         <Accordion defaultExpanded>
             <AccordionSummary
                  expandIcon={<ExpandMoreIcon />}
@@ -656,6 +569,85 @@ const CompaniesLogin = () => {
                
             </AccordionDetails>
         </Accordion>
+        <Accordion defaultExpanded>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1-content"
+                id="individuals-login-field"
+                className='individuals-sec-field-title'
+            >
+                <h3>معلومات الاتصال</h3>
+            </AccordionSummary>
+            <AccordionDetails>
+                <div className='individuals-sec-field'>
+                    <div className='individuals-single-field'>
+                        <label>اسم ضابط الاتصال</label>
+                        <input name="contactName" value={formData.contactName} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الهاتف</label>
+                        <input name="businessPhone" value={formData.businessPhone} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>البريد الالكتروني</label>
+                        <input name="email" value={formData.email} onChange={handleChange} />
+                    </div>
+                    </div>
+                    <div className='individuals-sec-field'>
+                    <div className='individuals-single-field'>
+                        <label>الجوال</label>
+                        <input name="mobileNumber" value={formData.mobileNumber} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>عنوان المراسلة</label>
+                        <input name="correspondenceAddress" value={formData.correspondenceAddress} onChange={handleChange} />
+                    </div>
+                </div>
+            </AccordionDetails>
+        </Accordion>
+        
+        <Accordion defaultExpanded>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1-content"
+                id="individuals-login-field"
+                className='individuals-sec-field-title'
+            >
+                <h3>معلومات الحساب البنكي</h3>
+            </AccordionSummary>
+            <AccordionDetails>
+                <div className='individuals-sec-field'>
+                    <div className='individuals-single-field'>
+                        <label>اسم البنك</label>
+                        <input name="bankName" value={formData.bankName} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>اسم مالك الحساب</label>
+                        <input name="accountOwnerName" value={formData.accountOwnerName} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>رقم الحساب الرئيسي</label>
+                        <input name="mainAccount" value={formData.mainAccount} onChange={handleChange} />
+                    </div>
+                    </div>
+                    <div className='individuals-sec-field'>
+                    <div className='individuals-single-field'>
+                        <label>الفرع</label>
+                        <input name="branch" value={formData.branch} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الدولة</label>
+                        <input name="country" value={formData.country} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>عملة الحساب</label>
+                        <input name="currency" value={formData.currency} onChange={handleChange} />
+                    </div>
+                </div>
+            </AccordionDetails>
+        </Accordion>
+        
+        
         
         
        
@@ -695,6 +687,136 @@ const CompaniesLogin = () => {
                     </div>
                 </div>
             </AccordionDetails>
+        </Accordion>
+        <Accordion defaultExpanded>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1-content"
+                id="individuals-login-field"
+                className='individuals-sec-field-title'
+            >
+                <h3>أسماء الأشخاص المفوضين بإدارة الحساب</h3>
+            </AccordionSummary>
+            <AccordionDetails>
+                <div className='individuals-sec-field'>
+                    <div className='individuals-single-field'>
+                        <label>اسم المفوض على الحساب</label>
+                        <input name="authorizedPersonName" value={formData.authorizedPersonName} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>علاقته بالعميل/ الشركة</label>
+                        <input name="relationship" value={formData.relationship} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>الجنسية</label>
+                        <input name="nationality" value={formData.nationality} onChange={handleChange} />
+                    </div>
+                    </div>
+                    <div className='individuals-sec-field'>
+                    <div className='individuals-single-field'>
+                        <label>نوع الهوية</label>
+                        <select name="idType" value={formData.idType} onChange={handleChange}>
+                            <option value="">-- يُرجى الاختيار --</option>
+                            <option value="Family ID">هوية عائلية</option>
+                            <option value="National ID">هوية وطنية</option>
+                            <option value="Passport">جواز سفر</option>
+                            <option value="Residence">إقامة</option>
+                        </select>
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>رقم الهوية</label>
+                        <input name="idNumber" value={formData.idNumber} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>مكان الإصدار</label>
+                        <input name="placeOfIssue" value={formData.placeOfIssue} onChange={handleChange} />
+                    </div>
+                    </div>
+                    <div className='individuals-sec-field'>
+                    <div className='individuals-single-field'>
+                        <label>تاريخ الإصدار</label>
+                        <input type="date" name="issueDate" value={formData.issueDate} onChange={handleChange} />
+                    </div>
+                    <div className='individuals-single-field'>
+                        <label>تاريخ الانتهاء</label>
+                        <input type="date" name="expiryDate" value={formData.expiryDate} onChange={handleChange} />
+                    </div>
+                </div>
+            </AccordionDetails>
+        </Accordion>
+        <Accordion defaultExpanded>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="individuals-login-field"
+                className='individuals-sec-field-title'
+          >
+            <h3>معلومات أمين الحفظ</h3>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className='individuals-sec-field'>
+              <div className='individuals-single-field'>
+                <label>رقم الحساب</label>
+                <input name="accountNumber" value={formData.accountNumber} onChange={handleChange} />
+              </div>
+              <div className='individuals-single-field'>
+                <label>اسم أمين الحفظ</label>
+                <input name="custodianName" value={formData.custodianName} onChange={handleChange} />
+              </div>
+              <div className='individuals-single-field'>
+                <label>عنوان أمين الحفظ</label>
+                <input name="custodianAddress" value={formData.custodianAddress} onChange={handleChange} />
+              </div>
+            </div>
+            <div className='individuals-sec-field table'>
+          <table>
+            <thead>
+              <tr>
+                <th>أين ترغب بإرسال الآتي:</th>
+                <th>العميل</th>
+                <th>أمين الحفظ</th>
+                <th>جهات أخرى: تحديد أي تعليمات صادرة عن العميل بشأن الجهة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label>الشهادات Certificates</label>
+                </td>
+                <td className='checkbox'>          <input type="checkbox" name="clientCertificates" checked={formData.clientCertificates} onChange={handleChange} /></td>
+                <td className='checkbox'>
+                  <input type="checkbox" name="custodianCertificates" checked={formData.custodianCertificates} onChange={handleChange} />
+                </td>
+                <td>        <input name="OtherPartiesCertificates" value={formData.OtherPartiesCertificates} onChange={handleChange} /></td>
+              </tr>
+              <tr>
+                <td>
+                  <label>حصص الأرباح أو أي دخل آخر Dividends or any other income</label>
+                </td>
+                <td className='checkbox'>          <input type="checkbox" name="clientDividends" checked={formData.clientDividends} onChange={handleChange} />
+        </td>
+                <td className='checkbox'>
+                  <input type="checkbox" name="custodianDividends" checked={formData.custodianDividends} onChange={handleChange} />
+                </td>
+                <td >        <input name="OtherPartiesDividends" value={formData.OtherPartiesDividends} onChange={handleChange} /></td>
+        
+              </tr>
+              <tr>
+                <td>
+                  <label>حصيلة البيع/ Sales proceed</label>
+                </td>
+                <td className='checkbox'>          <input type="checkbox" name="clientSalesProceed" checked={formData.clientSalesProceed} onChange={handleChange} /></td>
+                <td className='checkbox' >
+                  <input type="checkbox" name="custodianSalesProceed" checked={formData.custodianSalesProceed} onChange={handleChange} />
+                </td>
+                <td>        <input name="OtherPartiesSalesProceed" value={formData.OtherPartiesSalesProceed} onChange={handleChange} /></td>
+        
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+          </AccordionDetails>
         </Accordion>
        
         <Accordion defaultExpanded>
@@ -910,80 +1032,7 @@ const CompaniesLogin = () => {
         </div>
         </AccordionDetails>
         </Accordion>
-        <Accordion defaultExpanded>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1-content"
-            id="individuals-login-field"
-                className='individuals-sec-field-title'
-          >
-            <h3>معلومات أمين الحفظ</h3>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div className='individuals-sec-field'>
-              <div className='individuals-single-field'>
-                <label>رقم الحساب</label>
-                <input name="accountNumber" value={formData.accountNumber} onChange={handleChange} />
-              </div>
-              <div className='individuals-single-field'>
-                <label>اسم أمين الحفظ</label>
-                <input name="custodianName" value={formData.custodianName} onChange={handleChange} />
-              </div>
-              <div className='individuals-single-field'>
-                <label>عنوان أمين الحفظ</label>
-                <input name="custodianAddress" value={formData.custodianAddress} onChange={handleChange} />
-              </div>
-            </div>
-            <div className='individuals-sec-field table'>
-          <table>
-            <thead>
-              <tr>
-                <th>أين ترغب بإرسال الآتي:</th>
-                <th>العميل</th>
-                <th>أمين الحفظ</th>
-                <th>جهات أخرى: تحديد أي تعليمات صادرة عن العميل بشأن الجهة</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <label>الشهادات Certificates</label>
-                </td>
-                <td className='checkbox'>          <input type="checkbox" name="clientCertificates" checked={formData.clientCertificates} onChange={handleChange} /></td>
-                <td className='checkbox'>
-                  <input type="checkbox" name="custodianCertificates" checked={formData.custodianCertificates} onChange={handleChange} />
-                </td>
-                <td>        <input name="OtherPartiesCertificates" value={formData.OtherPartiesCertificates} onChange={handleChange} /></td>
-              </tr>
-              <tr>
-                <td>
-                  <label>حصص الأرباح أو أي دخل آخر Dividends or any other income</label>
-                </td>
-                <td className='checkbox'>          <input type="checkbox" name="clientDividends" checked={formData.clientDividends} onChange={handleChange} />
-        </td>
-                <td className='checkbox'>
-                  <input type="checkbox" name="custodianDividends" checked={formData.custodianDividends} onChange={handleChange} />
-                </td>
-                <td >        <input name="OtherPartiesDividends" value={formData.OtherPartiesDividends} onChange={handleChange} /></td>
         
-              </tr>
-              <tr>
-                <td>
-                  <label>حصيلة البيع/ Sales proceed</label>
-                </td>
-                <td className='checkbox'>          <input type="checkbox" name="clientSalesProceed" checked={formData.clientSalesProceed} onChange={handleChange} /></td>
-                <td className='checkbox' >
-                  <input type="checkbox" name="custodianSalesProceed" checked={formData.custodianSalesProceed} onChange={handleChange} />
-                </td>
-                <td>        <input name="OtherPartiesSalesProceed" value={formData.OtherPartiesSalesProceed} onChange={handleChange} /></td>
-        
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-          </AccordionDetails>
-        </Accordion>
         <Accordion defaultExpanded>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
