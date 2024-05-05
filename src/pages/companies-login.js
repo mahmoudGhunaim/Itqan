@@ -431,7 +431,7 @@ const CompaniesLogin = () => {
                 <h3>معلومات المستثمر (الشركات)</h3>
             </AccordionSummary>
             <AccordionDetails>
-                <div className='corporate-investor-fields'>
+            <div className='individuals-sec-field'>
                     <div className='individuals-single-field'>
                         <label>الاسم:</label>
                         <input name="companyName" value={formData.companyName} onChange={handleChange} />
@@ -444,6 +444,8 @@ const CompaniesLogin = () => {
                         <label>الرقم الموحد للمنشأة:</label>
                         <input name="unifiedNumber" value={formData.unifiedNumber} onChange={handleChange} />
                     </div>
+                    </div>
+                    <div className='individuals-sec-field'>
                     <div className='individuals-single-field'>
                         <label>رقم السجل التجاري (أو ما يمثله):</label>
                         <input name="commercialRegistrationNumber" value={formData.commercialRegistrationNumber} onChange={handleChange} />
@@ -456,6 +458,8 @@ const CompaniesLogin = () => {
                         <label>العنوان المسجل:</label>
                         <input name="registeredAddress" value={formData.registeredAddress} onChange={handleChange} />
                     </div>
+                    </div>
+                    <div className='individuals-sec-field'>
                     <div className='individuals-single-field'>
                         <label>رقم المبنى:</label>
                         <input name="buildingNumber" value={formData.buildingNumber} onChange={handleChange} />
@@ -468,6 +472,8 @@ const CompaniesLogin = () => {
                         <label>الحي:</label>
                         <input name="district" value={formData.district} onChange={handleChange} />
                     </div>
+                    </div>
+                    <div className='individuals-sec-field'>
                     <div className='individuals-single-field'>
                         <label>المدينة:</label>
                         <input name="city" value={formData.city} onChange={handleChange} />
@@ -480,6 +486,8 @@ const CompaniesLogin = () => {
                         <label>الرقم الإضافي:</label>
                         <input name="additionalNumber" value={formData.additionalNumber} onChange={handleChange} />
                     </div>
+                    </div>
+                    <div className='individuals-sec-field'>
                     <div className='individuals-single-field'>
                         <label>بلد التسجيل:</label>
                         <input name="registrationCountry" value={formData.registrationCountry} onChange={handleChange} />
@@ -492,6 +500,8 @@ const CompaniesLogin = () => {
                         <label>النشاط الرئيسي:</label>
                         <input name="mainActivity" value={formData.mainActivity} onChange={handleChange} />
                     </div>
+                    </div>
+                    <div className='individuals-sec-field'>
                     <div className='individuals-single-field'>
                         <label>عدد الموظفين:</label>
                         <input name="numberOfEmployees" value={formData.numberOfEmployees} onChange={handleChange} />
@@ -504,6 +514,8 @@ const CompaniesLogin = () => {
                         <label>حجم الأعمال السنوية:</label>
                         <input name="annualBusinessVolume" value={formData.annualBusinessVolume} onChange={handleChange} />
                     </div>
+                    </div>
+                    <div className='individuals-sec-field'>
                     <div className='individuals-single-field'>
                         <label>هاتف (بالإضافة للتحويلة):</label>
                         <input name="phone" value={formData.phone} onChange={handleChange} />
@@ -513,6 +525,7 @@ const CompaniesLogin = () => {
                         <input name="website" value={formData.website} onChange={handleChange} />
                     </div>
                 </div>
+                
             </AccordionDetails>
         </Accordion>
                         <Accordion defaultExpanded>
@@ -644,125 +657,20 @@ const CompaniesLogin = () => {
             </AccordionDetails>
         </Accordion>
         
-        <Accordion defaultExpanded>
-            <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1-content"
-                  id="individuals-login-field"
-                  className='individuals-sec-field-title'
-            >
-                <h3>معلومات المهنة - أفراد</h3>
-            </AccordionSummary>
-            <AccordionDetails>
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>المستوى التعليمي</label>
-                        <select id="academicQualifications" name="academicQualifications">
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Primary">Primary / ابتدائي</option>
-                            <option value="Intermediate">Intermediate / متوسط</option>
-                            <option value="High School">High School / ثانوي</option>
-                            <option value="Diploma">دبلوم/ Diploma</option>
-                            <option value="Bachelor/ جامعي">Bachelor/ جامعي</option>
-                            <option value="Postgraduate / دراسات عليا">Postgraduate / دراسات عليا</option>
-                        </select>
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>قطاع</label>
-                        <select id="Sector " name="Sector">
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Government / حكومي">Government / حكومي</option>
-                            <option value="Private/خاص">Private/خاص</option>
-                            <option value="Self- Employment / أعمال خاصة ">Self- Employment / أعمال خاصة </option>
-                            <option value="أخرى/ Other">أخرى/ Other</option>
-                       
-                        </select>
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>فئة التوظيف</label>
-                        <select id="employmentCategory" name="employmentCategory">
-                            <option value="">-- يُرجى الاختيار --</option>
-                            <option value="Full-Time">Full-Time</option>
-                            <option value="Part-Time">Part-Time</option>
-                            <option value="Contract">Contract</option>
-                            <option value="Freelance">Freelance</option>
-                            <option value="Internship">Internship</option>
-                            <option value="Temporary">Temporary</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                </div>
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>اسم جهة العمل</label>
-                        <input name="employerName" value={formData.employerName} onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>المسمى الوظيفي</label>
-                        <input name="jobTitle" value={formData.jobTitle} onChange={handleChange} />
-                    </div>
-                </div>
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>عنوان جهة العمل</label>
-                        <input name="employerAddress" value={formData.employerAddress} onChange={handleChange} />
-                    </div>
-                </div>
-                <div className='individuals-sec-field'>
-                    <div className='individuals-single-field'>
-                        <label>مدة الخدمة</label>
-                        <input name="Years Employment " value={formData.YearsEmployment } onChange={handleChange} />
-                    </div>
-                    <div className='individuals-single-field'>
-                        <label>هاتف جهة العمل</label>
-                        <input name="employerPhone" value={formData.employerPhone} onChange={handleChange} />
-                    </div>
-                </div>
-            </AccordionDetails>
-        </Accordion>
-        <Accordion defaultExpanded>
-            <AccordionSummary
-                 expandIcon={<ExpandMoreIcon />}
-                 aria-controls="panel1-content"
-                 id="individuals-login-field"
-                 className='individuals-sec-field-title'
-            >
-                <h3>الخبرات العملية في القطاع المالي</h3>
-            </AccordionSummary>
-            <AccordionDetails> 
-            <div className='individuals-sec-field'>
-            <div className='individuals-single-field'>
-                <label>الخبرات العملية في القطاع المالي</label>
-                <select name="financialExperience" value={formData.financialExperience} onChange={handleChange}>
-                    <option value="">-- يُرجى الاختيار --</option>
-                    <option value="Yes">نعم</option>
-                    <option value="No">لا</option>
-                </select>
-            </div>
         
-            <div className='individuals-single-field'>
-                <label>هل للعميل أي خبرات عملية أخرى ذات صلة بالقطاع المالي؟</label>
-                <select name="otherFinancialExperience" value={formData.otherFinancialExperience} onChange={handleChange}>
-                    <option value="">-- يُرجى الاختيار --</option>
-                    <option value="Yes">نعم</option>
-                    <option value="No">لا</option>
-                </select>
-            </div>
-        </div>
-            </AccordionDetails>
-        </Accordion>
+       
         <Accordion defaultExpanded>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1-content"
-                id="general-info-field"
-                className='general-info-field-title'
+                id="individuals-login-field"
+                className='individuals-sec-field-title'
             >
                 <h3>معلومات عامة</h3>
             </AccordionSummary>
             <AccordionDetails>
-                <div className='general-info-fields'>
-                    <div className='general-info-single-field'>
+                <div className='individuals-sec-field'>
+                    <div className='individuals-single-field'>
                         <label>هل الشركة مدرجة في السوق السعودي؟</label>
                         <select name="isPubliclyListed" value={formData.isPubliclyListed} onChange={handleChange}>
                             <option value="">-- يُرجى الاختيار --</option>
@@ -770,15 +678,18 @@ const CompaniesLogin = () => {
                             <option value="لا">لا / No</option>
                         </select>
                     </div>
-                    <div className='general-info-single-field'>
+                    <div className='individuals-single-field'>
                         <label>أسماء الأشخاص الطبيعيين المالكين او المسيطرين على 25% أو أكثر من الحصص</label>
                         <input name="namesOfNaturalPersons" value={formData.namesOfNaturalPersons} onChange={handleChange} />
                     </div>
-                    <div className='general-info-single-field'>
+                    </div>
+                    <div className='individuals-sec-field'>
+
+                    <div className='individuals-single-field'>
                         <label>أسماء جميع المديرين وكبار الإداريين:</label>
                         <input name="namesOfDirectors" value={formData.namesOfDirectors} onChange={handleChange} />
                     </div>
-                    <div className='general-info-single-field'>
+                    <div className='individuals-single-field'>
                         <label>أي معلومات مالية أخرى عن الوضع المالي للعميل</label>
                         <input name="otherFinancialInfo" value={formData.otherFinancialInfo} onChange={handleChange} />
                     </div>
