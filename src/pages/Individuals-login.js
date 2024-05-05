@@ -44,6 +44,7 @@ const IndividualsLogin = () => {
         Building:'',
         Currency:'',
         telephoneNumber: '',
+        Correspondence:'',
         correspondenceLanguage: '',
         messageTime: '',
         communicationMethod: '',
@@ -55,6 +56,7 @@ const IndividualsLogin = () => {
         employmentCategory: '',
         employerName: '',
         jobTitle: '',
+        YearsEmployment:'',
         employmentDate: '',
         employerAddress: '',
         employerPostalCode: '',
@@ -70,17 +72,158 @@ const IndividualsLogin = () => {
         passportName: '',
         originCountryAddress: '',
         agreementType: '',
-        // termsConsent: false
+        Sector:'',
+        financialExperience:'',
+        otherFinancialExperience:'',
+        inheritorsAgentFaxNo:'',
+        inheritorsAgentSignature:'',
+        inheritorsAgentPlaceOfIssue:'',
+        inheritorsAgentTelNo:'',
+        inheritorsAgentIssueDate:'',
+        inheritorsAgentIdType:'',
+        inheritorsAgentId:'',
+        inheritorsAgentExpiryDate:'',
+        inheritorsAgentName:'',
+        fatherGuardianMinor:'',
+        inheritorsAgent:'',
+        illiterateBlindWitness:'',
+        veiledWomanId:'',
+        incompetentLegalGuardian:'',
+        investmentKnowledgeDescription:'' ,
+                    investmentYears:'' ,
+                    previousInvestments:'' ,
+                    professionalCertificates:'' ,
+                    loanToInvestedMoneyRatio:'' ,
+                    marginTransactions:'' ,
+                    securitiesTransactionsOutsideKingdom:'' ,
+                    countriesForSecuritiesTransactions:'' ,
+                    riskAppetite: '',
+                    investmentGoals: {
+                        capitalProtection: '',
+                        incomeGeneration: '',
+                        balanced: '',
+                        capitalGrowth: '',
+                        retirementSavings: '',
+                        projectFinancing: '',
+                        assetPurchase: '',
+                        other: ""
+                      },
+                      saudiAssets: '',
+                      foreignCurrencyAssets: '',
+                      selectedCurrencies: "",
+                      expectedDuration: '',
+                      clientCurrentWalletdepositsMurabah: "",
+                      idealportfoliofortheclientdepositsMurabah: "",
+                      clientCurrentWalletdebitInstruments: "",
+                      idealportfoliofortheclientdebitInstruments: "",
+                      clientCurrentWalletequity: "",
+                      idealportfoliofortheclientequity: "",
+                      clientCurrentWalletinvestmentFund: "",
+                      idealportfoliofortheclientinvestmentFund: "",
+                      clientCurrentWalletrealEstate: "",
+                      idealportfoliofortheclientrealEstate: "",
+                      clientCurrentWalletderivativesContracts: "",
+                      idealportfoliofortheclientderivativesContracts: "",
+                      clientCurrentWalletalternativeInvestments: "",
+                      idealportfoliofortheclientalternativeInvestments: "",
+                      accountNumber:'' ,
+                      custodianName:'' ,
+                      custodianAddress:'' ,
+                      clientCertificates: '',
+                      custodianCertificates: '',
+                      OtherPartiesCertificates:'' ,
+                      clientDividends: '',
+                      custodianDividends: '',
+                      OtherPartiesDividends:'' ,
+                      clientSalesProceed: '',
+                      custodianSalesProceed: '',
+                      OtherPartiesSalesProceed:'' ,
+                      recommendation: '',
+                      signature: '', // This should be handled differently as it's a file upload
+                      clientName: ''
+
     });
+    const [q1Answer, setQ1Answer] = useState('');
+    const [q2Answer, setQ2Answer] = useState('');
+    const [q3Answer, setQ3Answer] = useState('');
+    const [q4Answer, setQ4Answer] = useState('');
+    const [q5Answer, setQ5Answer] = useState('');
 
-
-    const handleChange = (event) => {
-        const { name, value, type, checked } = event.target;
-        setFormData(prevFormData => ({
-            ...prevFormData,
-            [name]: type === 'checkbox' ? checked : value
-        }));
+    
+    // Handle change for question 1
+    const handleQ1Change = (e) => {
+      setQ1Answer(e.target.value);
     };
+    
+    // Handle change for question 2
+    const handleQ2Change = (e) => {
+      setQ2Answer(e.target.value);
+    };
+    const handleQ3Change = (e) => {
+        setQ3Answer(e.target.value);
+      };
+      const handleQ4Change = (e) => {
+        setQ4Answer(e.target.value);
+      };
+      const handleQ5Change = (e) => {
+        setQ5Answer(e.target.value);
+      };
+  
+    const handleChange = (event) => {
+        const { name, type, checked, value } = event.target;
+    
+        if (type === "checkbox") {
+            console.log('check1');
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                [name]: checked
+            }));
+        } else {
+            console.log('check2');
+
+            if (name.startsWith("investmentGoals.")) {
+                console.log('check2 inside if');
+
+                const goalName = name.split(".")[1];
+                setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    investmentGoals: {
+                        ...prevFormData.investmentGoals,
+                        [goalName]: value
+                    }
+                }));
+            } else {
+                console.log('else');
+                setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    [name]: value
+                }));
+            }
+        }
+    };
+    const handleChange2 = (event) => {
+        const { name, type, checked, value } = event.target;
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          investmentGoals: {
+            ...prevFormData.investmentGoals,
+            [name]: type === "checkbox" ? checked : value
+          }
+        }));
+      };
+    
+      const [answers, setAnswers] = useState({
+        q1: 0,
+        q2: 0,
+        q3: 0,
+        q4: 0,
+        q5: 0,
+      });
+      const handleOptionChange = (question, points) => {
+        setAnswers({ ...answers, [question]: points });
+      };
+    
+      const totalPoints = Object.values(answers).reduce((acc, curr) => acc + curr, 0);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -106,18 +249,21 @@ const IndividualsLogin = () => {
                     identityNumber: '',
                     issueDate: '',
                     expirationDate: '',
+                    YearsEmployment:'',
                     placeOfIssue: '',
                     dateOfBirth: '',
                     maritalStatus: '',
                     numberOfDependents: '',
                     housingType: '',
                     residenceAddress: '',
+                    Correspondence:'',
                     postalCode: '',
                     poBox: '',
                     country: '',
                     city: '',
                     mobileNumber: '',
                     homePhone: '',
+                    Sector:'',
                     email: '',
                     Building: '' ,
                     Currency:'',
@@ -148,6 +294,75 @@ const IndividualsLogin = () => {
                     passportName: '',
                     originCountryAddress: '',
                     agreementType: '',
+                    financialExperience:'',
+                    otherFinancialExperience:'',
+                    inheritorsAgentFaxNo:'',
+                    inheritorsAgentSignature:'',
+                    inheritorsAgentPlaceOfIssue:'',
+                    inheritorsAgentTelNo:'',
+                    inheritorsAgentIssueDate:'',
+                    inheritorsAgentIdType:'',
+                    inheritorsAgentId:'',
+                    inheritorsAgentExpiryDate:'',
+                    inheritorsAgentName:'',
+                    fatherGuardianMinor:'',
+                    inheritorsAgent:'',
+                    illiterateBlindWitness:'',
+                    veiledWomanId:'',
+                    incompetentLegalGuardian:'',
+                    investmentKnowledgeDescription:'' ,
+                    investmentYears:'' ,
+                    previousInvestments:'' ,
+                    professionalCertificates:'' ,
+                    loanToInvestedMoneyRatio:'' ,
+                    marginTransactions:'' ,
+                    securitiesTransactionsOutsideKingdom:'' ,
+                    countriesForSecuritiesTransactions:'' ,
+                    riskAppetite: '',
+                    investmentGoals: {
+                        capitalProtection: '',
+                        incomeGeneration: '',
+                        balanced: '',
+                        capitalGrowth: '',
+                        retirementSavings: '',
+                        projectFinancing: '',
+                        assetPurchase: '',
+                        other: ""
+                      },
+                      saudiAssets: '',
+                      foreignCurrencyAssets: '',
+                      selectedCurrencies: "",
+                      expectedDuration: '',
+                      clientCurrentWalletdepositsMurabah: "",
+                      idealportfoliofortheclientdepositsMurabah: "",
+                      clientCurrentWalletdebitInstruments: "",
+                      idealportfoliofortheclientdebitInstruments: "",
+                      clientCurrentWalletequity: "",
+                      idealportfoliofortheclientequity: "",
+                      clientCurrentWalletinvestmentFund: "",
+                      idealportfoliofortheclientinvestmentFund: "",
+                      clientCurrentWalletrealEstate: "",
+                      idealportfoliofortheclientrealEstate: "",
+                      clientCurrentWalletderivativesContracts: "",
+                      idealportfoliofortheclientderivativesContracts: "",
+                      clientCurrentWalletalternativeInvestments: "",
+                      idealportfoliofortheclientalternativeInvestments: "",
+                      accountNumber:'' ,
+                      custodianName:'' ,
+                      custodianAddress:'' ,
+                      clientCertificates: '',
+                      custodianCertificates: '',
+                      OtherPartiesCertificates:'' ,
+                      clientDividends: '',
+                      custodianDividends: '',
+                      OtherPartiesDividends:'' ,
+                      clientSalesProceed: '',
+                      custodianSalesProceed: '',
+                      OtherPartiesSalesProceed:'' ,
+                      recommendation: '',
+                      signature: '', // This should be handled differently as it's a file upload
+                      clientName: ''
+                      
                 });
             } else {
                 setFormError(true);
@@ -157,7 +372,17 @@ const IndividualsLogin = () => {
             setFormError(true);
         }
     };
+    const calculateTotalPoints = () => {
+        let totalPoints = 0;
     
+        totalPoints += parseInt(q1Answer);
+        totalPoints += parseInt(q2Answer);
+        totalPoints += parseInt(q3Answer);
+        totalPoints += parseInt(q4Answer);
+        totalPoints += parseInt(q5Answer);
+    
+        return totalPoints;
+      };
   return (
 <Layout>
 <Seo title="فتح حساب للأفراد - خدمة العملاء - إتقان كابيتال" description="اتفق على شروط وأحكام فتح حساب استثماري للأفراد مع إتقان كابيتال. ملء النموذج بالمعلومات المطلوبة لبدء عملية الفتح. تقديم الطلب الآن واحصل على حسابك الاستثماري الخاص."/>
@@ -414,25 +639,42 @@ const IndividualsLogin = () => {
     </AccordionSummary>
     <AccordionDetails>
         <div className='individuals-sec-field'>
-            <div className='individuals-single-field'>
-                <label>وقت الرسال</label>
-                <select id="messageTime" name="messageTime" className="custom-select">
+        <div className='individuals-single-field'>
+                <label>مصدر الدخل</label>
+                <select id="incomeSource" name="incomeSource">
                     <option value="">-- يُرجى الاختيار --</option>
-                    <option value="صباحًا (AM)">صباحًا (AM)</option>
-                    <option value="بعد الظهر/مساءً (PM)">بعد الظهر/مساءً (PM)</option>
+                    <option value="Employment">employment / وظيفة</option>
+                    <option value="Business">Business / تجارة</option>
+                    <option value="Real Estate">Real Estate / عقار</option>
+                    <option value="Inheritance">Inheritance / إرث</option>
+                    <option value="Stock">Stock / أسهم</option>
+                    <option value="Other">Other / أخرى</option>
                 </select>
             </div>
             <div className='individuals-single-field'>
                 <label>بواسطة</label>
                 <select id="communicationMethod" name="communicationMethod">
                     <option value="">-- يُرجى الاختيار --</option>
-                    <option value="Email">Email</option>
-                    <option value="Phone">Phone</option>
-                    <option value="SMS">SMS</option>
-                    <option value="Mail">Mail</option>
+                    <option value="Email">البريد الالكتروني</option>
+                    <option value="Fax">فاكس</option>
+                    <option value="SMS">رسالة قصيرة</option>
+                    <option value="Mail">بريد</option>
                 </select>
             </div>
             <div className='individuals-single-field'>
+                <label>كشوف الحساب</label>
+                <select id="Correspondence" name="Correspondence">
+                    <option value="">-- يُرجى الاختيار --</option>
+                    <option value="Per Transaction">عند كل عملية</option>
+                    <option value="Daily">يومي</option>
+                    <option value="Monthly">شهري</option>
+                    <option value="Upon Request">عند الطلب</option>
+                </select>
+            </div>
+            
+        </div>
+        <div className='individuals-sec-field'>
+        <div className='individuals-single-field'>
                 <label htmlFor="annualIncome">الدخل السنوي التقريبي (ريال سعودي)</label>
                 <select id="annualIncome" name="annualIncome" value={formData.annualIncome} onChange={handleChange}>
                     <option value="">-- يُرجى الاختيار --</option>
@@ -447,20 +689,6 @@ const IndividualsLogin = () => {
                     <option value="More than 400,000">More than 400,000</option>
                 </select>
 
-            </div>
-        </div>
-        <div className='individuals-sec-field'>
-            <div className='individuals-single-field'>
-                <label>مصدر الدخل</label>
-                <select id="incomeSource" name="incomeSource">
-                    <option value="">-- يُرجى الاختيار --</option>
-                    <option value="Employment">Employment</option>
-                    <option value="Business">Business</option>
-                    <option value="Investments">Investments</option>
-                    <option value="Rental Income">Rental Income</option>
-                    <option value="Retirement">Retirement</option>
-                    <option value="Other">Other</option>
-                </select>
             </div>
             <div className='individuals-single-field'>
                 <label>صافي الثروة التقريبي (باستثناء السكن) (ريال سعودي)</label>
@@ -490,28 +718,26 @@ const IndividualsLogin = () => {
     <AccordionDetails>
         <div className='individuals-sec-field'>
             <div className='individuals-single-field'>
-                <label>المؤهلات العلمية</label>
+                <label>المستوى التعليمي</label>
                 <select id="academicQualifications" name="academicQualifications">
                     <option value="">-- يُرجى الاختيار --</option>
-                    <option value="High School Diploma or Equivalent">High School Diploma or Equivalent</option>
-                    <option value="Vocational Training">Vocational Training</option>
-                    <option value="Associate Degree">Associate Degree</option>
-                    <option value="Bachelor’s Degree">Bachelor’s Degree</option>
-                    <option value="Master’s Degree">Master’s Degree</option>
-                    <option value="Doctorate or Higher">Doctorate or Higher</option>
+                    <option value="Primary">Primary / ابتدائي</option>
+                    <option value="Intermediate">Intermediate / متوسط</option>
+                    <option value="High School">High School / ثانوي</option>
+                    <option value="Diploma">دبلوم/ Diploma</option>
+                    <option value="Bachelor/ جامعي">Bachelor/ جامعي</option>
+                    <option value="Postgraduate / دراسات عليا">Postgraduate / دراسات عليا</option>
                 </select>
             </div>
             <div className='individuals-single-field'>
-                <label>الحالة الوظيفية</label>
-                <select id="employmentStatus" name="employmentStatus">
+                <label>قطاع</label>
+                <select id="Sector " name="Sector">
                     <option value="">-- يُرجى الاختيار --</option>
-                    <option value="Employed">Employed</option>
-                    <option value="Self-Employed">Self-Employed</option>
-                    <option value="Unemployed">Unemployed</option>
-                    <option value="Student">Student</option>
-                    <option value="Retired">Retired</option>
-                    <option value="Homemaker">Homemaker</option>
-                    <option value="Other">Other</option>
+                    <option value="Government / حكومي">Government / حكومي</option>
+                    <option value="Private/خاص">Private/خاص</option>
+                    <option value="Self- Employment / أعمال خاصة ">Self- Employment / أعمال خاصة </option>
+                    <option value="أخرى/ Other">أخرى/ Other</option>
+               
                 </select>
             </div>
             <div className='individuals-single-field'>
@@ -530,55 +756,32 @@ const IndividualsLogin = () => {
         </div>
         <div className='individuals-sec-field'>
             <div className='individuals-single-field'>
-                <label>اسم صاحب العمل</label>
+                <label>اسم جهة العمل</label>
                 <input name="employerName" value={formData.employerName} onChange={handleChange} />
             </div>
             <div className='individuals-single-field'>
                 <label>المسمى الوظيفي</label>
                 <input name="jobTitle" value={formData.jobTitle} onChange={handleChange} />
             </div>
-            <div className='individuals-single-field'>
-                <label>تاريخ الالتحاق</label>
-                <input type="date" name="employmentDate" value={formData.employmentDate} onChange={handleChange} />
-            </div>
         </div>
         <div className='individuals-sec-field'>
             <div className='individuals-single-field'>
-                <label>عنوان صاحب العمل</label>
+                <label>عنوان جهة العمل</label>
                 <input name="employerAddress" value={formData.employerAddress} onChange={handleChange} />
             </div>
         </div>
         <div className='individuals-sec-field'>
             <div className='individuals-single-field'>
-                <label>الرمز البريدي</label>
-                <input name="employerPostalCode" value={formData.employerPostalCode} onChange={handleChange} />
+                <label>مدة الخدمة</label>
+                <input name="Years Employment " value={formData.YearsEmployment } onChange={handleChange} />
             </div>
             <div className='individuals-single-field'>
-                <label>صندوق البريد</label>
-                <input name="employerPOBox" value={formData.employerPOBox} onChange={handleChange} />
-            </div>
-            <div className='individuals-single-field'>
-                <label>الدولة</label>
-                <input name="employerCountry" value={formData.employerCountry} onChange={handleChange} />
-            </div>
-        </div>
-        <div className='individuals-sec-field'>
-            <div className='individuals-single-field'>
-                <label>المدينة</label>
-                <input name="employerCity" value={formData.employerCity} onChange={handleChange} />
-            </div>
-            <div className='individuals-single-field'>
-                <label>فاكس العمل</label>
-                <input name="employerFax" value={formData.employerFax} onChange={handleChange} />
-            </div>
-            <div className='individuals-single-field'>
-                <label>هاتف العمل</label>
+                <label>هاتف جهة العمل</label>
                 <input name="employerPhone" value={formData.employerPhone} onChange={handleChange} />
             </div>
         </div>
     </AccordionDetails>
 </Accordion>
-
 <Accordion defaultExpanded>
     <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
@@ -586,58 +789,625 @@ const IndividualsLogin = () => {
          id="individuals-login-field"
          className='individuals-sec-field-title'
     >
-        <h3>معلومات شخصية (لغير السعوديين)</h3>
+        <h3>الخبرات العملية في القطاع المالي</h3>
     </AccordionSummary>
     <AccordionDetails> 
+    <div className='individuals-sec-field'>
+    <div className='individuals-single-field'>
+        <label>الخبرات العملية في القطاع المالي</label>
+        <select name="financialExperience" value={formData.financialExperience} onChange={handleChange}>
+            <option value="">-- يُرجى الاختيار --</option>
+            <option value="Yes">نعم</option>
+            <option value="No">لا</option>
+        </select>
+    </div>
+
+    <div className='individuals-single-field'>
+        <label>هل للعميل أي خبرات عملية أخرى ذات صلة بالقطاع المالي؟</label>
+        <select name="otherFinancialExperience" value={formData.otherFinancialExperience} onChange={handleChange}>
+            <option value="">-- يُرجى الاختيار --</option>
+            <option value="Yes">نعم</option>
+            <option value="No">لا</option>
+        </select>
+    </div>
+</div>
+    </AccordionDetails>
+</Accordion>
+<Accordion defaultExpanded>
+    <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1-content"
+        id="individuals-login-field"
+        className='individuals-sec-field-title'
+    >
+        <h3>معلومات عامة</h3>
+    </AccordionSummary>
+    <AccordionDetails>
         <div className='individuals-sec-field'>
             <div className='individuals-single-field'>
-                <label>مكان الإصدار</label>
-                <input name="passportIssuePlace" value={formData.passportIssuePlace} onChange={handleChange} />
+                <label>هل العميل عضو أو ذو علاقة بعضو مجلس إدارة أو لجنة مراجعة أو أحد كبار التنفيذين في شركة مدرجة؟</label>
+                <select name="boardMembership" value={formData.boardMembership} onChange={handleChange}>
+                    <option value="">-- يُرجى الاختيار --</option>
+                    <option value="Yes">نعم</option>
+                    <option value="No">لا</option>
+                </select>
+                {formData.boardMembership === "Yes" && (
+                    <input type="text" name="companyName" placeholder="اسم الشركة" value={formData.companyName} onChange={handleChange} />
+                )}
             </div>
             <div className='individuals-single-field'>
-                <label>رقم جواز السفر</label>
-                <input name="passportNumber" value={formData.passportNumber} onChange={handleChange} />
+                <label>هل العميل مكلف بمهمات عليا في المملكة او في دولة أجنبية أو مناصب إدارة عليا أو وظيفة في إحدى المنظمات الدولية؟</label>
+                <select name="seniorPosition" value={formData.seniorPosition} onChange={handleChange}>
+                    <option value="">-- يُرجى الاختيار --</option>
+                    <option value="Yes">نعم</option>
+                    <option value="No">لا</option>
+                </select>
+            </div>
+        </div>
+
+        <div className='individuals-sec-field'>
+            <div className='individuals-single-field'>
+                <label>هل للعميل صلة قرابة برابطة الدم أو الزواج وصولًا إلى الدرجة الثانية أو يعد مقربًا من شخص مكلف بمهمات عليا في المملكة أو في دولة أجنبية أو مناصب إدارة عليا أو وظيفة في إحدى المنظمات الدولية؟</label>
+                <select name="familyRelationship" value={formData.familyRelationship} onChange={handleChange}>
+                    <option value="">-- يُرجى الاختيار --</option>
+                    <option value="Yes">نعم</option>
+                    <option value="No">لا</option>
+                </select>
+            </div>
+        
+            <div className='individuals-single-field'>
+                <label>هل أنت المالك والمستفيد الحقيقي والنهائي والوحيد للحساب الاستثماري او علاقة العمل؟</label>
+                <select name="accountOwnership" value={formData.accountOwnership} onChange={handleChange}>
+                    <option value="">-- يُرجى الاختيار --</option>
+                    <option value="Yes">نعم</option>
+                    <option value="No">لا</option>
+                </select>
+            </div>
+        </div>
+
+        {formData.accountOwnership === "No" && (
+            <div className='individuals-sec-field'>
+                <div className='individuals-single-field'>
+                    <label>هوية المستفيد الحقيقي من الحساب أو علاقة العمل:</label>
+                    <textarea name="beneficialOwnership" value={formData.beneficialOwnership} onChange={handleChange}></textarea>
+                </div>
+            </div>
+        )}
+
+        <div className='individuals-sec-field'>
+            <div className='individuals-single-field'>
+                <label>هل الحساب البنكي الذي قمت بإدخاله في الخانة المخصصة له بملف فتح الحساب باسمك وهل انت المالك والمستفيد الحقيقي والنهائي والوحيد له؟</label>
+                <select name="bankAccountOwnership" value={formData.bankAccountOwnership} onChange={handleChange}>
+                    <option value="">-- يُرجى الاختيار --</option>
+                    <option value="Yes">نعم</option>
+                    <option value="No">لا</option>
+                </select>
+            </div>
+            <div className='individuals-single-field'>
+            <label htmlFor="expectedDuration">المدة التي يتوقع العميل خلالها استرداد الأموال المستثمرة</label>
+                <select
+                    id="expectedDuration"
+                    name="expectedDuration"
+                    value={formData.expectedDuration}
+                    onChange={handleChange}
+                >
+                    <option value="">اختر المدة</option>
+                    <option value="shortTerm">مدة قصيرة المدى (أقل من سنة)</option>
+                    <option value="mediumTerm">مدة متوسطة المدى (من سنة إلى خمس سنوات)</option>
+                    <option value="longTerm">مدة طويلة المدى (أكثر من خمس سنوات)</option>
+                </select>
+                </div>
+        </div>
+
+        <div className='individuals-sec-field'>
+            <div className='individuals-single-field'>
+                <label>أي معلومات أخرى عن الوضع المالي للمستثمر</label>
+                <textarea name="financialSituationInfo" value={formData.financialSituationInfo} onChange={handleChange}></textarea>
+            </div>
+        </div>
+
+    </AccordionDetails>
+</Accordion>
+<Accordion defaultExpanded>
+    <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1-content"
+        id="individuals-login-field"
+        className='individuals-sec-field-title'
+    >
+        <h3>معلومات الحالات الخاصة</h3>
+    </AccordionSummary>
+    <AccordionDetails>
+        <div className='individuals-sec-field'>
+      
+            <div className='individuals-single-field'>
+                <label>قيم لناقص الأهلية</label>
+                <input type="text" name="incompetentLegalGuardian" value={formData.incompetentLegalGuardian} onChange={handleChange} />
+            </div>
+        
+            <div className='individuals-single-field'>
+                <label>معرف المحجبة</label>
+                <input type="text" name="veiledWomanId" value={formData.veiledWomanId} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>شاهد للأمي والكفيف</label>
+                <input type="text" name="illiterateBlindWitness" value={formData.illiterateBlindWitness} onChange={handleChange} />
+            </div>
+           
+            <div className='individuals-single-field'>
+                <label>ولي / وصي للقاصر</label>
+                <input type="text" name="inheritorsAgent" value={formData.inheritorsAgent} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>وكيل الورثة</label>
+                <input type="text" name="fatherGuardianMinor" value={formData.fatherGuardianMinor} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>الاسم</label>
+                <input type="text" name="inheritorsAgentName" value={formData.inheritorsAgentName} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>رقم الهوية</label>
+                <input type="text" name="inheritorsAgentId" value={formData.inheritorsAgentId} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>نوع الهوية</label>
+                <input type="text" name="inheritorsAgentIdType" value={formData.inheritorsAgentIdType} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>تاريخ الانتهاء</label>
+                <input type="date" name="inheritorsAgentExpiryDate" value={formData.inheritorsAgentExpiryDate} onChange={handleChange} />
             </div>
             <div className='individuals-single-field'>
                 <label>تاريخ الإصدار</label>
-                <input type="date" name="passportIssueDate" value={formData.passportIssueDate} onChange={handleChange} />
+                <input type="date" name="inheritorsAgentIssueDate" value={formData.inheritorsAgentIssueDate} onChange={handleChange} />
             </div>
+            <div className='individuals-single-field'>
+                <label>رقم الهاتف</label>
+                <input type="text" name="inheritorsAgentTelNo" value={formData.inheritorsAgentTelNo} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>مكان الإصدار</label>
+                <input type="text" name="inheritorsAgentPlaceOfIssue" value={formData.inheritorsAgentPlaceOfIssue} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>التوقيع</label>
+                <input type="text" name="inheritorsAgentSignature" value={formData.inheritorsAgentSignature} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>رقم الفاكس</label>
+                <input type="text" name="inheritorsAgentFaxNo" value={formData.inheritorsAgentFaxNo} onChange={handleChange} />
+            </div>
+        
         </div>
+    </AccordionDetails>
+</Accordion>
+<Accordion defaultExpanded>
+    <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1-content"
+        id="individuals-login-field"
+        className='individuals-sec-field-title'
+    >
+        <h3>المعرفة والخبرات الاستثمارية</h3>
+    </AccordionSummary>
+    <AccordionDetails>
         <div className='individuals-sec-field'>
             <div className='individuals-single-field'>
-                <label>تاريخ الانتهاء</label>
-                <input type="date" name="passportExpirationDate" value={formData.passportExpirationDate} onChange={handleChange} />
+                <label>كيف تصف معرفتك وخبراتك الاستثمارية؟</label>
+                <select name="investmentKnowledgeDescription" value={formData.investmentKnowledgeDescription} onChange={handleChange}>
+                    <option value="Extensive">متميزة</option>
+                    <option value="Good">جيدة</option>
+                    <option value="Limited">محدودة</option>
+                </select>
             </div>
             <div className='individuals-single-field'>
-                <label>الاسم كما في جواز السفر</label>
-                <input name="passportName" value={formData.passportName} onChange={handleChange} />
+                <label>عدد سنوات الاستثمار في أسواق الأوراق المالية:</label>
+                <input type="number" name="investmentYears" value={formData.investmentYears} onChange={handleChange} />
             </div>
             <div className='individuals-single-field'>
-                <label>العنوان في بلد المنشأ</label>
-                <input name="originCountryAddress" value={formData.originCountryAddress} onChange={handleChange} />
+                <label>المنتجات التي سبق الاستثمار فيها:</label>
+                <input type="text" name="previousInvestments" value={formData.previousInvestments} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>الشهادات المهنية:</label>
+                <input type="text" name="professionalCertificates" value={formData.professionalCertificates} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>نسبة القروض من الأموال المستثمرة:</label>
+                <input type="text" name="loanToInvestedMoneyRatio" value={formData.loanToInvestedMoneyRatio} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>صفات التمويل بالهامش خلال السنوات الخمس السابقة:</label>
+                <input type="text" name="marginTransactions" value={formData.marginTransactions} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>صفقات الأوراق المالية خارج المملكة خلال السنوات الخمس السابقة:</label>
+                <input type="text" name="securitiesTransactionsOutsideKingdom" value={formData.securitiesTransactionsOutsideKingdom} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>إذا كان قد تم تنفيذ صفقات أوراق مالية خارج المملكة خلال السنوات الخمس السابقة، ما هي الدول التي تم تنفيذ تلك الصفقات فيها؟</label>
+                <input type="text" name="countriesForSecuritiesTransactions" value={formData.countriesForSecuritiesTransactions} onChange={handleChange} />
+            </div>
+            <div className='individuals-single-field'>
+                <label>قدرتك على تحمل المخاطر:</label>
+                <select name="riskAppetite" value={formData.riskAppetite} onChange={handleChange}>
+                    <option value="Extensive">متميزة</option>
+                    <option value="Good">جيدة</option>
+                    <option value="Limited">محدودة</option>
+                </select>
             </div>
         </div>
     </AccordionDetails>
 </Accordion>
-<div className='individuals-sec-field-title' style={{background:"#F2F4F7"}}>
-    <h3>تصنيف العميل</h3>
-
-    <div className='individuals-sec-field'>
-        <div className='individuals-single-field' style={{textAlign:"right"}}>
-            <label>أوافق على التصنيف على أنه</label>
-            <select id="agreement" name="agreement" value={formData.agreement} onChange={handleChange}>
-                <option value="">-- يُرجى الاختيار --</option>
-                <option value="عميل انجاز فقط">عميل انجاز فقط</option>
-                <option value="عميل">عميل</option>
-                <option value="طرف مقابل">طرف مقابل</option>
-            </select>
-            <div className='individuals-single-check-box'>
-                <input type="checkbox" id="consent" name="consent" checked={formData.consent} onChange={handleChange} style={{marginLeft: "10px"}} />
-                <label htmlFor="consent">لقد قرأت ووافقت / وافقت على <Link to="/terms-and-conditions">الأحكام والشروط</Link></label>
+<Accordion defaultExpanded>
+    <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1-content"
+        id="individuals-login-field"
+        className='individuals-sec-field-title'
+    >
+        <h3>الأهداف الاستثمارية العامة</h3>
+    </AccordionSummary>
+    <AccordionDetails>
+        <div className='individuals-sec-field'>
+            <div className='individuals-single-field checkbox'>
+                <label>حماية رأس المال</label>
+                <input type="checkbox" name="capitalProtection" checked={formData.investmentGoals.capitalProtection} onChange={handleChange2} />
             </div>
+            <div className='individuals-single-field checkbox'>
+                <label>تحقيق الدخل</label>
+                <input type="checkbox" name="incomeGeneration" checked={formData.investmentGoals.incomeGeneration} onChange={handleChange2} />
+            </div>
+            <div className='individuals-single-field checkbox'>
+                <label>متوازنة</label>
+                <input type="checkbox" name="balanced" checked={formData.investmentGoals.balanced} onChange={handleChange2} />
+            </div>
+            </div>
+            <div className='individuals-sec-field'>
+            <div className='individuals-single-field checkbox'>
+                <label>نمو رأس المال</label>
+                <input type="checkbox" name="capitalGrowth" checked={formData.investmentGoals.capitalGrowth} onChange={handleChange2} />
+            </div>
+            <div className='individuals-single-field checkbox'>
+                <label>تكوين مدخرات للتقاعد</label>
+                <input type="checkbox" name="retirementSavings" checked={formData.investmentGoals.retirementSavings} onChange={handleChange2} />
+            </div>
+            <div className='individuals-single-field checkbox'>
+                <label>تمويل مشروع</label>
+                <input type="checkbox" name="projectFinancing" checked={formData.investmentGoals.projectFinancing} onChange={handleChange2} />
+            </div>
+            </div>
+            <div className='individuals-sec-field'>
+            <div className='individuals-single-field checkbox'>
+                <label>شراء أصل (على سبيل المثال: عقار أو مركبة)</label>
+                <input type="checkbox" name="assetPurchase" checked={formData.investmentGoals.assetPurchase} onChange={handleChange2} />
+            </div>
+            </div>
+            <div className='individuals-sec-field'>
+            <div className='individuals-single-field '>
+                <label>غيرها (يرجى التحديد)</label>
+                <input type="text" name="otherInvestmentGoal" value={formData.investmentGoals.other} onChange={handleChange2} />
+            </div>
+           
+        </div>
+    </AccordionDetails>
+</Accordion>
+<Accordion defaultExpanded>
+    <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1-content"
+        id="individuals-login-field"
+        className='individuals-sec-field-title'
+    >
+        <h3>ما الأصول الاستثمارية المفضلة للعميل؟</h3>
+    </AccordionSummary>
+    <AccordionDetails>
+    <label>(يمكنك اختيار أكثر من فئة)</label>
+    <div className='individuals-sec-field'>
+        <div className='individuals-single-field checkbox'>
+            <label>أصول بالريال السعودي</label>
+            <input type="checkbox" name="saudiAssets" checked={formData.saudiAssets} onChange={handleChange} />
+        </div>
+        <div className='individuals-single-field checkbox'>
+            <label>أصول بعملات أجنبية أخرى</label>
+            <input type="checkbox" name="foreignCurrencyAssets" checked={formData.foreignCurrencyAssets} onChange={handleChange} />
         </div>
     </div>
+    <div className='individuals-sec-field'>
+        {formData.foreignCurrencyAssets && (
+            <div className='individuals-single-field'>
+                <label>يرجى التحديد العملات الأجنبية</label>
+                <input type="text" name="selectedForeignCurrencies" value={formData.selectedForeignCurrencies} onChange={handleChange} />
+            </div>
+        )}
+    </div>
+</AccordionDetails>
+</Accordion>
+<Accordion defaultExpanded>
+    <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1-content"
+        id="individuals-login-field"
+        className='individuals-sec-field-title'
+    >
+        <h3>علومات عن المحافظ الاستثمارية للعميل</h3>
+    </AccordionSummary>
+    <AccordionDetails>
+    <div className='individuals-sec-field'>
+
+    <table>
+  <thead>
+    <tr>
+      <th>الأدوات الاستثمارية</th>
+      <th>المحفظة الحالية للعميل</th>
+      <th>المحفظة المثالية للعميل</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Deposits/Murabah (ودائع ومرابحات)</td>
+    <td><input type="text" name="clientCurrentWalletdepositsMurabah" value={formData.clientCurrentWalletdepositsMurabah} onChange={handleChange} /></td>
+      <td><input type="text" name="idealportfoliofortheclientdepositsMurabah" value={formData.idealportfoliofortheclientdepositsMurabah} onChange={handleChange} /></td>
+    </tr>
+    <tr>
+    <td>Debit Instruments (أدوات دين)</td>
+      <td><input type="text" name="clientCurrentWalletdebitInstruments" value={formData.clientCurrentWalletdebitInstruments} onChange={handleChange} /></td>
+
+      <td><input type="text" name="idealportfoliofortheclientdebitInstruments" value={formData.idealportfoliofortheclientdebitInstruments} onChange={handleChange} /></td>
+    </tr>
+    <tr>
+    <td>Equity (أسهم)</td>
+      <td><input type="text" name="clientCurrentWalletequity" value={formData.clientCurrentWalletequity} onChange={handleChange} /></td>
+    
+      <td><input type="text" name="idealportfoliofortheclientequity" value={formData.idealportfoliofortheclientequity} onChange={handleChange} /></td>
+    </tr>
+    <tr>
+    <td>Investment Fund (صناديق استثمارية)</td>
+      <td><input type="text" name="clientCurrentWalletinvestmentFund" value={formData.clientCurrentWalletinvestmentFund} onChange={handleChange} /></td>
+      <td><input type="text" name="idealportfoliofortheclientinvestmentFund" value={formData.idealportfoliofortheclientinvestmentFund} onChange={handleChange} /></td>
+    </tr>
+    <tr>
+    <td>Real estate (عقارات)</td>
+
+      <td><input type="text" name="clientCurrentWalletrealEstate" value={formData.clientCurrentWalletrealEstate} onChange={handleChange} /></td>
+      <td><input type="text" name="idealportfoliofortheclientrealEstate" value={formData.idealportfoliofortheclientrealEstate} onChange={handleChange} /></td>
+    </tr>
+    <tr>
+    <td>Derivatives contracts (عقود مشتقات)</td>
+    <td><input type="text" name="clientCurrentWalletderivativesContracts" value={formData.clientCurrentWalletderivativesContracts} onChange={handleChange} /></td>
+   
+      <td><input type="text" name="idealportfoliofortheclientderivativesContracts" value={formData.idealportfoliofortheclientderivativesContracts} onChange={handleChange} /></td>
+    </tr>
+    <tr>
+    <td>Alternative Investments (استثمارات بديلة)</td>
+    <td><input type="text" name="clientCurrentWalletalternativeInvestments" value={formData.clientCurrentWalletalternativeInvestments} onChange={handleChange} /></td>
+
+      <td><input type="text" name="idealportfoliofortheclientalternativeInvestments" value={formData.idealportfoliofortheclientalternativeInvestments} onChange={handleChange} /></td>
+    </tr>
+    <tr>
+      <td>الرجاء التأكد من أن مجموع النسب المئوية أعلاه يساوي 100%</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</AccordionDetails>
+</Accordion>
+<Accordion defaultExpanded>
+  <AccordionSummary
+    expandIcon={<ExpandMoreIcon />}
+    aria-controls="panel1-content"
+    id="individuals-login-field"
+        className='individuals-sec-field-title'
+  >
+    <h3>معلومات أمين الحفظ</h3>
+  </AccordionSummary>
+  <AccordionDetails>
+    <div className='individuals-sec-field'>
+      <div className='individuals-single-field'>
+        <label>رقم الحساب</label>
+        <input name="accountNumber" value={formData.accountNumber} onChange={handleChange} />
+      </div>
+      <div className='individuals-single-field'>
+        <label>اسم أمين الحفظ</label>
+        <input name="custodianName" value={formData.custodianName} onChange={handleChange} />
+      </div>
+      <div className='individuals-single-field'>
+        <label>عنوان أمين الحفظ</label>
+        <input name="custodianAddress" value={formData.custodianAddress} onChange={handleChange} />
+      </div>
+    </div>
+    <div className='individuals-sec-field'>
+  <table>
+    <thead>
+      <tr>
+        <th>أين ترغب بإرسال الآتي:</th>
+        <th>العميل</th>
+        <th>أمين الحفظ</th>
+        <th>جهات أخرى: تحديد أي تعليمات صادرة عن العميل بشأن الجهة</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <label>الشهادات Certificates</label>
+        </td>
+        <td className='checkbox'>          <input type="checkbox" name="clientCertificates" checked={formData.clientCertificates} onChange={handleChange} /></td>
+        <td className='checkbox'>
+          <input type="checkbox" name="custodianCertificates" checked={formData.custodianCertificates} onChange={handleChange} />
+        </td>
+        <td>        <input name="OtherPartiesCertificates" value={formData.OtherPartiesCertificates} onChange={handleChange} /></td>
+      </tr>
+      <tr>
+        <td>
+          <label>حصص الأرباح أو أي دخل آخر Dividends or any other income</label>
+        </td>
+        <td className='checkbox'>          <input type="checkbox" name="clientDividends" checked={formData.clientDividends} onChange={handleChange} />
+</td>
+        <td className='checkbox'>
+          <input type="checkbox" name="custodianDividends" checked={formData.custodianDividends} onChange={handleChange} />
+        </td>
+        <td >        <input name="OtherPartiesDividends" value={formData.OtherPartiesDividends} onChange={handleChange} /></td>
+
+      </tr>
+      <tr>
+        <td>
+          <label>حصيلة البيع/ Sales proceed</label>
+        </td>
+        <td className='checkbox'>          <input type="checkbox" name="clientSalesProceed" checked={formData.clientSalesProceed} onChange={handleChange} /></td>
+        <td className='checkbox' >
+          <input type="checkbox" name="custodianSalesProceed" checked={formData.custodianSalesProceed} onChange={handleChange} />
+        </td>
+        <td>        <input name="OtherPartiesSalesProceed" value={formData.OtherPartiesSalesProceed} onChange={handleChange} /></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </AccordionDetails>
+</Accordion>
+<Accordion defaultExpanded>
+  <AccordionSummary
+    expandIcon={<ExpandMoreIcon />}
+    aria-controls="panel1-content"
+    id="individuals-login-field"
+    className='individuals-sec-field-title'
+  >
+    <h3>استبيان تقييم المخاطر / الملائمة</h3>
+  </AccordionSummary>
+  <AccordionDetails>
+    <div className='individuals-sec-field'>
+      <div className='individuals-single-field'>
+        <label>1. ما هو مدى خبرتك في مجال المنتجات الاستثمارية؟</label>
+        <select value={q1Answer} onChange={(e) => setQ1Answer(e.target.value)}>
+          <option value="1">لا يوجد اي خبرة استثمارية (نقطة واحدة)</option>
+          <option value="2">خبرة استثمارية قليلة (نقطتان)</option>
+          <option value="3">خبرة عالية في الاستثمار (3 نقاط)</option>
+        </select>
+      </div>
+      <div className='individuals-single-field'>
+        <label>2. كم هو عمرك؟</label>
+        <select value={q2Answer} onChange={(e) => setQ2Answer(e.target.value)}>
+          <option value="1">فوق 65 (نقطة واحدة)</option>
+          <option value="2">بين 51-65 (نقطتان)</option>
+          <option value="3">بين 35-50 (3 نقاط)</option>
+          <option value="4">أقل من 35 (4 نقاط)</option>
+        </select>
+      </div>
+      </div>
+      <div className='individuals-sec-field'>
+      <div className='individuals-single-field'>
+        <label>3. ماهي ردة فعلك إذا هبطت قيمة استثمارك فجأة؟</label>
+        <select value={q3Answer} onChange={handleQ3Change}>
+        <option value="">-- اختر ردة الفعل --</option>
+        <option value="1">بيعها لتفادي اي خسارة مستقبلية (نقطة واحدة)</option>
+        <option value="2">بيع جزء منها لتفادي الخسائر (نقطتان)</option>
+        <option value="3">أحافظ عليها (3 نقاط)</option>
+        <option value="4">شراء المزيد إذا كان الاستثمار مغري على الاسعار المرتفعة ويظهر بأنه أفضل على سعره الحالي (4 نقاط)</option>
+      </select>
+      </div>
+      <div className='individuals-single-field'>
+        <label>4. ما هي المدة التي ستبقي فيها على استثمارك؟</label>
+        <select value={q4Answer} onChange={handleQ4Change}>
+        <option value="">-- اختر المدة --</option>
+        <option value="1">أقل من سنة (نقطة واحدة)</option>
+        <option value="2">بين 1-2 سنة (نقطتان)</option>
+        <option value="3">بين 2-3 سنوات (3 نقاط)</option>
+        <option value="4">أكثر من 3 سنوات (4 نقاط)</option>
+      </select>      </div>
+      </div>
+      <div className='individuals-sec-field'>
+
+      <div className='individuals-single-field'>
+        <label>5. ماهي نسبة رأس المال التي سوف تستعملها لهذا الاستثمار من إجمالي رأس المال (باستثناء العقارات والاستثمارات غير النقدية)؟</label>
+        <select value={q5Answer} onChange={handleQ5Change}>
+        <option value="">-- اختر النسبة --</option>
+        <option value="1">أقل من 25% (نقطة واحدة)</option>
+        <option value="2">بين 26% -50% (نقطتان)</option>
+        <option value="3">بين 51% -75% (3 نقاط)</option>
+        <option value="4">أكثر من 75% (4 نقاط)</option>
+      </select>      </div>
+      <div className='individuals-single-field'>
+        <label>النتيجة (عدد النقاط)</label>
+        <div className='calculateTotalPoints'><h4>{calculateTotalPoints()}</h4></div>
+              </div>
+          
+    </div>
+    <div className='individuals-sec-field'>
+
+    <div className='individuals-single-field'>
+                <label>عدد النقاط من (1) إلى (6): مخاطر منخفضة
+(ننصح العميل بالاستثمار في منتجات منخفضة المخاطر)
+</label>
+              </div></div>
+              <div className='individuals-sec-field'>
+
+<div className='individuals-single-field'>
+            <label>
+            عدد النقاط من (7) إلى (15): مخاطر متوسطة إلى مرتفعة
+(ننصح العميل بالاستثمار في منتجات متوسطة المخاطر)
+
+</label>
+          </div></div>
+          <div className='individuals-sec-field'>
+
+<div className='individuals-single-field'>
+            <label>
+            عدد النقاط أكثر من (15): مخاطر مرتفعة
+(ننصح العميل بالاستثمار في منتجات عالية المخاطر)
+</label>
+          </div></div>
+          <div className='individuals-sec-field'>
+
+          <div className='individuals-single-field'>
+  <label>يرغب العميل الاستثمار في (صناديق / محافظ):</label>
+  <input
+    name="investmentDesire"
+    value={formData.investmentDesire}
+    onChange={handleChange}
+  />
+</div>
+<div className='individuals-single-field'>
+  <label>بالرغم من توصية إتقان كابيتال:</label>
+  <input
+    name="recommendation"
+    value={formData.recommendation}
+    onChange={handleChange}
+  />
+  </div>
+  </div>
+          <div className='individuals-sec-field'>
+
+<div className='individuals-single-field'>
+  <label>التوقيع:</label>
+  <input
+    type="file"
+    name="signature"
+    accept="image/*"
+
+    value={formData.signature}
+    onChange={handleChange}
+  />
+</div>
+<div className='individuals-single-field'>
+  <label>اسم العميل:</label>
+  <input
+
+    name="clientName"
+    value={formData.clientName}
+    onChange={handleChange}
+
+  />
+</div>
+</div>
+
+  </AccordionDetails>
+</Accordion>
+
+
 <button type='submit' className='individuals-buttom-form'>إرسال</button>
 <Modal isOpen={formSubmitted || formError} onRequestClose={() => {setFormSubmitted(false); setFormError(false);}}>
                                 {formSubmitted ? (

@@ -102,8 +102,18 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: space-between;
 }
-.individuals-single-field input,.individuals-single-field select,.individuals-single-field textarea {
+.checkbox{
+    flex-direction: row;
+}
+.checkbox input{
+    width: 20px;
+}
+th{
+    width: 25%;
+}
+.individuals-single-field input,.individuals-single-field select,.individuals-single-field textarea ,.individuals-sec-field td input,.calculateTotalPoints{
     height: 46px;
     border: 1px solid #AEAEAE;
     border-radius: 10px;
@@ -112,6 +122,12 @@
     font-weight: 500;
     font-family: 'Bahij TheSansArabic';
   
+}
+.calculateTotalPoints {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 .individuals-single-field textarea{
     height: 160px;
@@ -138,7 +154,7 @@ color: #5D5D5D;
 .individuals-single-field select{
     padding: 10px;
 }
-.individuals-single-field input{
+.individuals-single-field input ,.individuals-sec-field table tbody td input{
     padding: 10px;
     height: 22px;
     
