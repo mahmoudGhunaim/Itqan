@@ -214,6 +214,9 @@ color: #5D5D5D;
 #agreement{
     width: 50%;
 }
+.table{
+    overflow: auto;
+}
 @media screen and (max-width:  1024px) {
     .individuals-login-title h1{
         font-size: 24px;

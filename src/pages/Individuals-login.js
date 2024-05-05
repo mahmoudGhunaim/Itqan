@@ -1134,7 +1134,7 @@ const IndividualsLogin = () => {
         <h3>علومات عن المحافظ الاستثمارية للعميل</h3>
     </AccordionSummary>
     <AccordionDetails>
-    <div className='individuals-sec-field'>
+    <div className='individuals-sec-field table'>
 
     <table>
   <thead>
@@ -1219,7 +1219,7 @@ const IndividualsLogin = () => {
         <input name="custodianAddress" value={formData.custodianAddress} onChange={handleChange} />
       </div>
     </div>
-    <div className='individuals-sec-field'>
+    <div className='individuals-sec-field table'>
   <table>
     <thead>
       <tr>
