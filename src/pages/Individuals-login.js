@@ -232,9 +232,12 @@ const IndividualsLogin = () => {
             const response = await axios.post("https://wizardly-torvalds.65-21-12-13.plesk.page/api/individuals-logins", formData, {
             headers: {
                 'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            "Authorization": "Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c",
-       
+                'Accept': '*/*',
+                'Authorization': 'Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c',
+                'Cache-Control': 'no-cache',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'User-Agent': 'PostmanRuntime/7.37.3',
+                'Host': 'wizardly-torvalds.65-21-12-13.plesk.page'
             }
         });
     
@@ -321,16 +324,16 @@ const IndividualsLogin = () => {
                     securitiesTransactionsOutsideKingdom:'' ,
                     countriesForSecuritiesTransactions:'' ,
                     riskAppetite: '',
-                    investmentGoals: {
-                        capitalProtection: '',
-                        incomeGeneration: '',
-                        balanced: '',
-                        capitalGrowth: '',
-                        retirementSavings: '',
-                        projectFinancing: '',
-                        assetPurchase: '',
-                        other: ""
-                      },
+                    // investmentGoals: {
+                    //     capitalProtection: '',
+                    //     incomeGeneration: '',
+                    //     balanced: '',
+                    //     capitalGrowth: '',
+                    //     retirementSavings: '',
+                    //     projectFinancing: '',
+                    //     assetPurchase: '',
+                    //     other: ""
+                    //   },
                       saudiAssets: '',
                       foreignCurrencyAssets: '',
                       selectedCurrencies: "",
@@ -367,10 +370,11 @@ const IndividualsLogin = () => {
                       
                 });
             } else {
+                console.error('Unexpected response:', response);
                 setFormError(true);
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error:', error.response ? error.response.data : error.message);
             setFormError(true);
         }
     };
