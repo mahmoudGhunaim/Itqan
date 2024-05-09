@@ -260,7 +260,7 @@ const IndividualsLogin = () => {
                 }
             });
     
-            if (response.status === 200) {
+            if (response.status === 200 ||response.status === 204) {
                 setFormSubmitted(true);
                 setFormData({
                     fullName: '',
