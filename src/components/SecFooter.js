@@ -7,7 +7,7 @@ import Successfully from '../Json/Successfully.json'; // Import the success anim
 import Fail from '../Json/fail.json'; // Import the fail animation JSON file
 import "./style/ContactUs.css"
 import { Link } from "gatsby"
-
+import itqanProfile from "../../static/itqanProfile.pdf"
 const SecFooter = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
   const [formError, setFormError] = useState(false);
@@ -136,7 +136,7 @@ Kingdom of Saudi Arabia
             <img src='/X.png'/>
             <img src='/LinkedIn.png'/>
           </div>
-          <Link to='https://itqancapital.com/files/itg2024.pdf'>
+          <Link to={itqanProfile}>
           <h6><img src='/file-icon.png'/>ملف تعريفي للشركة</h6>
           </Link>
         </div>

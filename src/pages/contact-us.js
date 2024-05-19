@@ -10,7 +10,7 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import Successfully from "../Json/Successfully.json"
 import Fail from "../Json/fail.json"
 import { Link } from "gatsby"
-
+import itqanProfile from "../../static/itqanProfile.pdf"
 const ContactUs = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [formError, setFormError] = useState(false);
@@ -165,7 +165,7 @@ const ContactUs = () => {
                     <img src='/X.png'/>
                     <img src='/LinkedIn.png'/>
                 </div>
-                <Link to='https://itqancapital.com/files/itg2024.pdf'>
+                <Link to={itqanProfile}>
           <h6><img src='/Investor.png'/>ملف تعريفي للشركة</h6>
           </Link>
             </div>

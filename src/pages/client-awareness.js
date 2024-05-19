@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 import "../components/style/ClientAwareness.css"
 import { Link } from "gatsby";
 import Seo from '../components/seo';
-
+import InvestorProtectionGuide from "../../static/1681029922_دليل-حماية-المستثمر (4).pdf"
 const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
   const [content, setContent] = useState(defaultContent);
   const [imgSrc, setImgSrc] = useState(defaultImgSrc);
@@ -56,7 +56,7 @@ const ClientAwareness = () => {
                         hoverContent='الإطلاع على ملف PDF'
                     />
                     </Link>
-                    <Link to='https://itqancapital.com/wp-content/themes/etq/co/InvestorProtectionGuide.pdf'>
+                    <Link to={InvestorProtectionGuide}>
                     <SecurityCard
                         defaultImgSrc='/Investor.png'
                         hoverImgSrc='/PDF.png' 
