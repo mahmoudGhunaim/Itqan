@@ -56,14 +56,14 @@ const ClientAwareness = () => {
                         hoverContent='الإطلاع على ملف PDF'
                     />
                     </Link>
-                    <Link to={InvestorProtectionGuide}>
+                    <a href={InvestorProtectionGuide} target = "_blank">
                     <SecurityCard
                         defaultImgSrc='/Investor.png'
                         hoverImgSrc='/PDF.png' 
                         defaultContent='دليل حماية المستثمر'
                         hoverContent='الإطلاع على ملف PDF'
                     />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>
