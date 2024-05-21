@@ -15,7 +15,7 @@ const BoardDirectors = () => {
     <Hero
     title="الهيكل التنظيمي"/>
     <section className='BoardDirectors-sec'>
-        <img  src='/الهيكل التنظيمي للإدارات_page.jpg'/>
+        <img  src='/الهيكل التنظيمي للإدارات-1.png'/>
     </section>
    </Layout>
   )
