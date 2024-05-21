@@ -20,7 +20,7 @@ const Layout = ({ children, overPadding,  }) => {
   `)
   useEffect(() => {
   
-    setTimeout(() => setLoading(false), 3000); 
+    setTimeout(() => setLoading(false), 1000); 
   }, []);
 
   if (loading) return <Loader />;

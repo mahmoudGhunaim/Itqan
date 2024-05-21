@@ -188,7 +188,7 @@ const AssetManagement = () => {
           className={activeButton === "portfolio" ? "active" : ""}
           onClick={handlePortfolioManagementClick}
         >
-          أدارة المحافظ
+          إدارة المحافظ
         </button>
         <button
           className={activeButton === "private" ? "active" : ""}

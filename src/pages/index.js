@@ -53,8 +53,8 @@ const Index  = () => {
 
   const backgrounds = [
     "JeddahCORNICHE.jpg",
-    "Rectangle%203-minn.png", 
     "Rectangle%201-min.png",
+    "Rectangle%203-minn.png", 
   ];
 
   
@@ -145,7 +145,7 @@ const Index  = () => {
             <td>يومي</td>
             <td>10/01/2024</td>
             <td>SAR 13.9661</td>
-            <td className='box-name'>صندوق المرابحات والصكوك<img src='/Frame 1.png'/></td>    
+            <td className='box-name'>صندوق إتقان المرابحات والصكوك<img src='/Frame 1.png'/></td>    
           </tr>
           <tr>
             <td>1.93</td>
@@ -154,7 +154,7 @@ const Index  = () => {
           
             <td>10/01/2024</td>
             <td>SAR 16.7911</td>
-            <td className='box-name'>صندوق إتقان للأسهم السعودية<img src='/Frame 1.png'/></td>      
+            <td className='box-name'>صندوق إتقان كابيتال للأسهم السعودية<img src='/Frame 1.png'/></td>      
           </tr>
         </table>
         </div>

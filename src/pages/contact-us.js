@@ -151,19 +151,28 @@ const ContactUs = () => {
                 </div>
                 <div className='Contact-info'>
                     <div className='Contact-info-data'>
-                      <h6> 1 العنوان</h6>
-                         <p>المملكة العربية السعودية / الرياض......</p>
-                    </div>
+                      <h6> جدة</h6>
+                         <p>حي الزهراء – شارع أحمد العطاس
+
+مركز الزهراء التجاري، وحدة 2563، جدة 23425-2753
+المملكة العربية السعودية</p>                   </div>
                     <div className='Contact-info-data'>
-                      <h6> 2 العنوان</h6>
-                         <p>المملكة العربية السعودية / الرياض......</p>
+                      <h6>الرياض</h6>
+                         <p>الطابق الثاني، مركز الدغيثر
+العليا، الرياض
+
+المملكة العربية السعودية</p>
                     </div>
                 </div>
                 
                 <h6>التواصل الاجتماعي</h6>
                 <div className='Contact-footer-content-social'> 
+                <Link to='https://x.com/ItqanCapital'>
                     <img src='/X.png'/>
+                    </Link>
+                    <Link to='https://sa.linkedin.com/company/itqancapital'>
                     <img src='/LinkedIn.png'/>
+                    </Link>
                 </div>
                 <Link to={itqanProfile}>
           <h6><img src='/Investor.png'/>ملف تعريفي للشركة</h6>

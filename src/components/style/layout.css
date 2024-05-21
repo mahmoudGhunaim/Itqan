@@ -29,7 +29,7 @@ header.navBar-sec {
 }
 .navBar-container {
   display: flex;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
   justify-content: space-between;
   width: 90%;
   align-items: center;

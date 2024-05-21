@@ -17,6 +17,9 @@
     justify-content: space-between;
     padding-top: 88px;
 }
+.Contact-info-data {
+    width: 50%;
+}
 .Contact-footer-form input,.Contact-footer-form textarea{
     text-align: right;
     margin-top: 15px;
@@ -190,6 +193,9 @@ form.Contact-footer-form{
     text-decoration: none;
 }
 @media screen and (max-width:  1024px){
+    .Contact-info-data {
+        width: 100%;
+    }
     .Contact-footer-content{
         width: 100%;
     }
