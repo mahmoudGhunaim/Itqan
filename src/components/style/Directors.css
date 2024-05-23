@@ -98,4 +98,7 @@ color: #000000;
     .director-card img {
         width: 100%;
     }
+    .Board-hero-title h1{
+        font-size: 36px;
+    }
 }

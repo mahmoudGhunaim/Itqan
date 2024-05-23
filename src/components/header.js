@@ -100,6 +100,8 @@ const Header = ({ siteTitle }) => {
               <Link to="/board-directors">الهيكل التنظيمي</Link>
               <Link to="/csr">المسؤولية الاجتماعية للشركات (CSR)</Link>
               <Link to="/board">مجلس الإدارة</Link>
+              <Link to="/management-team">فريق الإدارة</Link>
+
               <Link to="/asset-management">إدارة الأصول</Link>
                 <Link to="/conservation-services">خدمات الحفظ</Link>
                 <Link to="/Investment-banking">الخدمات المصرفية الاستثمارية</Link>
