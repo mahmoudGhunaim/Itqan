@@ -39,7 +39,7 @@ const Header = ({ siteTitle }) => {
           <Link to="/">الرئيسية</Link>
           <div className="dropdown">
           <Link to="" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
-            نبذة عنا
+            نبذة عنا <img src='/arrow.png'/>
           </Link>
           {showDropdown && (
             <div className="dropdown-content" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
@@ -53,7 +53,7 @@ const Header = ({ siteTitle }) => {
 </div>
           <div className="dropdown">
             <Link to="" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
-              الخدمات
+              الخدمات<img src='/arrow.png'/>
             </Link>
             {showDropdown && (
               <div className="dropdown-content" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
@@ -64,20 +64,10 @@ const Header = ({ siteTitle }) => {
               </div>
             )}
           </div>
-          <div className="dropdown">
-            <Link to="/" onMouseEnter={() => setShowCustomerServiceDropdown(true)} onMouseLeave={() => setShowCustomerServiceDropdown(false)}>
-              خدمة العملاء
-            </Link>
-            {showCustomerServiceDropdown && (
-              <div className="dropdown-content" onMouseEnter={() => setShowCustomerServiceDropdown(true)} onMouseLeave={() => setShowCustomerServiceDropdown(false)}>
-
-                <Link to="/client-awareness">توعية العملاء</Link>
-              </div>
-            )}
-          </div>        
+           
             <Link to="/announcements">التصريحات</Link>
             <Link to="/reports">التقارير</Link>
-            
+            <Link to="/client-awareness">توعية العملاء</Link>    
                  <Link to="/contact-us">الاتصال بنا</Link>
         </div>
         <div className="navBar-openAcc">

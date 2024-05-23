@@ -44,6 +44,7 @@ color: #FFFFFF;
 }
 .Team-card img{
     border-radius: 0px 20px 20px 0;
+    max-height: 480px;
 }
 .Team-card-info{
     padding:  0 30px;

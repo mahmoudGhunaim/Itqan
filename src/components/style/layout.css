@@ -29,7 +29,7 @@ header.navBar-sec {
 }
 .navBar-container {
   display: flex;
-  /* flex-direction: row-reverse; */
+  flex-direction: row-reverse;
   justify-content: space-between;
   width: 90%;
   align-items: center;
@@ -51,7 +51,14 @@ header.navBar-sec {
   font-weight: 500;
   font-family:"Bahij TheSansArabic" ;
   font-size: 16px;
-
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3px;
+  justify-content: space-between;
+align-items: center;
+}
+.navBar-links a img{
+  height: 100%;
 }
 .navBar-links a:focus{
   color: #3F1A58;
