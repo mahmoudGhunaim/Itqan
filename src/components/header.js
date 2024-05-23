@@ -47,6 +47,7 @@ const Header = ({ siteTitle }) => {
               <Link to="/shariyah-review">الهيئة الشرعية</Link>
               <Link to="/board-directors">الهيكل التنظيمي</Link>
               <Link to="/board">مجلس الإدارة</Link>
+              <Link to="/management-team">فريق الإدارة</Link>
             </div>
           )}
 </div>

@@ -85,6 +85,9 @@ color: #000000;
     text-align: center;
     color: #46235E;
 }
+.director-card-container a {
+    text-decoration: none;
+}
 @media screen and (max-width:  1024px){
     .director-card-container{
         grid-template-columns: repeat(1, auto);
