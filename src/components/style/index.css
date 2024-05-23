@@ -387,9 +387,8 @@ color: #222222;
 .Reports-data-sec{
     display: flex;
     justify-content: center;
-    background: url("/Frame 21212.png");
-
-background-position: right top;
+    background: url("/Frame 2.png");
+    background-position: 0 0;
     background-repeat: no-repeat;
 }
 .Reports-data-container{

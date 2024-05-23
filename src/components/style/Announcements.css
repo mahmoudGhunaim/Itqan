@@ -25,9 +25,9 @@
 } */
 .Announcements-sec{
     padding: 100px 0;
-    background: url("/Frame 21212.png");
+    background: url("/Frame 2.png");
+    background-position: 0 0;
     background-repeat: no-repeat;
-    background-position: top right;
     display: flex;
     justify-content: center;
 }

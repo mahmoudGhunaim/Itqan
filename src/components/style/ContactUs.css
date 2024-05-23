@@ -1,15 +1,15 @@
 .Contact-footer-section{
     display: flex;
     justify-content: center;
-    background: url("/Frame 21212.png");
+    background: url("/Frame 2.png");
+    background-position: 0 0;
     background-repeat: no-repeat;
-    background-position: top right;
 }
 .Contact-footer-section-wallpaper{
     padding-bottom: 95px;
-    background: url("/Frame 106.png");
+    /* background: url("/Frame 106.png");
     background-repeat: no-repeat;
-    background-position: bottom left;
+    background-position: bottom left; */
 }
 .Contact-footer-container {
     width: 90%;
