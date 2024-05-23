@@ -59,7 +59,12 @@
 }
 .director-card{
     box-shadow: 0px 4px 15.5px 0px #85858514;
+    transition: transform 0.3s ease-in-out;
 
+}
+.director-card:hover{
+    transform: scale(1.03 );
+ 
 }
 .director-card img{
     width: 25vw;
@@ -88,6 +93,7 @@ color: #000000;
 .director-card-container a {
     text-decoration: none;
 }
+
 @media screen and (max-width:  1024px){
     .director-card-container{
         grid-template-columns: repeat(1, auto);
