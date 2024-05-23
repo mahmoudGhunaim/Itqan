@@ -13,7 +13,7 @@
     text-align: right;
 
 }
-.AnnouncementsBox p:nth-child(1){
+/* .AnnouncementsBox p:nth-child(1){
     color: #3F1A58;
 }
 .AnnouncementsBox p:nth-child(2){
@@ -22,7 +22,7 @@
 .AnnouncementsBox p:nth-child(3){
     color: #3F1A58;
     color: 16px;
-}
+} */
 .Announcements-sec{
     padding: 100px 0;
     background: url("/Frame 21212.png");
