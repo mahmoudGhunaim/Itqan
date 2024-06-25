@@ -87,6 +87,9 @@ section.private-box-sec {
     background-position: left top;
         background-repeat: no-repeat;
   }
+  .buttons-container-private button{
+    width: 300px !important;
+  }
   @media screen and (max-width: 1023px){
     .assetManagement-accordion-container {
       width: 90%;

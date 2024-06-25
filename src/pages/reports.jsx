@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import Layout from "../components/layout";
 import Accordion from '../components/Accordion';
 import ScrollToTopButton from '../components/ScrollToTopButton';
-import accordionData from '../Json/Accordion.json';
+import accordionData from '../Json/reports.json';
 import "../components/style/index.css";
 import Seo from '../components/seo';
 const Reports = () => {
@@ -19,7 +19,8 @@ const Reports = () => {
         />
         <ScrollToTopButton/>
         <section className='assetManagement-accordion Reports-sec'>
-            <h3>التقارير</h3>
+            <h3>التقارير والبيانات
+            </h3>
             <div className='assetManagement-accordion-container'>
             {accordionData.map((item, index) => (
             <Accordion 
@@ -29,8 +30,8 @@ const Reports = () => {
             />
         ))}
         </div>
-
         </section>
+        
     </Layout>
   )
 }

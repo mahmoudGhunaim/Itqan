@@ -40,7 +40,7 @@ const ManagementTeam = () => {
       <section className='Board-hero-sec'>
         <div className='Board-hero-container'>
           <div className='Board-hero-title'>
-            <h1>فريق الإدارة اتقان كابيتال</h1>
+            <h1>فريق الإدارة إتقان كابيتال</h1>
             <p>“نبذة عنا”</p>
           </div>
         </div>

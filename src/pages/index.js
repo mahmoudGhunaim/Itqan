@@ -145,7 +145,7 @@ const Index  = () => {
             <td>يومي</td>
             <td>10/01/2024</td>
             <td>SAR 13.9661</td>
-            <td className='box-name'>صندوق إتقان المرابحات والصكوك<img src='/Frame 1.png'/></td>    
+            <td className='box-name'>صندوق إتقان للمرابحات والصكوك<img src='/Frame 1.png'/></td>
           </tr>
           <tr>
             <td>1.93</td>

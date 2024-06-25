@@ -19,37 +19,148 @@ const SliderButtons = () => {
   const swiper = useSwiper();
   return (
     <div className="btn-sliider">
-      <button onClick={() => swiper.slidePrev()} className=''><img src='/arrow-circle-left.png' /></button>
+<button onClick={() => swiper.slidePrev()} style={{ transform: "rotate(180deg)" }}>
+  <img src='/arrow-circle-right.png' alt="Previous Slide" />
+</button>
       <button onClick={() => swiper.slideNext()} className=''><img src='/arrow-circle-right.png' /></button>
     </div>
   )
 }
 const AssetManagement = () => {
   const [activeButton, setActiveButton] = useState("stock");
+  const handlePortfolioMurabahaandSukukFund = () => {
+    setContent( <> <div className="buttons-container buttons-container-private">
+       
+       <button
+         className={activeButton === "private" ? "active" : ""}
+         onClick={handlePortfolioSaudiEquityFund}
+       >
+صندوق الأسهم السعودية
+</button>
+<button
+         className={activeButton === "portfolio" ? "active" : ""}
+         onClick={handlePortfolioMurabahaandSukukFund}
+       >
+صندوق المرابحات والصكوك
+</button>
+     </div> <InfoPanel
+      title="صندوق المرابحات والصكوك     "
+      paragraph="يهدف صندوق إتقان للمرابحات والصكوك إلى تحقيق عائدات مجزية للمستثمرين على المدى القصير والمتوسط متوافقة مع الضوابط الشرعية للاستثمار، والعمل على المحافظة على رأس مال المستثمر وتوفير إمكانية الاسترداد حسب الحاجة بأمثل طريقة لإدارة المخاطر. بهدف تحقيق أهدافه الاستثمارية، سيستثمر الصندوق بشكل أساسي في السوق السعودية في محفظة استثمارية متنوعة مكونة من أدوات استثمارية عالية الجودة وقصيرة الأجل ومتوافقة مع الضوابط الشرعية للاستثمار بما يشمل:"
+      point1="صفقات السلع القائمة على المرابحة."
+      point2="الصكوك باختلاف أنواعها، بشكل مباشر وغير مباشر، بحد أقصى 30% من صافي قيمة أصول الصندوق."
+      point3="وحدات صناديق استثمارية تستثمر في المرابحات و/ أو الصكوك بشكل رئيسي."
+      point4="وحدات صناديق الاستثمار التي تستثمر في أدوات الاستثمار المختلفة بما في ذلك المرابحة والمضاربة والاستصناع والسلم."
+      button="استثمر بذكاء مع صندوق إتقان"
+      image="/Frame 136.png"
+      links="/Individuals-login"
+      
+      />
+      <h2 className='boxes-title'>صناديق الأسهم والمرابحات العامة</h2>
+  
+   
+      <section className='assetManagement-accordion'>
+          <div className='assetManagement-accordion-container'>
+          {accordionData.map((item, index) => (
+          <Accordion 
+          key={index}
+          title={item.title}
+          Details={item.Details}
+          />
+      ))}
+      </div>
+  
+      </section></>);
+    setActiveButton("portfolio");
+  };
+  const handlePortfolioSaudiEquityFund = () => {
+    setContent(<> <div className="buttons-container buttons-container-private">
+       
+       <button
+         className={activeButton === "private" ? "active" : ""}
+         onClick={handlePortfolioSaudiEquityFund}
+       >
+صندوق الأسهم السعودية
+</button>
+<button
+         className={activeButton === "portfolio" ? "active" : ""}
+         onClick={handlePortfolioMurabahaandSukukFund}
+       >
+صندوق المرابحات والصكوك
+</button>
+     </div><InfoPanel
+      title="صندوق الأسهم السعودية
+      "
+      paragraph="يهدف صندوق إتقان كابيتال للأسهم السعودية، وهو صندوق استثماري مفتوح، لتحقيق نمو في رأس المال في المدى المتوسط والطويل من خلال الاستثمار في أسهم الشركات المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وفي أسهم الإصدارات الأولية وحقوق الأولوية المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وصناديق المؤشرات المتداولة (ETFs) والصناديق العقارية المتداولة وصناديق الاستثمار في الأسهم السعودية و صناديق أسواق النقد وصناديق الدخل الثابت المرخصة من هيئة السوق المالية وأدوات الدخل الثابت والنقد وأشباه النقود المتوافقة مع ضوابط هيئة الرقابة الشرعية ذات تصنيف ائتماني بحد أدنى- BBB أو ما يعادلها في تصنيفات وكالات التصنيف الائتماني."
+    
+      button="استثمر بذكاء مع صندوق إتقان"
+      image="/Frame 138.png"
+      revers="row-reverse"
+      none="none"
+      links="/Individuals-login"
+      />
+       <h2 className='boxes-title'>صناديق الأسهم والمرابحات العامة</h2>
+  
+   
+  <section className='assetManagement-accordion'>
+      <div className='assetManagement-accordion-container'>
+      {accordionData.map((item, index) => (
+      <Accordion 
+      key={index}
+      title={item.title}
+      Details={item.Details}
+      />
+  ))}
+  </div>
 
+  </section>
+       </>);
+    setActiveButton("portfolio");
+  };
   const [content, setContent] = useState(
     <section className='AssetManagement-title'>
+     <div className="buttons-container buttons-container-private">
+       
+       <button
+        className={activeButton === 'Saudi Stocks Fund' ? 'active' : ''}
+        onClick={handlePortfolioSaudiEquityFund}
+       >
+صندوق الأسهم السعودية
+</button>
+<button
+        className={activeButton === 'Mudarabah and Sukuk Fund' ? 'active' : ''}
+        onClick={handlePortfolioMurabahaandSukukFund}
+       >
+صندوق المرابحات والصكوك
+</button>
+     </div>
+     <InfoPanel
+      title="صندوق المرابحات والصكوك     "
+      paragraph="يهدف صندوق إتقان للمرابحات والصكوك إلى تحقيق عائدات مجزية للمستثمرين على المدى القصير والمتوسط متوافقة مع الضوابط الشرعية للاستثمار، والعمل على المحافظة على رأس مال المستثمر وتوفير إمكانية الاسترداد حسب الحاجة بأمثل طريقة لإدارة المخاطر. بهدف تحقيق أهدافه الاستثمارية، سيستثمر الصندوق بشكل أساسي في السوق السعودية في محفظة استثمارية متنوعة مكونة من أدوات استثمارية عالية الجودة وقصيرة الأجل ومتوافقة مع الضوابط الشرعية للاستثمار بما يشمل:"
+      point1="صفقات السلع القائمة على المرابحة."
+      point2="الصكوك باختلاف أنواعها، بشكل مباشر وغير مباشر، بحد أقصى 30% من صافي قيمة أصول الصندوق."
+      point3="وحدات صناديق استثمارية تستثمر في المرابحات و/ أو الصكوك بشكل رئيسي."
+      point4="وحدات صناديق الاستثمار التي تستثمر في أدوات الاستثمار المختلفة بما في ذلك المرابحة والمضاربة والاستصناع والسلم."
+      button="استثمر بذكاء مع صندوق إتقان"
+      image="/Frame 136.png"
+      links="/Individuals-login"
+      
+      />
       <h2 className='boxes-title'>صناديق الأسهم والمرابحات العامة</h2>
-      <InfoPanel
-        title="صندوق المرابحات والصكوك     "
-        paragraph="يهدف صندوق إتقان للمرابحات والصكوك إلى تحقيق عائدات مجزية للمستثمرين على المدى القصير والمتوسط متوافقة مع الضوابط الشرعية للاستثمار، والعمل على المحافظة على رأس مال المستثمر وتوفير إمكانية الاسترداد حسب الحاجة بأمثل طريقة لإدارة المخاطر. بهدف تحقيق أهدافه الاستثمارية، سيستثمر الصندوق بشكل أساسي في السوق السعودية في محفظة استثمارية متنوعة مكونة من أدوات استثمارية عالية الجودة وقصيرة الأجل ومتوافقة مع الضوابط الشرعية للاستثمار بما يشمل:"
-        point1="صفقات السلع القائمة على المرابحة."
-        point2="الصكوك باختلاف أنواعها، بشكل مباشر وغير مباشر، بحد أقصى 30% من صافي قيمة أصول الصندوق."
-        point3="وحدات صناديق استثمارية تستثمر في المرابحات و/ أو الصكوك بشكل رئيسي."
-        point4="وحدات صناديق الاستثمار التي تستثمر في أدوات الاستثمار المختلفة بما في ذلك المرابحة والمضاربة والاستصناع والسلم."
-        button="استثمر بذكاء مع صندوق إتقان"
-        image="/Frame 136.png"
-        links="/Individuals-login"
-      />
-      <InfoPanel
-        title="صندوق الأسهم السعودية"
-        paragraph="يهدف صندوق إتقان كابيتال للأسهم السعودية، وهو صندوق استثماري مفتوح، لتحقيق نمو في رأس المال في المدى المتوسط والطويل من خلال الاستثمار في أسهم الشركات المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وفي أسهم الإصدارات الأولية وحقوق الأولوية المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وصناديق المؤشرات المتداولة (ETFs) والصناديق العقارية المتداولة وصناديق الاستثمار في الأسهم السعودية و صناديق أسواق النقد وصناديق الدخل الثابت المرخصة من هيئة السوق المالية وأدوات الدخل الثابت والنقد وأشباه النقود المتوافقة مع ضوابط هيئة الرقابة الشرعية ذات تصنيف ائتماني بحد أدنى- BBB أو ما يعادلها في تصنيفات وكالات التصنيف الائتماني."
-        button="استثمر بذكاء مع صندوق إتقان"
-        image="/Frame 138.png"
-        revers="row-reverse"
-        none="none"
-        links="/Individuals-login"
-      />
+  
+   
+      <section className='assetManagement-accordion'>
+          <div className='assetManagement-accordion-container'>
+          {accordionData.map((item, index) => (
+          <Accordion 
+          key={index}
+          title={item.title}
+          Details={item.Details}
+          />
+      ))}
+      </div>
+  
+      </section>
+   
     </section>
   );
 ;
@@ -131,45 +242,52 @@ const AssetManagement = () => {
       setActiveButton("private");
 
   };
-
+ 
   const handleStockFundsClick = () => {
     setContent(<section className='AssetManagement-title'>
-    <h2 className='boxes-title'>صناديق الأسهم والمرابحات العامة</h2>
-    <InfoPanel
-    title="صندوق المرابحات والصكوك     "
-    paragraph="يهدف صندوق إتقان للمرابحات والصكوك إلى تحقيق عائدات مجزية للمستثمرين على المدى القصير والمتوسط متوافقة مع الضوابط الشرعية للاستثمار، والعمل على المحافظة على رأس مال المستثمر وتوفير إمكانية الاسترداد حسب الحاجة بأمثل طريقة لإدارة المخاطر. بهدف تحقيق أهدافه الاستثمارية، سيستثمر الصندوق بشكل أساسي في السوق السعودية في محفظة استثمارية متنوعة مكونة من أدوات استثمارية عالية الجودة وقصيرة الأجل ومتوافقة مع الضوابط الشرعية للاستثمار بما يشمل:"
-    point1="صفقات السلع القائمة على المرابحة."
-    point2="الصكوك باختلاف أنواعها، بشكل مباشر وغير مباشر، بحد أقصى 30% من صافي قيمة أصول الصندوق."
-    point3="وحدات صناديق استثمارية تستثمر في المرابحات و/ أو الصكوك بشكل رئيسي."
-    point4="وحدات صناديق الاستثمار التي تستثمر في أدوات الاستثمار المختلفة بما في ذلك المرابحة والمضاربة والاستصناع والسلم."
-    button="استثمر بذكاء مع صندوق إتقان"
-    image="/Frame 136.png"
-    links="/Individuals-login"
-    
-    />
-    <InfoPanel
-    title="صندوق الأسهم السعودية
-    "
-    paragraph="يهدف صندوق إتقان كابيتال للأسهم السعودية، وهو صندوق استثماري مفتوح، لتحقيق نمو في رأس المال في المدى المتوسط والطويل من خلال الاستثمار في أسهم الشركات المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وفي أسهم الإصدارات الأولية وحقوق الأولوية المدرجة في سوق الأسهم السعودية الرئيسية أو المدرجة في سوق الأسهم السعودية الموازية (نمو)، وصناديق المؤشرات المتداولة (ETFs) والصناديق العقارية المتداولة وصناديق الاستثمار في الأسهم السعودية و صناديق أسواق النقد وصناديق الدخل الثابت المرخصة من هيئة السوق المالية وأدوات الدخل الثابت والنقد وأشباه النقود المتوافقة مع ضوابط هيئة الرقابة الشرعية ذات تصنيف ائتماني بحد أدنى- BBB أو ما يعادلها في تصنيفات وكالات التصنيف الائتماني."
+     <div className="buttons-container buttons-container-private">
+       
+       <button
+         className={activeButton === "private" ? "active" : ""}
+         onClick={handlePortfolioSaudiEquityFund}
+       >
+صندوق الأسهم السعودية
+</button>
+<button
+         className={activeButton === "portfolio" ? "active" : ""}
+         onClick={handlePortfolioMurabahaandSukukFund}
+       >
+صندوق المرابحات والصكوك
+</button>
+     </div>
+     <InfoPanel
+      title="صندوق المرابحات والصكوك     "
+      paragraph="يهدف صندوق إتقان للمرابحات والصكوك إلى تحقيق عائدات مجزية للمستثمرين على المدى القصير والمتوسط متوافقة مع الضوابط الشرعية للاستثمار، والعمل على المحافظة على رأس مال المستثمر وتوفير إمكانية الاسترداد حسب الحاجة بأمثل طريقة لإدارة المخاطر. بهدف تحقيق أهدافه الاستثمارية، سيستثمر الصندوق بشكل أساسي في السوق السعودية في محفظة استثمارية متنوعة مكونة من أدوات استثمارية عالية الجودة وقصيرة الأجل ومتوافقة مع الضوابط الشرعية للاستثمار بما يشمل:"
+      point1="صفقات السلع القائمة على المرابحة."
+      point2="الصكوك باختلاف أنواعها، بشكل مباشر وغير مباشر، بحد أقصى 30% من صافي قيمة أصول الصندوق."
+      point3="وحدات صناديق استثمارية تستثمر في المرابحات و/ أو الصكوك بشكل رئيسي."
+      point4="وحدات صناديق الاستثمار التي تستثمر في أدوات الاستثمار المختلفة بما في ذلك المرابحة والمضاربة والاستصناع والسلم."
+      button="استثمر بذكاء مع صندوق إتقان"
+      image="/Frame 136.png"
+      links="/Individuals-login"
+      
+      />
+      <h2 className='boxes-title'>صناديق الأسهم والمرابحات العامة</h2>
   
-    button="استثمر بذكاء مع صندوق إتقان"
-    image="/Frame 138.png"
-    revers="row-reverse"
-    none="none"
-    links="/Individuals-login"
-    /> 
-    <section className='assetManagement-accordion'>
-        <div className='assetManagement-accordion-container'>
-        {accordionData.map((item, index) => (
-        <Accordion 
-        key={index}
-        title={item.title}
-        Details={item.Details}
-        />
-    ))}
-    </div>
-
-    </section>
+   
+      <section className='assetManagement-accordion'>
+          <div className='assetManagement-accordion-container'>
+          {accordionData.map((item, index) => (
+          <Accordion 
+          key={index}
+          title={item.title}
+          Details={item.Details}
+          />
+      ))}
+      </div>
+  
+      </section>
+   
     </section>);
         setActiveButton("stock");
   };
@@ -217,4 +335,4 @@ const AssetManagement = () => {
   )
 }
 
-export default AssetManagement
+export default AssetManagement;
