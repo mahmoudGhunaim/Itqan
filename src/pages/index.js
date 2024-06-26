@@ -61,30 +61,24 @@ const Index  = () => {
   const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
   const [opacity, setOpacity] = useState(1); // Start with full opacity
 
-
   useEffect(() => {
-    
     const changeBackground = () => {
-
       setOpacity(0);
-    
 
       setTimeout(() => {
-        setCurrentBackground((prev) => {
+        setCurrentBackground(prev => {
           const index = backgrounds.indexOf(prev);
           return backgrounds[(index + 1) % backgrounds.length];
         });
-    
-        setOpacity(1);
-      }, 100); 
-    };
 
+        setOpacity(1);
+      }, 500); // Adjust timing to match CSS transition time
+    };
 
     const intervalId = setInterval(changeBackground, 3000);
 
-
     return () => clearInterval(intervalId);
-  }, []); 
+  }, []);
 
   return (
     <Layout>

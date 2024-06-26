@@ -28,9 +28,9 @@ body{
       align-items: center;
   }
   .hero-homepage-sec {
-
     transition: opacity 0.5s ease; /* Smooth transition for opacity change */
-
+    opacity: 1; /* Ensure initial opacity */
+    background-size: cover; /* Adjust background size as needed */
   }
   .hero-homepage-sec::before {
       content: "";
