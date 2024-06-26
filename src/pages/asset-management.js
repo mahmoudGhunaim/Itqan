@@ -76,13 +76,11 @@ const AssetManagement = () => {
     setContent(<> <div className="buttons-container buttons-container-private">
        
        <button
-         className={activeButton === "private" ? "active" : ""}
          onClick={handlePortfolioSaudiEquityFund}
        >
 صندوق الأسهم السعودية
 </button>
 <button
-         className={activeButton === "portfolio" ? "active" : ""}
          onClick={handlePortfolioMurabahaandSukukFund}
        >
 صندوق المرابحات والصكوك
@@ -121,13 +119,11 @@ const AssetManagement = () => {
      <div className="buttons-container buttons-container-private">
        
        <button
-        className={activeButton === 'Saudi Stocks Fund' ? 'active' : ''}
         onClick={handlePortfolioSaudiEquityFund}
        >
 صندوق الأسهم السعودية
 </button>
 <button
-        className={activeButton === 'Mudarabah and Sukuk Fund' ? 'active' : ''}
         onClick={handlePortfolioMurabahaandSukukFund}
        >
 صندوق المرابحات والصكوك
@@ -248,13 +244,12 @@ const AssetManagement = () => {
      <div className="buttons-container buttons-container-private">
        
        <button
-         className={activeButton === "private" ? "active" : ""}
          onClick={handlePortfolioSaudiEquityFund}
        >
 صندوق الأسهم السعودية
 </button>
 <button
-         className={activeButton === "portfolio" ? "active" : ""}
+        
          onClick={handlePortfolioMurabahaandSukukFund}
        >
 صندوق المرابحات والصكوك
