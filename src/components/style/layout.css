@@ -206,6 +206,9 @@ button.button-input-button{
   transform: translateY(0px) translateX(-100px); 
 
 }
+html[lang="en"] .dropdown-content a{
+  text-align: left  ;
+}
 .dropdown-content a {
   font-family: "Bahij TheSansArabic";
   font-weight: 500;

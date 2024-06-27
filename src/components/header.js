@@ -95,27 +95,20 @@ const Header = ({ siteTitle }) => {
         </div>
         <div className="navBar-openAcc">
           <Link to="/Individuals-login"><button><FormattedMessage id="open_new_account" /></button></Link>
-          {/* <div className="language-switch">
-          <button onClick={() => handleLanguageChange('en')} className={`lang-btn ${locale === 'en' ? 'active' : ''}`}>
-          <img src='/Vector (111).svg'/>  EN
-          </button>
-          <button onClick={() => handleLanguageChange('ar')} className={`lang-btn ${locale === 'ar' ? 'active' : ''}`}>
-          <img src='/Vector (111).svg'/> AR
-          </button>
-        </div> */}
+
         <MDBDropdown>
-            <MDBDropdownToggle>
+            <MDBDropdownToggle > 
               {/* Display the current language in the dropdown toggle */}
               <img src='/Vector (111).svg' alt='EN' />{locale === 'ar' ? 'AR' : 'EN'}
             </MDBDropdownToggle>
             <MDBDropdownMenu>
               
-              <MDBDropdownItem>
+              <MDBDropdownItem style={{ display: locale === 'en' ? 'none' : '' }} > 
                 <button onClick={() => handleLanguageChange('en')} className={`lang-btn ${locale === 'en' ? 'active' : ''}`}>
                   <img src='/Vector (111).svg' alt='EN' /> EN
                 </button>
               </MDBDropdownItem>
-              <MDBDropdownItem>
+              <MDBDropdownItem style={{ display: locale === 'ar' ? 'none' : '' }}>
                 <button onClick={() => handleLanguageChange('ar')} className={`lang-btn ${locale === 'ar' ? 'active' : ''}`}>
                   <img src='/Vector (111).svg' alt='AR' />AR
                 </button>

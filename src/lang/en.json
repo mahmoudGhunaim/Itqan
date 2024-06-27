@@ -158,7 +158,214 @@
   "contact_us_contact_details_header": "Contact Details",
   "contact_us_email_header": "Email:",
   "contact_us_phone_header": "Phone:",
-  "contact_us_google_map": "Itqan Capital"
+  "contact_us_google_map": "Itqan Capital",
+  "reports_page_title": "Reports - Useful Resources and Analysis from Itqan Capital",
+  "reports_page_description": "Browse through important reports and analyses provided by Itqan Capital, the investment company specializing in Saudi Arabia, to benefit from knowledge resources and analyses in the field of investment and financial markets.",
+  "reports_hero_title": "Reports",
+  "reports_hero_subtitle": "The Sources",
+  "reports_section_title": "Reports and Data",
+  "report_title_0": "Annual Reports – 2023",
+  "report_title_1": "Annual Reports – 2022",
+  "report_title_2": "Annual Reports – 2021",
+  "report_title_3": "Annual Reports – 2020",
+  "report_title_4": "Annual Reports – 2019",
+  "report_title_5": "Annual Reports – 2018",
+  "report_title_6": "Annual Reports – 2017",
+  "report_title_7": "Annual Reports – 2016",
+  "report_title_8": "Financial Data – 2023",
+  "report_title_9": "Financial Data – 2022",
+  "report_title_10": "Financial Data – 2021",
+  "report_title_11": "Financial Data – 2020",
+  "report_title_12": "Financial Data – 2019",
+  "report_title_13": "Financial Data – 2018",
+  "report_title_14": "Financial Data – 2017",
+  "report_title_15": "Financial Data – 2016",
+  "report_title_16": "Pillar III – 2019",
+  "report_title_17": "Pillar III – 2018",
+  "report_title_18": "Pillar III – 2017",
+  "report_title_19": "Pillar III – 2016",
+  "reportss": [
+    {
+        "title": "Annual Reports – 2023",
+        "Details": [
+            {
+                "content": "Board Report 2023",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2023/12/BoardReport2023.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Annual Reports – 2022",
+        "Details": [
+            {
+                "content": "Board Report 2022",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2022/12/BoardReport2022.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Annual Reports – 2021",
+        "Details": [
+            {
+                "content": "Board Report 2021",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2021/12/BoardReport2021.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Annual Reports – 2020",
+        "Details": [
+            {
+                "content": "Board Report 2020",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/BoardReport2020.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Annual Reports – 2019",
+        "Details": [
+            {
+                "content": "Board Report 2019",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2019/12/BoardReport2019.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Annual Reports – 2018",
+        "Details": [
+            {
+                "content": "Board Report 2018",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2018/12/BoardReport2018.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Annual Reports – 2017",
+        "Details": [
+            {
+                "content": "Board Report 2017",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2017/12/BoardReport2017.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Annual Reports – 2016",
+        "Details": [
+            {
+                "content": "Board Report 2016",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2016/12/BoardReport2016.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Financial Data – 2023",
+        "Details": [
+            {
+                "content": "Latest Audited Annual Financial Report 2023",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2023/12/FinancialReport2023.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Financial Data – 2022",
+        "Details": [
+            {
+                "content": "Latest Audited Annual Financial Report 2022",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2022/12/FinancialReport2022.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Financial Data – 2021",
+        "Details": [
+            {
+                "content": "Latest Audited Annual Financial Report 2021",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2021/12/FinancialReport2021.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Financial Data – 2020",
+        "Details": [
+            {
+                "content": "Latest Audited Annual Financial Report 2020",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/FinancialReport2020.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Financial Data – 2019",
+        "Details": [
+            {
+                "content": "Latest Audited Annual Financial Report 2019",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2019/12/FinancialReport2019.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Financial Data – 2018",
+        "Details": [
+            {
+                "content": "Latest Audited Annual Financial Report 2018",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2018/12/FinancialReport2018.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Financial Data – 2017",
+        "Details": [
+            {
+                "content": "Latest Audited Annual Financial Report 2017",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2017/12/FinancialReport2017.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Financial Data – 2016",
+        "Details": [
+            {
+                "content": "Latest Audited Annual Financial Report 2016",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2016/12/FinancialReport2016.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Pillar III – 2019",
+        "Details": [
+            {
+                "content": "Pillar III Disclosure for the year 2019",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2019/12/PillarIIIDisclosure2019.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Pillar III – 2018",
+        "Details": [
+            {
+                "content": "Pillar III Disclosure for the year 2018",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2018/12/PillarIIIDisclosure2018.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Pillar III – 2017",
+        "Details": [
+            {
+                "content": "Pillar III Disclosure for the year 2017",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2017/12/PillarIIIDisclosure2017.pdf"
+            }
+        ]
+    },
+    {
+        "title": "Pillar III – 2016",
+        "Details": [
+            {
+                "content": "Pillar III Disclosure for the year 2016",
+                "linkpdf": "https://itqancapital.com/wp-content/uploads/2016/12/PillarIIIDisclosure2016.pdf"
+            }
+        ]
+    }
+]
 
   
 
