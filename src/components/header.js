@@ -130,12 +130,12 @@ const Header = ({ siteTitle }) => {
               <img src='/Vector (111).svg' alt='EN' />{locale === 'ar' ? 'AR' : 'EN'}
             </MDBDropdownToggle>
             <MDBDropdownMenu>
-              <MDBDropdownItem>
+              <MDBDropdownItem style={{ display: locale === 'en' ? 'none' : '' }}>
                 <button onClick={() => handleLanguageChange('en')} className={`lang-btn ${locale === 'en' ? 'active' : ''}`}>
                   <img src='/Vector (111).svg' alt='EN' /> EN
                 </button>
               </MDBDropdownItem>
-              <MDBDropdownItem>
+              <MDBDropdownItem style={{ display: locale === 'ar' ? 'none' : '' }}>
                 <button onClick={() => handleLanguageChange('ar')} className={`lang-btn ${locale === 'ar' ? 'active' : ''}`}>
                   <img src='/Vector (111).svg' alt='AR' />AR
                 </button>
