@@ -54,7 +54,9 @@ body{
     justify-content: center;
     align-items: center;
 }
-
+html[lang="en"] h1 ,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4,html[lang="en"] h5,html[lang="en"] h6,html[lang="en"] p{
+    direction: ltr !important;
+}
 .hero-homepage-content{
     display: flex;
     flex-direction: column;
@@ -208,6 +210,9 @@ background-position: left top;
     font-weight: 500;
 
 }
+html[lang="en"] .products-container p{
+    text-align: left;
+}
 .products-content{
     display: flex;
     flex-wrap: wrap;
@@ -239,6 +244,9 @@ background-position: left top;
     box-shadow: 0px 0px 23.200000762939453px 0px #64646F1F;
     cursor: pointer;
     transition: 0.3s ease;
+}
+html[lang="en"] .products-single button{
+    flex-direction: row;
 }
 .products-single button:hover{
     box-shadow: 0px 0px 23.200000762939453px 0px #3F1F5861;

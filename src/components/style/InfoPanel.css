@@ -3,6 +3,16 @@
     justify-content: center;
     padding: 100px 0;
 }
+html[lang="en"] .infopanel-container{
+    flex-direction: row !important;
+}
+html[lang="en"]  .ShariyahReview-content{
+    align-items: flex-start;
+    text-align: left;
+}
+html[lang="en"] .infopanel-container p{
+    text-align: left;
+}
 .infopanel-container{
     display: flex;
     max-width: 90%;

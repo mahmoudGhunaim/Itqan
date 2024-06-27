@@ -95,6 +95,19 @@ form.sec-footer-form button{
             text-align: right;
 
 }
+html[lang="en"] .sec-footer-content h2,html[lang="en"] .sec-footer-content  p,html[lang="en"] .sec-footer-content h3{
+    text-align: left;
+}  
+html[lang="en"] .sec-footer-content-social {
+   justify-content: flex-start;
+}
+html[lang="en"] form.sec-footer-form label{
+    align-items: flex-start;
+
+}
+html[lang="en"] form.sec-footer-form label input, form.sec-footer-form label textarea,form.sec-footer-form p{
+    text-align: left;
+}
 .sec-footer-content  p{
     font-family: 'Bahij TheSansArabic light';
 font-size: 16px;

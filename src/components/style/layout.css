@@ -20,6 +20,9 @@ header.navBar-sec {
 
   z-index: 11;
 }
+html[lang="en"] .navBar-container,html[lang="en"] .navBar-links{
+  flex-direction: row;
+}
 .show-header {
   top: 0; /* Show header */
 }

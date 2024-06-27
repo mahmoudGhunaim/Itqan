@@ -73,6 +73,12 @@ section.AdvisoryResearch-sec {
     align-items: center;
     margin-top: 50px;
 }
+html[lang="en"] .AdvisoryResearch-container{
+    flex-direction: row-reverse;
+}
+html[lang="en"] .AdvisoryResarch-info p{
+text-align: left;
+}
 .AdvisoryResarch-img{
     width: 80%;
 }

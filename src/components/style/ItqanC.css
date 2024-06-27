@@ -64,6 +64,9 @@
     flex-direction: row-reverse;
     text-align: right;
 }
+html[lang="en"] .itqan-c-text p{
+    text-align: left;
+}
 .itqan-c-line{
     border-top: 3px solid #3F1A58;
     width: 220px;
@@ -72,6 +75,16 @@
 }
 .itqan-c-image{
     width: 50%;
+}
+html[lang="en"] .itqan-c-content {
+    direction: ltr; /* Left-to-right direction */
+    align-items: flex-start; /* Align items at the start */
+}
+html[lang="en"] .itqan-c-text{
+    align-items: flex-start;
+}
+html[lang="en"] .itqan-c-text h6{
+    flex-direction: row;
 }
 @media screen and (max-width:  1024px) {
     .itqan-c-container{
