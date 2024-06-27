@@ -7,6 +7,8 @@ import { Link } from "gatsby"
 import Header from "./header"
 import "./style/layout.css"
 import Loader from "./loader"
+import { LocalizationProvider } from '../context/LocalizationContext';
+
 const Layout = ({ children, overPadding,  }) => {
   const [loading, setLoading] = useState(true);
   const data = useStaticQuery(graphql`
@@ -25,7 +27,7 @@ const Layout = ({ children, overPadding,  }) => {
 
   if (loading) return <Loader />;
   return (
-    <>
+    <LocalizationProvider>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{children}</main>
       <footer className="footer-sec">
@@ -75,7 +77,7 @@ const Layout = ({ children, overPadding,  }) => {
               <p>إتقان كابيتال © 2024. جميع الحقوق محفوظة. Created For Itqan Capital</p>
           </div>
       </footer>
-    </>
+      </LocalizationProvider>
   )
 }
 

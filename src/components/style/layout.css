@@ -38,6 +38,10 @@ header.navBar-sec {
 .navBar-logo{
   padding: 15px 0;
 }
+.navBar-openAcc {
+  display: flex;
+  gap: 10px;
+}
 .navBar-links {
   display: flex;
   flex-direction: row-reverse;
@@ -297,6 +301,23 @@ button.btn-close::before{
 }
 .modal-content {
   overflow-y: auto;
+}
+.dropdown .dropdown-toggle,.lang-btn {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 3px;
+    max-width: 62px;
+}
+
+.dropdown  ul{
+  list-style-type: none;
+  padding-left: 1px;
+}
+.dropdown  ul li:nth-child(2){
+  margin-top: 5px;
 }
 @media screen and (max-width: 1024px){
   .modal-content {

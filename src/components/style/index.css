@@ -59,7 +59,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 739px;
+    width: 1000px;
 }
 .hero-homepage-content span{
     color: #FFFFFF;
