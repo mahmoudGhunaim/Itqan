@@ -115,4 +115,7 @@ text-align: left;
     .AdvisoryResearch-container{
         flex-direction: column;
     }
+    html[lang="en"] .AdvisoryResearch-container{
+        flex-direction: column-reverse;
+    }
 }
