@@ -88,7 +88,7 @@ const Index = () => {
       <section className="hero-homepage-sec" style={{ backgroundImage: `url(${currentBackground})` }}>
         <div className="hero-homepage-container">
           <div className="hero-homepage-content">
-            <span><img src="/Isolation_Mode.svg" /> <FormattedMessage id="itqan_capital" /></span>
+            <span><img src="/Isolation_Mode.svg" /> <FormattedMessage id="itqan_capital" /><img src="/Isolation_Mode.svg" /></span>
             <h1><img src="/Vector.svg" /> <FormattedMessage id="trusted_investment_leaders" /></h1>
             <p><FormattedMessage id="itqan_description" /></p>
             <Link to="/Individuals-login">
