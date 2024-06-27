@@ -109,6 +109,7 @@ const Header = ({ siteTitle }) => {
               <img src='/Vector (111).svg' alt='EN' />{locale === 'ar' ? 'AR' : 'EN'}
             </MDBDropdownToggle>
             <MDBDropdownMenu>
+              
               <MDBDropdownItem>
                 <button onClick={() => handleLanguageChange('en')} className={`lang-btn ${locale === 'en' ? 'active' : ''}`}>
                   <img src='/Vector (111).svg' alt='EN' /> EN
