@@ -12,3 +12,12 @@
 // export const wrapPageElement = ({ element, props }) => {
 //   return <Layout {...props}>{element}</Layout>;
 // };
+// gatsby-browser.js (or layout component)
+import React from 'react';
+import { LocalizationProvider } from './src/context/LocalizationContext';
+
+export const wrapRootElement = ({ element }) => (
+    <LocalizationProvider>
+        {element}
+    </LocalizationProvider>
+);
