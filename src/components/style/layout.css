@@ -77,7 +77,7 @@ align-items: center;
 .hide-header {
   top: -100px; 
 }
-.navBar-openAcc button{
+.navBar-openAcc button,.logo-sec-mob button{
   color: #3F1A58;
   font-family: 'Bahij TheSansArabic';
   font-size: 16px;
@@ -88,6 +88,11 @@ align-items: center;
   width: 189px;
   height: 48px;
   border-radius: 24px;
+}
+.logo-sec-mob{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
 }
 .navBar-openAcc button:hover{
   background: #3F1A58;

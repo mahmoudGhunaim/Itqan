@@ -130,7 +130,24 @@ const Header = ({ siteTitle }) => {
             <ModalHeader toggle={toggle}></ModalHeader>
             <ModalBody>
               <div className="logo-sec-mob">
-                <Link to="/"><img src="/itqanlogo.svg" alt="Logo" /></Link>
+                <Link to="/"><img src="/itqanlogo.svg" alt="Logo" /></Link><MDBDropdown>
+            <MDBDropdownToggle>
+              {/* Display the current language in the dropdown toggle */}
+              <img src='/Vector (111).svg' alt='EN' />{locale === 'ar' ? 'AR' : 'EN'}
+            </MDBDropdownToggle>
+            <MDBDropdownMenu>
+              <MDBDropdownItem>
+                <button onClick={() => handleLanguageChange('en')} className={`lang-btn ${locale === 'en' ? 'active' : ''}`}>
+                  <img src='/Vector (111).svg' alt='EN' /> EN
+                </button>
+              </MDBDropdownItem>
+              <MDBDropdownItem>
+                <button onClick={() => handleLanguageChange('ar')} className={`lang-btn ${locale === 'ar' ? 'active' : ''}`}>
+                  <img src='/Vector (111).svg' alt='AR' />AR
+                </button>
+              </MDBDropdownItem>
+            </MDBDropdownMenu>
+          </MDBDropdown>
               </div>
               <div className='navBar-hamburger'>
                 <Link to="/"><FormattedMessage id="home" /></Link>
