@@ -5,15 +5,20 @@ import "../components/style/Directors.css";
 import Layout from "../components/layout";
 import Seo from '../components/seo';
 import { Link } from "gatsby";
+import { FormattedMessage } from 'react-intl';
+import { useLocalization } from '../context/LocalizationContext';
+import { useIntl } from 'react-intl';
 
 const Board = () => {
   const [directors, setDirectors] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { formatMessage } = useIntl();
+  const { locale, changeLocale } = useLocalization();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://itqan-strapi.softylus.com/api/board-of-directors?populate=profileImage', {
+        const response = await fetch(`https://itqan-strapi.softylus.com/api/board-of-directors?populate=profileImage&locale=${locale}`, {
           headers: {
             'Authorization': 'Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c'
           }
@@ -40,13 +45,13 @@ const Board = () => {
       <section className='Board-hero-sec'>
         <div className='Board-hero-container'>
           <div className='Board-hero-title'>
-            <h1>مجلس ادارة إتقان كابيتال</h1>
-            <p>“نبذة عنا”</p>
+            <h1>{formatMessage({ id: "boardTitle" })}</h1>
+            <p>{formatMessage({ id: "boardaboutUs" })} </p>
           </div>
         </div>
       </section>
       <section className='director-card-sec'>
-        <h3>مجلس الإدارة</h3>
+        <h3>{formatMessage({ id: "boardOfDirectors" })}</h3>
         <div className='director-card-container'>
         {loading ? (
             <p>Loading...</p>

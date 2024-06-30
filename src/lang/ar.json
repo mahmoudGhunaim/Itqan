@@ -368,7 +368,12 @@
             ]
         }
     ]
-  
+  ,
+  "loading": "جار التحميل...",
+  "boardTitle": "مجلس ادارة إتقان كابيتال",
+  "boardaboutUs": "نبذة عنا",
+  "boardOfDirectors": "مجلس الإدارة",
+  "defaultProfileImageAlt": "صورة الملف الشخصي الافتراضية"
   
 }
   

@@ -8,15 +8,21 @@ import "../components/style/Announcements.css";
 import Seo from '../components/seo';
 import { Player } from '@lottiefiles/react-lottie-player';
 import loaderl from "../Json/loaderl.json";
+import { FormattedMessage } from 'react-intl';
+import { useLocalization } from '../context/LocalizationContext';
+import { useIntl } from 'react-intl';
 
 const Announcements = () => {
+  const { locale, changeLocale } = useLocalization();
   const [announcements, setAnnouncements] = useState([]);
   const [loading, setLoading] = useState(true);
   const loaderRef = useRef(null);
+  const { formatMessage } = useIntl();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://itqan-strapi.softylus.com/api/announcements', {
+        const response = await fetch(`https://itqan-strapi.softylus.com/api/announcements?locale=${locale}`, {
           headers: {
             'Authorization': 'Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c'
           }
@@ -68,11 +74,11 @@ const Announcements = () => {
         description="اطّلع على إعلانات شركة إتقان كابيتال بشأن صندوق إتقان  للمرابحات والصكوك، بما في ذلك إتاحة البيان الربع سنوي للفترة المنتهية في 31 ديسمبر 2023م، واحصل على نسخة من البيان من خلال الضغط هنا."
       />
       <ScrollToTopButton />
-      <Hero title="التصريحات" />
+      <Hero title={formatMessage({ id: "announcements" })} />
       <section className='Announcements-sec'>
         <div className='Announcements-container'>
           <div className='Announcements-content'>
-            <h3>التصريحات</h3>
+            <h3><FormattedMessage id="announcements" /></h3>
             {loading ? (
               <div ref={loaderRef} style={{ height: '100px', margin: '30px 0', display: 'flex', justifyContent: 'center' }}>
                 <Player autoplay loop src={loaderl} style={{ height: '100px', width: '100px' }} />
