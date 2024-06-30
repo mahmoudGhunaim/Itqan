@@ -9,8 +9,10 @@ const messages = {
     en: messages_en,
 };
 
-const LocalizationContext = createContext();
-
+const LocalizationContext = createContext({
+    locale: 'ar', // Default locale
+    changeLocale: () => {}, // Default changeLocale function
+});
 export const useLocalization = () => useContext(LocalizationContext);
 
 export const LocalizationProvider = ({ children }) => {

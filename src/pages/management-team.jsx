@@ -7,12 +7,10 @@ import Seo from '../components/seo';
 import { Link } from "gatsby";
 import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
-import { useIntl } from 'react-intl';
 
 const ManagementTeam = () => {
   const [directors, setDirectors] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { formatMessage } = useIntl();
   const { locale, changeLocale } = useLocalization();
 
   useEffect(() => {

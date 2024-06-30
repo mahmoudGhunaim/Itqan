@@ -6,75 +6,75 @@ import "../components/style/Team.css"; // Ensure you have a CSS file for styling
 import Layout from "../components/layout";
 import Seo from '../components/seo';
 import { Link } from "gatsby";
-import { useIntl } from 'react-intl'; // Import the useIntl hook
+import { FormattedMessage } from 'react-intl';
+import { useLocalization } from '../context/LocalizationContext'; // Import useLocalization hook
 
 const Team = () => {
-  const location = useLocation(); // Get the location object
-  const params = new URLSearchParams(location.search); // Parse the query parameters
-  const id = params.get('id'); // Get the 'id' parameter
-  const { formatMessage } = useIntl(); // Initialize useIntl hook
+    const location = useLocation(); // Get the location object
+    const params = new URLSearchParams(location.search); // Parse the query parameters
+    const id = params.get('id'); // Get the 'id' parameter
 
-  const [teamMember, setTeamMember] = useState(null);
-  const [loading, setLoading] = useState(true);
+    const [teamMember, setTeamMember] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`https://itqan-strapi.softylus.com/api/board-of-directors/${id}?populate=profileImage`, {
-          headers: {
-            'Authorization': 'Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c'
-          }
-        });
-        const data = await response.json();
-        setTeamMember(data.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching team member:', error);
-        setLoading(false);
-      }
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`https://itqan-strapi.softylus.com/api/board-of-directors/${id}?populate=profileImage`, {
+                    headers: {
+                        'Authorization': 'Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c'
+                    }
+                });
+                const data = await response.json();
+                setTeamMember(data.data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching team member:', error);
+                setLoading(false);
+            }
+        };
 
-    if (id) {
-      fetchData();
+        if (id) {
+            fetchData();
+        }
+    }, [id]);
+
+    if (loading) {
+        return <p>Loading...</p>;
     }
-  }, [id]);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+    if (!teamMember) {
+        return <p><FormattedMessage id="notFoundMessage" /></p>; // Replace with your not found message
+    }
 
-  if (!teamMember) {
-    return <p>{formatMessage({ id: "notFoundMessage" })}</p>;
-  }
+    const { attributes } = teamMember;
+    const profileImageUrl = attributes.profileImage?.data?.attributes?.url
+        ? `https://itqan-strapi.softylus.com${attributes.profileImage.data.attributes.url}`
+        : '/default-profile.png';
 
-  const { attributes } = teamMember;
-  const profileImageUrl = attributes.profileImage?.data?.attributes?.url
-    ? `https://itqan-strapi.softylus.com${attributes.profileImage.data.attributes.url}`
-    : '/default-profile.png';
-
-  return (
-    <Layout>
-      <Seo
-        title={`فريق إتقان - ${attributes.name} - شركة إتقان كابيتال`}
-        description={attributes.description}
-      />
-      <ScrollToTopButton />
-      <Hero title={formatMessage({ id: "teamTitle" })} />
-      <section className='Team-sec'>
-        <div className='Team-container'>
-          <Link to="/board"><button>{formatMessage({ id: "backButton" })}<img src='/RA.png'/></button></Link>
-          <div className='Team-card'>
-            <img src={profileImageUrl} alt={attributes.name} />
-            <div className='Team-card-info'>
-              <h4>{attributes.name}</h4>
-              <p>{attributes.position}</p>
-              <p>{attributes.description}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
+    return (
+        <Layout>
+            <Seo
+                title={`فريق إتقان - ${attributes.name} - شركة إتقان كابيتال`}
+                description={attributes.description}
+            />
+            <ScrollToTopButton />
+            <Hero title={<FormattedMessage id="teamTitle"/>} /> 
+            <section className='Team-sec'>
+                <div className='Team-container'>
+                    <Link to="/board"><button><FormattedMessage id="backButton" /><img src='/RA.png' alt="RA" /></button></Link>
+                    <div className='Team-card'>
+                        <img src={profileImageUrl} alt={attributes.name} />
+                        <div className='Team-card-info'>
+                            <h4>{attributes.name}</h4>
+                            <p>{attributes.position}</p>
+                            <p>{attributes.description}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </Layout>
+    );
 };
 
 export default Team;

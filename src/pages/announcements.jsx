@@ -10,14 +10,12 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import loaderl from "../Json/loaderl.json";
 import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
-import { useIntl } from 'react-intl';
 
 const Announcements = () => {
   const { locale, changeLocale } = useLocalization();
   const [announcements, setAnnouncements] = useState([]);
   const [loading, setLoading] = useState(true);
   const loaderRef = useRef(null);
-  const { formatMessage } = useIntl();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -74,7 +72,7 @@ const Announcements = () => {
         description="اطّلع على إعلانات شركة إتقان كابيتال بشأن صندوق إتقان  للمرابحات والصكوك، بما في ذلك إتاحة البيان الربع سنوي للفترة المنتهية في 31 ديسمبر 2023م، واحصل على نسخة من البيان من خلال الضغط هنا."
       />
       <ScrollToTopButton />
-      <Hero title={formatMessage({ id: "announcements" })} />
+      <Hero title={<FormattedMessage id= "announcements" />} />
       <section className='Announcements-sec'>
         <div className='Announcements-container'>
           <div className='Announcements-content'>

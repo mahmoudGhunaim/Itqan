@@ -7,12 +7,10 @@ import Seo from '../components/seo';
 import { Link } from "gatsby";
 import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
-import { useIntl } from 'react-intl';
 
 const Board = () => {
   const [directors, setDirectors] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { formatMessage } = useIntl();
   const { locale, changeLocale } = useLocalization();
 
   useEffect(() => {
@@ -45,13 +43,13 @@ const Board = () => {
       <section className='Board-hero-sec'>
         <div className='Board-hero-container'>
           <div className='Board-hero-title'>
-            <h1>{formatMessage({ id: "boardTitle" })}</h1>
-            <p>{formatMessage({ id: "boardaboutUs" })} </p>
+            <h1><FormattedMessage id= "boardTitle" /></h1>
+            <p><FormattedMessage id= "boardaboutUs" /> </p>
           </div>
         </div>
       </section>
       <section className='director-card-sec'>
-        <h3>{formatMessage({ id: "boardOfDirectors" })}</h3>
+        <h3><FormattedMessage id=  "boardOfDirectors" /></h3>
         <div className='director-card-container'>
         {loading ? (
             <p>Loading...</p>

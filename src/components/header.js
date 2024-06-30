@@ -11,9 +11,9 @@ const Header = ({ siteTitle }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [modal, setModal] = useState(false);
   const [isVisible, setIsVisible] = useState(true); // This replaces the previous visibility state handling
+
+
   const { locale, changeLocale } = useLocalization();
-
-
 
   const toggle = () => setModal(!modal);
 
