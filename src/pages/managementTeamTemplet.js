@@ -6,6 +6,7 @@ import "../components/style/Team.css"; // Ensure you have a CSS file for styling
 import Layout from "../components/layout";
 import Seo from '../components/seo';
 import { Link } from "gatsby";
+import { FormattedMessage } from 'react-intl';
 
 const ManagementTeamTemplate = () => {
   const location = useLocation(); // Get the location object
@@ -42,7 +43,7 @@ const ManagementTeamTemplate = () => {
   }
 
   if (!teamMember) {
-    return <p>Team member not found</p>;
+    return <p><FormattedMessage id="teamMemberNotFound" defaultMessage="Team member not found" /></p>;
   }
 
   const { attributes } = teamMember;
@@ -57,10 +58,10 @@ const ManagementTeamTemplate = () => {
         description={attributes.description}
       />
       <ScrollToTopButton />
-      <Hero title="أعضاء الفريق" />
+      <Hero title={<FormattedMessage id="managementTeamTitle" values={{ name: attributes.name }} />} />
       <section className='Team-sec'>
         <div className='Team-container'>
-          <Link to="/management-team"><button>الرجوع<img src='/RA.png'/></button></Link>
+          <Link to="/management-team"><button><FormattedMessage id="backButtonText" defaultMessage="Back" /><img src='/RA.png'/></button></Link>
           <div className='Team-card'>
             <img src={profileImageUrl} alt={attributes.name} />
             <div className='Team-card-info'>

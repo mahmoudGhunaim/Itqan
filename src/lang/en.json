@@ -372,7 +372,18 @@
   "boardTitle": "Board of Directors - Itqan Capital",
   "boardaboutUs": "About Us",
   "boardOfDirectors": "Board of Directors",
-  "defaultProfileImageAlt": "Default Profile Image"
+  "defaultProfileImageAlt": "Default Profile Image",
+  "teamTitle": "Team Members",
+  "backButton": "Back",
+  "notFoundMessage": "Team member not found",
+  "managementTeamTitle": "Itqan Team - Management Team - Itqan Capital",
+  "managementTeamDescription": "Learn about the members of the management team at Itqan Capital, including CEO Basam Hashem El-Sayed, and benefit from the unique experiences and specialties that each member brings to the company.",
+  "managementTeamHeading": "Itqan Capital Management Team",
+  "managementTeamSubtitle": "About Us",
+  "managementTeamSectionTitle": "Management Team",
+  "teamMemberNotFound": "Team member not found",
+  "backButtonText": "Back",
+  "loadingText": "Loading..."
 
 
   }

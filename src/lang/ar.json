@@ -373,7 +373,19 @@
   "boardTitle": "مجلس ادارة إتقان كابيتال",
   "boardaboutUs": "نبذة عنا",
   "boardOfDirectors": "مجلس الإدارة",
-  "defaultProfileImageAlt": "صورة الملف الشخصي الافتراضية"
+  "defaultProfileImageAlt": "صورة الملف الشخصي الافتراضية",
+  "teamTitle": "أعضاء الفريق",
+  "backButton": "الرجوع",
+  "notFoundMessage": "لم يتم العثور على عضو في الفريق",
+  "managementTeamTitle": "فريق إتقان - فريق الإدارة - شركة إتقان كابيتال",
+  "managementTeamDescription": "تعرف على أعضاء فريق الإدارة في شركة إتقان كابيتال، بما في ذلك العضو المنتدب والرئيس التنفيذي بسام هاشم السيد، واستفد من الخبرات والتخصصات الفريدة التي يجلبها كل فرد إلى الشركة.",
+  "managementTeamHeading": "فريق الإدارة إتقان كابيتال",
+  "managementTeamSubtitle": "نبذة عنا",
+  "managementTeamSectionTitle": "فريق الإدارة",
+  "teamMemberNotFound": "لم يتم العثور على عضو الفريق",
+  "backButtonText": "الرجوع",
+  "loadingText": "جاري التحميل..."
+
   
 }
   

@@ -6,11 +6,13 @@ import "../components/style/Team.css"; // Ensure you have a CSS file for styling
 import Layout from "../components/layout";
 import Seo from '../components/seo';
 import { Link } from "gatsby";
+import { useIntl } from 'react-intl'; // Import the useIntl hook
 
 const Team = () => {
   const location = useLocation(); // Get the location object
   const params = new URLSearchParams(location.search); // Parse the query parameters
   const id = params.get('id'); // Get the 'id' parameter
+  const { formatMessage } = useIntl(); // Initialize useIntl hook
 
   const [teamMember, setTeamMember] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -42,7 +44,7 @@ const Team = () => {
   }
 
   if (!teamMember) {
-    return <p>Team member not found</p>;
+    return <p>{formatMessage({ id: "notFoundMessage" })}</p>;
   }
 
   const { attributes } = teamMember;
@@ -57,10 +59,10 @@ const Team = () => {
         description={attributes.description}
       />
       <ScrollToTopButton />
-      <Hero title="أعضاء الفريق" />
+      <Hero title={formatMessage({ id: "teamTitle" })} />
       <section className='Team-sec'>
         <div className='Team-container'>
-          <Link to="/board"><button>الرجوع<img src='/RA.png'/></button></Link>
+          <Link to="/board"><button>{formatMessage({ id: "backButton" })}<img src='/RA.png'/></button></Link>
           <div className='Team-card'>
             <img src={profileImageUrl} alt={attributes.name} />
             <div className='Team-card-info'>
