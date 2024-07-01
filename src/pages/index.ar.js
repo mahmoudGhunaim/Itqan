@@ -85,7 +85,7 @@ const Index = () => {
   return (
     <Layout>
       <ScrollToTopButton />
-      <section className="hero-homepage-sec" style={{ backgroundImage: `url(/${currentBackground})` }}>
+      <section className="hero-homepage-sec" style={{ background: `url(../../static/${currentBackground})` }}>
         <div className="hero-homepage-container">
           <div className="hero-homepage-content">
             <span><img src="/Isolation_Mode.svg" /> <FormattedMessage id="itqan_capital" /><img src="/Isolation_Mode.svg" /></span>

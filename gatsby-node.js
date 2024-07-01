@@ -1,18 +1,22 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
- */
-
-/**
- * @type {import('gatsby').GatsbyNode['createPages']}
- */
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
-  })
-}
+// gatsby-node.js
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+  
+  // Only create localized versions for non-404 pages
+  if (page.path !== '/404/') {
+    deletePage(page);
+    
+    ['ar', 'en'].forEach(lang => {
+      const localizedPath = `/${lang}${page.path}`;
+      
+      createPage({
+        ...page,
+        path: localizedPath,
+        context: {
+          ...page.context,
+          locale: lang,
+        },
+      });
+    });
+  }
+};

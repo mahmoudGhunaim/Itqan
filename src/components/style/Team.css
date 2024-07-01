@@ -42,6 +42,10 @@ color: #FFFFFF;
     margin-top: 20px;
 
 }
+html[lang="en"] .Team-card{
+    flex-direction: row;
+    text-align: left;
+}
 .Team-card img{
     border-radius: 0px 20px 20px 0;
     max-height: 480px;
@@ -78,7 +82,7 @@ color: #FFFFFF;
 
 }
 @media screen and (max-width:  1024px){
-    .Team-card{
+    .Team-card,html[lang="en"] .Team-card{
         flex-direction: column;
     }
     .Team-card-info{
