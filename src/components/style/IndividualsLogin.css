@@ -39,6 +39,12 @@
     background: #F2F4F7 !important;
     margin-top: 30px;
 }
+html[lang="en"] #individuals-login-field{
+    flex-direction: row;
+}
+html[lang="en"] #individuals-login-field div{
+    justify-content: left;
+}
 .css-eqpfi5-MuiAccordionSummary-content{
     justify-content: right;
 }
@@ -107,6 +113,9 @@
 .checkbox{
     flex-direction: row;
 }
+html[lang="en"] .checkbox{
+    flex-direction: row-reverse;
+}
 .checkbox input{
     width: 20px;
 }
@@ -151,6 +160,10 @@ color: #5D5D5D;
     color: #5D5D5D;
 
 }
+html[lang="en"] .individuals-single-field label{
+    text-align: left;
+}
+
 .individuals-single-field select{
     padding: 10px;
 }

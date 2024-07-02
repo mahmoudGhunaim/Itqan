@@ -2,7 +2,7 @@
 import Hero from '../components/Hero';
 import Layout from "../components/layout";
 import { Link } from "gatsby"
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import "../components/style/IndividualsLogin.css"
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Accordion from '@mui/material/Accordion';
@@ -15,6 +15,7 @@ import Modal from 'react-modal';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import Successfully from "../Json/Successfully.json"
 import { FormattedMessage } from 'react-intl';
+import { useLocalization } from '../context/LocalizationContext';
 
 import Fail from "../Json/fail.json"
 const IndividualsLogin = () => {
@@ -251,7 +252,32 @@ const IndividualsLogin = () => {
     //   // Start the server
     //   const PORT = process.env.PORT || 3000;
     //   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-      
+    
+    const [total, setTotal] = useState(0);
+    const [calc, setcalc] = useState({
+      idealportfoliofortheclientalternativeInvestments: '',
+      idealportfoliofortheclientderivativesContracts: '',
+      idealportfoliofortheclientrealEstate: '',
+      idealportfoliofortheclientinvestmentFund: '',
+      idealportfoliofortheclientequity: '',
+      idealportfoliofortheclientdebitInstruments: '',
+      idealportfoliofortheclientdepositsMurabah: ''
+    });
+
+  const handleChange3 = (e) => {
+    const { name, value } = e.target;
+    setcalc({
+      ...calc,
+      [name]: value
+    });
+  };
+    useEffect(() => {
+      const sum = Object.values(calc).reduce((acc, curr) => {
+        const value = parseFloat(curr);
+        return acc + (isNaN(value) ? 0 : value);
+      }, 0);
+      setTotal(sum);
+    }, [calc]);
      const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -408,18 +434,19 @@ const IndividualsLogin = () => {
     
         return totalPoints;
       };
+      const { locale } = useLocalization();
   return (
 <Layout>
 <Seo title="فتح حساب للأفراد - خدمة العملاء - إتقان كابيتال" description="اتفق على شروط وأحكام فتح حساب استثماري للأفراد مع إتقان كابيتال. ملء النموذج بالمعلومات المطلوبة لبدء عملية الفتح. تقديم الطلب الآن واحصل على حسابك الاستثماري الخاص."/>
             <ScrollToTopButton/>
-            <Hero title="فتح حساب للأفراد" />
+            <Hero title={<FormattedMessage id="individualAccount.title" />} />
             <section className='individuals-login-sec'>
             <div className='individuals-login-container'>
                 <div className='individuals-login-title'>
                     <h1><FormattedMessage id="investment_account_agreement_title" /></h1>
                     <p><FormattedMessage id="select_account_type" /></p>
                     <div className='individuals-login-buttons'>
-                        <Link to="/companies-login">
+                        <Link to={`/${locale}/companies-login`}>
                             <button style={{background:"none",color:"#46235E"}}>
                                 <FormattedMessage id="corporate_account" />
                             </button>
@@ -1139,13 +1166,19 @@ const IndividualsLogin = () => {
     <div className='individuals-sec-field table'>
 
     <table>
-  <thead>
-    <tr>
-      <th>الأدوات الاستثمارية</th>
-      <th>المحفظة الحالية للعميل</th>
-      <th>المحفظة المثالية للعميل</th>
-    </tr>
-  </thead>
+    <thead>
+        <tr>
+          <th>
+            <FormattedMessage id="tableHeader.investmentTools" />
+          </th>
+          <th>
+            <FormattedMessage id="tableHeader.currentClientPortfolio" />
+          </th>
+          <th>
+            <FormattedMessage id="tableHeader.idealClientPortfolio" />
+          </th>
+        </tr>
+      </thead>
   <tbody>
     <tr>
     <td>Deposits/Murabah (ودائع ومرابحات)</td>
@@ -1188,8 +1221,10 @@ const IndividualsLogin = () => {
       <td><input type="text" name="idealportfoliofortheclientalternativeInvestments" value={formData.idealportfoliofortheclientalternativeInvestments} onChange={handleChange} /></td>
     </tr>
     <tr>
-      <td>الرجاء التأكد من أن مجموع النسب المئوية أعلاه يساوي 100%</td>
-      <td></td>
+    <td >
+            <FormattedMessage id="tableData.checkPercentageSum" />
+          </td>    
+    <td></td>
       <td></td>
     </tr>
   </tbody>
@@ -1204,33 +1239,48 @@ const IndividualsLogin = () => {
     id="individuals-login-field"
         className='individuals-sec-field-title'
   >
-    <h3>معلومات أمين الحفظ</h3>
-  </AccordionSummary>
+<h3>
+        <FormattedMessage id="header.custodianInfo" />
+      </h3>  </AccordionSummary>
   <AccordionDetails>
-    <div className='individuals-sec-field'>
+  <div className='individuals-sec-field'>
       <div className='individuals-single-field'>
-        <label>رقم الحساب</label>
+        <label>
+          <FormattedMessage id="form.accountNumber" />
+        </label>
         <input name="accountNumber" value={formData.accountNumber} onChange={handleChange} />
       </div>
       <div className='individuals-single-field'>
-        <label>اسم أمين الحفظ</label>
+        <label>
+          <FormattedMessage id="form.custodianName" />
+        </label>
         <input name="custodianName" value={formData.custodianName} onChange={handleChange} />
       </div>
       <div className='individuals-single-field'>
-        <label>عنوان أمين الحفظ</label>
+        <label>
+          <FormattedMessage id="form.custodianAddress" />
+        </label>
         <input name="custodianAddress" value={formData.custodianAddress} onChange={handleChange} />
       </div>
     </div>
     <div className='individuals-sec-field table'>
   <table>
-    <thead>
-      <tr>
-        <th>أين ترغب بإرسال الآتي:</th>
-        <th>العميل</th>
-        <th>أمين الحفظ</th>
-        <th>جهات أخرى: تحديد أي تعليمات صادرة عن العميل بشأن الجهة</th>
-      </tr>
-    </thead>
+  <thead>
+        <tr>
+          <th>
+            <FormattedMessage id="tableHeader.sendTo" />
+          </th>
+          <th>
+            <FormattedMessage id="tableHeader.client" />
+          </th>
+          <th>
+            <FormattedMessage id="tableHeader.custodian" />
+          </th>
+          <th>
+            <FormattedMessage id="tableHeader.otherEntities" />
+          </th>
+        </tr>
+      </thead>
     <tbody>
       <tr>
         <td>
@@ -1270,92 +1320,92 @@ const IndividualsLogin = () => {
 </div>
 
   </AccordionDetails>
-</Accordion>
-<Accordion defaultExpanded>
+  </Accordion>
+  <Accordion defaultExpanded>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1-content"
         id="individuals-login-field"
         className='individuals-sec-field-title'
       >
-        <h3><FormattedMessage id="riskAssessment.title" /></h3>
+        <h3><FormattedMessage id="accordion.sectionTitle" /></h3>
       </AccordionSummary>
       <AccordionDetails>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.question1" /></label>
+            <label><FormattedMessage id="question.q1" /></label>
             <select value={q1Answer} onChange={(e) => setQ1Answer(e.target.value)}>
-              <option value="1"><FormattedMessage id="riskAssessment.answer1" /></option>
-              <option value="2"><FormattedMessage id="riskAssessment.answer2" /></option>
-              <option value="3"><FormattedMessage id="riskAssessment.answer3" /></option>
+              <option value="1"><FormattedMessage id="question.q1.option1" /></option>
+              <option value="2"><FormattedMessage id="question.q1.option2" /></option>
+              <option value="3"><FormattedMessage id="question.q1.option3" /></option>
             </select>
           </div>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.question2" /></label>
+            <label><FormattedMessage id="question.q2" /></label>
             <select value={q2Answer} onChange={(e) => setQ2Answer(e.target.value)}>
-              <option value="1"><FormattedMessage id="riskAssessment.answer4" /></option>
-              <option value="2"><FormattedMessage id="riskAssessment.answer5" /></option>
-              <option value="3"><FormattedMessage id="riskAssessment.answer6" /></option>
-              <option value="4"><FormattedMessage id="riskAssessment.answer7" /></option>
+              <option value="1"><FormattedMessage id="question.q2.option1" /></option>
+              <option value="2"><FormattedMessage id="question.q2.option2" /></option>
+              <option value="3"><FormattedMessage id="question.q2.option3" /></option>
+              <option value="4"><FormattedMessage id="question.q2.option4" /></option>
             </select>
           </div>
         </div>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.question3" /></label>
+            <label><FormattedMessage id="question.q3" /></label>
             <select value={q3Answer} onChange={handleQ3Change}>
-              <option value="">-- <FormattedMessage id="riskAssessment.selectReaction" /> --</option>
-              <option value="1"><FormattedMessage id="riskAssessment.answer8" /></option>
-              <option value="2"><FormattedMessage id="riskAssessment.answer9" /></option>
-              <option value="3"><FormattedMessage id="riskAssessment.answer10" /></option>
-              <option value="4"><FormattedMessage id="riskAssessment.answer11" /></option>
+              <option value=""><FormattedMessage id="question.selectOption" /></option>
+              <option value="1"><FormattedMessage id="question.q3.option1" /></option>
+              <option value="2"><FormattedMessage id="question.q3.option2" /></option>
+              <option value="3"><FormattedMessage id="question.q3.option3" /></option>
+              <option value="4"><FormattedMessage id="question.q3.option4" /></option>
             </select>
           </div>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.question4" /></label>
+            <label><FormattedMessage id="question.q4" /></label>
             <select value={q4Answer} onChange={handleQ4Change}>
-              <option value="">-- <FormattedMessage id="riskAssessment.selectDuration" /> --</option>
-              <option value="1"><FormattedMessage id="riskAssessment.answer12" /></option>
-              <option value="2"><FormattedMessage id="riskAssessment.answer13" /></option>
-              <option value="3"><FormattedMessage id="riskAssessment.answer14" /></option>
-              <option value="4"><FormattedMessage id="riskAssessment.answer15" /></option>
+              <option value=""><FormattedMessage id="question.selectOption" /></option>
+              <option value="1"><FormattedMessage id="question.q4.option1" /></option>
+              <option value="2"><FormattedMessage id="question.q4.option2" /></option>
+              <option value="3"><FormattedMessage id="question.q4.option3" /></option>
+              <option value="4"><FormattedMessage id="question.q4.option4" /></option>
             </select>
           </div>
         </div>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.question5" /></label>
+            <label><FormattedMessage id="question.q5" /></label>
             <select value={q5Answer} onChange={handleQ5Change}>
-              <option value="">-- <FormattedMessage id="riskAssessment.selectPercentage" /> --</option>
-              <option value="1"><FormattedMessage id="riskAssessment.answer16" /></option>
-              <option value="2"><FormattedMessage id="riskAssessment.answer17" /></option>
-              <option value="3"><FormattedMessage id="riskAssessment.answer18" /></option>
-              <option value="4"><FormattedMessage id="riskAssessment.answer19" /></option>
+              <option value=""><FormattedMessage id="question.selectOption" /></option>
+              <option value="1"><FormattedMessage id="question.q5.option1" /></option>
+              <option value="2"><FormattedMessage id="question.q5.option2" /></option>
+              <option value="3"><FormattedMessage id="question.q5.option3" /></option>
+              <option value="4"><FormattedMessage id="question.q5.option4" /></option>
             </select>
           </div>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.totalPoints" /></label>
+            <label><FormattedMessage id="question.totalPoints" /></label>
             <div className='calculateTotalPoints'><h4>{calculateTotalPoints()}</h4></div>
           </div>
         </div>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.resultLowRisk" /></label>
+            <label><FormattedMessage id="result.lowRisk" /></label>
           </div>
         </div>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.resultMediumRisk" /></label>
+            <label><FormattedMessage id="result.mediumRisk" /></label>
           </div>
         </div>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.resultHighRisk" /></label>
+            <label><FormattedMessage id="result.highRisk" /></label>
           </div>
         </div>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.investmentDesire" /></label>
+            <label><FormattedMessage id="question.investmentDesire" /></label>
             <input
               name="investmentDesire"
               value={formData.investmentDesire}
@@ -1363,7 +1413,7 @@ const IndividualsLogin = () => {
             />
           </div>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.recommendation" /></label>
+            <label><FormattedMessage id="question.recommendation" /></label>
             <input
               name="recommendation"
               value={formData.recommendation}
@@ -1373,7 +1423,7 @@ const IndividualsLogin = () => {
         </div>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.signature" /></label>
+            <label><FormattedMessage id="question.signature" /></label>
             <input
               type="file"
               name="signature"
@@ -1383,7 +1433,7 @@ const IndividualsLogin = () => {
             />
           </div>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="riskAssessment.clientName" /></label>
+            <label><FormattedMessage id="question.clientName" /></label>
             <input
               name="clientName"
               value={formData.clientName}
@@ -1395,41 +1445,46 @@ const IndividualsLogin = () => {
     </Accordion>
 
 
-<button type='submit' className='individuals-buttom-form'>إرسال</button>
-<Modal isOpen={formSubmitted || formError} onRequestClose={() => {setFormSubmitted(false); setFormError(false);}}>
-                                {formSubmitted ? (
-                                    <div className='Contact-successfuly'>
-                                     <button onClick={() => {setFormSubmitted(false);}}><img src='/close.svg'/></button>
-                                     <div className='Contact-successfuly-body'> 
-                                     <Player
-                                        autoplay
-                                        loop
-                                        src={Successfully} 
-                                        style={{ height: '200px', width: '200px' }} 
-                                    >
-                                        <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-                                    </Player>  
-                                        <h4>لقد تم أرسال طلبك بنجاح</h4>
-                                        </div>
-
-                                    </div>
-                                ) : (
-                                    <div className='Contact-error'>
-                                     <button onClick={() => {setFormError(false);}}><img src='/close.svg'/></button>
-                                     <div className='Contact-error-body'>
-                                     <Player
-                                        autoplay
-                                        loop
-                                        src={Fail} 
-                                        style={{ height: '200px', width: '200px' }} 
-                                    >
-                                        <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-                                    </Player>  
-                                        <h4>لم يتم أرسال طلبك , الرجاء المحاوله لاحقا</h4>
-                                        </div>
-                                    </div>
-                                )}
-                            </Modal>
+    <button type='submit' className='individuals-buttom-form'>
+        <FormattedMessage id="form.submit" />
+      </button>
+      <Modal isOpen={formSubmitted || formError} onRequestClose={() => {setFormSubmitted(false); setFormError(false);}}>
+        {formSubmitted ? (
+          <div className='Contact-successfuly'>
+            <button onClick={() => {setFormSubmitted(false);}}>
+              <img src='/close.svg' alt="Close" />
+            </button>
+            <div className='Contact-successfuly-body'> 
+              <Player
+                autoplay
+                loop
+                src={Successfully} 
+                style={{ height: '200px', width: '200px' }} 
+              >
+                <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+              </Player>  
+              <h4><FormattedMessage id="form.success" /></h4>
+            </div>
+          </div>
+        ) : (
+          <div className='Contact-error'>
+            <button onClick={() => {setFormError(false);}}>
+              <img src='/close.svg' alt="Close" />
+            </button>
+            <div className='Contact-error-body'>
+              <Player
+                autoplay
+                loop
+                src={Fail} 
+                style={{ height: '200px', width: '200px' }} 
+              >
+                <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+              </Player>  
+              <h4><FormattedMessage id="form.error" /></h4>
+            </div>
+          </div>
+        )}
+      </Modal>
     </form>
     </div>
     </section>

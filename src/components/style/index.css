@@ -54,7 +54,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-html[lang="en"] h1 ,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4,html[lang="en"] h5,html[lang="en"] h6,html[lang="en"] p{
+html[lang="en"] h1 ,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4,html[lang="en"] h5,html[lang="en"] h6,html[lang="en"] p,html[lang="en"] select,html[lang="en"] input,html[lang="en"] label,html[lang="en"] ul{
     direction: ltr !important;
 }
 .hero-homepage-content{

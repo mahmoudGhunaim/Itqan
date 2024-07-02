@@ -12,6 +12,25 @@
     flex-direction: row-reverse;
     justify-content: space-between;
 }
+html[lang="en"] #panel1-faq{
+    flex-direction: row;
+}
+html[lang="en"] #panel1-faq div{
+    justify-content: flex-start !important; 
+}
+html[lang="en"] .acc-Asset li{
+    text-align: left;
+}
+html[lang="en"] .acc-Asset li::after{
+    content: ""; 
+
+}
+html[lang="en"] .acc-Asset li::before {
+    content: "\2022"; 
+    color: #877096; 
+    font-size: inherit;
+    margin-right: 0.5em; 
+}
 #panel1-faq div{
     font-family: "Bahij TheSansArabic";
 font-size: 16px;
