@@ -1,7 +1,11 @@
 import React from 'react'
 import "./style/PrivateBoxCard.css"
 import { Link } from "gatsby"
+import { useLocalization } from '../context/LocalizationContext';
+
 const PrivateBoxCard = ({title,imgSrc,subtitle,Button,size,backgroundColor,spaceP,link,hidebutton}) => {
+  const { locale } = useLocalization();
+
   return (
     <div className='PrivateBoxCard-sec'>
     <div className={`PrivateBoxCard-container ${backgroundColor}`}>
@@ -12,8 +16,8 @@ const PrivateBoxCard = ({title,imgSrc,subtitle,Button,size,backgroundColor,space
             <h3>{title}</h3>
             <p>{subtitle}</p>
             <p style={{paddingTop:spaceP}}>{size}</p>
-            <Link to={link} style={{display: hidebutton}}><button>{Button}</button></Link>
-          </div>
+            <Link to={`/${locale}/${link}`}><button>{Button}</button></Link>
+            </div>
         </div>
     </div>
   )

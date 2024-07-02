@@ -9,6 +9,7 @@ import ItqanC from '../components/ItqanC';
 import Distinction from '../components/distinction';
 import SecFooter from '../components/SecFooter';
 import ScrollToTopButton from '../components/ScrollToTopButton';
+import { useLocalization } from '../context/LocalizationContext';
 
 const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
   const [content, setContent] = useState(defaultContent);
@@ -81,6 +82,7 @@ const Index = () => {
 
     return () => clearInterval(intervalId);
   }, []);
+  const { locale } = useLocalization();
 
   return (
     <Layout>
@@ -91,7 +93,7 @@ const Index = () => {
             <span><img src="/Isolation_Mode.svg" /> <FormattedMessage id="itqan_capital" /><img src="/Isolation_Mode.svg" /></span>
             <h1><img src="/Vector.svg" /> <FormattedMessage id="trusted_investment_leaders" /></h1>
             <p><FormattedMessage id="itqan_description" /></p>
-            <Link to="/Individuals-login">
+            <Link to={`/${locale}/Individuals-login`}>
               <div className="button-wrapper"><button> <img src="/Vector1.svg" /><div className='z-index'><FormattedMessage id="create_new_account" /></div></button> </div>
             </Link>
           </div>
@@ -102,21 +104,21 @@ const Index = () => {
           <h1><FormattedMessage id="itqan_products" /></h1>
           <p><FormattedMessage id="financial_services" /></p>
           <div className="products-content">
-            <div className="products-single">
-              <Link to="/asset-management"><button><img src="/Control Panel Icon.png" /><FormattedMessage id="asset_management" /></button></Link>
-            </div>
-            <div className="products-single">
-              <Link to="/Investment-banking"><button><img src="/Consultation.png" /><FormattedMessage id="investment_banking_services" /></button></Link>
-            </div>
-            <div className="products-single">
-              <Link to="/conservation-services"><button><img src="/Examination.png" /><FormattedMessage id="conservation_services" /></button></Link>
-            </div>
-            <div className="products-single">
-              <Link to="/advisory-research"> <button><img src="/Reporting.png" /><FormattedMessage id="wealth_management" /></button></Link>
-            </div>
-            <div className="products-single">
-              <Link to='/Individuals-login'> <button><img src="/New Account.png" /><FormattedMessage id="open_new_account" /></button></Link>
-            </div>
+          <div className="products-single">
+  <Link to={`/${locale}/asset-management`}><button><img src="/Control Panel Icon.png" /><FormattedMessage id="asset_management" /></button></Link>
+</div>
+<div className="products-single">
+  <Link to={`/${locale}/Investment-banking`}><button><img src="/Consultation.png" /><FormattedMessage id="investment_banking_services" /></button></Link>
+</div>
+<div className="products-single">
+  <Link to={`/${locale}/conservation-services`}><button><img src="/Examination.png" /><FormattedMessage id="conservation_services" /></button></Link>
+</div>
+<div className="products-single">
+  <Link to={`/${locale}/advisory-research`}><button><img src="/Reporting.png" /><FormattedMessage id="wealth_management" /></button></Link>
+</div>
+<div className="products-single">
+  <Link to={`/${locale}/Individuals-login`}><button><img src="/New Account.png" /><FormattedMessage id="open_new_account" /></button></Link>
+</div>
           </div>
           <ItqanC />
         </div>

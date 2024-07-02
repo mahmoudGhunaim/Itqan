@@ -451,8 +451,8 @@ const IndividualsLogin = () => {
                                 <FormattedMessage id="corporate_account" />
                             </button>
                         </Link>
-                        <Link to="/Individuals-login">
-                            <button style={{background:"#3F1A58",color:"#FFFFFF"}}>
+                        <Link to={`/${locale}/Individuals-login`}>
+                        <button style={{background:"#3F1A58",color:"#FFFFFF"}}>
                                 <FormattedMessage id="individual_account" />
                             </button>
                         </Link>

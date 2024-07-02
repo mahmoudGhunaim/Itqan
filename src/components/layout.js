@@ -6,9 +6,12 @@ import Header from "./header";
 import "./style/layout.css";
 import Loader from "./loader";
 import { LocalizationProvider } from '../context/LocalizationContext';
+import { useLocalization } from '../context/LocalizationContext';
 
 const Layout = ({ children, overPadding }) => {
   const [loading, setLoading] = useState(true);
+  const { locale } = useLocalization();
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,6 +28,7 @@ const Layout = ({ children, overPadding }) => {
   // const intl = useIntl();
 
   if (loading) return <Loader />;
+
   return (
     <LocalizationProvider>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
@@ -32,8 +36,8 @@ const Layout = ({ children, overPadding }) => {
       <footer className="footer-sec">
         <div className="footer-container">
           <div className="footer-logo">
-            <Link to="../../../"><img src="/itqanlogo.svg" alt="Itqan Capital Logo"/></Link>
-            <p><FormattedMessage id="footer.companyDescription" defaultMessage="Itqan Capital is an investment company based in Saudi Arabia and licensed by the Capital Market Authority." /></p>
+          <Link to={`/${locale}/`}><img src="/itqanlogo.svg" alt="Itqan Capital Logo"/></Link>
+          <p><FormattedMessage id="footer.companyDescription" defaultMessage="Itqan Capital is an investment company based in Saudi Arabia and licensed by the Capital Market Authority." /></p>
             <p><FormattedMessage id="footer.registrationNumber" defaultMessage="Commercial Registration Number: 4030167335 dated 6/3/2007" /></p>
             <p><FormattedMessage id="footer.licenseNumber" defaultMessage="License Number: 07058-37" /></p>
             <p><FormattedMessage id="footer.contactNumber" defaultMessage="Unified Number: 8001240533" /></p>
@@ -41,18 +45,19 @@ const Layout = ({ children, overPadding }) => {
        
           <div className="footer-services">
             <h6><FormattedMessage id="footer.services" defaultMessage="Services" /></h6>
-            <Link to="/asset-management"><FormattedMessage id="footer.assetManagement" defaultMessage="Asset Management" /></Link>
-            <Link to="/Investment-banking"><FormattedMessage id="footer.investmentBanking" defaultMessage="Investment Banking" /></Link>
-            <Link to="/conservation-services"><FormattedMessage id="footer.conservationServices" defaultMessage="Conservation Services" /></Link>
-            <Link to="/advisory-research"><FormattedMessage id="footer.advisoryResearch" defaultMessage="Wealth Management" /></Link>
+            <Link to={`/${locale}/asset-management`}><FormattedMessage id="footer.assetManagement" defaultMessage="Asset Management" /></Link>
+            <Link to={`/${locale}/Investment-banking`}><FormattedMessage id="footer.investmentBanking" defaultMessage="Investment Banking" /></Link>
+            <Link to={`/${locale}/conservation-services`}><FormattedMessage id="footer.conservationServices" defaultMessage="Conservation Services" /></Link>
+            <Link to={`/${locale}/advisory-research`}><FormattedMessage id="footer.advisoryResearch" defaultMessage="Wealth Management" /></Link>
+
           </div>
 
           <div className="footer-links">
             <h6><FormattedMessage id="footer.quickLinks" defaultMessage="Quick Links" /></h6>
-            <Link to="/about-us"><FormattedMessage id="footer.aboutUs" defaultMessage="Overview" /></Link>
-            <Link to="/announcements"><FormattedMessage id="footer.announcements" defaultMessage="Announcements" /></Link>
-            <Link to="/careers"><FormattedMessage id="footer.careers" defaultMessage="Careers" /></Link>
-            <Link to="/contact-us"><FormattedMessage id="footer.contactUs" defaultMessage="Contact Us" /></Link>
+            <Link to={`/${locale}/about-us`}><FormattedMessage id="footer.aboutUs" defaultMessage="Overview" /></Link>
+            <Link to={`/${locale}/announcements`}><FormattedMessage id="footer.announcements" defaultMessage="Announcements" /></Link>
+            <Link to={`/${locale}/careers`}><FormattedMessage id="footer.careers" defaultMessage="Careers" /></Link>
+            <Link to={`/${locale}/contact-us`}><FormattedMessage id="footer.contactUs" defaultMessage="Contact Us" /></Link>
           </div>
 
           <form>
