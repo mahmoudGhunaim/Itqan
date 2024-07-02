@@ -78,7 +78,7 @@ const Header = ({ siteTitle }) => {
               <Link to={`/${locale}/asset-management`}>
                 <FormattedMessage id="asset_management" />
               </Link>
-              <Link to={`/${locale}/investment-banking`}>
+              <Link to={`/${locale}/Investment-banking`}>
                 <FormattedMessage id="investment_banking" />
               </Link>
               <Link to={`/${locale}/conservation-services`}>
@@ -104,7 +104,7 @@ const Header = ({ siteTitle }) => {
           </Link>
         </div>
         <div className="navBar-openAcc">
-          <Link to="./Individuals-login"><button><FormattedMessage id="open_new_account" /></button></Link>
+          <Link to={`/${locale}/Individuals-login`}><button><FormattedMessage id="open_new_account" /></button></Link>
           <MDBDropdown>
             <MDBDropdownToggle>
               {/* Display the current language in the dropdown toggle */}

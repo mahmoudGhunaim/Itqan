@@ -88,7 +88,7 @@ const Board = ({ pageContext, location }) => {
               return (
                 <Link
                   key={director.id}
-                  to={getLocalizedUrl(`?id=${director.id}`)}
+                  to={`../team?id=${director.id}`}
                   className="director-card"
                 >
                   <img

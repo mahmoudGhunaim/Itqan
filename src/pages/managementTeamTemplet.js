@@ -7,11 +7,13 @@ import Layout from "../components/layout";
 import Seo from '../components/seo';
 import { Link } from "gatsby";
 import { FormattedMessage } from 'react-intl';
+import { useLocalization } from '../context/LocalizationContext';
 
 const ManagementTeamTemplate = () => {
   const location = useLocation(); // Get the location object
   const params = new URLSearchParams(location.search); // Parse the query parameters
   const id = params.get('id'); // Get the 'id' parameter
+  const { locale, changeLocale } = useLocalization();
 
   const [teamMember, setTeamMember] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -61,7 +63,7 @@ const ManagementTeamTemplate = () => {
       <Hero title={<FormattedMessage id="managementTeamTitle" values={{ name: attributes.name }} />} />
       <section className='Team-sec'>
         <div className='Team-container'>
-          <Link to="/management-team"><button><FormattedMessage id="backButtonText" defaultMessage="Back" /><img src='/RA.png'/></button></Link>
+          <Link to={`/${locale}/management-team`}><button><FormattedMessage id="backButtonText" defaultMessage="Back" /><img src='/RA.png'/></button></Link>
           <div className='Team-card'>
             <img src={profileImageUrl} alt={attributes.name} />
             <div className='Team-card-info'>

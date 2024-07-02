@@ -22,6 +22,13 @@ html[lang="en"] .infopanel-container p{
 .infopanel-content{
     text-align: right;
 }
+html[lang="en"]  .AssetManagement-title .infopanel-content,html[lang="en"] .assetManagement-all-sec .infopanel-content{
+    text-align: left;
+}
+html[lang="en"]  .AssetManagement-title .infopanel-content li,html[lang="en"]  .AssetManagement-title .infopanel-content h2,html[lang="en"] .assetManagement-all-sec .infopanel-content h2,html[lang="en"] .assetManagement-all-sec .infopanel-content li{
+    direction: ltr !important;
+    text-align: left;
+}
 .infopanel-content ul {
     list-style: none;
     direction: rtl;

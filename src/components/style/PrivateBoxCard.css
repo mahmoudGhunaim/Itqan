@@ -13,6 +13,9 @@
     text-align: right;
     margin-top: 10px;
 }
+html[lang="en"]  .PrivateBoxCard-title h3,html[lang="en"] .PrivateBoxCard-title p,html[lang="en"] .infopanel-container h2 ,html[lang="en"] .infopanel-content ul{
+    text-align: left;
+}
 .PrivateBoxCard-title p{
     font-family: "Bahij TheSansArabic";
     font-size: 16px;

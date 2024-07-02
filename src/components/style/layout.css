@@ -119,6 +119,23 @@ align-items: center;
   width: 90%;
   padding-bottom: 60px;
 }
+html[lang="en"]  .footer-container{
+  flex-direction: row;
+}
+html[lang="en"] .footer-logo{
+  text-align: left;
+}
+html[lang="en"] .footer-links a,html[lang="en"] .footer-services a,html[lang="en"] .footer-logo p,html[lang="en"] .footer-container form p,html[lang="en"] input.button-input-field{
+  text-align: left;
+}
+html[lang="en"] .footer-links h6, html[lang="en"] .footer-services h6, html[lang="en"] .footer-container form h6{
+  text-align: left;
+}
+html[lang="en"] .button-input{
+  flex-direction: row;
+  padding: 3px 5px 3px 20px;
+}
+
 .footer-links,.footer-services,.footer-container form {
   display: flex;
   flex-direction: column;
@@ -345,7 +362,7 @@ button.btn-close::before{
     border-radius: 3px;
     transform: translate(0, 0); 
 }
-  .footer-container{
+html[lang="en"]  .footer-container,.footer-container{
     flex-direction: column;
   }
   .mobile-menu{

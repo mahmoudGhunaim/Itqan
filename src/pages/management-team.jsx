@@ -60,7 +60,7 @@ const ManagementTeam = () => {
                 : '/default-profile.png'; // Use a default image if profile image is not available
 
               return (
-                <Link key={director.id} to={`/managementTeamTemplet?id=${director.id}`} className='director-card'>
+                <Link key={director.id} to={`../managementTeamTemplet?id=${director.id}`} className='director-card'>
                   <img src={profileImageUrl} alt={director.attributes.name} />
                   <div className='director-card-info'>
                     <h4>{director.attributes.name}</h4>

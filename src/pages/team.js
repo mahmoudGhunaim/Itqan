@@ -13,6 +13,7 @@ const Team = () => {
     const location = useLocation(); // Get the location object
     const params = new URLSearchParams(location.search); // Parse the query parameters
     const id = params.get('id'); // Get the 'id' parameter
+    const { locale, changeLocale } = useLocalization();
 
     const [teamMember, setTeamMember] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -62,7 +63,7 @@ const Team = () => {
             <Hero title={<FormattedMessage id="teamTitle"/>} /> 
             <section className='Team-sec'>
                 <div className='Team-container'>
-                    <Link to="/board"><button><FormattedMessage id="backButton" /><img src='/RA.png' alt="RA" /></button></Link>
+                    <Link to={`/${locale}/board`}><button><FormattedMessage id="backButton" /><img src='/RA.png' alt="RA" /></button></Link>
                     <div className='Team-card'>
                         <img src={profileImageUrl} alt={attributes.name} />
                         <div className='Team-card-info'>

@@ -13,6 +13,9 @@
     text-align: right;
 
 }
+html[lang="en"] .AnnouncementsBox p,html[lang="en"] .Announcements-content h3{
+    text-align: left;
+}
 /* .AnnouncementsBox p:nth-child(1){
     color: #3F1A58;
 }
