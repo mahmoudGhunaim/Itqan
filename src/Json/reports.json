@@ -1,77 +1,10 @@
 [
-    {
-        "title": "التقارير السنوية – 2023",
-        "Details": [
-          {
-            "content": "تقرير مجلس الإدارة 2023",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2023/12/%D8%AA%D9%82%D8%B1%D9%8A%D8%B1%20%D9%85%D8%AC%D9%84%D8%B3%20%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D9%84%D8%B9%D8%A7%D9%85%202023%D9%85%20-%20%D8%A5%D8%AA%D9%82%D8%A7%D9%86%20%D9%83%D8%A7%D8%A8%D9%8A%D8%AA%D8%A7%D9%84.pdf"
-          }
-        ]
-      }, {
-        "title": "التقارير السنوية – 2022",
-        "Details": [
-          {
-            "content": "تقرير مجلس الإدارة 2022",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2022/12/bordreport31122022.pdf"
-          }
-        ]
-      }
-      , {
-        "title": "التقارير السنوية – 2021",
-        "Details": [
-          {
-            "content": "تقرير مجلس الإدارة 2021",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2021/03/bordreport31122021.pdf"
-          }
-        ]
-      } , {
-        "title": "التقارير السنوية – 2020",
-        "Details": [
-          {
-            "content": "تقرير مجلس الإدارة 2020",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2021/03/2020-Annual-Report-Itqan-Capital.pdf"
-          }
-        ]
-      }, {
-        "title": "التقارير السنوية – 2019",
-        "Details": [
-          {
-            "content": "تقرير مجلس الإدارة 2019",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/2019-Annual-Report_ITQAN-CAPITAL.pdf"
-          }
-        ]
-      }, {
-        "title": "التقارير السنوية – 2018",
-        "Details": [
-          {
-            "content": "تقرير مجلس الإدارة 2018",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/2018-Annual-Report_ITQAN-CAPITAL.pdf"
-          }
-        ]
-      }, {
-        "title": "التقارير السنوية – 2017",
-        "Details": [
-          {
-            "content": "تقرير مجلس الإدارة 2017",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/2017-Annual-Report_ITQAN-CAPITAL_-MM20180329.pdf"
-          }
-        ]
-      }
-      , {
-        "title": "التقارير السنوية – 2016",
-        "Details": [
-          {
-            "content": "تقرير مجلس الإدارة 2016",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/BoardReport2016Ar.pdf"
-          }
-        ]
-      }
-      , {
+ {
         "title": "البيانات المالية – 2023",
         "Details": [
           {
             "content": "اخر تقرير مالي سنوي مدقق 2023",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2023/12/FS23ItqanCapital.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/FS_23_Itqan_Capital_a02c93aaaf.pdf"
           }
         ]
       } , {
@@ -79,7 +12,7 @@
         "Details": [
           {
             "content": "اخر تقرير مالي سنوي مدقق 2022",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2023/03/FS22ItqanCapital.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/FS_22_Itqan_Capital_21148fe9d2.pdf"
           }
         ]
       }, {
@@ -87,7 +20,7 @@
         "Details": [
           {
             "content": "اخر تقرير مالي سنوي مدقق 2021",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2022/04/FS%2021%20-%20Itqan%20Capital-%20Arabic%20-%20Audited.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/FS_21_Itqan_Capital_Arabic_Audited_f70432a94b.pdf"
           }
         ]
       }, {
@@ -95,7 +28,7 @@
         "Details": [
           {
             "content": "اخر تقرير مالي سنوي مدقق 2020",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2021/04/AR-FS-20-Itqan-Capital.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/AR_FS_20_Itqan_Capital_72f6d52e8a.pdf"
           }
         ]
       }, {
@@ -103,7 +36,7 @@
         "Details": [
           {
             "content": "اخر تقرير مالي سنوي مدقق 2019",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/FinancialStatements31Dec2019AR.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Financial_Statements31_Dec2019_AR_d135a032e0.pdf"
           }
         ]
       }, {
@@ -111,7 +44,7 @@
         "Details": [
           {
             "content": "اخر تقرير مالي سنوي مدقق 2018",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/FinancialStatements31Dec2018En.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Financial_Statements31_Dec2018_En_f2456f7e68.pdf"
           }
         ]
       }, {
@@ -119,7 +52,7 @@
         "Details": [
           {
             "content": "اخر تقرير مالي سنوي مدقق 2017",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/FinancialStatements31Dec2017En.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Financial_Statements31_Dec2017_En_11b97f5b7c.pdf"
           }
         ]
       }, {
@@ -127,7 +60,7 @@
         "Details": [
           {
             "content": "اخر تقرير مالي سنوي مدقق 2016",
-            "linkpdf": "https://itqancapital.com/wp-content/themes/etq/Financial-Statements/FinancialStatements31Dec2016Ar.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Financial_Statements31_Dec2016_Ar_af679786f3.pdf"
           }
         ]
       }, {
@@ -135,7 +68,7 @@
         "Details": [
           {
             "content": "تقرير الركيزة الثالثة لعام 2019",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/PILLAR-III-DISCLOSURE-for-the-year-2019.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/PILLAR_III_DISCLOSURE_for_the_year_2019_6be9842ccf.pdf"
           }
         ]
       }, {
@@ -143,7 +76,7 @@
         "Details": [
           {
             "content": "تقرير الركيزة الثالثة لعام 2018",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/PILLAR-III-DISCLOSURE-for-the-year-2018.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/PILLAR_III_DISCLOSURE_for_the_year_2018_fa4669eb0a.pdf"
           }
         ]
       }, {
@@ -151,7 +84,7 @@
         "Details": [
           {
             "content": "تقرير الركيزة الثالثة لعام 2017",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/PILLAR-III-DISCLOSURE-for-the-year-2017_MM-20180324_V2.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/PILLAR_III_DISCLOSURE_for_the_year_2017_MM_20180324_V2_a002bf9dc0.pdf"
           }
         ]
       }, {
@@ -159,7 +92,7 @@
         "Details": [
           {
             "content": "تقرير الركيزة الثالثة لعام 2016",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/ItqanCapitalPILLARIIIDISCLOSURE2016En.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Itqan_Capital_PILLARIIIDISCLOSURE_2016_En_7df45b2165.pdf"
           }
         ]
       }

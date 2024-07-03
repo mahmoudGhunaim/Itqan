@@ -233,7 +233,7 @@ const handlePrivateFundsClick = () => {
             {PrivateBoxData.map((item, index) => (
               <SwiperSlide key={index} className="swiper-Discover-Slide">
                 <PrivateBox
-                  title={<FormattedMessage id="private_box_title" defaultMessage={item.title} />}
+                  title={<FormattedMessage id="private_funds_button" defaultMessage={item.title} />}
                   subtitle={<FormattedMessage id="private_box_subtitle" defaultMessage={item.subtitle} />}
                   Button={<FormattedMessage id="private_box_button" defaultMessage={item.button} />}
                   imgSrc={item.imgSrc}

@@ -16,7 +16,9 @@ const PrivateBoxCard = ({title,imgSrc,subtitle,Button,size,backgroundColor,space
             <h3>{title}</h3>
             <p>{subtitle}</p>
             <p style={{paddingTop:spaceP}}>{size}</p>
-            <Link to={`/${locale}/${link}`}><button>{Button}</button></Link>
+            <Link to={`/${locale}/${link}`}> <button style={{ display: hidebutton ? 'none' : 'inline-block' }}>
+              {Button}
+            </button></Link>
             </div>
         </div>
     </div>

@@ -6,8 +6,12 @@ import Hero from '../components/Hero';
 import InfoPanel from '../components/InfoPanel';
 import Accordion from '../components/Accordion';
 import accordionData from '../Json/Accordion.json';
+import accordionDataen from '../Json/Accordionen.json';
+
 import PrivateBox from '../components/PrivateBoxCard';
 import PrivateBoxData from "../Json/PrivateBoxData.json"
+import PrivateBoxDataen from "../Json/PrivateBoxDataen.json"
+
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
@@ -32,6 +36,7 @@ const SliderButtons = () => {
 const AssetManagement = () => {
   const [activeButton, setActiveButton] = useState("stock");
   const { formatMessage } = useLocalization();
+  const { locale } = useLocalization();
 
   const handlePortfolioMurabahaandSukukFund = () => {
     setContent(
@@ -69,13 +74,23 @@ const AssetManagement = () => {
         </h2>
         <section className='assetManagement-accordion'>
           <div className='assetManagement-accordion-container'>
-            {accordionData.map((item, index) => (
+          {locale === "ar" ? (
+            accordionData.map((item, index) => (
               <Accordion
                 key={index}
-                title={<FormattedMessage id={`accordion_title_${index}`} defaultMessage={item.titleDefault} />}
-                Details={<FormattedMessage id={`accordion_details_${index}`} defaultMessage={item.detailsDefault} />}
+                title={item.title}
+                Details={item.Details}
               />
-            ))}
+            ))
+          ) : locale === "en" ? (
+            accordionDataen.map((item, index) => (
+              <Accordion
+                key={index}
+                title={item.title}
+                Details={item.Details}
+              />
+            ))
+          ) : null}
           </div>
         </section>
       </>
@@ -111,13 +126,23 @@ const AssetManagement = () => {
         </h2>
         <section className='assetManagement-accordion'>
           <div className='assetManagement-accordion-container'>
-            {accordionData.map((item, index) => (
+          {locale === "ar" ? (
+            accordionData.map((item, index) => (
               <Accordion
                 key={index}
-                title={<FormattedMessage id={`accordion_title_${index}`} defaultMessage={item.titleDefault} />}
-                Details={<FormattedMessage id={`accordion_details_${index}`} defaultMessage={item.detailsDefault} />}
+                title={item.title}
+                Details={item.Details}
               />
-            ))}
+            ))
+          ) : locale === "en" ? (
+            accordionDataen.map((item, index) => (
+              <Accordion
+                key={index}
+                title={item.title}
+                Details={item.Details}
+              />
+            ))
+          ) : null}
           </div>
         </section>
       </>
@@ -167,13 +192,23 @@ const AssetManagement = () => {
   </h2>
   <section className='assetManagement-accordion'>
     <div className='assetManagement-accordion-container'>
-      {accordionData.map((item, index) => (
-        <Accordion
-          key={index}
-          title={<FormattedMessage id={`accordion_title_${index}`} defaultMessage={item.title} />}
-          Details={<FormattedMessage id={`accordion_details_${index}`} defaultMessage={item.Details} />}
-        />
-      ))}
+    {locale === "ar" ? (
+            accordionData.map((item, index) => (
+              <Accordion
+                key={index}
+                title={item.title}
+                Details={item.Details}
+              />
+            ))
+          ) : locale === "en" ? (
+            accordionDataen.map((item, index) => (
+              <Accordion
+                key={index}
+                title={item.title}
+                Details={item.Details}
+              />
+            ))
+          ) : null}
     </div>
   </section>
 </section>    </section>
@@ -230,19 +265,35 @@ const AssetManagement = () => {
               <SliderButtons />
             </div>
             <div className='private-box-card'>
-              {PrivateBoxData.map((item, index) => (
-                <SwiperSlide key={index} className="swiper-Discover-Slide">
-                  <PrivateBox
-                    title={<FormattedMessage id={`private_box_title_${index}`} defaultMessage={item.title} />}
-                    subtitle={<FormattedMessage id={`private_box_subtitle_${index}`} defaultMessage={item.subtitle} />}
-                    Button={<FormattedMessage id={`private_box_button_${index}`} defaultMessage={item.button} />}
-                    imgSrc={item.imgSrc}
-                    size={item.size}
-                    link={item.link}
-                    hidebutton="none"
-                  />
-                </SwiperSlide>
-              ))}
+            {locale === "ar" ? (
+  PrivateBoxData.map((item, index) => (
+    <SwiperSlide key={index} className="swiper-Discover-Slide">
+      <PrivateBox
+        title={<FormattedMessage id={`private_box_title_${index}`} defaultMessage={item.title} />}
+        subtitle={<FormattedMessage id={`private_box_subtitle_${index}`} defaultMessage={item.subtitle} />}
+        Button={<FormattedMessage id={`private_funds_button`} defaultMessage={item.button} />}
+        imgSrc={item.imgSrc}
+        size={item.size}
+        link={item.link}
+        hidebutton="none"
+      />
+    </SwiperSlide>
+  ))
+) : (
+  PrivateBoxDataen.map((item, index) => (
+    <SwiperSlide key={index} className="swiper-Discover-Slide">
+      <PrivateBox
+        title={<FormattedMessage id={`private_box_title_${index}`} defaultMessage={item.title} />}
+        subtitle={<FormattedMessage id={`private_box_subtitle_${index}`} defaultMessage={item.subtitle} />}
+        Button={<FormattedMessage id={`private_funds_button`} defaultMessage={item.button} />}
+        imgSrc={item.imgSrc}
+        size={item.size}
+        link={item.link}
+        hidebutton="none"
+      />
+    </SwiperSlide>
+  ))
+)}
             </div>
           </Swiper>
         </div>
@@ -294,13 +345,23 @@ const AssetManagement = () => {
   </h2>
   <section className='assetManagement-accordion'>
     <div className='assetManagement-accordion-container'>
-      {accordionData.map((item, index) => (
-        <Accordion
-          key={index}
-          title={<FormattedMessage id={`accordion_title_${index}`} defaultMessage={item.title} />}
-          Details={<FormattedMessage id={`accordion_details_${index}`} defaultMessage={item.Details} />}
-        />
-      ))}
+    {locale === "ar" ? (
+            accordionData.map((item, index) => (
+              <Accordion
+                key={index}
+                title={item.title}
+                Details={item.Details}
+              />
+            ))
+          ) : locale === "en" ? (
+            accordionDataen.map((item, index) => (
+              <Accordion
+                key={index}
+                title={item.title}
+                Details={item.Details}
+              />
+            ))
+          ) : null}
     </div>
   </section>
 </section>      </section>

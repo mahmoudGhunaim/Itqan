@@ -74,6 +74,7 @@
     }
     .distinguishes-container{
         gap: 30px;
+        padding-bottom: 50px;
     }
     .distinguishes-container h1{
         font-size: 24px;

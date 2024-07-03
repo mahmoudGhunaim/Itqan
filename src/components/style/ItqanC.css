@@ -87,6 +87,9 @@ html[lang="en"] .itqan-c-text h6{
     flex-direction: row;
 }
 @media screen and (max-width:  1024px) {
+    .itqan-c-section{
+        margin-top: 50px;
+    }
     .itqan-c-container{
         flex-direction: column;
         padding: 10px;

@@ -1,68 +1,10 @@
 [
-    {
-        "title": "Annual Reports - 2023",
-        "Details": [
-          {
-            "content": "Board of Directors Report 2023",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2023/12/Board-of-Directors-Report-2023-Itqan-Capital.pdf"
-          }
-        ]
-      }, {
-        "title": "Annual Reports - 2022",
-        "Details": [
-          {
-            "content": "Board of Directors Report 2022",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2022/12/bordreport31122022.pdf"
-          }
-        ]
-      }
-      , {
-        "title": "Annual Reports - 2021",
-        "Details": [
-          {
-            "content": "Board of Directors Report 2021",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2021/03/bordreport31122021.pdf"
-          }
-        ]
-      } , {
-        "title": "Annual Reports - 2020",
-        "Details": [
-          {
-            "content": "Board of Directors Report 2020",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2021/03/2020-Annual-Report-Itqan-Capital.pdf"
-          }
-        ]
-      }, {
-        "title": "Annual Reports - 2019",
-        "Details": [
-          {
-            "content": "Board of Directors Report 2019",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/2019-Annual-Report_ITQAN-CAPITAL.pdf"
-          }
-        ]
-      }, {
-        "title": "Annual Reports - 2018",
-        "Details": [
-          {
-            "content": "Board of Directors Report 2018",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/2018-Annual-Report_ITQAN-CAPITAL.pdf"
-          }
-        ]
-      }, {
-        "title": "Annual Reports - 2017",
-        "Details": [
-          {
-            "content": "Board of Directors Report 2017",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/2017-Annual-Report_ITQAN-CAPITAL_-MM20180329.pdf"
-          }
-        ]
-      }
-      , {
+     {
         "title": "Financial Data - 2023",
         "Details": [
           {
             "content": "Latest audited annual financial report 2023",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2023/12/FS23ItqanCapital.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/FS_23_Itqan_Capital_a02c93aaaf.pdf"
           }
         ]
       } , {
@@ -70,7 +12,7 @@
         "Details": [
           {
             "content": "Latest audited annual financial report 2022",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2023/03/FS22ItqanCapital.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/FS_22_Itqan_Capital_21148fe9d2.pdf"
           }
         ]
       }, {
@@ -78,7 +20,7 @@
         "Details": [
           {
             "content": "Latest audited annual financial report 2021",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2022/04/FS%2021%20-%20Itqan%20Capital-%20Arabic%20-%20Audited.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/FS_21_Itqan_Capital_Arabic_Audited_f70432a94b.pdf"
           }
         ]
       }, {
@@ -86,7 +28,7 @@
         "Details": [
           {
             "content": "Latest audited annual financial report 2020",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2021/04/AR-FS-20-Itqan-Capital.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/AR_FS_20_Itqan_Capital_72f6d52e8a.pdf"
           }
         ]
       }, {
@@ -94,7 +36,7 @@
         "Details": [
           {
             "content": "Latest audited annual financial report 2019",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/FinancialStatements31Dec2019AR.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Financial_Statements31_Dec2019_AR_d135a032e0.pdf"
           }
         ]
       }, {
@@ -102,7 +44,7 @@
         "Details": [
           {
             "content": "Latest audited annual financial report 2018",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/FinancialStatements31Dec2018En.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Financial_Statements31_Dec2018_En_f2456f7e68.pdf"
           }
         ]
       }, {
@@ -110,7 +52,15 @@
         "Details": [
           {
             "content": "Latest audited annual financial report 2017",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/FinancialStatements31Dec2017En.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Financial_Statements31_Dec2017_En_11b97f5b7c.pdf"
+          }
+        ]
+      }, {
+        "title": "Financial Data - 2016",
+        "Details": [
+          {
+            "content": "Latest audited annual financial report 2016",
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Financial_Statements31_Dec2016_Ar_af679786f3.pdf"
           }
         ]
       }, {
@@ -118,7 +68,7 @@
         "Details": [
           {
             "content": "Pillar III Disclosure Report for 2019",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/PILLAR-III-DISCLOSURE-for-the-year-2019.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/PILLAR_III_DISCLOSURE_for_the_year_2019_6be9842ccf.pdf"
           }
         ]
       }, {
@@ -126,7 +76,7 @@
         "Details": [
           {
             "content": "Pillar III Disclosure Report for 2018",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/PILLAR-III-DISCLOSURE-for-the-year-2018.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/PILLAR_III_DISCLOSURE_for_the_year_2018_fa4669eb0a.pdf"
           }
         ]
       }, {
@@ -134,7 +84,7 @@
         "Details": [
           {
             "content": "Pillar III Disclosure Report for 2017",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/PILLAR-III-DISCLOSURE-for-the-year-2017_MM-20180324_V2.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/PILLAR_III_DISCLOSURE_for_the_year_2017_MM_20180324_V2_a002bf9dc0.pdf"
           }
         ]
       }, {
@@ -142,7 +92,7 @@
         "Details": [
           {
             "content": "Pillar III Disclosure Report for 2016",
-            "linkpdf": "https://itqancapital.com/wp-content/uploads/2020/12/ItqanCapitalPILLARIIIDISCLOSURE2016En.pdf"
+            "linkpdf": "https://itqan-strapi.softylus.com/uploads/Itqan_Capital_PILLARIIIDISCLOSURE_2016_En_7df45b2165.pdf"
           }
         ]
       }

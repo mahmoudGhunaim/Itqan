@@ -7,6 +7,7 @@ import { Link } from "gatsby";
 import Seo from '../components/seo';
 import InvestorProtectionGuide from "../../static/1681029922_دليل-حماية-المستثمر (4).pdf";
 import { FormattedMessage } from 'react-intl';
+import Complaint from "../../static/شكوى.pdf"
 
 const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
   const [content, setContent] = useState(defaultContent);
@@ -54,14 +55,14 @@ const ClientAwareness = () => {
             {/* Add translated title here */}
           </div>
           <div className='Reports-data-cards security-cards'>
-            <Link to='https://itqancapital.com/wp-content/themes/etq/co/CustomerComplaint.pdf'>
+          <a href={Complaint} target="_blank" rel="noopener noreferrer">
               <SecurityCard
                 defaultImgSrc='/Complaint.png'
                 hoverImgSrc='/PDF.png'
                 defaultContent={<FormattedMessage id="client_awareness_complaint_procedure" />}
                 hoverContent={<FormattedMessage id="client_awareness_view_pdf" />}
               />
-            </Link>
+            </a>
             <a href={InvestorProtectionGuide} target="_blank" rel="noopener noreferrer">
               <SecurityCard
                 defaultImgSrc='/Investor.png'

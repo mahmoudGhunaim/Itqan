@@ -38,7 +38,7 @@ const ShariyahReview = () => {
                 <Link to="https://shariyah.net">
                   <button><FormattedMessage id="learn_more_button" /></button>
                 </Link>
-                <Link to="https://itqancapital.com/wp-content/uploads/2023/12/ItqanCapital%202023ShariahAuditReport.pdf">
+                <Link to="https://itqan-strapi.softylus.com/uploads/Itqan_Capital_2023_Shariah_Audit_Report_cc5d1bad2c.pdf">
                   <SecurityCard
                     defaultImgSrc='/Investor.png'
                     hoverImgSrc='/PDF.png' 

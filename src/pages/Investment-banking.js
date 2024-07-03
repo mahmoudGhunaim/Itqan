@@ -81,6 +81,7 @@ const InvestmentBanking = (props) => {
             hidebutton="none"
             imgSrc="/Group 164.png"
             link="/Individuals-login"
+            
         />
         <PrivateBox
             title={<FormattedMessage id="mergers_acquisitions_title" />}
