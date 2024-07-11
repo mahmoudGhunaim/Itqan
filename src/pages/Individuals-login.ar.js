@@ -1335,6 +1335,7 @@ const IndividualsLogin = () => {
           <div className='individuals-single-field'>
             <label><FormattedMessage id="question.q1" /></label>
             <select value={q1Answer} onChange={(e) => setQ1Answer(e.target.value)}>
+            <option value=""><FormattedMessage id="question.selectOption" /></option>
               <option value="1"><FormattedMessage id="question.q1.option1" /></option>
               <option value="2"><FormattedMessage id="question.q1.option2" /></option>
               <option value="3"><FormattedMessage id="question.q1.option3" /></option>
@@ -1343,6 +1344,7 @@ const IndividualsLogin = () => {
           <div className='individuals-single-field'>
             <label><FormattedMessage id="question.q2" /></label>
             <select value={q2Answer} onChange={(e) => setQ2Answer(e.target.value)}>
+            <option value=""><FormattedMessage id="question.selectOption" /></option>
               <option value="1"><FormattedMessage id="question.q2.option1" /></option>
               <option value="2"><FormattedMessage id="question.q2.option2" /></option>
               <option value="3"><FormattedMessage id="question.q2.option3" /></option>

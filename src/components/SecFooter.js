@@ -63,7 +63,7 @@ const SecFooter = () => {
                         <input
                             type='text'
                             name='name'
-                            placeholder={<FormattedMessage id="name_placeholder" defaultMessage="حقل لإدخال الاسم" />}
+                            placeholder='Name'
                             value={formData.name}
                             onChange={handleChange}
                         />
@@ -75,7 +75,7 @@ const SecFooter = () => {
                         <input
                             type='email'
                             name='email'
-                            placeholder={<FormattedMessage id="email_placeholder" defaultMessage="حقل لإدخال البريد الإلكتروني" />}
+                            placeholder='Email'
                             value={formData.email}
                             onChange={handleChange}
                         />
@@ -86,7 +86,7 @@ const SecFooter = () => {
                         </FormattedMessage>
                         <textarea
                             name='message'
-                            placeholder={<FormattedMessage id="message_placeholder" defaultMessage="حقل لإدخال موضوع الاستفسار" />}
+                            placeholder='Message'
                             value={formData.message}
                             onChange={handleChange}
                         />
@@ -141,7 +141,7 @@ const SecFooter = () => {
                     <p>
                         <FormattedMessage
                             id="address_details"
-                            defaultMessage="المملكة العربية السعودية / جدة/ Al Zahraa District – Ahmed Al Attas Street Al Zahraa Commercial Center, Unit 2563, Jeddah 23425-2753 Kingdom of Saudi Arabia"
+                            defaultMessage="المملكة العربية السعودية / جدة/ حي الزهراء – شارع أحمد العطاس مركز الزهراء التجاري وحدة 2563 جدة 23425-2753 المملكة العربية السعودية"
                         />
                     </p>
                     <h6><FormattedMessage id="social_media_title" defaultMessage="التواصل الاجتماعي" /></h6>

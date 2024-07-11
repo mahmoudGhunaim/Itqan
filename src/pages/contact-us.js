@@ -61,8 +61,8 @@ const ContactUs = () => {
     return (
         <Layout>
             <Seo
-                title={<FormattedMessage id="contact_us_seo_title" />}
-                description={<FormattedMessage id="contact_us_seo_description" />}
+                title="تواصل معنا للحصول على دعم وإجابة استفساراتك - إتقان كابيتال"
+                description="نحن في إتقان كابيتال هنا لمساعدتك وتقديم الدعم. اتصل بنا الآن عبر البريد الإلكتروني أو الهاتف أو ملء نموذج الاتصال. سنقوم بالرد على استفساراتك في أسرع وقت ممكن."
             />
             <Hero title={<FormattedMessage id="contact_us_hero_title" />} />
             <ScrollToTopButton/>
@@ -76,7 +76,7 @@ const ContactUs = () => {
                                 <input
                                     type='text'
                                     name='name'
-                                    placeholder={<FormattedMessage id="contact_form_name_placeholder" />}
+                                    placeholder='Name'
                                     value={formData.name}
                                     onChange={handleChange}
                                 />
@@ -86,7 +86,7 @@ const ContactUs = () => {
                                 <input
                                     type='email'
                                     name='email'
-                                    placeholder={<FormattedMessage id="contact_form_email_placeholder" />}
+                                    placeholder='Email'
                                     value={formData.email}
                                     onChange={handleChange}
                                 />
@@ -95,7 +95,7 @@ const ContactUs = () => {
                                 <FormattedMessage id="contact_form_message" />
                                 <textarea
                                     name='message'
-                                    placeholder={<FormattedMessage id="contact_form_message_placeholder" />}
+                                    placeholder='message'
                                     value={formData.message}
                                     onChange={handleChange}
                                 />
@@ -148,19 +148,20 @@ const ContactUs = () => {
                 </div>
                 <div className='Contact-info-data'>
                     <h6><FormattedMessage id="contact_info_phone_title" /></h6>
-                    <p><FormattedMessage id="contact_info_phone_numbers" /></p>
+                    <p><FormattedMessage id="contact_info_phone_numbers_jaddah"/></p>
+                    <p><FormattedMessage id="contact_info_phone_numbers_reyad"/></p>
                 </div>
                 </div>
                 <div className='Contact-info'>
                     <div className='Contact-info-data'>
                       <h6><FormattedMessage id="contact_info_jeddah_title" /></h6>
                          <p><FormattedMessage id="contact_info_jeddah_address" />
-                         <Link to='https://www.google.com/maps/place/%D8%A5%D8%AA%D9%82%D8%A7%D9%86+%D9%83%D8%A7%D8%A8%D9%8A%D8%AA%D8%A7%D9%84+%7C+Itqan+Capital%E2%80%AD/@21.5885065,39.1293053,17z/data=!4m14!1m7!3m6!1s0x15c3dbb5575e28cb:0x7ceca97ac7bcbe1!2z2KXYqtmC2KfZhiDZg9in2KjZitiq2KfZhCB8IEl0cWFuIENhcGl0YWw!8m2!3d21.5885065!4d39.131494!16s%2Fg%2F11sh49gd90!3m5!1s0x15c3dbb5575e28cb:0x7ceca97ac7bcbe1!8m2!3d21.5885065!4d39.131494!16s%2Fg%2F11sh49gd90?entry=ttu' ><span  style={{display:"block"}} className='google-map'><FormattedMessage id="google_map" /></span></Link>
+                         <Link  target='_blank' to='https://www.google.com/maps/place/%D8%A5%D8%AA%D9%82%D8%A7%D9%86+%D9%83%D8%A7%D8%A8%D9%8A%D8%AA%D8%A7%D9%84+%7C+Itqan+Capital%E2%80%AD/@21.5885065,39.1293053,17z/data=!4m14!1m7!3m6!1s0x15c3dbb5575e28cb:0x7ceca97ac7bcbe1!2z2KXYqtmC2KfZhiDZg9in2KjZitiq2KfZhCB8IEl0cWFuIENhcGl0YWw!8m2!3d21.5885065!4d39.131494!16s%2Fg%2F11sh49gd90!3m5!1s0x15c3dbb5575e28cb:0x7ceca97ac7bcbe1!8m2!3d21.5885065!4d39.131494!16s%2Fg%2F11sh49gd90?entry=ttu' ><span  style={{display:"block"}} className='google-map'><FormattedMessage id="google_map" /></span></Link>
 </p>                   </div>
                     <div className='Contact-info-data'>
                       <h6><FormattedMessage id="contact_info_riyadh_title" /></h6>
                          <p><FormattedMessage id="contact_info_riyadh_address" />
-<Link to='https://www.google.com/maps/place/Itqan+Capital/@24.6986875,46.6879375,15z/data=!4m6!3m5!1s0x3e2f0379e66ca3d5:0x6fa553a2eed997f4!8m2!3d24.6986875!4d46.6879375!16s%2Fg%2F11v022rw6w?entry=ttu' ><span style={{display:"block"}} className='google-map'><FormattedMessage id="google_map" /></span></Link>
+<Link  target='_blank' to='https://www.google.com/maps/place/Itqan+Capital/@24.6986875,46.6879375,15z/data=!4m6!3m5!1s0x3e2f0379e66ca3d5:0x6fa553a2eed997f4!8m2!3d24.6986875!4d46.6879375!16s%2Fg%2F11v022rw6w?entry=ttu' ><span style={{display:"block"}} className='google-map'><FormattedMessage id="google_map" /></span></Link>
 </p>
                     </div>
                 </div>

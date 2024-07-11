@@ -1,5 +1,71 @@
 [
- {
+  {
+    "title": "التقارير السنوية – 2023",
+    "Details": [
+      {
+        "content": "تقرير مجلس الإدارة 2023",
+        "linkpdf": "https://itqan-strapi.softylus.com/uploads/tqryr_mjls_alidart_leam_2023m_itqan_kabytal_989682e72a.pdf"
+      }
+    ]
+  }, {
+    "title": "التقارير السنوية – 2022",
+    "Details": [
+      {
+        "content": "تقرير مجلس الإدارة 2022",
+        "linkpdf": "https://itqan-strapi.softylus.com/uploads/bordreport31122022_a7fe4aee44.pdf"
+      }
+    ]
+  }
+  , {
+    "title": "التقارير السنوية – 2021",
+    "Details": [
+      {
+        "content": "تقرير مجلس الإدارة 2021",
+        "linkpdf": "https://itqan-strapi.softylus.com/uploads/bordreport31122021_84badf76e2.pdf"
+      }
+    ]
+  } , {
+    "title": "التقارير السنوية – 2020",
+    "Details": [
+      {
+        "content": "تقرير مجلس الإدارة 2020",
+        "linkpdf": "https://itqan-strapi.softylus.com/uploads/2020_Annual_Report_Itqan_Capital_5c2cd75153.pdf"
+      }
+    ]
+  }, {
+    "title": "التقارير السنوية – 2019",
+    "Details": [
+      {
+        "content": "تقرير مجلس الإدارة 2019",
+        "linkpdf": "https://itqan-strapi.softylus.com/uploads/2019_Annual_Report_ITQAN_CAPITAL_be37aba27b.pdf"
+      }
+    ]
+  }, {
+    "title": "التقارير السنوية – 2018",
+    "Details": [
+      {
+        "content": "تقرير مجلس الإدارة 2018",
+        "linkpdf": "https://itqan-strapi.softylus.com/uploads/2018_Annual_Report_ITQAN_CAPITAL_e9a0af39bf.pdf"
+      }
+    ]
+  }, {
+    "title": "التقارير السنوية – 2017",
+    "Details": [
+      {
+        "content": "تقرير مجلس الإدارة 2017",
+        "linkpdf": "https://itqan-strapi.softylus.com/uploads/2017_Annual_Report_ITQAN_CAPITAL_MM_20180329_900bb18e4d.pdf"
+      }
+    ]
+  }
+  , {
+    "title": "التقارير السنوية – 2016",
+    "Details": [
+      {
+        "content": "تقرير مجلس الإدارة 2016",
+        "linkpdf": "https://itqan-strapi.softylus.com/uploads/Board_Report2016_Ar_7b75df5622.pdf"
+      }
+    ]
+  }, {
         "title": "البيانات المالية – 2023",
         "Details": [
           {

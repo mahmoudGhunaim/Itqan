@@ -701,7 +701,7 @@ const IndividualsLogin = () => {
             </div>
             <div className='individuals-single-field'>
                 <label><FormattedMessage id="correspondenceType.label" /></label>
-                <select id="Correspondence" name="Correspondence">
+                <select id="Correspondence" name="Correspondence" value={formData.Correspondence} >
                     <option value=""><FormattedMessage id="correspondenceType.placeholder" /></option>
                     <option value="Per Transaction">عند كل عملية</option>
                     <option value="Daily">يومي</option>
@@ -839,11 +839,8 @@ const IndividualsLogin = () => {
                 </div>
                 <div className='individuals-single-field'>
                     <label><FormattedMessage id="otherFinancialExperience.label" /></label>
-                    <select name="otherFinancialExperience" value={formData.otherFinancialExperience} onChange={handleChange}>
-                        <option value=""><FormattedMessage id="otherFinancialExperience.placeholder" /></option>
-                        <option value="Yes"><FormattedMessage id="otherFinancialExperience.yes" /></option>
-                        <option value="No"><FormattedMessage id="otherFinancialExperience.no" /></option>
-                    </select>
+                    <input name="otherFinancialExperience" value={formData.otherFinancialExperience} onChange={handleChange} />
+                      
                 </div>
             </div>
         </AccordionDetails>
@@ -1026,6 +1023,8 @@ const IndividualsLogin = () => {
         <div className='individuals-single-field'>
           <label><FormattedMessage id="investmentExperience.knowledgeDescription" /></label>
           <select name="investmentKnowledgeDescription" value={formData.investmentKnowledgeDescription} onChange={handleChange}>
+          <option value=""><FormattedMessage id="generalInformation.expectedDuration.placeholder" /></option>
+
             <option value="Extensive"><FormattedMessage id="investmentExperience.extensive" /></option>
             <option value="Good"><FormattedMessage id="investmentExperience.good" /></option>
             <option value="Limited"><FormattedMessage id="investmentExperience.limited" /></option>
@@ -1062,6 +1061,8 @@ const IndividualsLogin = () => {
         <div className='individuals-single-field'>
           <label><FormattedMessage id="investmentExperience.riskAppetite" /></label>
           <select name="riskAppetite" value={formData.riskAppetite} onChange={handleChange}>
+          <option value=""><FormattedMessage id="generalInformation.expectedDuration.placeholder" /></option>
+
             <option value="Extensive"><FormattedMessage id="investmentExperience.extensive" /></option>
             <option value="Good"><FormattedMessage id="investmentExperience.good" /></option>
             <option value="Limited"><FormattedMessage id="investmentExperience.limited" /></option>
@@ -1335,6 +1336,8 @@ const IndividualsLogin = () => {
           <div className='individuals-single-field'>
             <label><FormattedMessage id="question.q1" /></label>
             <select value={q1Answer} onChange={(e) => setQ1Answer(e.target.value)}>
+            <option value=""><FormattedMessage id="question.selectOption" /></option>
+
               <option value="1"><FormattedMessage id="question.q1.option1" /></option>
               <option value="2"><FormattedMessage id="question.q1.option2" /></option>
               <option value="3"><FormattedMessage id="question.q1.option3" /></option>
@@ -1343,6 +1346,8 @@ const IndividualsLogin = () => {
           <div className='individuals-single-field'>
             <label><FormattedMessage id="question.q2" /></label>
             <select value={q2Answer} onChange={(e) => setQ2Answer(e.target.value)}>
+            <option value=""><FormattedMessage id="question.selectOption" /></option>
+
               <option value="1"><FormattedMessage id="question.q2.option1" /></option>
               <option value="2"><FormattedMessage id="question.q2.option2" /></option>
               <option value="3"><FormattedMessage id="question.q2.option3" /></option>
@@ -1413,7 +1418,15 @@ const IndividualsLogin = () => {
             />
           </div>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="question.recommendation" /></label>
+            <label><FormattedMessage id="question.recommendation" /> {calculateTotalPoints() >= 1 && calculateTotalPoints() <= 6 && (
+          <FormattedMessage id="lowRisk" />
+        )}
+        {calculateTotalPoints() >= 7 && calculateTotalPoints() <= 15 && (
+          <FormattedMessage id="mediumRisk" />
+        )}
+        {calculateTotalPoints() > 15 && (
+          <FormattedMessage id="highRisk" />
+        )}</label>
             <input
               name="recommendation"
               value={formData.recommendation}

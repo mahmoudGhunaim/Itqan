@@ -55,22 +55,22 @@ const ClientAwareness = () => {
             {/* Add translated title here */}
           </div>
           <div className='Reports-data-cards security-cards'>
-          <a href={Complaint} target="_blank" rel="noopener noreferrer">
+          <Link to="https://itqan-strapi.softylus.com/uploads/shkwa_b0155fefc9.pdf">
               <SecurityCard
                 defaultImgSrc='/Complaint.png'
                 hoverImgSrc='/PDF.png'
                 defaultContent={<FormattedMessage id="client_awareness_complaint_procedure" />}
                 hoverContent={<FormattedMessage id="client_awareness_view_pdf" />}
               />
-            </a>
-            <a href={InvestorProtectionGuide} target="_blank" rel="noopener noreferrer">
+            </Link>
+            <Link to="https://itqan-strapi.softylus.com/uploads/1681029922_dlyl_hmayt_almstthmr_4_0145b1d4a4.pdf">
               <SecurityCard
                 defaultImgSrc='/Investor.png'
                 hoverImgSrc='/PDF.png'
                 defaultContent={<FormattedMessage id="client_awareness_investor_guide" />}
                 hoverContent={<FormattedMessage id="client_awareness_view_pdf" />}
               />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

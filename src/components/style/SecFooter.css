@@ -67,7 +67,7 @@ form.sec-footer-form p{
     font-weight: 300;
     line-height: 30px;
     letter-spacing: 0em;
-    text-align: right;
+    text-align: right !important;
     color: rgba(255, 255, 255, 1);
 
 }
@@ -105,8 +105,8 @@ html[lang="en"] form.sec-footer-form label{
     align-items: flex-start;
 
 }
-html[lang="en"] form.sec-footer-form label input, form.sec-footer-form label textarea,form.sec-footer-form p{
-    text-align: left;
+html[lang="en"] form.sec-footer-form label input,html[lang="en"] form.sec-footer-form label textarea,html[lang="en"] form.sec-footer-form p{
+    text-align: left !important;
 }
 .sec-footer-content  p{
     font-family: 'Bahij TheSansArabic light';

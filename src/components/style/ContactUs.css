@@ -64,7 +64,7 @@ form.Contact-footer-form label{
     margin-bottom: 20px;
 
 }
- .Contact-footer-content h2,html[lang="en"] .Contact-footer-content p,html[lang="en"] .Contact-footer-content h3{
+html[lang="en"] .Contact-footer-content h2,html[lang="en"] .Contact-footer-content p,html[lang="en"] .Contact-footer-content h3{
     text-align: left;
 }
 html[lang="en"] .Contact-info{

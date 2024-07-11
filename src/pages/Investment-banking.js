@@ -15,8 +15,8 @@ const InvestmentBanking = (props) => {
   return (
    <Layout>
     <Seo
-      title={<FormattedMessage id="investment_banking_seo_title" />}
-      description={<FormattedMessage id="investment_banking_seo_description" />}
+     title="خدمات الاستثمار المصرفي لـ إتقان كابيتال - الطروحات العامة والاستثمار المباشر    "
+    description="استكشف خدمات الاستثمار المصرفي المقدمة من إتقان كابيتال، بما في ذلك الطروحات العامة والاستثمار المباشر، واحصل على استشارات مالية استراتيجية تلبي احتياجات عملائنا بشكل فعال ومحترف.    "
     />
     <ScrollToTopButton/>
     <Hero 

@@ -23,6 +23,8 @@ const CompaniesLogin = () => {
     const [formData, setFormData] = useState({
         fullName: '',
         nationality: '',
+        authorizedPersonNames: [''] ,
+        authorizedPersonName:'',
         gender: '',
         title:'',
         investorInformation:'', 
@@ -259,6 +261,7 @@ const CompaniesLogin = () => {
                 setFormSubmitted(true);
                 setFormData({
                     fullName: '',
+                    authorizedPersonNames: [''] ,
                     nationality: '',
                     gender: '',
                     title:'',
@@ -337,6 +340,7 @@ const CompaniesLogin = () => {
                     inheritorsAgentName:'',
                     fatherGuardianMinor:'',
                     inheritorsAgent:'',
+                    authorizedPersonName:'',
                     illiterateBlindWitness:'',
                     veiledWomanId:'',
                     incompetentLegalGuardian:'',
@@ -421,7 +425,21 @@ const CompaniesLogin = () => {
         return totalPoints;
       };
       const { locale } = useLocalization();
-
+      const handleChange5 = (index, event) => {
+        const newAuthorizedPersonNames = [...formData.authorizedPersonNames];
+        newAuthorizedPersonNames[index] = event.target.value;
+        setFormData({
+          ...formData,
+          authorizedPersonNames: newAuthorizedPersonNames,
+          authorizedPersonName: event.target.value
+        });
+      };
+      const handleAddAnother = () => {
+        setFormData({
+          ...formData,
+          authorizedPersonNames: [...formData.authorizedPersonNames, '']
+        });
+      };
     return (
         <Layout>
         <Seo title="فتح حساب للشركات - خدمة العملاء - إتقان كابيتال" description="اتفق على شروط وأحكام فتح حساب استثماري للأفراد مع إتقان كابيتال. ملء النموذج بالمعلومات المطلوبة لبدء عملية الفتح. تقديم الطلب الآن واحصل على حسابك الاستثماري الخاص."/>
@@ -704,10 +722,21 @@ const CompaniesLogin = () => {
       </AccordionSummary>
       <AccordionDetails>
         <div className='individuals-sec-field'>
-          <div className='individuals-single-field'>
-            <label><FormattedMessage id="authorizedPersons.authorizedNameLabel" /></label>
-            <input name="authorizedPersonName" value={formData.authorizedPersonName} onChange={handleChange} />
-          </div>
+            {formData.authorizedPersonNames.map((name, index) => (
+            <div key={index} className='individuals-single-field'>
+              <label><FormattedMessage id="authorizedPersons.authorizedNameLabel" /></label>
+              <div className='rebeted-form'>
+              <input
+                name={`authorizedPersonName-${index}`}
+                value={name}
+                onChange={(e) => handleChange5(index, e)}
+              />
+               {index === formData.authorizedPersonNames.length - 1 && ( // Show add button only for the last input field
+                <button onClick={handleAddAnother}>+</button>
+              )}
+             </div>
+            </div>
+          ))}
           <div className='individuals-single-field'>
             <label><FormattedMessage id="authorizedPersons.relationshipLabel" /></label>
             <input name="relationship" value={formData.relationship} onChange={handleChange} />
@@ -853,6 +882,8 @@ const CompaniesLogin = () => {
           <div className='individuals-single-field'>
             <label><FormattedMessage id="investmentKnowledge.knowledgeDescriptionLabel" /></label>
             <select name="investmentKnowledgeDescription" value={formData.investmentKnowledgeDescription} onChange={handleChange}>
+            <option value=""><FormattedMessage id="generalInformation.expectedDuration.placeholder" /></option>
+
               <option value="Extensive"><FormattedMessage id="investmentKnowledge.extensiveOption" /></option>
               <option value="Good"><FormattedMessage id="investmentKnowledge.goodOption" /></option>
               <option value="Limited"><FormattedMessage id="investmentKnowledge.limitedOption" /></option>
@@ -889,6 +920,8 @@ const CompaniesLogin = () => {
           <div className='individuals-single-field'>
             <label><FormattedMessage id="investmentKnowledge.riskAppetiteLabel" /></label>
             <select name="riskAppetite" value={formData.riskAppetite} onChange={handleChange}>
+            <option value=""><FormattedMessage id="generalInformation.expectedDuration.placeholder" /></option>
+
               <option value="Extensive"><FormattedMessage id="investmentKnowledge.extensiveOption" /></option>
               <option value="Good"><FormattedMessage id="investmentKnowledge.goodOption" /></option>
               <option value="Limited"><FormattedMessage id="investmentKnowledge.limitedOption" /></option>
@@ -1075,6 +1108,8 @@ const CompaniesLogin = () => {
           <div className='individuals-single-field'>
             <label><FormattedMessage id="question.q1" /></label>
             <select value={q1Answer} onChange={(e) => setQ1Answer(e.target.value)}>
+            <option value=""><FormattedMessage id="question.selectOption" /></option>
+
               <option value="1"><FormattedMessage id="question.q1.option1" /></option>
               <option value="2"><FormattedMessage id="question.q1.option2" /></option>
               <option value="3"><FormattedMessage id="question.q1.option3" /></option>
@@ -1083,6 +1118,8 @@ const CompaniesLogin = () => {
           <div className='individuals-single-field'>
             <label><FormattedMessage id="question.q2" /></label>
             <select value={q2Answer} onChange={(e) => setQ2Answer(e.target.value)}>
+            <option value=""><FormattedMessage id="question.selectOption" /></option>
+
               <option value="1"><FormattedMessage id="question.q2.option1" /></option>
               <option value="2"><FormattedMessage id="question.q2.option2" /></option>
               <option value="3"><FormattedMessage id="question.q2.option3" /></option>
@@ -1153,7 +1190,15 @@ const CompaniesLogin = () => {
             />
           </div>
           <div className='individuals-single-field'>
-            <label><FormattedMessage id="question.recommendation" /></label>
+            <label><FormattedMessage id="question.recommendation" /> {calculateTotalPoints() >= 1 && calculateTotalPoints() <= 6 && (
+          <FormattedMessage id="lowRisk" />
+        )}
+        {calculateTotalPoints() >= 7 && calculateTotalPoints() <= 15 && (
+          <FormattedMessage id="mediumRisk" />
+        )}
+        {calculateTotalPoints() > 15 && (
+          <FormattedMessage id="highRisk" />
+        )}</label>
             <input
               name="recommendation"
               value={formData.recommendation}
@@ -1183,7 +1228,6 @@ const CompaniesLogin = () => {
         </div>
       </AccordionDetails>
     </Accordion>
-
 
     <button type='submit' className='individuals-buttom-form'>
         <FormattedMessage id="form.submit" />

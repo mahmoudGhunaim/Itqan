@@ -48,6 +48,19 @@ html[lang="en"] #individuals-login-field div{
 .css-eqpfi5-MuiAccordionSummary-content{
     justify-content: right;
 }
+.rebeted-form{
+    display: flex;
+    justify-content: space-between;
+}
+.rebeted-form input{
+    width: 100%;
+}
+.rebeted-form button{
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #3F1A58;
+}
 .individuals-login-buttons{
     display: flex;
     gap: 20px;

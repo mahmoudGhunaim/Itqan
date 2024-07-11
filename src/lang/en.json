@@ -6,7 +6,7 @@
     "organizational_structure": "Organizational Structure",
     "board_of_directors": "Board of Directors",
     "management_team": "Management Team",
-    "announcements": "Announcements",
+    "announcements": "Advertisements",
     "reports": "Reports",
     "client_awareness": "Client Awareness",
     "contact_us": "Contact Us",
@@ -135,9 +135,9 @@
   "emailInfo": "support@itqan-capital.com",
   "phoneInfoTitle": "Phone",
   "phoneInfo": "+966 55 555 5555",
-  "jeddahTitle": "Jeddah",
+  "jeddahTitle": "Jeddah (main branch)",
   "jeddahAddress": "Tahlia Street, 2nd Floor, Office No. 201",
-  "riyadhTitle": "Riyadh",
+  "riyadhTitle": "Riyadh (sub-headquarters)",
   "riyadhAddress": "King Fahd Street, 5th Floor, Office No. 501",
   "googleMapLink": "Google Maps Link",
   "socialTitle": "Follow Us on Social Media",
@@ -395,7 +395,7 @@
   "footer.advisoryResearch": "Wealth Management",
   "footer.quickLinks": "Quick Links",
   "footer.aboutUs": "Overview",
-  "footer.announcements": "Announcements",
+  "footer.announcements": "Advertisements",
   "footer.careers": "Careers",
   "footer.contactUs": "Contact Us",
   "footer.newsletter": "Newsletter",
@@ -476,9 +476,11 @@
   "contact_info_email_title": "Email",
   "contact_info_phone_title": "Phone Number",
   "contact_info_phone_numbers": "Jeddah: +966 12 263 8787 – Ext. (615) \nRiyadh: 8001240533 +966 11 2164333",
-  "contact_info_jeddah_title": "Jeddah",
+  "contact_info_phone_numbers_jaddah":"Jeddah: +966 12 263 8787 – Ext. (615) ",
+  "contact_info_phone_numbers_reyad":"Riyadh: 8001240533 +966 11 2164333",
+  "contact_info_jeddah_title": "Jeddah (main branch)",
   "contact_info_jeddah_address": "Al-Zahra District - Ahmed Al-Attas Street\nAl-Zahra Commercial Center, Unit 2563, Jeddah 23425-2753\nKingdom of Saudi Arabia",
-  "contact_info_riyadh_title": "Riyadh",
+  "contact_info_riyadh_title": "Riyadh (sub-headquarters)",
   "contact_info_riyadh_address": "Second Floor, Al-Deghaither Center\nOlaya, Riyadh\nKingdom of Saudi Arabia",
   "google_map": "Google Map",
   "company_profile": "Company Profile",
@@ -582,7 +584,7 @@
   "financialExperience.placeholder": "-- Please Select --",
   "financialExperience.yes": "Yes",
   "financialExperience.no": "No",
-  "otherFinancialExperience.label": "Does the client have any other relevant work experience in the financial sector?",
+  "otherFinancialExperience.label": "How many years of experience?",
   "otherFinancialExperience.placeholder": "-- Please Select --",
   "otherFinancialExperience.yes": "Yes",
   "otherFinancialExperience.no": "No",
@@ -671,7 +673,9 @@
   "form.success": "Your request has been successfully sent",
   "form.error": "Your request could not be sent, please try again later",
   "form.close": "Close",
-  
+  "lowRisk": "(We advise the client to invest in low-risk products)",
+  "mediumRisk": "(We advise the client to invest in medium-risk products)",
+  "highRisk": "(We advise the client to invest in high-risk products)",
   "form.accountNumber": "Account Number",
   "form.custodianName": "Custodian Name",
   "form.custodianAddress": "Custodian Address",
@@ -822,8 +826,12 @@
     "reports.heroTitle": "Reports",
     "reports.heroSubTitle": "Resources",
     "reports.sectionTitle": "Reports and Data",
-    "hero.organizationalStructure": "Organizational Structure"
-
+    "hero.organizationalStructure": "Organizational Structure",
+    "investmentExperience.extensive": "High",
+    "investmentExperience.good": "Medium",
+    "investmentExperience.limited": "Low",
+    "investmentAssets.title":"investment Assets"
+    
   
 
 

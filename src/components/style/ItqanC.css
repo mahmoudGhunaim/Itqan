@@ -86,6 +86,26 @@ html[lang="en"] .itqan-c-text{
 html[lang="en"] .itqan-c-text h6{
     flex-direction: row;
 }
+.itqan-c-text li{
+    direction: rtl;
+}
+
+html[lang="en"] .itqan-c-text li p{
+    margin-left: 10px;
+
+}
+html[lang="en"]  .itqan-c-text li{
+    direction: ltr;
+
+}
+.itqan-c-text li::marker {
+    content: url('/carbon_condition-wait-point.png'); /* Replace with the path to your marker image */
+    /* Additional styling properties if needed */
+}
+.itqan-c-text li p{
+    margin-right: 10px;
+    margin-top: 0;
+}
 @media screen and (max-width:  1024px) {
     .itqan-c-section{
         margin-top: 50px;

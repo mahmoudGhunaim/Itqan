@@ -122,7 +122,15 @@ const Header = ({ siteTitle }) => {
         </div>
         <div className="navBar-openAcc">
           <Link to={`/${locale}/Individuals-login`}><button><FormattedMessage id="open_new_account" /></button></Link>
-          <MDBDropdown>
+          <div className=''>
+          <button onClick={() => handleLanguageChange('en')} className={`lang-btn ${locale === 'en' ? 'active' : ''}`} style={{ display: locale === 'en' ? 'none' : '' }}>
+                        <img src='/Vector (111).svg' alt='EN' /> EN
+                      </button>
+                      <button onClick={() => handleLanguageChange('ar')} className={`lang-btn ${locale === 'ar' ? 'active' : ''}`} style={{ display: locale === 'ar' ? 'none' : '' }}>
+                        <img src='/Vector (111).svg' alt='AR' /> AR
+                      </button>
+          </div>
+          {/* <MDBDropdown>
                   <MDBDropdownToggle>
                     <img src='/Vector (111).svg' alt='EN' />{locale === 'ar' ? 'AR' : 'EN'}
                   </MDBDropdownToggle>
@@ -138,26 +146,17 @@ const Header = ({ siteTitle }) => {
                       </button>
                     </MDBDropdownItem>
                   </MDBDropdownMenu>
-                </MDBDropdown>
+                </MDBDropdown> */}
         </div>
         <div className='mobile-menu'>
-           <MDBDropdown>
-            <MDBDropdownToggle>
-              <img src='/Vector (111).svg' alt='EN' />{locale === 'ar' ? 'AR' : 'EN'}
-            </MDBDropdownToggle>
-            <MDBDropdownMenu>
-              <MDBDropdownItem style={{ display: locale === 'en' ? 'none' : '' }}>
-                <button onClick={() => handleLanguageChange('en')} className={`lang-btn ${locale === 'en' ? 'active' : ''}`}>
-                  <img src='/Vector (111).svg' alt='EN' /> EN
-                </button>
-              </MDBDropdownItem>
-              <MDBDropdownItem style={{ display: locale === 'ar' ? 'none' : '' }}>
-                <button onClick={() => handleLanguageChange('ar')} className={`lang-btn ${locale === 'ar' ? 'active' : ''}`}>
-                  <img src='/Vector (111).svg' alt='AR' /> AR
-                </button>
-              </MDBDropdownItem>
-            </MDBDropdownMenu>
-          </MDBDropdown>
+        <div className=''>
+          <button onClick={() => handleLanguageChange('en')} className={`lang-btn ${locale === 'en' ? 'active' : ''}`} style={{ display: locale === 'en' ? 'none' : '' }}>
+                        <img src='/Vector (111).svg' alt='EN' /> EN
+                      </button>
+                      <button onClick={() => handleLanguageChange('ar')} className={`lang-btn ${locale === 'ar' ? 'active' : ''}`} style={{ display: locale === 'ar' ? 'none' : '' }}>
+                        <img src='/Vector (111).svg' alt='AR' /> AR
+                      </button>
+          </div>
           <Button color="danger" onClick={toggleModal}>
             <img src='/menu.png' alt="Menu" />
           </Button>

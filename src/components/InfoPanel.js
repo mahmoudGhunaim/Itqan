@@ -18,7 +18,6 @@ const InfoPanel = ({title, image, paragraph,button,point1,point2,point3,point4,l
                     <li>{point3}</li>
                     <li>{point4}</li>
                 </ul>
-                <Link to={`/${locale}/${links}`}><button>{button}</button></Link>
                 </div>
             <div className='infopanel-image'>
                 <img src={image}/>

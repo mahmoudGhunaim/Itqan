@@ -59,9 +59,9 @@ const AssetManagement = () => {
           image="/Frame 136.png"
           links="/Individuals-login"
         />
-        <h2 className='boxes-title'>
+        {/* <h2 className='boxes-title'>
           <FormattedMessage id="equity_fund_title" defaultMessage="Public Equity and Murabaha Funds" />
-        </h2>
+        </h2> */}
         <section className='assetManagement-accordion'>
           <div className='assetManagement-accordion-container'>
             {accordionData.map((item, index) => (
@@ -104,9 +104,9 @@ const AssetManagement = () => {
           none="none"
           links="/Individuals-login"
         />
-        <h2 className='boxes-title'>
+        {/* <h2 className='boxes-title'>
           <FormattedMessage id="equity_fund_title" defaultMessage="Public Equity and Murabaha Funds" />
-        </h2>
+        </h2> */}
         <section className='assetManagement-accordion'>
           <div className='assetManagement-accordion-container'>
             {accordionData.map((item, index) => (
@@ -150,9 +150,9 @@ const AssetManagement = () => {
         image="/Frame 136.png"
         links="/Individuals-login"
       />
-      <h2 className='boxes-title'>
+      {/* <h2 className='boxes-title'>
         <FormattedMessage id="equity_fund_title" defaultMessage="Public Equity and Murabaha Funds" />
-      </h2>
+      </h2> */}
       <section className='assetManagement-accordion'>
         <div className='assetManagement-accordion-container'>
           {accordionData.map((item, index) => (
@@ -248,7 +248,7 @@ const handlePrivateFundsClick = () => {
       </div>
     </section>
   );
-  setActiveButton("private");
+  setActiveButton("stock");
 };
 
  

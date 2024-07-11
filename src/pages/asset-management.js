@@ -7,7 +7,8 @@ import InfoPanel from '../components/InfoPanel';
 import Accordion from '../components/Accordion';
 import accordionData from '../Json/Accordion.json';
 import accordionDataen from '../Json/Accordionen.json';
-
+import murabaha_sukuk_fund from "../Json/murabaha_sukuk_fund.json"
+import murabaha_sukuk_funden from "../Json/murabaha_sukuk_funden.json"
 import PrivateBox from '../components/PrivateBoxCard';
 import PrivateBoxData from "../Json/PrivateBoxData.json"
 import PrivateBoxDataen from "../Json/PrivateBoxDataen.json"
@@ -69,13 +70,13 @@ const AssetManagement = () => {
           image="/Frame 136.png"
           links="/Individuals-login"
         />
-        <h2 className='boxes-title'>
+        {/* <h2 className='boxes-title'>
           <FormattedMessage id="equity_fund_title" defaultMessage="Public Equity and Murabaha Funds" />
-        </h2>
+        </h2> */}
         <section className='assetManagement-accordion'>
           <div className='assetManagement-accordion-container'>
           {locale === "ar" ? (
-            accordionData.map((item, index) => (
+            murabaha_sukuk_fund.map((item, index) => (
               <Accordion
                 key={index}
                 title={item.title}
@@ -83,7 +84,7 @@ const AssetManagement = () => {
               />
             ))
           ) : locale === "en" ? (
-            accordionDataen.map((item, index) => (
+            murabaha_sukuk_funden.map((item, index) => (
               <Accordion
                 key={index}
                 title={item.title}
@@ -95,7 +96,7 @@ const AssetManagement = () => {
         </section>
       </>
     );
-    setActiveButton("portfolio");
+    setActiveButton("stock");
   };
 
   const handlePortfolioSaudiEquityFund = () => {
@@ -106,7 +107,7 @@ const AssetManagement = () => {
             <FormattedMessage id="saudi_equity_fund" defaultMessage="Saudi Equity Fund" />
           </button>
           <button onClick={handlePortfolioMurabahaandSukukFund}>
-            <FormattedMessage id="murabaha_sukuk_fund" defaultMessage="Murabaha and Sukuk Fund" />
+            <FormattedMessage id="fund_title" defaultMessage="Murabaha and Sukuk Fund" />
           </button>
         </div>
         <InfoPanel
@@ -121,9 +122,9 @@ const AssetManagement = () => {
           none="none"
           links="/Individuals-login"
         />
-        <h2 className='boxes-title'>
+        {/* <h2 className='boxes-title'>
           <FormattedMessage id="equity_fund_title" defaultMessage="Public Equity and Murabaha Funds" />
-        </h2>
+        </h2> */}
         <section className='assetManagement-accordion'>
           <div className='assetManagement-accordion-container'>
           {locale === "ar" ? (
@@ -147,7 +148,7 @@ const AssetManagement = () => {
         </section>
       </>
     );
-    setActiveButton("portfolio");
+    setActiveButton("stock");
   };
 
   const [content, setContent] = useState(
@@ -158,7 +159,7 @@ const AssetManagement = () => {
       <FormattedMessage id="saudi_equity_fund" defaultMessage="Saudi Equity Fund" />
     </button>
     <button onClick={handlePortfolioMurabahaandSukukFund}>
-      <FormattedMessage id="murabaha_sukuk_fund" defaultMessage="Murabaha and Sukuk Fund" />
+      <FormattedMessage id="fund_title" defaultMessage="Murabaha and Sukuk Fund" />
     </button>
   </div>
   <InfoPanel
@@ -187,13 +188,13 @@ const AssetManagement = () => {
     image="/Frame 136.png"
     links="/Individuals-login"
   />
-  <h2 className='boxes-title'>
+  {/* <h2 className='boxes-title'>
     <FormattedMessage id="public_equity_murabaha_funds" defaultMessage="Public Equity and Murabaha Funds" />
-  </h2>
+  </h2> */}
   <section className='assetManagement-accordion'>
     <div className='assetManagement-accordion-container'>
     {locale === "ar" ? (
-            accordionData.map((item, index) => (
+            murabaha_sukuk_fund.map((item, index) => (
               <Accordion
                 key={index}
                 title={item.title}
@@ -201,7 +202,7 @@ const AssetManagement = () => {
               />
             ))
           ) : locale === "en" ? (
-            accordionDataen.map((item, index) => (
+            murabaha_sukuk_funden.map((item, index) => (
               <Accordion
                 key={index}
                 title={item.title}
@@ -311,7 +312,7 @@ const AssetManagement = () => {
       <FormattedMessage id="saudi_equity_fund" defaultMessage="Saudi Equity Fund" />
     </button>
     <button onClick={handlePortfolioMurabahaandSukukFund}>
-      <FormattedMessage id="murabaha_sukuk_fund" defaultMessage="Murabaha and Sukuk Fund" />
+      <FormattedMessage id="fund_title" defaultMessage="Murabaha and Sukuk Fund" />
     </button>
   </div>
   <InfoPanel
@@ -340,9 +341,9 @@ const AssetManagement = () => {
     image="/Frame 136.png"
     links="/Individuals-login"
   />
-  <h2 className='boxes-title'>
+  {/* <h2 className='boxes-title'>
     <FormattedMessage id="public_equity_murabaha_funds" defaultMessage="Public Equity and Murabaha Funds" />
-  </h2>
+  </h2> */}
   <section className='assetManagement-accordion'>
     <div className='assetManagement-accordion-container'>
     {locale === "ar" ? (

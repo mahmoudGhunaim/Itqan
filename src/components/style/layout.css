@@ -45,6 +45,9 @@ html[lang="en"] .navBar-container,html[lang="en"] .navBar-links{
   display: flex;
   gap: 10px;
 }
+html[lang="en"] .navBar-openAcc{
+  flex-direction: row-reverse;
+}
 .navBar-links {
   display: flex;
   flex-direction: row-reverse;
@@ -388,9 +391,9 @@ html[lang="en"]  .footer-container,.footer-container{
       background: #EFEFEF !important;
   
   }
-  .lang-btn{
+  /* .lang-btn{
     margin-top: -15px !important;
-  }
+  } */
   .mobile-menu{
     display:  flex;
     flex-direction: row-reverse;

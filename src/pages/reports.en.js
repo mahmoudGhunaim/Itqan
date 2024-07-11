@@ -26,7 +26,7 @@ const Reports = () => {
             <Accordion 
             key={index}
             title={item.title}
-            Details={item.Details}
+            
             />
         ))}
         </div>

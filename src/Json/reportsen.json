@@ -1,4 +1,70 @@
-[
+[{
+  "title": "Annual Reports - 2023",
+  "Details": [
+    {
+      "content": "Board of Directors Report 2023",
+      "linkpdf": "https://itqan-strapi.softylus.com/uploads/tqryr_mjls_alidart_leam_2023m_itqan_kabytal_989682e72a.pdf"
+    }
+  ]
+}, {
+  "title": "Annual Reports - 2022",
+  "Details": [
+    {
+      "content": "Board of Directors Report 2022",
+      "linkpdf": "https://itqan-strapi.softylus.com/uploads/bordreport31122022_a7fe4aee44.pdf"
+    }
+  ]
+}
+, {
+  "title": "Annual Reports - 2021",
+  "Details": [
+    {
+      "content": "Board of Directors Report 2021",
+      "linkpdf": "https://itqan-strapi.softylus.com/uploads/bordreport31122021_84badf76e2.pdf"
+    }
+  ]
+} , {
+  "title": "Annual Reports - 2020",
+  "Details": [
+    {
+      "content": "Board of Directors Report 2020",
+      "linkpdf": "https://itqan-strapi.softylus.com/uploads/2020_Annual_Report_Itqan_Capital_5c2cd75153.pdf"
+    }
+  ]
+}, {
+  "title": "Annual Reports - 2019",
+  "Details": [
+    {
+      "content": "Board of Directors Report 2019",
+      "linkpdf": "https://itqan-strapi.softylus.com/uploads/2019_Annual_Report_ITQAN_CAPITAL_be37aba27b.pdf"
+    }
+  ]
+}, {
+  "title": "Annual Reports - 2018",
+  "Details": [
+    {
+      "content": "Board of Directors Report 2018",
+      "linkpdf": "https://itqan-strapi.softylus.com/uploads/2018_Annual_Report_ITQAN_CAPITAL_e9a0af39bf.pdf"
+    }
+  ]
+}, {
+  "title": "Annual Reports - 2017",
+  "Details": [
+    {
+      "content": "Board of Directors Report 2017",
+      "linkpdf": "https://itqan-strapi.softylus.com/uploads/2017_Annual_Report_ITQAN_CAPITAL_MM_20180329_900bb18e4d.pdf"
+    }
+  ]
+}
+, {
+  "title": "Annual Reports – 2016",
+  "Details": [
+    {
+      "content": "Board of Directors Report 2016",
+      "linkpdf": "https://itqan-strapi.softylus.com/uploads/Board_Report2016_Ar_7b75df5622.pdf"
+    }
+  ]
+},
      {
         "title": "Financial Data - 2023",
         "Details": [

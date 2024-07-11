@@ -75,7 +75,7 @@ const AssetManagement = () => {
         </section>
       </>
     );
-    setActiveButton("portfolio");
+    setActiveButton("stock");
   };
   const handlePortfolioSaudiEquityFund = () => {
     setContent(
@@ -120,7 +120,7 @@ const AssetManagement = () => {
         </section>
       </>
     );
-    setActiveButton("portfolio");
+    setActiveButton("stock");
   };
   const [content, setContent] = useState(
     <section className='AssetManagement-title'>

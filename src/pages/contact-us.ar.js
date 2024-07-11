@@ -156,7 +156,7 @@ const ContactUs = () => {
 
 مركز الزهراء التجاري، وحدة 2563، جدة 23425-2753
  المملكة العربية السعودية
- <Link to='https://www.google.com/maps/place/%D8%A5%D8%AA%D9%82%D8%A7%D9%86+%D9%83%D8%A7%D8%A8%D9%8A%D8%AA%D8%A7%D9%84+%7C+Itqan+Capital%E2%80%AD/@21.5885065,39.1293053,17z/data=!4m14!1m7!3m6!1s0x15c3dbb5575e28cb:0x7ceca97ac7bcbe1!2z2KXYqtmC2KfZhiDZg9in2KjZitiq2KfZhCB8IEl0cWFuIENhcGl0YWw!8m2!3d21.5885065!4d39.131494!16s%2Fg%2F11sh49gd90!3m5!1s0x15c3dbb5575e28cb:0x7ceca97ac7bcbe1!8m2!3d21.5885065!4d39.131494!16s%2Fg%2F11sh49gd90?entry=ttu' ><span  style={{display:"block"}} className='google-map'>Google Map</span></Link>
+ <Link  target='_blank' to='https://www.google.com/maps/place/%D8%A5%D8%AA%D9%82%D8%A7%D9%86+%D9%83%D8%A7%D8%A8%D9%8A%D8%AA%D8%A7%D9%84+%7C+Itqan+Capital%E2%80%AD/@21.5885065,39.1293053,17z/data=!4m14!1m7!3m6!1s0x15c3dbb5575e28cb:0x7ceca97ac7bcbe1!2z2KXYqtmC2KfZhiDZg9in2KjZitiq2KfZhCB8IEl0cWFuIENhcGl0YWw!8m2!3d21.5885065!4d39.131494!16s%2Fg%2F11sh49gd90!3m5!1s0x15c3dbb5575e28cb:0x7ceca97ac7bcbe1!8m2!3d21.5885065!4d39.131494!16s%2Fg%2F11sh49gd90?entry=ttu' ><span  style={{display:"block"}} className='google-map'>Google Map</span></Link>
 
 </p>                   </div>
                     <div className='Contact-info-data'>
@@ -165,7 +165,7 @@ const ContactUs = () => {
 العليا، الرياض
 
 المملكة العربية السعودية
-<Link to='https://www.google.com/maps/place/Itqan+Capital/@24.6986875,46.6879375,15z/data=!4m6!3m5!1s0x3e2f0379e66ca3d5:0x6fa553a2eed997f4!8m2!3d24.6986875!4d46.6879375!16s%2Fg%2F11v022rw6w?entry=ttu' ><span style={{display:"block"}} className='google-map'>Google Map</span></Link>
+<Link  target='_blank' to='https://www.google.com/maps/place/Itqan+Capital/@24.6986875,46.6879375,15z/data=!4m6!3m5!1s0x3e2f0379e66ca3d5:0x6fa553a2eed997f4!8m2!3d24.6986875!4d46.6879375!16s%2Fg%2F11v022rw6w?entry=ttu' ><span style={{display:"block"}} className='google-map'>Google Map</span></Link>
 
 </p>
                     </div>
@@ -180,9 +180,9 @@ const ContactUs = () => {
                     <img src='/LinkedIn.png'/>
                     </Link>
                 </div>
-                <a to={itqanProfile} target = "_blank">
-          <h6><img src='/Investor.png'/>ملف تعريفي للشركة</h6>
-          </a>
+               <Link to='https://itqan-strapi.softylus.com/uploads/brwfayl_shrkt_itqan_kabytal_30_04_2024_a3772dc6a79c4eebe6441e527c86706f_5d4068f242.pdf'>
+                    <h6><img src='/Investor.png'/>ملف تعريفي للشركة</h6>
+                    </Link>
             </div>
                     </div>
                 </section>
