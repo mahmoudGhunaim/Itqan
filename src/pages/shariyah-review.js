@@ -41,7 +41,7 @@ const ShariyahReview = () => {
                 <Link to="https://itqan-strapi.softylus.com/uploads/Itqan_Capital_2023_Shariah_Audit_Report_cc5d1bad2c.pdf">
                   <SecurityCard
                     defaultImgSrc='/Investor.png'
-                    hoverImgSrc='/PDF.png' 
+                    hoverImgSrc='/PDF.png'
                     defaultContent='annual_reports'
                     hoverContent='view_pdf'
                   />

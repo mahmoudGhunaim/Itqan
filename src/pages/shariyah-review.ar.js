@@ -42,8 +42,8 @@ const ShariyahReview = () => {
                   <SecurityCard
                     defaultImgSrc='/Investor.png'
                     hoverImgSrc='/PDF.png' 
-                    defaultContent='annual_reports'
-                    hoverContent='view_pdf'
+                    defaultContent={<FormattedMessage id="client_awareness_investor_guide" />}
+                hoverContent={<FormattedMessage id="client_awareness_view_pdf" />}
                   />
                 </Link>
               </div>
