@@ -1,81 +1,99 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from "../components/layout";
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Hero from '../components/Hero';
 import "../components/style/ClientAwareness.css";
 import { Link } from "gatsby";
 import Seo from '../components/seo';
-import InvestorProtectionGuide from "../../static/1681029922_دليل-حماية-المستثمر (4).pdf";
 import { FormattedMessage } from 'react-intl';
-import Complaint from "../../static/شكوى.pdf"
+import axios from 'axios';
+import { useLocalization } from '../context/LocalizationContext';
 
-const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
-  const [content, setContent] = useState(defaultContent);
-  const [imgSrc, setImgSrc] = useState(defaultImgSrc);
-
-  // Update both content and image source on hover
+const SecurityCard = ({ title, hoverTitle, pdfLink, imageSrc, hoverImageSrc }) => {
+  const [content, setContent] = useState(title);
+  const [imgSrc, setImgSrc] = useState(imageSrc);
   const handleMouseEnter = () => {
-    setContent(hoverContent);
-    setImgSrc(hoverImgSrc);
+    setContent(hoverTitle);
+    setImgSrc(hoverImageSrc);
   };
-
-  // Revert to default content and image source when not hovered
   const handleMouseLeave = () => {
-    setContent(defaultContent);
-    setImgSrc(defaultImgSrc);
+    setContent(title);
+    setImgSrc(imageSrc);
   };
-
   return (
-    <div 
-      className='Reports-data-single-card security-single-card'
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
-        <img src={imgSrc} alt="" />
-        <p>{content}</p>
-    </div>
+    <Link to={pdfLink}>
+      <div 
+        className='Reports-data-single-card security-single-card'
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
+          <img src={imgSrc} alt="" />
+          <p>{content}</p>
+      </div>
+    </Link>
   );
 };
-
-// Example usage of SecurityCard within your component
 const ClientAwareness = () => {
+  const [pageData, setPageData] = useState(null);
+  const { locale } = useLocalization();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://itqan-strapi.softylus.com/api/pages/?filters[custom_slug][$eq]=client-awareness&locale=${locale}&populate[sections][populate][section_content][populate]=*&populate=image`,
+          {
+            headers: {
+              Authorization: 'Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c'
+            }
+          }
+        );
+        setPageData(response.data.data[0]);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+  if (!pageData) {
+    return <div>Loading...</div>;
+  }
+  const heroSection = pageData.attributes.sections.data.find(
+    section => section.attributes.section_content[0].__component === 'blocks.hero-section'
+  );
+  const securityCards = pageData.attributes.sections.data.find(
+    section => section.attributes.section_content[0].__component === 'blocks.security-card'
+  );
   return (
     <Layout>
       <Seo
-       title="خدمة العملاء في إتقان كابيتال - التقارير والبيانات وإجراءات التقديم على الشكاوى      "
-      description="اكتشف خدمة العملاء في إتقان كابيتال، بما في ذلك التقارير والبيانات الأخيرة للأسواق المالية، وإجراءات تقديم الشكاوى، ودليل حماية المستثمر لضمان تجربة استثمارية آمنة وشفافة."
+        title={pageData.attributes.meta_title}
+        description={pageData.attributes.meta_description}
       />
       <ScrollToTopButton />
       <Hero
-        title={<FormattedMessage id="client_awareness_hero_title" />}
-        subTitle={<FormattedMessage id="client_awareness_hero_subtitle" />}
+        title={heroSection.attributes.section_content[0].title}
+        subTitle={heroSection.attributes.section_content[0].subtitle}
       />
       <section className='Reports-data-sec'>
         <div className='Reports-data-container'>
           <div className='Reports-data-title'>
-            {/* Add translated title here */}
+            {/* Add translated title here if needed */}
           </div>
           <div className='Reports-data-cards security-cards'>
-          <Link to="https://itqan-strapi.softylus.com/uploads/shkwa_b0155fefc9.pdf">
+            {securityCards.attributes.section_content.map((card, index) => (
               <SecurityCard
-                defaultImgSrc='/Complaint.png'
-                hoverImgSrc='/PDF.png'
-                defaultContent={<FormattedMessage id="client_awareness_complaint_procedure" />}
-                hoverContent={<FormattedMessage id="client_awareness_view_pdf" />}
+                key={index}
+                title={card.title}
+                hoverTitle={card.hover_title}
+                pdfLink={card.Pdf_link}
+                imageSrc={`https://itqan-strapi.softylus.com${card.image.data.attributes.url}`}
+                hoverImageSrc={`https://itqan-strapi.softylus.com${card.hover_image.data.attributes.url}`}
               />
-            </Link>
-            <Link to="https://itqan-strapi.softylus.com/uploads/1681029922_dlyl_hmayt_almstthmr_4_0145b1d4a4.pdf">
-              <SecurityCard
-                defaultImgSrc='/Investor.png'
-                hoverImgSrc='/PDF.png'
-                defaultContent={<FormattedMessage id="client_awareness_investor_guide" />}
-                hoverContent={<FormattedMessage id="client_awareness_view_pdf" />}
-              />
-            </Link>
+            ))}
           </div>
         </div>
       </section>
     </Layout>
   );
 };
-
 export default ClientAwareness;

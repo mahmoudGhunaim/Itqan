@@ -442,6 +442,10 @@ color: #222222;
     align-items: center;
     justify-content: center;
 }
+.Reports-data-single-card {
+margin-top: 30px;
+
+}
 .Reports-data-single-card p{
     margin-top: 15px;
     text-align: center;
