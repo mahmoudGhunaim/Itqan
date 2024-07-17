@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import "../components/style/AssetManagement.css"
 import Layout from "../components/layout";
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Hero from '../components/Hero';
 import InfoPanel from '../components/InfoPanel';
-import Accordion from '../components/Accordion';
-import accordionData from '../Json/Accordion.json';
-import accordionDataen from '../Json/Accordionen.json';
-import murabaha_sukuk_fund from "../Json/murabaha_sukuk_fund.json"
-import murabaha_sukuk_funden from "../Json/murabaha_sukuk_funden.json"
+import AccordionsV2 from '../components/AccordionV2';
 import PrivateBox from '../components/PrivateBoxCard';
 import PrivateBoxData from "../Json/PrivateBoxData.json"
 import PrivateBoxDataen from "../Json/PrivateBoxDataen.json"
@@ -36,15 +33,80 @@ const SliderButtons = () => {
 
 const AssetManagement = () => {
   const [activeButton, setActiveButton] = useState("stock");
-  const { formatMessage } = useLocalization();
   const { locale } = useLocalization();
+  const [pageData, setPageData] = useState(null);
+  const [content, setContent] = useState(<div>Loading...</div>);
+  const [isDataReady, setIsDataReady] = useState(false);
 
-  const handlePortfolioMurabahaandSukukFund = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://itqan-strapi.softylus.com/api/pages/?filters[custom_slug][%24eq]=asset-management&locale=${locale}&populate[sections][populate][section_content][populate][accordion_link][populate]=*&populate[sections][populate][section_content][populate][Content][populate]=*&populate[sections][populate][section_content][populate]=image`,
+          {
+            headers: {
+              Authorization: 'Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c'
+            }
+          }
+        );
+        setPageData(response.data.data[0].attributes);
+        setIsDataReady(true);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setContent(<div>Error loading data. Please try again later.</div>);
+      }
+    };
+
+    fetchData();
+  }, [locale]);
+
+  useEffect(() => {
+    if (isDataReady) {
+      handleStockFundsClick();
+    }
+  }, [isDataReady]);
+
+  const setInitialContent = (data) => {
+    const sections = data?.sections?.data || [];
+    const relevantSection = sections.find(section => 
+      section.attributes?.section_content?.[0]?.Content?.[0] &&
+      section.attributes?.section_content?.[0]?.accordion_link
+    );
+
+    if (!relevantSection) {
+      console.error('No relevant section found');
+      return null;
+    }
+
+    const sectionContent = relevantSection.attributes.section_content[0];
+    const murabahaContent = sectionContent.Content[0];
+    const imageUrl = murabahaContent?.image?.data?.attributes?.url
+      ? `https://itqan-strapi.softylus.com${murabahaContent.image.data.attributes.url}`
+      : "/Frame 136.png";
+    const paragraphContent = murabahaContent?.subtitle
+      ? murabahaContent.subtitle.split('\n').map((line, index, array) => (
+          <React.Fragment key={index}>
+            {line}
+            {index < array.length - 1 && (
+              <>
+                <br />
+                <span></span>
+              </>
+            )}
+          </React.Fragment>
+        ))
+      : null;
+    const accordionItems = sectionContent.accordion_link || [];
+
+    return { murabahaContent, imageUrl, paragraphContent, accordionItems };
+  };
+
+  const setContentFromData = ({ murabahaContent, imageUrl, paragraphContent, accordionItems }) => {
     setContent(
       <>
         <div className="buttons-container buttons-container-private">
           <button
-            className={activeButton === "private" ? "active" : ""}
+            className={activeButton === "" ? "active" : ""}
             onClick={handlePortfolioSaudiEquityFund}
           >
             <FormattedMessage id="private_equity_fund" defaultMessage="Private Equity Fund" />
@@ -57,188 +119,153 @@ const AssetManagement = () => {
           </button>
         </div>
         <InfoPanel
-          title={<FormattedMessage id="fund_title" defaultMessage="Murabaha and Sukuk Fund" />}
-          paragraph={<FormattedMessage
-            id="fund_paragraph"
-            defaultMessage="Lorem ipsum..."
-          />}
-          point1={<FormattedMessage id="fund_point1" defaultMessage="Point 1" />}
-          point2={<FormattedMessage id="fund_point2" defaultMessage="Point 2" />}
-          point3={<FormattedMessage id="fund_point3" defaultMessage="Point 3" />}
-          point4={<FormattedMessage id="fund_point4" defaultMessage="Point 4" />}
+          title={murabahaContent?.title || <FormattedMessage id="fund_title" defaultMessage="Murabaha and Sukuk Fund" />}
+          paragraph={paragraphContent}
+          none="none"
           button={<FormattedMessage id="fund_button" defaultMessage="Invest Smartly with Fund" />}
-          image="/Frame 136.png"
+          image={imageUrl}
           links="/Individuals-login"
         />
-        {/* <h2 className='boxes-title'>
-          <FormattedMessage id="equity_fund_title" defaultMessage="Public Equity and Murabaha Funds" />
-        </h2> */}
-        <section className='assetManagement-accordion'>
-          <div className='assetManagement-accordion-container'>
-          {locale === "ar" ? (
-            murabaha_sukuk_fund.map((item, index) => (
-              <Accordion
-                key={index}
-                title={item.title}
-                Details={item.Details}
-              />
-            ))
-          ) : locale === "en" ? (
-            murabaha_sukuk_funden.map((item, index) => (
-              <Accordion
-                key={index}
-                title={item.title}
-                Details={item.Details}
-              />
-            ))
-          ) : null}
-          </div>
-        </section>
+        {accordionItems && accordionItems.length > 0 && (
+          <section className='assetManagement-accordion'>
+            <div className='assetManagement-accordion-container'>
+              {accordionItems.map((item, index) => (
+                <AccordionsV2
+                  key={index}
+                  title={item.title || ''}
+                  links={item.link || []}
+                />
+              ))}
+            </div>
+          </section>
+        )}
       </>
     );
+  };
+
+  const handlePortfolioMurabahaandSukukFund = () => {
+    if (pageData) {
+      const contentData = setInitialContent(pageData);
+      setContentFromData(contentData);
+    }
     setActiveButton("stock");
   };
 
   const handlePortfolioSaudiEquityFund = () => {
+    if (!pageData || !pageData.sections || !pageData.sections.data) {
+      console.log("Data not yet loaded");
+      return;
+    }
+
+    const saudiEquityFundData = pageData.sections.data.find(section => 
+      section.attributes?.section_title === "صندوق الأسهم السعودية" ||
+      section.attributes?.section_title === "Saudi Equity Fund"
+    )?.attributes;
+
+    if (!saudiEquityFundData || !saudiEquityFundData.section_content) {
+      console.log("Saudi Equity Fund data not found");
+      return;
+    }
+
+    const content = saudiEquityFundData.section_content[0];
+    const accordionLinks = content.accordion_link;
+    const fundInfo = content.Content[0];
+    
+    const imageUrl = fundInfo.image?.data?.attributes?.url
+      ? `https://itqan-strapi.softylus.com${fundInfo.image.data.attributes.url}`
+      : "/Frame 138.png";
+
     setContent(
       <>
         <div className="buttons-container buttons-container-private">
           <button onClick={handlePortfolioSaudiEquityFund}>
-            <FormattedMessage id="saudi_equity_fund" defaultMessage="Saudi Equity Fund" />
+            {fundInfo.title}
           </button>
           <button onClick={handlePortfolioMurabahaandSukukFund}>
-            <FormattedMessage id="fund_title" defaultMessage="Murabaha and Sukuk Fund" />
+            {locale === "ar" ? "صندوق المرابحة والصكوك" : "Murabaha and Sukuk Fund"}
           </button>
         </div>
         <InfoPanel
-          title={<FormattedMessage id="saudi_equity_fund_title" defaultMessage="Saudi Equity Fund" />}
-          paragraph={<FormattedMessage
-            id="saudi_equity_fund_paragraph"
-            defaultMessage="Lorem ipsum..."
-          />}
-          button={<FormattedMessage id="fund_button" defaultMessage="Invest Smartly with Fund" />}
-          image="/Frame 138.png"
+          title={fundInfo.title}
+          paragraph={fundInfo.subtitle.split('\n').map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+          button={locale === "ar" ? "استثمر بذكاء مع الصندوق" : "Invest Smartly with Fund"}
+          image={imageUrl}
           revers="row-reverse"
           none="none"
           links="/Individuals-login"
         />
-        {/* <h2 className='boxes-title'>
-          <FormattedMessage id="equity_fund_title" defaultMessage="Public Equity and Murabaha Funds" />
-        </h2> */}
         <section className='assetManagement-accordion'>
           <div className='assetManagement-accordion-container'>
-          {locale === "ar" ? (
-            accordionData.map((item, index) => (
-              <Accordion
+            {accordionLinks.map((item, index) => (
+              <AccordionsV2
                 key={index}
-                title={item.title}
-                Details={item.Details}
+                title={item.title || ''}
+                links={item.link || []}
               />
-            ))
-          ) : locale === "en" ? (
-            accordionDataen.map((item, index) => (
-              <Accordion
-                key={index}
-                title={item.title}
-                Details={item.Details}
-              />
-            ))
-          ) : null}
+            ))}
           </div>
         </section>
       </>
     );
+
     setActiveButton("stock");
   };
 
-  const [content, setContent] = useState(
-    <section className='AssetManagement-title'>
-<section className='AssetManagement-title'>
-  <div className="buttons-container buttons-container-private">
-    <button onClick={handlePortfolioSaudiEquityFund}>
-      <FormattedMessage id="saudi_equity_fund" defaultMessage="Saudi Equity Fund" />
-    </button>
-    <button onClick={handlePortfolioMurabahaandSukukFund}>
-      <FormattedMessage id="fund_title" defaultMessage="Murabaha and Sukuk Fund" />
-    </button>
-  </div>
-  <InfoPanel
-    title={<FormattedMessage id="murabaha_sukuk_title" defaultMessage="Murabaha and Sukuk Fund" />}
-    paragraph={
-      <FormattedMessage
-        id="murabaha_sukuk_paragraph"
-        defaultMessage="The Murabaha and Sukuk Fund aims to achieve attractive returns for investors in the short and medium term, in compliance with Sharia principles. It focuses on preserving investor capital and providing flexible redemption options to manage risks optimally. To achieve its investment objectives, the fund primarily invests in the Saudi market through a diversified investment portfolio comprising high-quality short-term investment instruments that comply with Sharia principles, including:"
-      />
-    }
-    point1={<FormattedMessage id="murabaha_sukuk_point1" defaultMessage="Murabaha-based commodity transactions." />}
-    point2={
-      <FormattedMessage
-        id="murabaha_sukuk_point2"
-        defaultMessage="Sukuk (Islamic bonds) of various types, directly and indirectly, up to a maximum of 30% of the fund's net asset value."
-      />
-    }
-    point3={<FormattedMessage id="murabaha_sukuk_point3" defaultMessage="Investment units in funds focusing on Murabaha and/or Sukuk primarily." />}
-    point4={
-      <FormattedMessage
-        id="murabaha_sukuk_point4"
-        defaultMessage="Investment units in funds that invest in various investment instruments, including Murabaha, speculation, manufacturing, and leasing."
-      />
-    }
-    button={<FormattedMessage id="invest_smart_button" defaultMessage="Invest Smart with Itqan Fund" />}
-    image="/Frame 136.png"
-    links="/Individuals-login"
-  />
-  {/* <h2 className='boxes-title'>
-    <FormattedMessage id="public_equity_murabaha_funds" defaultMessage="Public Equity and Murabaha Funds" />
-  </h2> */}
-  <section className='assetManagement-accordion'>
-    <div className='assetManagement-accordion-container'>
-    {locale === "ar" ? (
-            murabaha_sukuk_fund.map((item, index) => (
-              <Accordion
-                key={index}
-                title={item.title}
-                Details={item.Details}
-              />
-            ))
-          ) : locale === "en" ? (
-            murabaha_sukuk_funden.map((item, index) => (
-              <Accordion
-                key={index}
-                title={item.title}
-                Details={item.Details}
-              />
-            ))
-          ) : null}
-    </div>
-  </section>
-</section>    </section>
-  );
-
   const handlePortfolioManagementClick = () => {
+    if (!pageData || !pageData.sections || !pageData.sections.data) {
+      console.log("Data not yet loaded");
+      return;
+    }
+
+    const portfolioManagementData = pageData.sections.data[2]?.attributes?.section_content?.find(content => 
+      content.__component === "blocks.content-card" &&
+      (content.title === "إدارة المحافظ" || content.title === "Portfolio Management")
+    );
+
+    if (!portfolioManagementData) {
+      console.log("Portfolio Management data not found");
+      return;
+    }
+
+    const imageUrl = portfolioManagementData.image?.data?.attributes?.url
+      ? `https://itqan-strapi.softylus.com${portfolioManagementData.image.data.attributes.url}`
+      : "/Frame 139.png";
+
     setContent(
       <section className='management-portfolios-sec'>
-        <h2 className='boxes-title'>
-          <FormattedMessage id="portfolio_management_title" defaultMessage="Portfolio Management" />
-        </h2>
+        <h2 className='boxes-title'>{portfolioManagementData.title}</h2>
         <InfoPanel
-          title={<FormattedMessage id="portfolio_management_title" defaultMessage="Portfolio Management" />}
-          paragraph={<FormattedMessage
-            id="portfolio_management_paragraph"
-            defaultMessage="Successful wealth management is directly linked to the quality of fundamental advice, which in turn depends on the expertise and capabilities of the advisor. At Itqan, our experienced team of specialists focuses on developing and implementing optimal strategies for each client individually, relying on external expertise when necessary. Instead of providing ready-made solutions, which are often the cornerstone of major wealth management firms, we focus on delivering responses that precisely meet personal needs, expectations, and risk tolerance."
-          />}
-          button={<FormattedMessage id="experience_our_unique_approach" defaultMessage="Experience Our Unique Approach Now" />}
-          image="/Frame 139.png"
+          title={portfolioManagementData.title}
+          paragraph={portfolioManagementData.subtitle.split('\n').map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+          button="Experience Our Unique Approach Now"
+          image={imageUrl}
           revers="row-reverse"
           none="none"
           links="/Individuals-login"
         />
       </section>
     );
+     
     setActiveButton("portfolio");
   };
 
   const handlePrivateFundsClick = () => {
+    const privateSection = pageData?.sections?.data.find(section => 
+      section.attributes?.section_title === "الصناديق الخاصة" ||
+      section.attributes?.section_title === "Private Funds"
+    );
+  
+    const privateFundsData = privateSection?.attributes?.section_content || [];
     setContent(
       <section className='private-box-sec'>
         <div className='private-box-container'>
@@ -261,40 +288,24 @@ const AssetManagement = () => {
           >
             <div className='private-box-title'>
               <h2>
-                <FormattedMessage id="private_funds_title" defaultMessage="Private Funds" />
+                {privateSection?.attributes?.section_title}
               </h2>
               <SliderButtons />
             </div>
             <div className='private-box-card'>
-            {locale === "ar" ? (
-  PrivateBoxData.map((item, index) => (
-    <SwiperSlide key={index} className="swiper-Discover-Slide">
-      <PrivateBox
-        title={<FormattedMessage id={`private_box_title_${index}`} defaultMessage={item.title} />}
-        subtitle={<FormattedMessage id={`private_box_subtitle_${index}`} defaultMessage={item.subtitle} />}
-        Button={<FormattedMessage id={`private_funds_button`} defaultMessage={item.button} />}
-        imgSrc={item.imgSrc}
-        size={item.size}
-        link={item.link}
-        hidebutton="none"
-      />
-    </SwiperSlide>
-  ))
-) : (
-  PrivateBoxDataen.map((item, index) => (
-    <SwiperSlide key={index} className="swiper-Discover-Slide">
-      <PrivateBox
-        title={<FormattedMessage id={`private_box_title_${index}`} defaultMessage={item.title} />}
-        subtitle={<FormattedMessage id={`private_box_subtitle_${index}`} defaultMessage={item.subtitle} />}
-        Button={<FormattedMessage id={`private_funds_button`} defaultMessage={item.button} />}
-        imgSrc={item.imgSrc}
-        size={item.size}
-        link={item.link}
-        hidebutton="none"
-      />
-    </SwiperSlide>
-  ))
-)}
+              {privateFundsData.map((item, index) => (
+                <SwiperSlide key={index} className="swiper-Discover-Slide">
+                  <PrivateBox
+                    title={item.title}
+                    subtitle={item.subtitle}
+                    Button={<FormattedMessage id="private_funds_button" defaultMessage="Invest Now" />}
+                    imgSrc={`https://itqan-strapi.softylus.com${item.image.data.attributes.url}`}
+                    size={item.image.data.attributes.size}
+                    link="/Individuals-login"
+                    hidebutton="none"
+                  />
+                </SwiperSlide>
+              ))}
             </div>
           </Swiper>
         </div>
@@ -302,79 +313,24 @@ const AssetManagement = () => {
     );
     setActiveButton("private");
   };
-
   const handleStockFundsClick = () => {
-    setContent(
-      <section className='AssetManagement-title'>
-<section className='AssetManagement-title'>
-  <div className="buttons-container buttons-container-private">
-    <button onClick={handlePortfolioSaudiEquityFund}>
-      <FormattedMessage id="saudi_equity_fund" defaultMessage="Saudi Equity Fund" />
-    </button>
-    <button onClick={handlePortfolioMurabahaandSukukFund}>
-      <FormattedMessage id="fund_title" defaultMessage="Murabaha and Sukuk Fund" />
-    </button>
-  </div>
-  <InfoPanel
-    title={<FormattedMessage id="murabaha_sukuk_title" defaultMessage="Murabaha and Sukuk Fund" />}
-    paragraph={
-      <FormattedMessage
-        id="murabaha_sukuk_paragraph"
-        defaultMessage="The Murabaha and Sukuk Fund aims to achieve attractive returns for investors in the short and medium term, in compliance with Sharia principles. It focuses on preserving investor capital and providing flexible redemption options to manage risks optimally. To achieve its investment objectives, the fund primarily invests in the Saudi market through a diversified investment portfolio comprising high-quality short-term investment instruments that comply with Sharia principles, including:"
-      />
+    if (pageData) {
+      const contentData = setInitialContent(pageData);
+      setContentFromData(contentData);
     }
-    point1={<FormattedMessage id="murabaha_sukuk_point1" defaultMessage="Murabaha-based commodity transactions." />}
-    point2={
-      <FormattedMessage
-        id="murabaha_sukuk_point2"
-        defaultMessage="Sukuk (Islamic bonds) of various types, directly and indirectly, up to a maximum of 30% of the fund's net asset value."
-      />
-    }
-    point3={<FormattedMessage id="murabaha_sukuk_point3" defaultMessage="Investment units in funds focusing on Murabaha and/or Sukuk primarily." />}
-    point4={
-      <FormattedMessage
-        id="murabaha_sukuk_point4"
-        defaultMessage="Investment units in funds that invest in various investment instruments, including Murabaha, speculation, manufacturing, and leasing."
-      />
-    }
-    button={<FormattedMessage id="invest_smart_button" defaultMessage="Invest Smart with Itqan Fund" />}
-    image="/Frame 136.png"
-    links="/Individuals-login"
-  />
-  {/* <h2 className='boxes-title'>
-    <FormattedMessage id="public_equity_murabaha_funds" defaultMessage="Public Equity and Murabaha Funds" />
-  </h2> */}
-  <section className='assetManagement-accordion'>
-    <div className='assetManagement-accordion-container'>
-    {locale === "ar" ? (
-            accordionData.map((item, index) => (
-              <Accordion
-                key={index}
-                title={item.title}
-                Details={item.Details}
-              />
-            ))
-          ) : locale === "en" ? (
-            accordionDataen.map((item, index) => (
-              <Accordion
-                key={index}
-                title={item.title}
-                Details={item.Details}
-              />
-            ))
-          ) : null}
-    </div>
-  </section>
-</section>      </section>
-    );
     setActiveButton("stock");
   };
+
+  if (!isDataReady) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Layout>
       <Seo
-       title="خدمات إدارة الأصول في شركة إتقان كابيتال - صناديق الأسهم والمرابحات والعقارات        "
-       description="اكتشف خدمات إدارة الأصول التي تقدمها شركة إتقان كابيتال، بما في ذلك صناديق الأسهم والمرابحات وصندوق العقارات، واستفد من الاستشارات المالية المخصصة لتحقيق أهداف استثمارية متوافقة مع الضوابط الشرعية.        "/>
+        title="خدمات إدارة الأصول في شركة إتقان كابيتال - صناديق الأسهم والمرابحات والعقارات"
+        description="اكتشف خدمات إدارة الأصول التي تقدمها شركة إتقان كابيتال، بما في ذلك صناديق الأسهم والمرابحات وصندوق العقارات، واستفد من الاستشارات المالية المخصصة لتحقيق أهداف استثمارية متوافقة مع الضوابط الشرعية."
+      />
       <Hero
         title={<FormattedMessage id="asset_management_title" defaultMessage="Asset Management" />}
         subTitle={<FormattedMessage id="asset_management_subtitle" defaultMessage="Asset Management Services" />}
@@ -402,9 +358,6 @@ const AssetManagement = () => {
         </div>
         {content}
       </section>
-      <div className="content">
-        {/* Additional content here */}
-      </div>
       <ScrollToTopButton />
     </Layout>
   );

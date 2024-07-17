@@ -6,10 +6,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link } from "gatsby";
 import "./style/Accordion.css";
 
-const AccordionsV2 = ({ title, Details, linkpdf }) => {
-  
+const AccordionV2 = ({ title, links }) => {
   return (
-    <Accordion className='acc-Asset' > 
+    <Accordion className='acc-Asset'> 
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1-content"
@@ -20,13 +19,15 @@ const AccordionsV2 = ({ title, Details, linkpdf }) => {
       </AccordionSummary>
       <AccordionDetails>
         <ul>
-            <li>
-            <Link to={linkpdf}>{Details}</Link>
-          </li>
+          {links && links.map((link, index) => (
+            <li key={index}>
+              <Link to={link.link || '#'}>{link.link_title || ''}</Link>
+            </li>
+          ))}
         </ul>
       </AccordionDetails>
     </Accordion>
   );
 };
 
-export default AccordionsV2;
+export default AccordionV2;

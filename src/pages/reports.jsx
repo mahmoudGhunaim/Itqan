@@ -74,17 +74,14 @@ const Reports = () => {
           <h3>{section.attributes.section_title}</h3>
           <div className="assetManagement-accordion-container">
             {section.attributes.section_content
-            
               .filter(item => item.__component === 'test.accordion')
               .map((item, index) => {
-                console.log("Accordion Item:", item.accordion_link[0].link); 
-            
+                console.log("Accordion Item:", item);
                 return (
                   <Accordion
                     key={index}
                     title={item.title}
-                    linkpdf={item.accordion_link[0].link}
-                    Details={item.accordion_link[0].link_title}
+                    links={item.accordion_link}
                   />
                 );
               })}

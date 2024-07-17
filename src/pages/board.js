@@ -7,17 +7,17 @@ import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
 
 const Board = ({ pageContext, location }) => {
-  const [directors, setDirectors] = useState([]);
+  const [pageData, setPageData] = useState(null);
   const [loading, setLoading] = useState(true);
   const { locale } = useLocalization();
   const currentLocale = pageContext.locale || locale;
 
   useEffect(() => {
-    const fetchDirectors = async () => {
+    const fetchPageData = async () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://itqan-strapi.softylus.com/api/board-of-directors?populate=profileImage&locale=${locale}`,
+          `https://itqan-strapi.softylus.com/api/pages/?filters[custom_slug][$eq]=board&locale=${locale}&populate[sections][populate][section_content][populate][Board_of_Directors_card][populate]=*&populate=image`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -27,7 +27,8 @@ const Board = ({ pageContext, location }) => {
           }
         );
         const data = await response.json();
-        setDirectors(data.data);
+        setPageData(data.data[0]);
+        console.log("aaaaaa",data.data[0])
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -35,7 +36,7 @@ const Board = ({ pageContext, location }) => {
       }
     };
 
-    fetchDirectors();
+    fetchPageData();
   }, [currentLocale]);
 
   // Function to generate localized URLs
@@ -45,64 +46,57 @@ const Board = ({ pageContext, location }) => {
     return '/' + urlParts.join('/') + path;
   };
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (!pageData) {
+    return <p>No data available</p>;
+  }
+
+  const sections = pageData.attributes.sections.data;
+  const heroSection = sections.find(section => section.attributes.custom_slug === "board" && section.attributes.section_content[0].__component === "blocks.hero-section");
+  const boardSection = sections.find(section => section.attributes.custom_slug === "board" && section.attributes.section_content[0].__component === "blocks.itqan-capital-members");
+
+  const directors = boardSection?.attributes.section_content[0].Board_of_Directors_card || [];
+
   return (
     <Layout>
       <Seo
-        title={
-          currentLocale === 'ar'
-            ? "فريق إتقان - مجلس الإدارة - شركة إتقان كابيتال"
-            : "Itqan Team - Board of Directors - Itqan Capital"
-        }
-        description={
-          currentLocale === 'ar'
-            ? "تعرف على أعضاء مجلس الإدارة في شركة إتقان كابيتال، بما في ذلك العضو المنتدب والرئيس التنفيذي بسام هاشم السيد، واستفد من الخبرات والتخصصات الفريدة التي يجلبها كل فرد إلى الشركة."
-            : "Learn about the Board of Directors at Itqan Capital, including Managing Director and CEO Bassam Hashim Al-Sayed, and benefit from the unique expertise and specializations each individual brings to the company."
-        }
+        title={pageData.attributes.meta_title}
+        description={pageData.attributes.meta_description}
       />
       <ScrollToTopButton />
       <section className="Board-hero-sec">
         <div className="Board-hero-container">
           <div className="Board-hero-title">
-            <h1>
-              <FormattedMessage id="boardTitle" />
-            </h1>
-            <p>
-              <FormattedMessage id="boardaboutUs" />
-            </p>
+            <h1>{heroSection?.attributes.section_content[0].title}</h1>
+            <p>{heroSection?.attributes.section_content[0].subtitle}</p>
           </div>
         </div>
       </section>
       <section className="director-card-sec">
-        <h3>
-          <FormattedMessage id="boardOfDirectors" />
-        </h3>
+        <h3>{boardSection?.attributes.section_content[0].title}</h3>
         <div className="director-card-container">
-          {loading ? (
-            <p>Loading...</p>
-          ) : (
-            directors.map((director) => {
-              const profileImageUrl =
-                director.attributes.profileImage?.data?.attributes?.formats
-                  ?.small?.url ||
-                '/default-profile.png';
-              return (
-                <Link
-                  key={director.id}
-                  to={`../team?id=${director.id}`}
-                  className="director-card"
-                >
-                  <img
-                    src={`https://itqan-strapi.softylus.com${profileImageUrl}`}
-                    alt={director.attributes.name}
-                  />
-                  <div className="director-card-info">
-                    <h4>{director.attributes.name}</h4>
-                    <p>{director.attributes.position}</p>
-                  </div>
-                </Link>
-              );
-            })
-          )}
+          {directors.map((director) => {
+            const profileImageUrl = director.image?.data?.attributes?.formats?.small?.url || '/default-profile.png';
+            return (
+              <Link
+                key={director.id}
+                to={`../team?id=${director.id}`}
+                className="director-card"
+              >
+                <img
+                  src={`https://itqan-strapi.softylus.com${profileImageUrl}`}
+                  alt={director.name}
+                />
+                <div className="director-card-info">
+                  <h4>{director.name}</h4>
+                  <p>{director.position}</p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
     </Layout>

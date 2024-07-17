@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 import Hero from '../components/Hero';
 import Layout from "../components/layout";
 import PrivateBox from '../components/PrivateBoxCard';
@@ -9,91 +10,102 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Seo from '../components/seo';
 import { FormattedMessage } from 'react-intl';
+import { useLocalization } from '../context/LocalizationContext';
 
-const InvestmentBanking = (props) => {
-    
+const InvestmentBanking = () => {
+  const [pageData, setPageData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const { locale } = useLocalization();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://itqan-strapi.softylus.com/api/pages/?filters[custom_slug][$eq]=Investment-banking&locale=${locale}&populate[sections][populate][section_content][populate]=*&populate=image`, {
+          headers: {
+            Authorization: 'Bearer 848485480979d1216343c88d697bd91d7e9d71cacffad3b1036c75e10813cc5849955b2fb50ea435089aa66e69976f378d4d040bc32930525651db4ad255615c24947494ddef876ec208ef49db6ba43f4a2eb05ddbee034e2b01f54741f2e9ea2f1930a4181d602dc086b7cde8a871f48d63596e07356bf2a56749c7c4f20b6c'
+          }
+        });
+        setPageData(response.data.data[0].attributes);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!pageData) return null;
+  const { meta_title, meta_description, sections } = pageData;
+  console.log("aaff",sections.data[0].attributes.section_title)
+  const contentCards = sections.data[0].attributes.section_content.filter(item => item.__component === "blocks.content-card");
+  const contentTabs = sections.data[0].attributes.section_content.find(item => item.__component === "blocks.content-tabs");
+  console.log("tapss",contentTabs)
   return (
    <Layout>
     <Seo
-     title="خدمات الاستثمار المصرفي لـ إتقان كابيتال - الطروحات العامة والاستثمار المباشر    "
-    description="استكشف خدمات الاستثمار المصرفي المقدمة من إتقان كابيتال، بما في ذلك الطروحات العامة والاستثمار المباشر، واحصل على استشارات مالية استراتيجية تلبي احتياجات عملائنا بشكل فعال ومحترف.    "
+     title={meta_title}
+     description={meta_description}
     />
     <ScrollToTopButton/>
     <Hero 
-      title={<FormattedMessage id="investment_banking_hero_title" />}
+      title={sections.data[0].attributes.section_title}
     />
     <section className='investment-banking-sec'>
         <div className='investment-banking-title'>
-
         </div>
         <div className='investment-banking-container-card'>
-        <PrivateBox
-            title={<FormattedMessage id="public_offerings_title" />}
-            subtitle={<FormattedMessage id="public_offerings_subtitle" />}
-            hidebutton="none"
-            imgSrc="/Group 167.png"
-            link="/Individuals-login"
-        />
-        <PrivateBox
-            title={<FormattedMessage id="initial_public_offerings_title" />}
-            subtitle={<FormattedMessage id="initial_public_offerings_subtitle" />}
-            size={<FormattedMessage id="initial_public_offerings_size" />}
-            hidebutton="none"
-            imgSrc="/Group 163.png"
-            link="/Individuals-login"
-            spaceP="25px"
-        />
+          {contentCards.slice(0, 2).map((card, index) => (
+            <PrivateBox
+              key={index}
+              title={card.title}
+              subtitle={card.subtitle}
+              hidebutton="none"
+              imgSrc={`https://itqan-strapi.softylus.com/${card.image.data.attributes.url}`}
+              spaceP={index === 1 ? "25px" : undefined}
+            />
+          ))}
         </div>
         <div className='investment-banking-info-card'>
-        <section className='infopanel-sec bg-infopanel-sec'>
-        <div className='infopanel-container'>
-            <div className='infopanel-content'>
-                <h2><FormattedMessage id="direct_investment_title" /></h2>
-                <p><FormattedMessage id="direct_investment_description" /></p>
+          <section className='infopanel-sec bg-infopanel-sec'>
+            <div className='infopanel-container'>
+              <div className='infopanel-content'>
+                <h2>{contentTabs.content[0].title}</h2>
+                <p>{contentTabs.content[0].subtitle}</p>
                 <Tabs>
-    <TabList>
-      <Tab><FormattedMessage id="private_direct_investment_tab" /></Tab>
-      <Tab><FormattedMessage id="real_estate_tab" /></Tab>
-      <Tab><FormattedMessage id="securities_tab" /></Tab>
-    </TabList>
-
-    <TabPanel>
-      <h2><FormattedMessage id="private_direct_investment_content" /></h2>
-    </TabPanel>
-    <TabPanel>
-      <h2><FormattedMessage id="real_estate_content" /></h2>
-    </TabPanel>
-    <TabPanel>
-      <h2><FormattedMessage id="securities_content" /></h2>
-    </TabPanel>
-  </Tabs>
-            </div>
-            <div className='infopanel-image'>
+                  <TabList>
+                    {contentTabs.tabs.map((tab, index) => (
+                      <Tab key={index}>{tab.title}</Tab>
+                    ))}
+                  </TabList>
+                  {contentTabs.tabs.map((tab, index) => (
+                    <TabPanel key={index}>
+                      <h2>{tab.subtitle}</h2>
+                    </TabPanel>
+                  ))}
+                </Tabs>
+              </div>
+              <div className='infopanel-image'>
                 <img src="/Frame 1399.png" alt={<FormattedMessage id="infopanel_image_alt" />} />
+              </div>
             </div>
-        </div>
-    </section>
+          </section>
         </div>
         <div className='investment-banking-container-card'>
-        <PrivateBox
-            title={<FormattedMessage id="financing_arrangement_title" />}
-            subtitle={<FormattedMessage id="financing_arrangement_subtitle" />}
-            hidebutton="none"
-            imgSrc="/Group 164.png"
-            link="/Individuals-login"
-            
-        />
-        <PrivateBox
-            title={<FormattedMessage id="mergers_acquisitions_title" />}
-            subtitle={<FormattedMessage id="mergers_acquisitions_subtitle" />}
-            hidebutton="none"
-            imgSrc="/Group 165.png"
-            link="/Individuals-login"
-        />
+          {contentCards.slice(2).map((card, index) => (
+            <PrivateBox
+              key={index}
+              title={card.title}
+              subtitle={card.subtitle}
+              hidebutton="none"
+              imgSrc={`https://itqan-strapi.softylus.com/${card.image.data.attributes.url}`}
+              />
+          ))}
         </div>
     </section>
    </Layout>
   )
 }
-
 export default InvestmentBanking
