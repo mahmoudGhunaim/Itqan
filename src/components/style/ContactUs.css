@@ -90,6 +90,7 @@ form.Contact-footer-form{
     flex-direction: column;
     gap: 28px;
    width: 40%;
+   height: fit-content;
 
 }
 .Contact-footer-form button{

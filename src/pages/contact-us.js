@@ -175,9 +175,9 @@ const ContactUs = () => {
                     <img src='/LinkedIn.png' alt="LinkedIn" />
                     </Link>
                 </div>
-                <a href={itqanProfile} target="_blank" rel="noopener noreferrer">
+               <Link to="https://itqan-strapi.softylus.com/uploads/brwfayl_shrkt_itqan_kabytal_30_04_2024_a3772dc6a79c4eebe6441e527c86706f_5d4068f242.pdf">
           <h6><img src='/Investor.png' alt="Investor icon" /><FormattedMessage id="company_profile" /></h6>
-          </a>
+          </Link>
             </div>
                     </div>
                 </section>

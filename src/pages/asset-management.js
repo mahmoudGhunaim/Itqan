@@ -106,13 +106,13 @@ const AssetManagement = () => {
       <>
         <div className="buttons-container buttons-container-private">
           <button
-            className={activeButton === "" ? "active" : ""}
+            
             onClick={handlePortfolioSaudiEquityFund}
           >
             <FormattedMessage id="private_equity_fund" defaultMessage="Private Equity Fund" />
           </button>
           <button
-            className={activeButton === "portfolio" ? "active" : ""}
+            className={activeButton === "portfolio" ? "active" : "active"}
             onClick={handlePortfolioMurabahaandSukukFund}
           >
             <FormattedMessage id="murabaha_sukuk_fund" defaultMessage="Murabaha and Sukuk Fund" />
@@ -149,6 +149,7 @@ const AssetManagement = () => {
       setContentFromData(contentData);
     }
     setActiveButton("stock");
+    
   };
 
   const handlePortfolioSaudiEquityFund = () => {
@@ -178,10 +179,13 @@ const AssetManagement = () => {
     setContent(
       <>
         <div className="buttons-container buttons-container-private">
-          <button onClick={handlePortfolioSaudiEquityFund}>
+          <button onClick={handlePortfolioSaudiEquityFund}
+          className={activeButton === "portfolio" ? "active" : "active"}  
+          >
             {fundInfo.title}
           </button>
-          <button onClick={handlePortfolioMurabahaandSukukFund}>
+          <button onClick={handlePortfolioMurabahaandSukukFund}   
+                    >
             {locale === "ar" ? "صندوق المرابحة والصكوك" : "Murabaha and Sukuk Fund"}
           </button>
         </div>
