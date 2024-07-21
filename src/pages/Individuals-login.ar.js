@@ -700,15 +700,33 @@ const IndividualsLogin = () => {
                 </select>
             </div>
             <div className='individuals-single-field'>
-                <label><FormattedMessage id="correspondenceType.label" /></label>
-                <select id="Correspondence" name="Correspondence">
-                    <option value=""><FormattedMessage id="correspondenceType.placeholder" /></option>
-                    <option value="Per Transaction">عند كل عملية</option>
-                    <option value="Daily">يومي</option>
-                    <option value="Monthly">شهري</option>
-                    <option value="Upon Request">عند الطلب</option>
-                </select>
-            </div>
+              <label><FormattedMessage id="correspondenceType.label" /></label>
+              <div className='individuals-single-field'>
+    <label><FormattedMessage id="correspondenceType.label" /></label>
+    <select 
+        id="Correspondence" 
+        name="Correspondence" 
+        value={formData.Correspondence} 
+        onChange={handleChange}
+    >
+        <option value="">
+            <FormattedMessage id="correspondenceType.placeholder" />
+        </option>
+        <option value="Per Transaction">
+            <FormattedMessage id="accountStatements.perTransaction" />
+        </option>
+        <option value="Daily">
+            <FormattedMessage id="accountStatements.daily" />
+        </option>
+        <option value="Monthly">
+            <FormattedMessage id="accountStatements.monthly" />
+        </option>
+        <option value="Upon Request">
+            <FormattedMessage id="accountStatements.uponRequest" />
+        </option>
+    </select>
+</div>
+          </div>
         </div>
         <div className='individuals-sec-field'>
             <div className='individuals-single-field'>

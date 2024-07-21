@@ -642,6 +642,11 @@
   "investmentGoals.incomeGeneration": "تحقيق الدخل",
   "investmentGoals.balanced": "متوازنة",
   "investmentGoals.capitalGrowth": "نمو رأس المال",
+
+  "communicationMethod.email": "البريد الالكتروني",
+  "communicationMethod.fax": "فاكس",
+  "communicationMethod.sms": "رسالة قصيرة",
+  "communicationMethod.mail": "بريد",
   "investmentGoals.retirementSavings": "تكوين مدخرات للتقاعد",
   "investmentGoals.projectFinancing": "تمويل مشروع",
   "investmentGoals.assetPurchase": "شراء أصل (على سبيل المثال: عقار أو مركبة)",

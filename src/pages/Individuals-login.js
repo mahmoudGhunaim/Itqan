@@ -690,24 +690,49 @@ const IndividualsLogin = () => {
                 </select>
             </div>
             <div className='individuals-single-field'>
-                <label><FormattedMessage id="communicationMethod.label" /></label>
-                <select id="communicationMethod" name="communicationMethod">
-                    <option value=""><FormattedMessage id="communicationMethod.placeholder" /></option>
-                    <option value="Email">البريد الالكتروني</option>
-                    <option value="Fax">فاكس</option>
-                    <option value="SMS">رسالة قصيرة</option>
-                    <option value="Mail">بريد</option>
-                </select>
-            </div>
+    <label><FormattedMessage id="communicationMethod.label" /></label>
+    <select id="communicationMethod" name="communicationMethod">
+        <option value="">
+            <FormattedMessage id="communicationMethod.placeholder" />
+        </option>
+        <option value="Email">
+            <FormattedMessage id="communicationMethod.email" />
+        </option>
+        <option value="Fax">
+            <FormattedMessage id="communicationMethod.fax" />
+        </option>
+        <option value="SMS">
+            <FormattedMessage id="communicationMethod.sms" />
+        </option>
+        <option value="Mail">
+            <FormattedMessage id="communicationMethod.mail" />
+        </option>
+    </select>
+</div>
             <div className='individuals-single-field'>
                 <label><FormattedMessage id="correspondenceType.label" /></label>
-                <select id="Correspondence" name="Correspondence" value={formData.Correspondence} >
-                    <option value=""><FormattedMessage id="correspondenceType.placeholder" /></option>
-                    <option value="Per Transaction">عند كل عملية</option>
-                    <option value="Daily">يومي</option>
-                    <option value="Monthly">شهري</option>
-                    <option value="Upon Request">عند الطلب</option>
-                </select>
+                <select 
+        id="Correspondence" 
+        name="Correspondence" 
+        value={formData.Correspondence} 
+        onChange={handleChange}
+    >
+        <option value="">
+            <FormattedMessage id="correspondenceType.placeholder" />
+        </option>
+        <option value="Per Transaction">
+            <FormattedMessage id="accountStatements.perTransaction" />
+        </option>
+        <option value="Daily">
+            <FormattedMessage id="accountStatements.daily" />
+        </option>
+        <option value="Monthly">
+            <FormattedMessage id="accountStatements.monthly" />
+        </option>
+        <option value="Upon Request">
+            <FormattedMessage id="accountStatements.uponRequest" />
+        </option>
+    </select>
             </div>
         </div>
         <div className='individuals-sec-field'>

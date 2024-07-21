@@ -23,6 +23,9 @@
     justify-content: center;
     gap: 50px;
 }
+html[lang="en"] .distinguishes-card{
+    flex-direction: row-reverse;
+}
 .distinguishes-single-card {
     width: 300px !important;
     text-align: center;

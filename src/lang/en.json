@@ -140,6 +140,10 @@
   "riyadhTitle": "Riyadh (sub-headquarters)",
   "riyadhAddress": "King Fahd Street, 5th Floor, Office No. 501",
   "googleMapLink": "Google Maps Link",
+  "communicationMethod.email": "Email",
+  "communicationMethod.fax": "Fax",
+  "communicationMethod.sms": "SMS",
+  "communicationMethod.mail": "Mail",
   "socialTitle": "Follow Us on Social Media",
   "companyProfile": "Company Profile",
   "contact_us_description": "Contact us for any inquiries or feedback.",
@@ -505,6 +509,7 @@
   "investmentAssets.saudiAssetsLabel":"Assets in Saudi Riyal",
 "investmentAssets.foreignCurrencyAssetsLabel":"Assets in Other Foreign Currencies",
 "investmentAssets.selectForeignCurrenciesLabel":"Please Specify Other Foreign Currencies",
+
   "dr": "Dr.",
   "eng": "Eng.",
   "other": "Other",
