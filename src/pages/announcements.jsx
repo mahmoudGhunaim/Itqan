@@ -83,7 +83,7 @@ const Announcements = () => {
       <section className='Announcements-sec'>
         <div className='Announcements-container'>
           <div className='Announcements-content'>
-            <h3><FormattedMessage id="announcements" /></h3>
+            <h3>{Data.page_title}</h3>
             {loading ? (
               <div ref={loaderRef} style={{ height: '100px', margin: '30px 0', display: 'flex', justifyContent: 'center' }}>
                 <Player autoplay loop src={loaderl} style={{ height: '100px', width: '100px' }} />
