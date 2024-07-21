@@ -1,4 +1,3 @@
-// src/context/LocalizationContext.js
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { IntlProvider } from 'react-intl';
 import { navigate } from 'gatsby';
@@ -33,8 +32,9 @@ export const LocalizationProvider = ({ children }) => {
       setLocale(newLocale);
       localStorage.setItem('locale', newLocale);
       if (typeof window !== 'undefined') {
-        const newPath = `/${newLocale}${window.location.pathname.replace(/^\/[a-z]{2}/, '')}`;
-        // Use window.location.href for a hard refresh
+        const currentPath = window.location.pathname;
+        const currentSearch = window.location.search;
+        const newPath = `/${newLocale}${currentPath.replace(/^\/[a-z]{2}/, '')}${currentSearch}`;
         window.location.href = newPath;
       }
     }

@@ -70,41 +70,53 @@ const ContactUs = () => {
                 <section className='Contact-footer-section'>
                     <div className='Contact-footer-container'>
                         
-                        <form className='Contact-footer-form' onSubmit={handleSubmit} method='OPTIONS'>
+                    <form className='Contact-footer-form' onSubmit={handleSubmit} method='OPTIONS'>
                             <label>
                                 <FormattedMessage id="contact_form_name" />     
-                                <input
-                                    type='text'
-                                    name='name'
-                                    placeholder='Name'
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                />
+                                <FormattedMessage id="contact_form_name_placeholder" defaultMessage="أدخل اسمك">
+                                    {placeholder => (
+                                        <input
+                                            type='text'
+                                            name='name'
+                                            placeholder={placeholder}
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                        />
+                                    )}
+                                </FormattedMessage>
                             </label>
                             <label>
                                 <FormattedMessage id="contact_form_email" />
-                                <input
-                                    type='email'
-                                    name='email'
-                                    placeholder='Email'
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                />
+                                <FormattedMessage id="contact_form_email_placeholder" defaultMessage="أدخل بريدك الإلكتروني">
+                                    {placeholder => (
+                                        <input
+                                            type='email'
+                                            name='email'
+                                            placeholder={placeholder}
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                        />
+                                    )}
+                                </FormattedMessage>
                             </label>
                             <label>
                                 <FormattedMessage id="contact_form_message" />
-                                <textarea
-                                    name='message'
-                                    placeholder='message'
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                />
+                                <FormattedMessage id="contact_form_message_placeholder" defaultMessage="اكتب رسالتك هنا">
+                                    {placeholder => (
+                                        <textarea
+                                            name='message'
+                                            placeholder={placeholder}
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                        />
+                                    )}
+                                </FormattedMessage>
                             </label>
                             <button type='submit'><FormattedMessage id="contact_form_submit" /></button>
-                             <Modal isOpen={formSubmitted || formError} onRequestClose={() => {setFormSubmitted(false); setFormError(false);}}>
+                            <Modal isOpen={formSubmitted || formError} onRequestClose={() => {setFormSubmitted(false); setFormError(false);}}>
                                 {formSubmitted ? (
                                     <div className='Contact-successfuly'>
-                                     <button onClick={() => {setFormSubmitted(false);}}><img src='/close.svg'/></button>
+                                     <button onClick={() => {setFormSubmitted(false);}}><img src='/close.svg' alt="Close"/></button>
                                      <div className='Contact-successfuly-body'> 
                                      <Player
                                         autoplay
@@ -119,7 +131,7 @@ const ContactUs = () => {
                                     </div>
                                 ) : (
                                     <div className='Contact-error'>
-                                     <button onClick={() => {setFormError(false);}}><img src='/close.svg'/></button>
+                                     <button onClick={() => {setFormError(false);}}><img src='/close.svg' alt="Close"/></button>
                                      <div className='Contact-error-body'>
                                      <Player
                                         autoplay
@@ -134,7 +146,6 @@ const ContactUs = () => {
                                     </div>
                                 )}
                             </Modal>
-                        
                         </form>
                        
                         <div className='Contact-footer-content'>

@@ -11,7 +11,7 @@ import { useLocalization } from '../context/LocalizationContext';
 const ManagementTeamTemplate = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const id = params.get('id');
+  const slug = params.get('slug');
   const { locale } = useLocalization();
 
   const [pageData, setPageData] = useState(null);
@@ -51,7 +51,7 @@ const ManagementTeamTemplate = () => {
 
   const managementTeamContent = managementTeamSection?.attributes.section_content.find(content => content.__component === "blocks.itqan-capital-members");
 
-  const teamMember = managementTeamContent?.Board_of_Directors_card.find(member => member.id.toString() === id);
+  const teamMember = managementTeamContent?.Board_of_Directors_card.find(member => member.slug === slug);
 
   if (!teamMember) {
     return <p><FormattedMessage id="teamMemberNotFound" defaultMessage="Team member not found" /></p>;

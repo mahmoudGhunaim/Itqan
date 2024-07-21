@@ -12,7 +12,7 @@ import { useLocalization } from '../context/LocalizationContext';
 const Team = ({ pageContext }) => {
     const location = useLocation();
     const params = new URLSearchParams(location.search);
-    const id = params.get('id');
+    const slug = params.get('slug');
     const { locale } = useLocalization();
     const currentLocale = pageContext.locale || locale;
 
@@ -55,7 +55,7 @@ const Team = ({ pageContext }) => {
     const heroSection = sections.find(section => section.attributes.section_content[0].__component === "blocks.hero-section");
     const boardSection = sections.find(section => section.attributes.section_content[0].__component === "blocks.itqan-capital-members");
 
-    const teamMember = boardSection?.attributes.section_content[0].Board_of_Directors_card.find(member => member.id.toString() === id);
+    const teamMember = boardSection?.attributes.section_content[0].Board_of_Directors_card.find(member => member.slug === slug);
 
     if (!teamMember) {
         return <p><FormattedMessage id="notFoundMessage" /></p>;

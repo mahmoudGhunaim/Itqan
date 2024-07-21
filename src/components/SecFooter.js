@@ -4,11 +4,10 @@ import Modal from 'react-modal';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import Successfully from '../Json/Successfully.json';
 import Fail from '../Json/fail.json';
-import { FormattedMessage } from 'react-intl'; // Import FormattedMessage for translations
+import { FormattedMessage } from 'react-intl';
 import "./style/SecFooter.css";
 import "./style/ContactUs.css";
 import { Link } from "gatsby";
-import itqanProfile from "../../static/بروفايل شركة إتقان كابيتال - 30-04-2024.pdf";
 
 const SecFooter = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -19,7 +18,6 @@ const SecFooter = () => {
         message: ''
     });
 
-    // Update form data as user inputs data
     const handleChange = (event) => {
         setFormData({
             ...formData,
@@ -27,7 +25,6 @@ const SecFooter = () => {
         });
     };
 
-    // Handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
         const payload = { data: formData };
@@ -60,36 +57,48 @@ const SecFooter = () => {
                         <FormattedMessage id="name_label" defaultMessage="الاسم">
                             {(text) => <span>{text}</span>}
                         </FormattedMessage>
-                        <input
-                            type='text'
-                            name='name'
-                            placeholder='Name'
-                            value={formData.name}
-                            onChange={handleChange}
-                        />
+                        <FormattedMessage id="name_placeholder" defaultMessage="أدخل اسمك">
+                            {placeholder => (
+                                <input
+                                    type='text'
+                                    name='name'
+                                    placeholder={placeholder}
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                />
+                            )}
+                        </FormattedMessage>
                     </label>
                     <label>
                         <FormattedMessage id="email_label" defaultMessage="البريد الإلكتروني">
                             {(text) => <span>{text}</span>}
                         </FormattedMessage>
-                        <input
-                            type='email'
-                            name='email'
-                            placeholder='Email'
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
+                        <FormattedMessage id="email_placeholder" defaultMessage="أدخل بريدك الإلكتروني">
+                            {placeholder => (
+                                <input
+                                    type='email'
+                                    name='email'
+                                    placeholder={placeholder}
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+                            )}
+                        </FormattedMessage>
                     </label>
                     <label>
                         <FormattedMessage id="message_label" defaultMessage="الرسالة">
                             {(text) => <span>{text}</span>}
                         </FormattedMessage>
-                        <textarea
-                            name='message'
-                            placeholder='Message'
-                            value={formData.message}
-                            onChange={handleChange}
-                        />
+                        <FormattedMessage id="message_placeholder" defaultMessage="اكتب رسالتك هنا">
+                            {placeholder => (
+                                <textarea
+                                    name='message'
+                                    placeholder={placeholder}
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                />
+                            )}
+                        </FormattedMessage>
                     </label>
                     <button type='submit'>
                         <FormattedMessage id="submit_button" defaultMessage="إرسال" />

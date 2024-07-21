@@ -67,6 +67,9 @@ html[lang="en"] .navBar-openAcc{
   justify-content: space-between;
 align-items: center;
 }
+html[lang="en"] .navBar-links a{
+  flex-direction: row;
+}
 .navBar-links a img{
   height: 100%;
 }

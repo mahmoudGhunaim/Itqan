@@ -29,6 +29,9 @@ section.private-box-sec {
 .private-box-container{
     width: 90%;
 }
+html[lang="en"] .buttons-container{
+  flex-direction: row-reverse;
+}
 .private-box-title h2{
     font-family: "Bahij TheSansArabic";
     font-size: 42px;

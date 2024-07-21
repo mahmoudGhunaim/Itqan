@@ -75,7 +75,7 @@ const ManagementTeam = () => {
               : '/default-profile.png';
 
             return (
-              <Link key={member.id} to={`../managementTeamTemplet?id=${member.id}`} className='director-card'>
+              <Link key={member.id} to={`../managementTeamTemplet?slug=${member.slug}`} className='director-card'>
                 <img src={profileImageUrl} alt={member.name} />
                 <div className='director-card-info'>
                   <h4>{member.name}</h4>

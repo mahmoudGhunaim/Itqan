@@ -82,10 +82,10 @@ const Board = ({ pageContext, location }) => {
             const profileImageUrl = director.image?.data?.attributes?.formats?.small?.url || '/default-profile.png';
             return (
               <Link
-                key={director.id}
-                to={`../team?id=${director.id}`}
-                className="director-card"
-              >
+              key={director.id}
+              to={`../team?slug=${director.slug}`}
+              className="director-card"
+            >
                 <img
                   src={`https://itqan-strapi.softylus.com${profileImageUrl}`}
                   alt={director.name}
