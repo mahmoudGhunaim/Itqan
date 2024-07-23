@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Hero from '../components/Hero';
 import Layout from "../components/layout";
-import PrivateBox from '../components/PrivateBoxCard';
+import PrivateBox from '../components/Card';
 import InfoPanel from '../components/InfoPanel';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import "../components/style/InvestmentBanking.css"
@@ -87,8 +87,9 @@ const InvestmentBanking = () => {
                   ))}
                 </Tabs>
               </div>
+              
               <div className='infopanel-image'>
-                <img src="/Frame 1399.png" alt={<FormattedMessage id="infopanel_image_alt" />} />
+                <h2>{contentTabs.content[0].title}</h2>
               </div>
             </div>
           </section>

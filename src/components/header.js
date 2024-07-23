@@ -115,14 +115,14 @@ const Header = ({ siteTitle }) => {
               className={`lang-btn ${locale === 'en' ? 'active' : ''}`} 
               style={{ display: locale === 'en' ? 'none' : '' }}
             >
-              <img src='/Vector (111).svg' alt='EN' /> EN
+               EN
             </button>
             <button 
               onClick={() => handleLanguageChange('ar')} 
               className={`lang-btn ${locale === 'ar' ? 'active' : ''}`} 
               style={{ display: locale === 'ar' ? 'none' : '' }}
             >
-              <img src='/Vector (111).svg' alt='AR' /> AR
+             AR
             </button>
           </div>
         </div>
@@ -133,14 +133,14 @@ const Header = ({ siteTitle }) => {
               className={`lang-btn ${locale === 'en' ? 'active' : ''}`} 
               style={{ display: locale === 'en' ? 'none' : '' }}
             >
-              <img src='/Vector (111).svg' alt='EN' /> EN
+            EN
             </button>
             <button 
               onClick={() => handleLanguageChange('ar')} 
               className={`lang-btn ${locale === 'ar' ? 'active' : ''}`} 
               style={{ display: locale === 'ar' ? 'none' : '' }}
             >
-              <img src='/Vector (111).svg' alt='AR' /> AR
+              AR
             </button>
           </div>
           <Button color="danger" onClick={toggleModal}>

@@ -17,6 +17,8 @@ import Successfully from "../Json/Successfully.json"
 import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
 
+import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, Checkbox, TextField } from '@mui/material';
+
 import Fail from "../Json/fail.json"
 const IndividualsLogin = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -435,6 +437,29 @@ const IndividualsLogin = () => {
         return totalPoints;
       };
       const { locale } = useLocalization();
+      const rows = [
+        { id: 'depositsMurabah', label: 'Deposits/Murabah (ودائع ومرابحات)' },
+        { id: 'debitInstruments', label: 'Debit Instruments (أدوات دين)' },
+        { id: 'equity', label: 'Equity (أسهم)' },
+        { id: 'investmentFund', label: 'Investment Fund (صناديق استثمارية)' },
+        { id: 'realEstate', label: 'Real estate (عقارات)' },
+        { id: 'derivativesContracts', label: 'Derivatives contracts (عقود مشتقات)' },
+        { id: 'alternativeInvestments', label: 'Alternative Investments (استثمارات بديلة)' },
+      ];
+      const rows2 = [
+        { 
+          id: 'Certificates', 
+          label: 'الشهادات Certificates'
+        },
+        { 
+          id: 'Dividends', 
+          label: 'حصص الأرباح أو أي دخل آخر Dividends or any other income'
+        },
+        { 
+          id: 'SalesProceed', 
+          label: 'حصيلة البيع/ Sales proceed'
+        }
+      ];
   return (
 <Layout>
 <Seo title="فتح حساب للأفراد - خدمة العملاء - إتقان كابيتال" description="اتفق على شروط وأحكام فتح حساب استثماري للأفراد مع إتقان كابيتال. ملء النموذج بالمعلومات المطلوبة لبدء عملية الفتح. تقديم الطلب الآن واحصل على حسابك الاستثماري الخاص."/>
@@ -1191,74 +1216,59 @@ const IndividualsLogin = () => {
     <AccordionDetails>
     <div className='individuals-sec-field table'>
 
-    <table>
-    <thead>
-        <tr>
-          <th>
-            <FormattedMessage id="tableHeader.investmentTools" />
-          </th>
-          <th>
-            <FormattedMessage id="tableHeader.currentClientPortfolio" />
-          </th>
-          <th>
-            <FormattedMessage id="tableHeader.idealClientPortfolio" />
-          </th>
-        </tr>
-      </thead>
-  <tbody>
-    <tr>
-    <td>Deposits/Murabah (ودائع ومرابحات)</td>
-    <td><input type="text" name="clientCurrentWalletdepositsMurabah" value={formData.clientCurrentWalletdepositsMurabah} onChange={handleChange} /></td>
-      <td><input type="text" name="idealportfoliofortheclientdepositsMurabah" value={formData.idealportfoliofortheclientdepositsMurabah} onChange={handleChange} /></td>
-    </tr>
-    <tr>
-    <td>Debit Instruments (أدوات دين)</td>
-      <td><input type="text" name="clientCurrentWalletdebitInstruments" value={formData.clientCurrentWalletdebitInstruments} onChange={handleChange} /></td>
-
-      <td><input type="text" name="idealportfoliofortheclientdebitInstruments" value={formData.idealportfoliofortheclientdebitInstruments} onChange={handleChange} /></td>
-    </tr>
-    <tr>
-    <td>Equity (أسهم)</td>
-      <td><input type="text" name="clientCurrentWalletequity" value={formData.clientCurrentWalletequity} onChange={handleChange} /></td>
-    
-      <td><input type="text" name="idealportfoliofortheclientequity" value={formData.idealportfoliofortheclientequity} onChange={handleChange} /></td>
-    </tr>
-    <tr>
-    <td>Investment Fund (صناديق استثمارية)</td>
-      <td><input type="text" name="clientCurrentWalletinvestmentFund" value={formData.clientCurrentWalletinvestmentFund} onChange={handleChange} /></td>
-      <td><input type="text" name="idealportfoliofortheclientinvestmentFund" value={formData.idealportfoliofortheclientinvestmentFund} onChange={handleChange} /></td>
-    </tr>
-    <tr>
-    <td>Real estate (عقارات)</td>
-
-      <td><input type="text" name="clientCurrentWalletrealEstate" value={formData.clientCurrentWalletrealEstate} onChange={handleChange} /></td>
-      <td><input type="text" name="idealportfoliofortheclientrealEstate" value={formData.idealportfoliofortheclientrealEstate} onChange={handleChange} /></td>
-    </tr>
-    <tr>
-    <td>Derivatives contracts (عقود مشتقات)</td>
-    <td><input type="text" name="clientCurrentWalletderivativesContracts" value={formData.clientCurrentWalletderivativesContracts} onChange={handleChange} /></td>
-   
-      <td><input type="text" name="idealportfoliofortheclientderivativesContracts" value={formData.idealportfoliofortheclientderivativesContracts} onChange={handleChange} /></td>
-    </tr>
-    <tr>
-    <td>Alternative Investments (استثمارات بديلة)</td>
-    <td><input type="text" name="clientCurrentWalletalternativeInvestments" value={formData.clientCurrentWalletalternativeInvestments} onChange={handleChange} /></td>
-
-      <td><input type="text" name="idealportfoliofortheclientalternativeInvestments" value={formData.idealportfoliofortheclientalternativeInvestments} onChange={handleChange} /></td>
-    </tr>
-    <tr>
-    <td >
-            <FormattedMessage id="tableData.checkPercentageSum" />
-          </td>    
-    <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="investment portfolio table">
+        <TableHead>
+          <TableRow>
+            <TableCell>
+              <FormattedMessage id="tableHeader.investmentTools" />
+            </TableCell>
+            <TableCell>
+              <FormattedMessage id="tableHeader.currentClientPortfolio" />
+            </TableCell>
+            <TableCell>
+              <FormattedMessage id="tableHeader.idealClientPortfolio" />
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.id}>
+              <TableCell component="th" scope="row">
+                {row.label}
+              </TableCell>
+              <TableCell>
+                <input
+                  type="text"
+                  name={`clientCurrentWallet${row.id}`}
+                  value={formData[`clientCurrentWallet${row.id}`]}
+                  onChange={handleChange}
+                />
+              </TableCell>
+              <TableCell>
+                <input
+                  type="text"
+                  name={`idealportfoliofortheclient${row.id}`}
+                  value={formData[`idealportfoliofortheclient${row.id}`]}
+                  onChange={handleChange}
+                />
+              </TableCell>
+            </TableRow>
+          ))}
+          <TableRow>
+            <TableCell>
+              <FormattedMessage id="tableData.checkPercentageSum" />
+            </TableCell>
+            <TableCell />
+            <TableCell />
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
 </div>
 </AccordionDetails>
 </Accordion>
-<Accordion defaultExpanded>
+<Accordion defaultExpanded className='table-table'>
   <AccordionSummary
     expandIcon={<ExpandMoreIcon />}
     aria-controls="panel1-content"
@@ -1290,59 +1300,59 @@ const IndividualsLogin = () => {
       </div>
     </div>
     <div className='individuals-sec-field table'>
-  <table>
-  <thead>
-        <tr>
-          <th>
-            <FormattedMessage id="tableHeader.sendTo" />
-          </th>
-          <th>
-            <FormattedMessage id="tableHeader.client" />
-          </th>
-          <th>
-            <FormattedMessage id="tableHeader.custodian" />
-          </th>
-          <th>
-            <FormattedMessage id="tableHeader.otherEntities" />
-          </th>
-        </tr>
-      </thead>
-    <tbody>
-      <tr>
-        <td>
-          <label>الشهادات Certificates</label>
-        </td>
-        <td className='checkbox'>          <input type="checkbox" name="clientCertificates" checked={formData.clientCertificates} onChange={handleChange} /></td>
-        <td className='checkbox'>
-          <input type="checkbox" name="custodianCertificates" checked={formData.custodianCertificates} onChange={handleChange} />
-        </td>
-        <td>        <input name="OtherPartiesCertificates" value={formData.OtherPartiesCertificates} onChange={handleChange} /></td>
-      </tr>
-      <tr>
-        <td>
-          <label>حصص الأرباح أو أي دخل آخر Dividends or any other income</label>
-        </td>
-        <td className='checkbox'>          <input type="checkbox" name="clientDividends" checked={formData.clientDividends} onChange={handleChange} />
-</td>
-        <td className='checkbox'>
-          <input type="checkbox" name="custodianDividends" checked={formData.custodianDividends} onChange={handleChange} />
-        </td>
-        <td >        <input name="OtherPartiesDividends" value={formData.OtherPartiesDividends} onChange={handleChange} /></td>
-
-      </tr>
-      <tr>
-        <td>
-          <label>حصيلة البيع/ Sales proceed</label>
-        </td>
-        <td className='checkbox'>          <input type="checkbox" name="clientSalesProceed" checked={formData.clientSalesProceed} onChange={handleChange} /></td>
-        <td className='checkbox' >
-          <input type="checkbox" name="custodianSalesProceed" checked={formData.custodianSalesProceed} onChange={handleChange} />
-        </td>
-        <td>        <input name="OtherPartiesSalesProceed" value={formData.OtherPartiesSalesProceed} onChange={handleChange} /></td>
-
-      </tr>
-    </tbody>
-  </table>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="send to table">
+        <TableHead>
+          <TableRow>
+            <TableCell>
+              <FormattedMessage id="tableHeader.sendTo" />
+            </TableCell>
+            <TableCell>
+              <FormattedMessage id="tableHeader.client" />
+            </TableCell>
+            <TableCell>
+              <FormattedMessage id="tableHeader.custodian" />
+            </TableCell>
+            <TableCell>
+              <FormattedMessage id="tableHeader.otherEntities" />
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows2.map((row) => (
+            <TableRow key={row.id}>
+              <TableCell component="th" scope="row">
+                {row.label}
+              </TableCell>
+              <TableCell>
+                <Checkbox
+                  name={`client${row.id}`}
+                  checked={formData[`client${row.id}`]}
+                  onChange={handleChange}
+                />
+              </TableCell>
+              <TableCell>
+                <Checkbox
+                  name={`custodian${row.id}`}
+                  checked={formData[`custodian${row.id}`]}
+                  onChange={handleChange}
+                />
+              </TableCell>
+              <TableCell>
+                <TextField
+                  name={`OtherParties${row.id}`}
+                  value={formData[`OtherParties${row.id}`]}
+                  onChange={handleChange}
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
 </div>
 
   </AccordionDetails>

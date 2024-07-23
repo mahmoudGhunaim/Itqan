@@ -1,3 +1,6 @@
+body{
+    position: relative;
+}
 .individuals-login-sec{
     background: url("/Frame 2.png");
     background-position: 0 0;
@@ -102,18 +105,25 @@ html[lang="en"] #individuals-login-field div{
     text-align: right;
 }
 
-.individuals-sec-field{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
+.individuals-sec-field {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     gap: 24px;
-    direction: rtl;
     margin-top: 20px;
 }
 
+html[lang="en"] .individuals-sec-field {
+    flex-direction: row;
+}
+
+.individuals-sec-field > * {
+    flex: 1 1 300px;
+}
 .individuals-sec-field-title {
     margin-top: 30px;
 }
+
 .individuals-single-field{
     display: flex;
     flex-direction: column;
@@ -132,7 +142,22 @@ html[lang="en"] .checkbox{
 th{
     width: 25%;
 }
-.individuals-single-field input,.individuals-single-field select,.individuals-single-field textarea ,.individuals-sec-field td input,.calculateTotalPoints{
+.MuiTableCell-head{
+    color: #222 !important;
+    font-weight: 700 !important;
+    font-family: 'Bahij TheSansArabic' !important;
+    font-size: 18px !important;
+    text-align: center !important;
+}
+.MuiTableCell-body{
+    color: #5d5d5d !important;
+    font-weight: 500 !important;
+
+    font-family: 'Bahij TheSansArabic' !important;
+    font-size: 18px !important;
+    text-align: center !important;
+}
+.individuals-single-field input,.individuals-single-field select,.individuals-single-field textarea ,.MuiTableCell-body input,.calculateTotalPoints{
     height: 46px;
     border: 1px solid #AEAEAE;
     border-radius: 10px;
@@ -141,6 +166,9 @@ th{
     font-weight: 500;
     font-family: 'Bahij TheSansArabic';
   
+}
+.MuiTableCell-body input:focus-visible{
+    outline: none !important;
 }
 .calculateTotalPoints {
     display: flex;

@@ -22,6 +22,9 @@
       padding: 50px ;
       border-radius: 10px;
  }
+ html[lang="en"]  .sec-footer-container{
+    flex-direction: row-reverse;
+ }
 form.sec-footer-form{
     display: flex;
     flex-direction: column;

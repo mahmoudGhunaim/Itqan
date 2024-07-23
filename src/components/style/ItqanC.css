@@ -121,4 +121,12 @@ html[lang="en"]  .itqan-c-text li{
     .itqan-c-image img{
         width: 100%;
     }
+    .itqan-c-text ul{
+        padding-left: 0;
+        padding-right: 20px;
+    }
+    html[lang="en"] .itqan-c-text ul{
+        padding-left: 20px;
+        padding-right: 0px;
+    }
 }

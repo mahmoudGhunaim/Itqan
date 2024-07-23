@@ -56,7 +56,6 @@ const Layout = ({ children, overPadding }) => {
             <h6><FormattedMessage id="footer.quickLinks" defaultMessage="Quick Links" /></h6>
             <Link to={`/${locale}/about-us`}><FormattedMessage id="footer.aboutUs" defaultMessage="Overview" /></Link>
             <Link to={`/${locale}/announcements`}><FormattedMessage id="footer.announcements" defaultMessage="Announcements" /></Link>
-            <Link to={`/${locale}/careers`}><FormattedMessage id="footer.careers" defaultMessage="Careers" /></Link>
             <Link to={`/${locale}/contact-us`}><FormattedMessage id="footer.contactUs" defaultMessage="Contact Us" /></Link>
           </div>
 
@@ -80,7 +79,7 @@ const Layout = ({ children, overPadding }) => {
       <footer className="copyright-sec">
         <div className="copyright">
           <p><FormattedMessage id="footer.designBy" defaultMessage="Designed and developed by" /> <Link to="https://softylus.com/">Softylus</Link> 2024.</p>
-          <p><FormattedMessage id="footer.copyright" defaultMessage="Itqan Capital © 2024. All rights reserved. Created for Itqan Capital" /></p>
+          <p><FormattedMessage id="footer.copyright" defaultMessage="Itqan Capital © 2024. All rights reserved. " /></p>
         </div>
       </footer>
     </LocalizationProvider>

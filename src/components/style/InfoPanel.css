@@ -71,6 +71,29 @@ html[lang="en"]  .AssetManagement-title .infopanel-content li,html[lang="en"]  .
     text-align: right;
 
 }
+.infopanel-content{
+    width: 59%;
+}
+.infopanel-image{
+    background: url("/Frame 11111.png");
+    width: 39%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;   
+}
+.infopanel-image h2{
+    font-family: 'Bahij TheSansArabic';
+font-size: 30px;
+font-weight: 600;
+line-height: 49.06px;
+text-align: right;
+    color: #3F1A58;
+    margin-bottom: 10%;
+}
 .infopanel-container button{
     padding: 10px 40px;
     background: #46235E;

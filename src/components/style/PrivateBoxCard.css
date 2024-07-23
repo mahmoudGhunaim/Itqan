@@ -41,3 +41,24 @@ html[lang="en"]  .PrivateBoxCard-title h3,html[lang="en"] .PrivateBoxCard-title 
     margin-top: 10px;
 
 }
+.Card-image{
+    width: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    border-radius: 16px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.Card-image h3{
+    font-family: 'Bahij TheSansArabic';
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 49.06px;
+    text-align: center;
+    color: White;
+    margin-bottom: 10%;
+}

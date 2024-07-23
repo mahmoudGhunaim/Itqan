@@ -357,6 +357,19 @@ button.btn-close::before{
 .dropdown  ul li:nth-child(2){
   margin-top: 5px;
 }
+.lang-btn::before{
+  content:" ";
+  width: 20px;
+  height: 20px;
+  background: url("/Vector (111).svg");
+  transition: 0.25s all ease;
+}
+.lang-btn:hover::before{
+  content:" ";
+  width: 20px;
+  height: 20px;
+  background: url("/Vector (111) 1.png");
+}
 @media screen and (max-width: 1024px){
   .modal-content {
     position: fixed;

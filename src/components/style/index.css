@@ -478,6 +478,45 @@ margin-top: 30px;
     display: flex;
     justify-content: end;
 }
+html[lang="en"] .exchange-rate-card table {
+    display: flex;
+    flex-direction: column;
+}
+
+html[lang="en"] .exchange-rate-card table thead, 
+html[lang="en"] .exchange-rate-card table tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+html[lang="en"] .exchange-rate-card table thead tr, 
+html[lang="en"] .exchange-rate-card table tbody tr {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the rows */
+    justify-content: center;
+    align-items: center;
+}
+
+html[lang="en"] .exchange-rate-card table th, 
+html[lang="en"] .exchange-rate-card table td {
+    flex: 1; /* Ensure all cells have equal width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Optional: Style table headers */
+html[lang="en"] .exchange-rate-card table th {
+    font-weight: bold;
+}
+html[lang="en"] .box-name{
+    flex-direction: row-reverse;
+}
+html[lang="en"] .box-name img{
+    margin-right: 0;
+    /* margin-left: 25px; */
+}
 @media screen and (max-width:  1024px) {
 
     .exchange-rate-card {
@@ -540,6 +579,9 @@ margin-top: 30px;
     }
     .BoardDirectors-sec{
         padding: 50px 0;
+    }
+    html[lang="en"] .exchange-rate-card table{
+        width: 1500px;
     }
 }
 @media screen and (max-width:  767px){
