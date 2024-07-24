@@ -117,4 +117,7 @@ text-align: left;
     html[lang="en"] .AdvisoryResearch-container{
         flex-direction: column-reverse;
     }
+    .AdvisoryResarch-info h1{
+        line-height: 1.3;
+    }
 }

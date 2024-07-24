@@ -34,10 +34,12 @@ const ScrollToTopButton = () => {
         {isVisible && (
           <button
             onClick={scrollToTop}
+            id='backToTop'
             style={{
+              
               position: 'fixed',
-              bottom: '10%',
-              left: '20px',
+              bottom: '40px',
+              left: '40px',
               background: '#3F1A58',
               color: 'white',
               border: 'none',

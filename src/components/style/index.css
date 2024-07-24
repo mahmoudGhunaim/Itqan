@@ -586,6 +586,10 @@ html[lang="en"] .box-name img{
     html[lang="en"] .products-content{
         flex-direction: column;
     }
+    .ShariyahReview-content a,
+    .ShariyahReview-content a > .Reports-data-single-card {
+        width: 100%;
+    }
 }
 @media screen and (max-width:  767px){
     .Reports-data-cards{

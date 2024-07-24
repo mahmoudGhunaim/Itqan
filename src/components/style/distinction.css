@@ -66,7 +66,12 @@ html[lang="en"] .distinguishes-card{
 
 @media screen and (max-width:  1024px) {
     
-   
+    html[lang="en"] .distinguishes-card {
+        flex-direction: row !important;
+    }
+    html[lang="ar"] .distinguishes-card {
+        flex-direction: row-reverse !important;
+    }
     .distinguishes-card{
         overflow-x: auto;
         width: 100%;
@@ -74,6 +79,7 @@ html[lang="en"] .distinguishes-card{
     }
     .distinguishes-single-card{
         flex: 0 0 auto; 
+        width: 340px !important;
     }
     .distinguishes-container{
         gap: 30px;

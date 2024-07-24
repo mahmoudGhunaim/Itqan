@@ -137,10 +137,10 @@ html[lang="en"] .individuals-single-field > *{
     direction: ltr;
 }
 .checkbox{
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
 html[lang="en"] .checkbox{
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 .checkbox input{
     width: 20px;
@@ -275,10 +275,10 @@ html[lang="en"] .individuals-single-field label{
     overflow: auto;
 }
 .recommendation{
-    color: lightgreen !important;
+    color: #4caa4c  !important;
 }
 
-  input:not([type="checkbox"]):not([type="radio"]),
+  .individuals-login-field input:not([type="checkbox"]):not([type="radio"]),
 select {
   -webkit-appearance: none;
   background-color: #fff;
@@ -360,4 +360,11 @@ html[lang="en"] .table table tbody tr {
     .individuals-buttom-form{
         width: 100%;
     }
+    .rebeted-form button {
+        font-size: 24px;
+        margin-right: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 }

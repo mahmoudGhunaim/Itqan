@@ -54,3 +54,16 @@ html[lang="en"] .AnnouncementsBox p,html[lang="en"] .Announcements-content h3{
     color: #222222;
     margin-bottom: 10px;
 }
+@media screen and (max-width: 1024px) {
+    .Announcements-content {
+      padding: 20px;
+    }
+    .Announcements-content h3 {
+      font-size: 32px;
+    }
+    .AnnouncementsBox p > p:not(:first-child) {
+      font-size: 14px;
+      line-height: normal;
+      margin-top: 16px;
+    }
+  }

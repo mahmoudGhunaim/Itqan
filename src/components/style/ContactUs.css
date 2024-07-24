@@ -179,6 +179,9 @@ form.Contact-footer-form{
 .Contact-successfuly-body img{
     width: 200px;
 }
+.Contact-footer-form input::placeholder,.Contact-footer-form textarea::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
 .Contact-successfuly-body h4,.Contact-error-body h4{
     font-family: "Bahij TheSansArabic";
     font-size: 26px;

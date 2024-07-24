@@ -108,4 +108,7 @@ color: #000000;
     .Board-hero-title h1{
         font-size: 36px;
     }
+    .Board-hero-title p {
+        margin-top: 32px;
+    }
 }

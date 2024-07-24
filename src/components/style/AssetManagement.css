@@ -113,11 +113,14 @@ html[lang="en"] .buttons-container{
     
     }
     html[lang="en"]  .buttons-container{
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center;
     }
     .assetManagement-accordion-container{
       width: 90%;
+    }
+    .assetManagement-accordion{
+      padding-top: 0;
     }
     .boxes-title{
       padding-top: 30px;

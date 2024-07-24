@@ -64,6 +64,16 @@
     flex-direction: row-reverse;
     text-align: right;
 }
+.itqan-c-text > h6 + div > p {
+    margin-bottom: 10px;
+}
+html[lang="en"] .itqan-c-text ul {
+    padding-left: 15px;
+}
+html[lang="ar"] .itqan-c-text ul {
+    padding-left: 0;
+    padding-right: 15px;
+}
 html[lang="en"] .itqan-c-text p{
     text-align: left;
 }
@@ -87,24 +97,38 @@ html[lang="en"] .itqan-c-text h6{
     flex-direction: row;
 }
 .itqan-c-text li{
+    position: relative;
+    list-style-type: none;
     direction: rtl;
 }
 
 html[lang="en"] .itqan-c-text li p{
     margin-left: 10px;
-
 }
+html[lang="ar"] .itqan-c-text li p{
+    margin-left: 0;
+    margin-right: 10px;
+}
+
 html[lang="en"]  .itqan-c-text li{
     direction: ltr;
 
 }
-.itqan-c-text li::marker {
+.itqan-c-text li::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     content: url('/carbon_condition-wait-point.png'); /* Replace with the path to your marker image */
     /* Additional styling properties if needed */
 }
+html[lang="en"] .itqan-c-text li::before {
+    left: -15px;
+}
+html[lang="ar"] .itqan-c-text li::before {
+    right: -15px;
+}
 .itqan-c-text li p{
-    margin-right: 10px;
-    margin-top: 0;
+    margin: 0;
 }
 @media screen and (max-width:  1024px) {
     .itqan-c-section{
@@ -112,7 +136,7 @@ html[lang="en"]  .itqan-c-text li{
     }
     .itqan-c-container{
         flex-direction: column;
-        padding: 10px;
+        padding: 20px;
 
     }
     .itqan-c-image{

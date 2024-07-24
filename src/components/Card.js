@@ -13,7 +13,7 @@ const Card = ({title,imgSrc,subtitle,Button,size,backgroundColor,spaceP,link,hid
                 <h3>{title}</h3>
             </div>
           <div className='PrivateBoxCard-title'>
-            <h3>{title}</h3>
+            <h3 style={{marginTop:"24px"}}>{title}</h3>
             <p>{subtitle}</p>
             <p style={{paddingTop:spaceP}}>{size}</p>
             <Link to={`/${locale}/${link}`}> <button style={{ display: hidebutton ? 'none' : 'inline-block' }}>

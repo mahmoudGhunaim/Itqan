@@ -25,15 +25,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     {
-			resolve: `gatsby-plugin-sharp`,
-			options: {
-				defaults: {
-					formats: [`auto`, `webp`, `avif`,`png`,`jpg`], 
-					quality: 100,
-					placeholder: "blurred",
-				},
-			},
-		}, 
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`, `avif`, `png`, `jpg`],
+          quality: 100,
+          placeholder: "blurred",
+        },
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -42,10 +42,9 @@ module.exports = {
         short_name: `starter`,
         start_url: `/ar`,
         background_color: `#663399`,
-     
         display: `minimal-ui`,
-        icon: `static/Fav Icon Itqan.png`, 
+        icon: `static/Fav Icon Itqan.png`,
       },
     },
   ],
-}
+};
