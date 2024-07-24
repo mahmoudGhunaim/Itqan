@@ -298,4 +298,7 @@ html[lang="en"] .individuals-single-field label{
     .individuals-sec-field-grid-box-title,.individuals-sec-field-grid-box,.individuals-sec-field-grid-box-h4{
         width: 249px;
     }
+   .individuals-single-field select{
+        width: 100%;
+    }
 }

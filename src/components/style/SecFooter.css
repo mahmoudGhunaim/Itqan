@@ -162,4 +162,7 @@ color: #FFFFFF;
     .sec-footer-container{
         flex-direction: column;
     }
+    html[lang="en"]  .sec-footer-container{
+        flex-direction: column-reverse;
+    }
 }

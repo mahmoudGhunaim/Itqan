@@ -81,7 +81,8 @@ color: rgba(34, 34, 34, 1) !important;
 }
 .tab-image{
     background: url("/Frame 11111.png");
-    width: 39%;background-position: center center;
+    width: 39%;
+    background-position: center center;
     background-size: cover;
     border-radius: 16px;
     display: flex;
@@ -91,5 +92,9 @@ color: rgba(34, 34, 34, 1) !important;
 @media screen and (max-width:  1024px){
     .investment-banking-container-card{
         grid-template-columns: repeat(1, 1fr);
+    }
+    .tab-image{
+        height: 400px !important;
+        width: 100% !important;
     }
 }

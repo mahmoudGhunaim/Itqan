@@ -583,6 +583,9 @@ html[lang="en"] .box-name img{
     html[lang="en"] .exchange-rate-card table{
         width: 1500px;
     }
+    html[lang="en"] .products-content{
+        flex-direction: column;
+    }
 }
 @media screen and (max-width:  767px){
     .Reports-data-cards{
@@ -596,5 +599,8 @@ html[lang="en"] .box-name img{
         text-align: center;
         gap: 0;
         margin-top: 20px;
+    }
+    .ShariyahReview-content{
+        align-items: center;
     }
 }

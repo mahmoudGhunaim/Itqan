@@ -28,7 +28,7 @@ const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc
 
   return (
     <div 
-      className='Reports-data-single-card security-single-card'
+      className='Reports-data-single-card security-single-card ShariyahReview-security-single-card '
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
         <img src={imgSrc} alt="" />

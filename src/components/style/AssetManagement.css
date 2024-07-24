@@ -112,6 +112,10 @@ html[lang="en"] .buttons-container{
       width: 90%;
     
     }
+    html[lang="en"]  .buttons-container{
+      flex-direction: column;
+      align-items: center;
+    }
     .assetManagement-accordion-container{
       width: 90%;
     }
