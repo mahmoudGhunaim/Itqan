@@ -8,6 +8,7 @@ import Seo from '../components/seo';
 import { FormattedMessage } from 'react-intl';
 import axios from 'axios';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const SecurityCard = ({ title, hoverTitle, pdfLink, imageSrc, hoverImageSrc }) => {
   const [content, setContent] = useState(title);
@@ -55,7 +56,7 @@ const ClientAwareness = () => {
     fetchData();
   }, []);
   if (!pageData) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
   const heroSection = pageData.attributes.sections.data.find(
     section => section.attributes.section_content[0].__component === 'blocks.hero-section'

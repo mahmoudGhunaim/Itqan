@@ -79,6 +79,15 @@ line-height: 34px !important;
 text-align: right!important;
 color: rgba(34, 34, 34, 1) !important;
 }
+.tab-image{
+    background: url("/Frame 11111.png");
+    width: 39%;background-position: center center;
+    background-size: cover;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;   
+}
 @media screen and (max-width:  1024px){
     .investment-banking-container-card{
         grid-template-columns: repeat(1, 1fr);

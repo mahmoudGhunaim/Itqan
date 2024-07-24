@@ -21,7 +21,7 @@ const AccordionV2 = ({ title, links }) => {
         <ul>
           {links && links.map((link, index) => (
             <li key={index}>
-              <Link to={link.link || '#'}>{link.link_title || ''}</Link>
+              <Link target="_blank" to={link.link || '#'}>{link.link_title || ''}</Link>
             </li>
           ))}
         </ul>

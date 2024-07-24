@@ -7,6 +7,7 @@ import Seo from '../components/seo';
 import { Link } from "gatsby";
 import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const ManagementTeamTemplate = () => {
   const location = useLocation();
@@ -38,7 +39,7 @@ const ManagementTeamTemplate = () => {
   }, [locale]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loader/>;
   }
 
   if (!pageData) {

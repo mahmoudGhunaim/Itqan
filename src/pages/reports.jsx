@@ -5,7 +5,7 @@ import Accordion from '../components/AccordionV2';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { useLocalization } from '../context/LocalizationContext';
 import Seo from '../components/seo';
-
+import Loader from '../components/loader';
 const Reports = () => {
   const { locale } = useLocalization();
   const [pageData, setPageData] = useState(null);
@@ -39,7 +39,7 @@ const Reports = () => {
   }, [locale]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }  if (!pageData || !pageData.data) {
     return <div>Error loading page data</div>;
   }

@@ -5,6 +5,7 @@ import Seo from '../components/seo';
 import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const Board = ({ pageContext, location }) => {
   const [pageData, setPageData] = useState(null);
@@ -47,7 +48,7 @@ const Board = ({ pageContext, location }) => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loader/>;
   }
 
   if (!pageData) {

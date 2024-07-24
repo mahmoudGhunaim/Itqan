@@ -11,6 +11,7 @@ import 'react-tabs/style/react-tabs.css';
 import Seo from '../components/seo';
 import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const InvestmentBanking = () => {
   const [pageData, setPageData] = useState(null);
@@ -35,7 +36,7 @@ const InvestmentBanking = () => {
     };
     fetchData();
   }, []);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loader/>;
   if (error) return <div>Error: {error}</div>;
   if (!pageData) return null;
   const { meta_title, meta_description, sections } = pageData;
@@ -88,7 +89,7 @@ const InvestmentBanking = () => {
                 </Tabs>
               </div>
               
-              <div className='infopanel-image'>
+              <div className='infopanel-image tab-image'>
                 <h2>{contentTabs.content[0].title}</h2>
               </div>
             </div>

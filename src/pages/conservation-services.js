@@ -7,6 +7,7 @@ import ScrollToTopButton from '../components/ScrollToTopButton';
 import Seo from '../components/seo';
 import axios from 'axios';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const ConservationServices = () => {
   const [pageData, setPageData] = useState(null);
@@ -34,7 +35,7 @@ const ConservationServices = () => {
     fetchPageData().then(data => setPageData(data));
   }, [locale]);
 
-  if (!pageData) return <div>Loading...</div>;
+  if (!pageData) return <Loader/>;
 
   const { attributes } = pageData;
   const heroSection = attributes.sections.data.find(section => section.attributes.custom_slug === "conservation-services" && section.attributes.section_content[0].__component === "blocks.hero-section");

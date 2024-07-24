@@ -10,6 +10,7 @@ import ScrollToTopButton from '../components/ScrollToTopButton';
 import Hero from '../components/Hero';
 import Seo from '../components/seo';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const AboutUS = () => {
   const [pageData, setPageData] = useState(null);
@@ -33,7 +34,7 @@ const AboutUS = () => {
   }, []);
 
   if (!pageData) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   return (

@@ -8,6 +8,7 @@ import Seo from '../components/seo';
 import { Link } from "gatsby";
 import { FormattedMessage } from 'react-intl';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const Team = ({ pageContext }) => {
     const location = useLocation();
@@ -44,7 +45,7 @@ const Team = ({ pageContext }) => {
     }, [currentLocale]);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <Loader/>;
     }
 
     if (!pageData) {

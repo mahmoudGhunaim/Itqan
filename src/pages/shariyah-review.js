@@ -8,6 +8,7 @@ import ScrollToTopButton from '../components/ScrollToTopButton';
 import "../components/style/index.css";
 import Seo from '../components/seo';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const SecurityCard = ({ defaultContent, hoverContent, defaultImgSrc, hoverImgSrc }) => {
   const [content, setContent] = useState(defaultContent);
@@ -62,7 +63,7 @@ const ShariyahReview = () => {
     fetchPageData().then(data => setPageData(data));
   }, [locale]); // Add locale as a dependency
 
-  if (!pageData) return <div>Loading...</div>;
+  if (!pageData) return <Loader/>;
 
   const { attributes } = pageData;
   const sectionContent = attributes.sections.data[0].attributes.section_content[0];

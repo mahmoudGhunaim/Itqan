@@ -16,6 +16,7 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import Seo from '../components/seo';
 import { useLocalization } from '../context/LocalizationContext';
 import { FormattedMessage } from 'react-intl';
+import Loader from '../components/loader';
 
 const SliderButtons = () => {
   const swiper = useSwiper();
@@ -326,7 +327,7 @@ const AssetManagement = () => {
   };
 
   if (!isDataReady) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   return (

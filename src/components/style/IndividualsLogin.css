@@ -130,6 +130,12 @@ html[lang="en"] .individuals-sec-field {
     gap: 10px;
     justify-content: space-between;
 }
+.individuals-single-field > *{
+    direction: rtl;
+}
+html[lang="en"] .individuals-single-field > *{
+    direction: ltr;
+}
 .checkbox{
     flex-direction: row;
 }
@@ -267,6 +273,9 @@ html[lang="en"] .individuals-single-field label{
 }
 .table{
     overflow: auto;
+}
+.recommendation{
+    color: lightgreen !important;
 }
 @media screen and (max-width:  1024px) {
     .individuals-login-title h1{

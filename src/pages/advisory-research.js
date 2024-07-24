@@ -6,6 +6,7 @@ import Seo from '../components/seo';
 import "../components/style/ConservationServices.css";
 import axios from 'axios';
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const AdvisoryResearch = () => {
   const [pageData, setPageData] = useState(null);
@@ -33,7 +34,7 @@ const AdvisoryResearch = () => {
     fetchPageData().then(data => setPageData(data));
   }, [locale]);
 
-  if (!pageData) return <div>Loading...</div>;
+  if (!pageData) return <Loader/>;
 
   const { attributes } = pageData;
   const contentSection = attributes.sections.data[0].attributes.section_content[0];

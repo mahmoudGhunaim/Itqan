@@ -1444,16 +1444,9 @@ const IndividualsLogin = () => {
           </div>
         </div>
         <div className='individuals-sec-field'>
-          <div className='individuals-single-field'>
-            <label><FormattedMessage id="question.investmentDesire" /></label>
-            <input
-              name="investmentDesire"
-              value={formData.investmentDesire}
-              onChange={handleChange}
-            />
-          </div>
-          <div className='individuals-single-field'>
-            <label><FormattedMessage id="question.recommendation" /> {calculateTotalPoints() >= 1 && calculateTotalPoints() <= 6 && (
+        <div className='individuals-single-field'>
+            <label><FormattedMessage id="question.recommendation" /> </label>
+            <label className='recommendation'>  {calculateTotalPoints() >= 1 && calculateTotalPoints() <= 6 && (
           <FormattedMessage id="lowRisk" />
         )}
         {calculateTotalPoints() >= 7 && calculateTotalPoints() <= 15 && (
@@ -1462,12 +1455,16 @@ const IndividualsLogin = () => {
         {calculateTotalPoints() > 15 && (
           <FormattedMessage id="highRisk" />
         )}</label>
+          </div>
+          <div className='individuals-single-field'>
+            <label><FormattedMessage id="question.investmentDesire" /></label>
             <input
-              name="recommendation"
-              value={formData.recommendation}
+              name="investmentDesire"
+              value={formData.investmentDesire}
               onChange={handleChange}
             />
           </div>
+          
         </div>
         <div className='individuals-sec-field'>
           <div className='individuals-single-field'>

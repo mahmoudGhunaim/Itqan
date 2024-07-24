@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import "./style/ItqanC.css";
 import { useLocalization } from '../context/LocalizationContext';
+import Loader from '../components/loader';
 
 const ItqanC = () => {
   const [pageData, setPageData] = useState(null);
@@ -32,7 +33,7 @@ const ItqanC = () => {
   }, []);
 
   if (!pageData) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   const section = pageData.attributes.sections.data[3];

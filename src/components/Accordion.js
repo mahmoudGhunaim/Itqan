@@ -9,17 +9,17 @@ import "./style/Accordion.css";
 const Accordions = ({ title, Details, linkpdf }) => {
     const renderDetails = () => {
         if (typeof Details === 'string') {
-          return <Link to={linkpdf}><li>{Details}</li></Link>;
+          return <Link  target="_blank" to={linkpdf}><li>{Details}</li></Link>;
         } else if (Array.isArray(Details)) {
           // Map over Details array when it contains multiple objects
           return Details.map((detail, index) => (
             <li key={index}>
-              <Link to={detail.linkpdf}>{detail.content}</Link>
+              <Link  target="_blank" to={detail.linkpdf}>{detail.content}</Link>
             </li>
           ));
         } else if (typeof Details === 'object' && Details !== null) {
           // If Details is a single object
-          return <Link to={linkpdf}><li>{Details.content}</li></Link>;
+          return <Link  target="_blank" to={linkpdf}><li>{Details.content}</li></Link>;
         }
         return null;
       };
