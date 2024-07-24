@@ -277,6 +277,53 @@ html[lang="en"] .individuals-single-field label{
 .recommendation{
     color: lightgreen !important;
 }
+input, select {
+    -webkit-appearance: none;
+    background-color: #fff;
+  }
+   .table table {
+    display: flex;
+    flex-direction: column;
+}
+
+ .table table thead, 
+ .table table tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+ .table table thead tr, 
+ .table table tbody tr {
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the rows */
+    justify-content: center;
+    align-items: center;
+}
+html[lang="en"].table table thead tr, 
+html[lang="en"] .table table tbody tr {
+   display: flex;
+   flex-direction: row; /* Reverse the rows */
+   justify-content: center;
+   align-items: center;
+}
+ .table table th, 
+ .table table td {
+    flex: 1; /* Ensure all cells have equal width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Optional: Style table headers */
+ .table table th, .table table td {
+    font-weight: bold;
+    height: 135px;
+    max-height: 135px;
+    min-height: 135px;
+    
+}
+
 @media screen and (max-width:  1024px) {
     .individuals-login-title h1{
         font-size: 24px;
