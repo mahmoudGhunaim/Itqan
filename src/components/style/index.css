@@ -590,6 +590,12 @@ html[lang="en"] .box-name img{
     .ShariyahReview-content a > .Reports-data-single-card {
         width: 100%;
     }
+    html[lang="ar"] .exchange-rate-card{
+        direction: rtl;
+    }
+    html[lang="ar"] .exchange-rate-card table{
+        direction: ltr;
+    }
 }
 @media screen and (max-width:  767px){
     .Reports-data-cards{
@@ -607,4 +613,5 @@ html[lang="en"] .box-name img{
     .ShariyahReview-content{
         align-items: center;
     }
+
 }

@@ -367,4 +367,16 @@ html[lang="en"] .table table tbody tr {
         justify-content: center;
         align-items: center;
       }
+      .MuiTableCell-body, .MuiTableCell-head{
+        font-size: 14px;
+      }
+      .table table td, .table table th{
+        overflow: hidden;
+      }
+      html[lang="ar"] .MuiPaper-elevation {
+        direction: rtl;
+      }
+      html[lang="ar"] .MuiPaper-elevation table{
+        direction: ltr;
+      }
 }

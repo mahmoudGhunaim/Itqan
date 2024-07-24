@@ -143,5 +143,7 @@ margin-top: 20px;
     .infopanel-container button{
         text-align: center;
     }
-  
+    html[lang="en"]  .infopanel-content h2{
+    line-height: 1.3;
+  }
 }
